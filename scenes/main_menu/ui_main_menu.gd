@@ -57,10 +57,10 @@ func _on_Exit_pressed():
 
 func _on_BtnAbout_pressed():
 	PopUp.new().accept_dialog("About", 
-		"Neon Rush\nDev: MLKW(Mofrog)\n" + \
+		"Neon Rush\nBy: MLKW(Mofrog)\n" + \
 		"Licenced under MIT\n" + \
-		"More info on github page:\n" + \
-		"Join to Neon rush discord server:", 
+		"More info on github page: https://github.com/Mofrog/NeonRush \n" + \
+		"Join to Neon rush discord server: https://discord.gg/qKznMrpdnw", 
 		self)
 
 
