@@ -1,7 +1,5 @@
 # NeonRush
 
-# NeonRush
-
 Neon Rush is a first person rhythm platformer where you can create your own voxel maps.
 
 - [Discord](https://discord.gg/qKznMrpdnw)
