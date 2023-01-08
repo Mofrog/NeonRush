@@ -1,0 +1,346 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://scenes/main_menu/ui_main_menu.gd" type="Script" id=1]
+[ext_resource path="res://code/ui_elements/debug.tscn" type="PackedScene" id=2]
+[ext_resource path="res://art/themes/timeline_theme.tres" type="Theme" id=3]
+[ext_resource path="res://art/Quicksand-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://art/font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://art/sfx/metro-high.wav" type="AudioStream" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=56]
+content_margin_left = 7.0
+content_margin_right = 7.0
+content_margin_top = 7.0
+content_margin_bottom = 7.0
+bg_color = Color( 0.14902, 0.172549, 0.231373, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.407843, 0.611765, 0.909804, 0.694118 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=57]
+content_margin_left = 7.0
+content_margin_right = 7.0
+content_margin_top = 7.0
+content_margin_bottom = 7.0
+bg_color = Color( 0.14902, 0.172549, 0.231373, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 0.694118 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=58]
+content_margin_left = 7.0
+content_margin_right = 7.0
+content_margin_top = 7.0
+content_margin_bottom = 7.0
+bg_color = Color( 0.0941176, 0.109804, 0.14902, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.407843, 0.611765, 0.909804, 0.694118 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=132]
+bg_color = Color( 0.12549, 0.141176, 0.192157, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.407843, 0.611765, 0.909804, 1 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=133]
+bg_color = Color( 0.12549, 0.141176, 0.192157, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=134]
+bg_color = Color( 0.12549, 0.141176, 0.192157, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="DynamicFont" id=59]
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=53]
+bg_color = Color( 0.2, 0.227451, 0.309804, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_top = 25.0
+shadow_size = 10
+
+[sub_resource type="Theme" id=54]
+Button/fonts/font = ExtResource( 5 )
+Button/styles/hover = SubResource( 56 )
+Button/styles/normal = SubResource( 57 )
+Button/styles/pressed = SubResource( 58 )
+Label/fonts/font = ExtResource( 5 )
+LineEdit/fonts/font = ExtResource( 5 )
+LineEdit/styles/focus = SubResource( 132 )
+LineEdit/styles/normal = SubResource( 133 )
+LineEdit/styles/read_only = SubResource( 134 )
+WindowDialog/colors/title_color = Color( 1, 1, 1, 1 )
+WindowDialog/constants/close_h_ofs = 22
+WindowDialog/fonts/title_font = SubResource( 59 )
+WindowDialog/styles/panel = SubResource( 53 )
+
+[node name="Root" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="C" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Header" type="Control" parent="C"]
+margin_right = 1680.0
+margin_bottom = 130.0
+size_flags_vertical = 3
+
+[node name="Body" type="Control" parent="C"]
+margin_left = 840.0
+margin_top = 134.0
+margin_right = 840.0
+margin_bottom = 915.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+
+[node name="Label" type="Label" parent="C/Body"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -414.5
+margin_right = 414.5
+margin_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = SubResource( 1 )
+text = "Neon Rush"
+align = 1
+
+[node name="Menu" type="VBoxContainer" parent="C/Body"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -58.0
+margin_right = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 400, 0 )
+theme = ExtResource( 3 )
+alignment = 1
+
+[node name="BtnSelect" type="Button" parent="C/Body/Menu"]
+margin_top = 297.0
+margin_right = 400.0
+margin_bottom = 331.0
+text = "Map selection"
+
+[node name="BtnEditor" type="Button" parent="C/Body/Menu"]
+margin_top = 335.0
+margin_right = 400.0
+margin_bottom = 369.0
+text = "Open editor"
+
+[node name="BtnSettings" type="Button" parent="C/Body/Menu"]
+margin_top = 373.0
+margin_right = 400.0
+margin_bottom = 407.0
+text = "Settings"
+
+[node name="BtnAbout" type="Button" parent="C/Body/Menu"]
+margin_top = 411.0
+margin_right = 400.0
+margin_bottom = 445.0
+text = "About"
+
+[node name="BtnExit" type="Button" parent="C/Body/Menu"]
+margin_top = 449.0
+margin_right = 400.0
+margin_bottom = 483.0
+text = "Exit"
+
+[node name="Footer" type="Control" parent="C"]
+margin_top = 919.0
+margin_right = 1680.0
+margin_bottom = 1050.0
+size_flags_vertical = 3
+
+[node name="VerTooltip" parent="." instance=ExtResource( 2 )]
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -200.0
+margin_right = 250.0
+margin_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource( 54 )
+window_title = "Settings"
+
+[node name="Panel" type="Panel" parent="AcceptDialog"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 492.0
+margin_bottom = 350.0
+
+[node name="MarginContainer" type="MarginContainer" parent="AcceptDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -50.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AcceptDialog/MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 479.0
+margin_bottom = 337.0
+
+[node name="Config" type="HBoxContainer" parent="AcceptDialog/MarginContainer/VBoxContainer"]
+margin_right = 474.0
+margin_bottom = 46.0
+
+[node name="Label" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer/Config"]
+margin_top = 13.0
+margin_right = 105.0
+margin_bottom = 33.0
+text = "Debug mode: "
+
+[node name="BtnDebug" type="CheckButton" parent="AcceptDialog/MarginContainer/VBoxContainer/Config"]
+margin_left = 109.0
+margin_right = 187.0
+margin_bottom = 46.0
+flat = true
+
+[node name="Label2" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer/Config"]
+margin_left = 191.0
+margin_top = 13.0
+margin_right = 281.0
+margin_bottom = 33.0
+text = "Motion blur: "
+
+[node name="BtnBlur" type="CheckButton" parent="AcceptDialog/MarginContainer/VBoxContainer/Config"]
+margin_left = 285.0
+margin_right = 363.0
+margin_bottom = 46.0
+flat = true
+
+[node name="Config2" type="HBoxContainer" parent="AcceptDialog/MarginContainer/VBoxContainer"]
+margin_top = 50.0
+margin_right = 474.0
+margin_bottom = 80.0
+
+[node name="Label2" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer/Config2"]
+margin_top = 5.0
+margin_right = 105.0
+margin_bottom = 25.0
+text = "Visible radius: "
+
+[node name="Radius" type="SpinBox" parent="AcceptDialog/MarginContainer/VBoxContainer/Config2"]
+margin_left = 109.0
+margin_right = 175.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 30 )
+min_value = 6.0
+max_value = 20.0
+value = 6.0
+
+[node name="Label3" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer/Config2"]
+margin_left = 179.0
+margin_top = 5.0
+margin_right = 315.0
+margin_bottom = 25.0
+text = "Mouse sensetivity: "
+
+[node name="HSlider" type="HSlider" parent="AcceptDialog/MarginContainer/VBoxContainer/Config2"]
+margin_left = 319.0
+margin_top = 7.0
+margin_right = 474.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 5.0
+step = 0.01
+value = 1.0
+tick_count = 6
+ticks_on_borders = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[connection signal="pressed" from="C/Body/Menu/BtnSelect" to="." method="_on_MapSelect_pressed"]
+[connection signal="pressed" from="C/Body/Menu/BtnEditor" to="." method="_on_Editor_pressed"]
+[connection signal="pressed" from="C/Body/Menu/BtnSettings" to="." method="_on_BtnSettings_pressed"]
+[connection signal="pressed" from="C/Body/Menu/BtnAbout" to="." method="_on_BtnAbout_pressed"]
+[connection signal="pressed" from="C/Body/Menu/BtnExit" to="." method="_on_Exit_pressed"]
+[connection signal="hide" from="AcceptDialog" to="." method="_on_AcceptDialog_hide"]
+[connection signal="toggled" from="AcceptDialog/MarginContainer/VBoxContainer/Config/BtnDebug" to="." method="_on_BtnDebug_toggled"]
+[connection signal="toggled" from="AcceptDialog/MarginContainer/VBoxContainer/Config/BtnBlur" to="." method="_on_BtnBlur_toggled"]
+[connection signal="value_changed" from="AcceptDialog/MarginContainer/VBoxContainer/Config2/Radius" to="." method="_on_Radius_value_changed"]
+[connection signal="value_changed" from="AcceptDialog/MarginContainer/VBoxContainer/Config2/HSlider" to="." method="_on_HSlider_value_changed"]

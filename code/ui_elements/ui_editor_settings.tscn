@@ -1,0 +1,885 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://art/Quicksand-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://code/ui_elements/ui_editor_settings.gd" type="Script" id=2]
+[ext_resource path="res://art/font.tres" type="DynamicFont" id=3]
+
+[sub_resource type="StyleBoxFlat" id=56]
+content_margin_left = 7.0
+content_margin_right = 7.0
+content_margin_top = 7.0
+content_margin_bottom = 7.0
+bg_color = Color( 0.14902, 0.172549, 0.231373, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.407843, 0.611765, 0.909804, 0.694118 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=57]
+content_margin_left = 7.0
+content_margin_right = 7.0
+content_margin_top = 7.0
+content_margin_bottom = 7.0
+bg_color = Color( 0.14902, 0.172549, 0.231373, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 0.694118 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=58]
+content_margin_left = 7.0
+content_margin_right = 7.0
+content_margin_top = 7.0
+content_margin_bottom = 7.0
+bg_color = Color( 0.0941176, 0.109804, 0.14902, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.407843, 0.611765, 0.909804, 0.694118 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=132]
+bg_color = Color( 0.12549, 0.141176, 0.192157, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.407843, 0.611765, 0.909804, 1 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=133]
+bg_color = Color( 0.12549, 0.141176, 0.192157, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=134]
+bg_color = Color( 0.12549, 0.141176, 0.192157, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="DynamicFont" id=59]
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=53]
+bg_color = Color( 0.2, 0.227451, 0.309804, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_top = 25.0
+shadow_size = 10
+
+[sub_resource type="Theme" id=54]
+Button/fonts/font = ExtResource( 3 )
+Button/styles/hover = SubResource( 56 )
+Button/styles/normal = SubResource( 57 )
+Button/styles/pressed = SubResource( 58 )
+Label/fonts/font = ExtResource( 3 )
+LineEdit/fonts/font = ExtResource( 3 )
+LineEdit/styles/focus = SubResource( 132 )
+LineEdit/styles/normal = SubResource( 133 )
+LineEdit/styles/read_only = SubResource( 134 )
+WindowDialog/colors/title_color = Color( 1, 1, 1, 1 )
+WindowDialog/constants/close_h_ofs = 22
+WindowDialog/fonts/title_font = SubResource( 59 )
+WindowDialog/styles/panel = SubResource( 53 )
+
+[sub_resource type="StyleBoxFlat" id=55]
+bg_color = Color( 0.14902, 0.172549, 0.231373, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id=148]
+
+[sub_resource type="StyleBoxEmpty" id=149]
+
+[sub_resource type="StyleBoxEmpty" id=150]
+
+[sub_resource type="ButtonGroup" id=157]
+
+[sub_resource type="StyleBoxFlat" id=151]
+content_margin_left = 7.0
+content_margin_right = 7.0
+content_margin_top = 7.0
+content_margin_bottom = 7.0
+bg_color = Color( 0.14902, 0.172549, 0.231373, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.407843, 0.611765, 0.909804, 0.694118 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=152]
+content_margin_left = 7.0
+content_margin_right = 7.0
+content_margin_top = 7.0
+content_margin_bottom = 7.0
+bg_color = Color( 0.14902, 0.172549, 0.231373, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 0.694118 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=153]
+content_margin_left = 7.0
+content_margin_right = 7.0
+content_margin_top = 7.0
+content_margin_bottom = 7.0
+bg_color = Color( 0.0941176, 0.109804, 0.14902, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.407843, 0.611765, 0.909804, 0.694118 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="ImageTexture" id=79]
+
+[sub_resource type="StyleBoxFlat" id=63]
+content_margin_right = 33.0
+bg_color = Color( 0.14902, 0.172549, 0.231373, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.407843, 0.611765, 0.909804, 1 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=64]
+content_margin_right = 33.0
+bg_color = Color( 0.14902, 0.172549, 0.231373, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0356, 0.0356, 0.04, 1 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=65]
+content_margin_right = 33.0
+bg_color = Color( 0.0896, 0.10388, 0.14, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.407843, 0.611765, 0.909804, 1 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="ImageTexture" id=66]
+
+[sub_resource type="ImageTexture" id=67]
+
+[sub_resource type="ImageTexture" id=68]
+
+[sub_resource type="ImageTexture" id=69]
+
+[sub_resource type="StyleBoxFlat" id=70]
+bg_color = Color( 0.141176, 0.160784, 0.219608, 1 )
+expand_margin_left = 3.0
+expand_margin_right = 3.0
+
+[sub_resource type="StyleBoxFlat" id=71]
+bg_color = Color( 0.2, 0.227451, 0.309804, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.47, 0.47, 0.47, 1 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+shadow_size = 2
+
+[sub_resource type="DynamicFont" id=154]
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=155]
+bg_color = Color( 0.2, 0.227451, 0.309804, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_top = 25.0
+shadow_size = 10
+
+[sub_resource type="Theme" id=156]
+Button/fonts/font = ExtResource( 3 )
+Button/styles/hover = SubResource( 151 )
+Button/styles/normal = SubResource( 152 )
+Button/styles/pressed = SubResource( 153 )
+Label/fonts/font = ExtResource( 3 )
+LineEdit/fonts/font = ExtResource( 3 )
+MenuButton/fonts/font = ExtResource( 3 )
+OptionButton/fonts/font = ExtResource( 3 )
+OptionButton/icons/arrow = SubResource( 79 )
+OptionButton/styles/hover = SubResource( 63 )
+OptionButton/styles/normal = SubResource( 64 )
+OptionButton/styles/pressed = SubResource( 65 )
+PopupMenu/fonts/font = ExtResource( 3 )
+PopupMenu/fonts/font_separator = ExtResource( 3 )
+PopupMenu/icons/checked = SubResource( 66 )
+PopupMenu/icons/radio_checked = SubResource( 67 )
+PopupMenu/icons/radio_unchecked = SubResource( 68 )
+PopupMenu/icons/unchecked = SubResource( 69 )
+PopupMenu/styles/hover = SubResource( 70 )
+PopupMenu/styles/panel = SubResource( 71 )
+Tree/fonts/font = ExtResource( 3 )
+WindowDialog/colors/title_color = Color( 1, 1, 1, 1 )
+WindowDialog/constants/close_h_ofs = 22
+WindowDialog/fonts/title_font = SubResource( 154 )
+WindowDialog/styles/panel = SubResource( 155 )
+
+[node name="Settings" type="AcceptDialog"]
+pause_mode = 2
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -350.0
+margin_top = -200.0
+margin_right = 350.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 700, 400 )
+theme = SubResource( 54 )
+window_title = "Map settings"
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 708.0
+margin_bottom = 408.0
+custom_styles/panel = SubResource( 55 )
+
+[node name="M" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.9
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -4.19998
+custom_constants/margin_right = 10
+custom_constants/margin_left = 10
+
+[node name="S" type="ScrollContainer" parent="M"]
+margin_left = 10.0
+margin_right = 690.0
+margin_bottom = 400.0
+scroll_horizontal_enabled = false
+scroll_vertical = 92
+
+[node name="V" type="VBoxContainer" parent="M/S"]
+margin_top = -92.0
+margin_right = 662.0
+margin_bottom = 400.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LN" type="VBoxContainer" parent="M/S/V"]
+margin_right = 662.0
+
+[node name="First" type="VBoxContainer" parent="M/S/V"]
+margin_top = 10.0
+margin_right = 662.0
+margin_bottom = 102.0
+custom_constants/separation = 10
+
+[node name="MapName" type="HBoxContainer" parent="M/S/V/First"]
+margin_right = 662.0
+margin_bottom = 34.0
+custom_constants/separation = 64
+
+[node name="Label" type="Label" parent="M/S/V/First/MapName"]
+margin_top = 7.0
+margin_right = 40.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 3 )
+text = "Map: "
+
+[node name="Name" type="LineEdit" parent="M/S/V/First/MapName"]
+margin_left = 104.0
+margin_right = 661.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 557, 34 )
+custom_fonts/font = ExtResource( 3 )
+text = "Unnamed"
+
+[node name="MapCreator" type="HBoxContainer" parent="M/S/V/First"]
+margin_top = 44.0
+margin_right = 662.0
+margin_bottom = 78.0
+custom_constants/separation = 41
+
+[node name="Label" type="Label" parent="M/S/V/First/MapCreator"]
+margin_top = 7.0
+margin_right = 63.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 3 )
+text = "Creator: "
+
+[node name="Name" type="LineEdit" parent="M/S/V/First/MapCreator"]
+margin_left = 104.0
+margin_right = 661.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 557, 34 )
+custom_fonts/font = ExtResource( 3 )
+text = "Unknown"
+
+[node name="HSeparator2" type="HSeparator" parent="M/S/V/First"]
+margin_top = 88.0
+margin_right = 662.0
+margin_bottom = 92.0
+
+[node name="Second" type="VBoxContainer" parent="M/S/V"]
+margin_top = 112.0
+margin_right = 662.0
+margin_bottom = 204.0
+custom_constants/separation = 10
+
+[node name="MapSong" type="HBoxContainer" parent="M/S/V/Second"]
+margin_right = 662.0
+margin_bottom = 34.0
+
+[node name="Label" type="Label" parent="M/S/V/Second/MapSong"]
+margin_top = 7.0
+margin_right = 81.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 3 )
+text = "Map song: "
+
+[node name="VSeparator" type="VSeparator" parent="M/S/V/Second/MapSong"]
+margin_left = 85.0
+margin_right = 101.0
+margin_bottom = 34.0
+custom_constants/separation = 16
+custom_styles/separator = SubResource( 148 )
+
+[node name="Path" type="LineEdit" parent="M/S/V/Second/MapSong"]
+margin_left = 105.0
+margin_right = 528.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 423, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "Unloaded"
+editable = false
+
+[node name="BtnLoadSong" type="Button" parent="M/S/V/Second/MapSong"]
+margin_left = 532.0
+margin_right = 662.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 130, 0 )
+text = "Load"
+
+[node name="SongArtist" type="HBoxContainer" parent="M/S/V/Second"]
+margin_top = 44.0
+margin_right = 662.0
+margin_bottom = 78.0
+custom_constants/separation = 61
+
+[node name="Label" type="Label" parent="M/S/V/Second/SongArtist"]
+margin_top = 7.0
+margin_right = 44.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 3 )
+text = "Artist: "
+
+[node name="Name" type="LineEdit" parent="M/S/V/Second/SongArtist"]
+margin_left = 105.0
+margin_right = 662.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 557, 34 )
+custom_fonts/font = ExtResource( 3 )
+text = "Unknown"
+
+[node name="HSeparator" type="HSeparator" parent="M/S/V/Second"]
+margin_top = 88.0
+margin_right = 662.0
+margin_bottom = 92.0
+
+[node name="Third" type="VBoxContainer" parent="M/S/V"]
+margin_top = 214.0
+margin_right = 662.0
+margin_bottom = 350.0
+custom_constants/separation = 10
+
+[node name="Lenght" type="HBoxContainer" parent="M/S/V/Third"]
+margin_right = 662.0
+margin_bottom = 34.0
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="M/S/V/Third/Lenght"]
+margin_top = 7.0
+margin_right = 90.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 3 )
+text = "Map length: "
+
+[node name="MapLength" type="SpinBox" parent="M/S/V/Third/Lenght"]
+margin_left = 105.0
+margin_right = 242.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 137, 34 )
+max_value = 3600.0
+editable = false
+
+[node name="H" type="HBoxContainer" parent="M/S/V/Third/Lenght"]
+margin_left = 257.0
+margin_right = 523.0
+margin_bottom = 34.0
+custom_constants/separation = 15
+
+[node name="VSeparator" type="VSeparator" parent="M/S/V/Third/Lenght/H"]
+margin_right = 4.0
+margin_bottom = 34.0
+
+[node name="Label" type="Label" parent="M/S/V/Third/Lenght/H"]
+margin_left = 19.0
+margin_top = 7.0
+margin_right = 114.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 3 )
+text = "Song length: "
+
+[node name="SongLength" type="SpinBox" parent="M/S/V/Third/Lenght/H"]
+margin_left = 129.0
+margin_right = 266.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 137, 0 )
+max_value = 3600.0
+editable = false
+
+[node name="Lenght2" type="HBoxContainer" parent="M/S/V/Third"]
+margin_top = 44.0
+margin_right = 662.0
+margin_bottom = 78.0
+custom_constants/separation = 11
+
+[node name="Label" type="Label" parent="M/S/V/Third/Lenght2"]
+margin_top = 7.0
+margin_right = 83.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 3 )
+text = "Song start: "
+
+[node name="VSeparator2" type="VSeparator" parent="M/S/V/Third/Lenght2"]
+margin_left = 94.0
+margin_right = 94.0
+margin_bottom = 34.0
+custom_constants/separation = 0
+custom_styles/separator = SubResource( 149 )
+
+[node name="Start" type="SpinBox" parent="M/S/V/Third/Lenght2"]
+margin_left = 105.0
+margin_right = 242.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 137, 0 )
+max_value = 0.0
+editable = false
+
+[node name="VSeparator" type="VSeparator" parent="M/S/V/Third/Lenght2"]
+margin_left = 253.0
+margin_right = 265.0
+margin_bottom = 34.0
+custom_constants/separation = 12
+
+[node name="Label2" type="Label" parent="M/S/V/Third/Lenght2"]
+margin_left = 276.0
+margin_top = 7.0
+margin_right = 353.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 3 )
+text = "Song end: "
+
+[node name="VSeparator3" type="VSeparator" parent="M/S/V/Third/Lenght2"]
+margin_left = 364.0
+margin_right = 375.0
+margin_bottom = 34.0
+custom_constants/separation = 11
+custom_styles/separator = SubResource( 150 )
+
+[node name="End" type="SpinBox" parent="M/S/V/Third/Lenght2"]
+margin_left = 386.0
+margin_right = 523.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 137, 0 )
+max_value = 0.0
+editable = false
+
+[node name="BtnCut" type="Button" parent="M/S/V/Third/Lenght2"]
+margin_left = 534.0
+margin_right = 662.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 128, 0 )
+disabled = true
+text = "Cut song"
+
+[node name="BPM" type="HBoxContainer" parent="M/S/V/Third"]
+margin_top = 88.0
+margin_right = 662.0
+margin_bottom = 122.0
+rect_min_size = Vector2( 0, 34 )
+custom_constants/separation = 11
+
+[node name="Label" type="Label" parent="M/S/V/Third/BPM"]
+margin_top = 7.0
+margin_right = 94.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 94, 0 )
+text = "BPM:"
+
+[node name="BPM" type="SpinBox" parent="M/S/V/Third/BPM"]
+margin_left = 105.0
+margin_right = 242.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 137, 0 )
+min_value = 1.0
+max_value = 500.0
+value = 1.0
+
+[node name="VSeparator" type="VSeparator" parent="M/S/V/Third/BPM"]
+margin_left = 253.0
+margin_right = 265.0
+margin_bottom = 34.0
+custom_constants/separation = 12
+
+[node name="0" type="Button" parent="M/S/V/Third/BPM"]
+margin_left = 276.0
+margin_right = 310.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 34, 0 )
+toggle_mode = true
+pressed = true
+group = SubResource( 157 )
+text = "1"
+
+[node name="1" type="Button" parent="M/S/V/Third/BPM"]
+margin_left = 321.0
+margin_right = 366.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 34, 0 )
+toggle_mode = true
+group = SubResource( 157 )
+text = "1 / 2"
+
+[node name="2" type="Button" parent="M/S/V/Third/BPM"]
+margin_left = 377.0
+margin_right = 421.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 34, 0 )
+toggle_mode = true
+group = SubResource( 157 )
+text = "1 / 3"
+
+[node name="3" type="Button" parent="M/S/V/Third/BPM"]
+margin_left = 432.0
+margin_right = 476.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 34, 0 )
+toggle_mode = true
+group = SubResource( 157 )
+text = "1 / 4"
+
+[node name="Test" type="Button" parent="M/S/V/Third/BPM"]
+margin_left = 487.0
+margin_right = 662.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 175, 0 )
+toggle_mode = true
+text = "Test"
+
+[node name="HSeparator" type="HSeparator" parent="M/S/V/Third"]
+margin_top = 132.0
+margin_right = 662.0
+margin_bottom = 136.0
+
+[node name="Diff" type="VBoxContainer" parent="M/S/V"]
+margin_top = 360.0
+margin_right = 662.0
+margin_bottom = 492.0
+custom_constants/separation = 10
+
+[node name="Difficult" type="HBoxContainer" parent="M/S/V/Diff"]
+margin_right = 662.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 0, 34 )
+custom_constants/separation = 11
+
+[node name="Label" type="Label" parent="M/S/V/Diff/Difficult"]
+margin_top = 7.0
+margin_right = 94.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 94, 0 )
+text = "Difficult:"
+
+[node name="Diff" type="SpinBox" parent="M/S/V/Diff/Difficult"]
+margin_left = 105.0
+margin_right = 242.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 137, 0 )
+max_value = 10.0
+step = 0.1
+
+[node name="VSeparator" type="VSeparator" parent="M/S/V/Diff/Difficult"]
+margin_left = 253.0
+margin_right = 265.0
+margin_bottom = 34.0
+custom_constants/separation = 12
+
+[node name="Label2" type="Label" parent="M/S/V/Diff/Difficult"]
+margin_left = 276.0
+margin_top = 7.0
+margin_right = 375.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 99, 0 )
+text = "Delay(sec):"
+
+[node name="DiffDelay" type="LineEdit" parent="M/S/V/Diff/Difficult"]
+margin_left = 386.0
+margin_right = 503.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 117, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+editable = false
+
+[node name="Label3" type="Label" parent="M/S/V/Diff/Difficult"]
+margin_left = 514.0
+margin_top = 7.0
+margin_right = 523.0
+margin_bottom = 27.0
+text = "+"
+
+[node name="Delay" type="SpinBox" parent="M/S/V/Diff/Difficult"]
+margin_left = 534.0
+margin_right = 662.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 128, 0 )
+max_value = 10.0
+step = 0.01
+
+[node name="Difficult2" type="HBoxContainer" parent="M/S/V/Diff"]
+margin_top = 44.0
+margin_right = 662.0
+margin_bottom = 78.0
+rect_min_size = Vector2( 0, 34 )
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="M/S/V/Diff/Difficult2"]
+margin_top = 7.0
+margin_right = 96.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 96, 0 )
+text = "Beat speed:"
+
+[node name="BS" type="SpinBox" parent="M/S/V/Diff/Difficult2"]
+margin_left = 106.0
+margin_right = 243.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 137, 0 )
+max_value = 10.0
+step = 0.1
+
+[node name="VSeparator" type="VSeparator" parent="M/S/V/Diff/Difficult2"]
+margin_left = 253.0
+margin_right = 265.0
+margin_bottom = 34.0
+custom_constants/separation = 12
+
+[node name="Label2" type="Label" parent="M/S/V/Diff/Difficult2"]
+margin_left = 275.0
+margin_top = 7.0
+margin_right = 376.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 101, 0 )
+text = "Timing diff:"
+
+[node name="TD" type="SpinBox" parent="M/S/V/Diff/Difficult2"]
+margin_left = 386.0
+margin_right = 523.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 137, 0 )
+max_value = 10.0
+step = 0.1
+
+[node name="Difficult3" type="HBoxContainer" parent="M/S/V/Diff"]
+margin_top = 88.0
+margin_right = 662.0
+margin_bottom = 122.0
+rect_min_size = Vector2( 0, 34 )
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="M/S/V/Diff/Difficult3"]
+margin_top = 7.0
+margin_right = 96.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 96, 0 )
+text = "Perfect time:"
+
+[node name="PerfectTime" type="SpinBox" parent="M/S/V/Diff/Difficult3"]
+margin_left = 106.0
+margin_right = 243.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 137, 0 )
+max_value = 10000.0
+step = 0.1
+
+[node name="VSeparator" type="VSeparator" parent="M/S/V/Diff/Difficult3"]
+margin_left = 253.0
+margin_right = 265.0
+margin_bottom = 34.0
+custom_constants/separation = 12
+
+[node name="Label2" type="Label" parent="M/S/V/Diff/Difficult3"]
+margin_left = 275.0
+margin_top = 7.0
+margin_right = 376.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 101, 0 )
+text = "Max jumps:"
+
+[node name="JumpsCount" type="SpinBox" parent="M/S/V/Diff/Difficult3"]
+margin_left = 386.0
+margin_right = 523.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 137, 0 )
+max_value = 10000.0
+
+[node name="LN" type="VBoxContainer" parent="M/S/V/Diff"]
+margin_top = 132.0
+margin_right = 662.0
+margin_bottom = 132.0
+
+[node name="OpenSong" type="FileDialog" parent="."]
+pause_mode = 2
+process_priority = 1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -350.0
+margin_top = -221.0
+margin_right = 350.0
+margin_bottom = 179.0
+rect_min_size = Vector2( 700, 400 )
+theme = SubResource( 156 )
+window_title = "Open a File"
+resizable = true
+mode = 0
+access = 2
+filters = PoolStringArray( "*.mp3", "*.wav", "*.ogg" )
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+
+[connection signal="hide" from="." to="." method="_on_Settings_hide"]
+[connection signal="text_changed" from="M/S/V/First/MapName/Name" to="." method="_on_Map_Name_text_changed"]
+[connection signal="text_changed" from="M/S/V/First/MapCreator/Name" to="." method="_on_Creator_text_changed"]
+[connection signal="text_changed" from="M/S/V/Second/MapSong/Path" to="." method="_on_Path_text_changed"]
+[connection signal="pressed" from="M/S/V/Second/MapSong/BtnLoadSong" to="." method="_on_BtnLoadSong_pressed"]
+[connection signal="text_changed" from="M/S/V/Second/SongArtist/Name" to="." method="_on_Name_text_changed"]
+[connection signal="value_changed" from="M/S/V/Third/BPM/BPM" to="." method="_on_BPM_value_changed"]
+[connection signal="pressed" from="M/S/V/Third/BPM/0" to="." method="_on_Mode_pressed"]
+[connection signal="pressed" from="M/S/V/Third/BPM/1" to="." method="_on_Mode_pressed"]
+[connection signal="pressed" from="M/S/V/Third/BPM/2" to="." method="_on_Mode_pressed"]
+[connection signal="pressed" from="M/S/V/Third/BPM/3" to="." method="_on_Mode_pressed"]
+[connection signal="toggled" from="M/S/V/Third/BPM/Test" to="." method="_on_Test_toggled"]
+[connection signal="value_changed" from="M/S/V/Diff/Difficult/Diff" to="." method="_on_Diff_value_changed"]
+[connection signal="text_changed" from="M/S/V/Diff/Difficult/DiffDelay" to="." method="_on_Name_text_changed"]
+[connection signal="value_changed" from="M/S/V/Diff/Difficult/Delay" to="." method="_on_Delay_value_changed"]
+[connection signal="value_changed" from="M/S/V/Diff/Difficult2/BS" to="." method="_on_BS_value_changed"]
+[connection signal="value_changed" from="M/S/V/Diff/Difficult2/TD" to="." method="_on_TD_value_changed"]
+[connection signal="value_changed" from="M/S/V/Diff/Difficult3/PerfectTime" to="." method="_on_PerfectTime_value_changed"]
+[connection signal="value_changed" from="M/S/V/Diff/Difficult3/JumpsCount" to="." method="_on_JumpsCount_value_changed"]
+[connection signal="file_selected" from="OpenSong" to="." method="_on_OpenSong_file_selected"]

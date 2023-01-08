@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://art/Quicksand-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://code/ui_elements/debug.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0.156863 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 0.415686 )
+border_blend = true
+shadow_color = Color( 0, 0, 0, 0.313726 )
+shadow_size = 3
+
+[sub_resource type="DynamicFont" id=2]
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0.588235 )
+border_width_left = 2
+border_color = Color( 0.64, 1, 0, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+outline_color = Color( 0.545098, 1, 0, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 4 )
+Label/colors/font_color = Color( 0.639216, 1, 0, 1 )
+PanelContainer/styles/panel = SubResource( 3 )
+
+[node name="Debug" type="Control"]
+pause_mode = 2
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -252.0
+margin_top = -55.0
+rect_rotation = -45.0
+rect_pivot_offset = Vector2( 120, -70 )
+script = ExtResource( 2 )
+
+[node name="BaseDebug" type="PanelContainer" parent="."]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="BaseDebug"]
+pause_mode = 2
+margin_left = 2.0
+margin_top = 6.0
+margin_right = 250.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 2 )
+text = "Alpha Test
+Ver: {Ver}"
+align = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Debug" type="PanelContainer" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_rotation = 45.0
+rect_pivot_offset = Vector2( 300, 0 )
+theme = SubResource( 5 )
+
+[node name="Label" type="Label" parent="Debug"]
+pause_mode = 2
+margin_left = 2.0
+margin_top = 17.0
+margin_right = 252.0
+margin_bottom = 37.0
+text = "Ver: {Ver}"
+align = 1
+autowrap = true

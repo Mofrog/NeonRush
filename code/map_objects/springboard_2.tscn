@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://code/map_objects/springboard_2.gd" type="Script" id=1]
+[ext_resource path="res://art/materials/m_cursor_spawn.tres" type="Material" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.2, 0.2, 0.2 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 0.4, 0.4, 0.4 )
+
+[node name="Springboard_2" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 2.4, 0, 0, 0, 1, 0, 0, 0, 2.4, 0, 0.1, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Area"]
+mesh = SubResource( 2 )
+material/0 = ExtResource( 2 )
+
+[connection signal="body_entered" from="Area" to="." method="_on_Trigger_body_entered"]
