@@ -1,38 +1,38 @@
 extends AcceptDialog
 
-onready var open_song_p = $OpenSong
+@onready var open_song_p = $OpenSong
 
-onready var map_name = $M/S/V/First/MapName/Name
-onready var creator = $M/S/V/First/MapCreator/Name
+@onready var map_name = $M/S/V/First/MapName/Name
+@onready var creator = $M/S/V/First/MapCreator/Name
 
-onready var song = $M/S/V/Second/MapSong/Path
-onready var song_btn = $M/S/V/Second/MapSong/BtnLoadSong
-onready var artist = $M/S/V/Second/SongArtist/Name
+@onready var song = $M/S/V/Second/MapSong/Path3D
+@onready var song_btn = $M/S/V/Second/MapSong/BtnLoadSong
+@onready var artist = $M/S/V/Second/SongArtist/Name
 
-onready var map_length = $M/S/V/Third/Lenght/MapLength
-onready var song_length = $M/S/V/Third/Lenght/H/SongLength
-onready var song_start = $M/S/V/Third/Lenght2/Start
-onready var song_end = $M/S/V/Third/Lenght2/End
-onready var cut_btn = $M/S/V/Third/Lenght2/BtnCut
+@onready var map_length = $M/S/V/Third/Lenght/MapLength
+@onready var song_length = $M/S/V/Third/Lenght/H/SongLength
+@onready var song_start = $M/S/V/Third/Lenght2/Start
+@onready var song_end = $M/S/V/Third/Lenght2/End
+@onready var cut_btn = $M/S/V/Third/Lenght2/BtnCut
 
-onready var ui_song = $M/S/V/Second
-onready var ui_length = $M/S/V/Third/Lenght/H
-onready var ui_length2 = $M/S/V/Third/Lenght2
+@onready var ui_song = $M/S/V/Second
+@onready var ui_length = $M/S/V/Third/Lenght/H
+@onready var ui_length2 = $M/S/V/Third/Lenght2
 
-onready var bpm = $M/S/V/Third/BPM/BPM
-onready var zero = $M/S/V/Third/BPM/"0"
-onready var test = $M/S/V/Third/BPM/Test
+@onready var bpm = $M/S/V/Third/BPM/BPM
+@onready var zero = $M/S/V/Third/BPM/"0"
+@onready var test = $M/S/V/Third/BPM/Test
 var bpm_group : ButtonGroup = null
 
-onready var diff = $M/S/V/Diff/Difficult/Diff
-onready var diff_delay = $M/S/V/Diff/Difficult/DiffDelay
-onready var delay = $M/S/V/Diff/Difficult/Delay
+@onready var diff = $M/S/V/Diff/Difficult/Diff
+@onready var diff_delay = $M/S/V/Diff/Difficult/DiffDelay
+@onready var delay = $M/S/V/Diff/Difficult/Delay
 
-onready var bs = $M/S/V/Diff/Difficult2/BS
-onready var td = $M/S/V/Diff/Difficult2/TD
+@onready var bs = $M/S/V/Diff/Difficult2/BS
+@onready var td = $M/S/V/Diff/Difficult2/TD
 
-onready var perfect_time = $M/S/V/Diff/Difficult3/PerfectTime
-onready var jumps_count = $M/S/V/Diff/Difficult3/JumpsCount
+@onready var perfect_time = $M/S/V/Diff/Difficult3/PerfectTime
+@onready var jumps_count = $M/S/V/Diff/Difficult3/JumpsCount
 
 var timeline = null
 
@@ -88,7 +88,7 @@ func data_update(new_data = null, is_init = false):
 	bpm.value = int(data["BPM"])
 	delay.value = float(data["Delay"])
 	for i in bpm_group.get_buttons():
-		if int(data["Mode"]) == int(i.name): i.pressed = true
+		if int(data["Mode"]) == int(i.name): i.button_pressed = true
 	diff.value = float(data["Difficult"])
 	bs.value = float(data["BS"])
 	td.value = float(data["TD"])
@@ -181,7 +181,7 @@ func _on_Mode_pressed():
 func _on_Delay_value_changed(value): 
 	data["Delay"] = value
 	timeline.manager.set_general_delay(value)
-	test.pressed = false
+	test.button_pressed = false
 	is_data_resave = true
 
 
@@ -194,16 +194,16 @@ func _on_Diff_value_changed(value):
 # Save new beat speed
 func _on_BS_value_changed(value): 
 	data["BS"] = value
-	diff_delay.text = str(stepify(-timeline.manager.calc_delay(data["BS"], data["TD"]), 0.01))
-	test.pressed = false
+	diff_delay.text = str(snapped(-timeline.manager.calc_delay(data["BS"], data["TD"]), 0.01))
+	test.button_pressed = false
 	is_data_resave = true
 
 
 # Save new timing difficult
 func _on_TD_value_changed(value): 
 	data["TD"] = value
-	diff_delay.text = str(stepify(-timeline.manager.calc_delay(data["BS"], data["TD"]), 0.01))
-	test.pressed = false
+	diff_delay.text = str(snapped(-timeline.manager.calc_delay(data["BS"], data["TD"]), 0.01))
+	test.button_pressed = false
 	is_data_resave = true
 
 

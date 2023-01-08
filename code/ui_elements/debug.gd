@@ -1,13 +1,13 @@
 extends Control
 
 
-onready var c_base_debug = $BaseDebug
-onready var c_debug = $Debug
+@onready var c_base_debug = $BaseDebug
+@onready var c_debug = $Debug
 
-onready var base_debug = $BaseDebug/Label
-onready var base_debug_text = base_debug.text
-onready var debug = $Debug/Label
-onready var debug_text = debug.text
+@onready var base_debug = $BaseDebug/Label
+@onready var base_debug_text = base_debug.text
+@onready var debug = $Debug/Label
+@onready var debug_text = debug.text
 
 var ver = ProjectSettings.get_setting("config/version")
 var is_debug_enabled = ProjectSettings.get_setting("config/is_debug_enabled")

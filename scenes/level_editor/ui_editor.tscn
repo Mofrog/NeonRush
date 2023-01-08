@@ -2,20 +2,20 @@
 
 [ext_resource path="res://scenes/level_editor/ui_editor.gd" type="Script" id=1]
 [ext_resource path="res://scenes/level_editor/level_editor.tscn" type="PackedScene" id=2]
-[ext_resource path="res://art/previews/p_2_tiles_small_01_black_emi.png" type="Texture" id=3]
+[ext_resource path="res://art/previews/p_2_tiles_small_01_black_emi.png" type="Texture2D" id=3]
 [ext_resource path="res://code/ui_elements/debug.tscn" type="PackedScene" id=4]
-[ext_resource path="res://art/previews/p_3_tiles_small_01_white.png" type="Texture" id=5]
-[ext_resource path="res://art/previews/p_5_tiles_xsmall_01.png" type="Texture" id=6]
-[ext_resource path="res://art/previews/p_4_tiles_small_01_white_emi.png" type="Texture" id=7]
+[ext_resource path="res://art/previews/p_3_tiles_small_01_white.png" type="Texture2D" id=5]
+[ext_resource path="res://art/previews/p_5_tiles_xsmall_01.png" type="Texture2D" id=6]
+[ext_resource path="res://art/previews/p_4_tiles_small_01_white_emi.png" type="Texture2D" id=7]
 [ext_resource path="res://code/ui_elements/timeline.tscn" type="PackedScene" id=8]
 [ext_resource path="res://code/ui_elements/line_checker.tscn" type="PackedScene" id=9]
-[ext_resource path="res://art/font.tres" type="DynamicFont" id=19]
-[ext_resource path="res://art/previews/p_6_logs_01.png" type="Texture" id=21]
-[ext_resource path="res://art/previews/p_8_tiles_01.png" type="Texture" id=23]
-[ext_resource path="res://art/previews/p_1_tiles_small_01_black.png" type="Texture" id=24]
-[ext_resource path="res://art/previews/p_9_tiles_small_02.png" type="Texture" id=25]
-[ext_resource path="res://art/previews/p_7_bricks_01.png" type="Texture" id=26]
-[ext_resource path="res://art/previews/p_10_bricks_02.png" type="Texture" id=27]
+[ext_resource path="res://art/font.tres" type="FontFile" id=19]
+[ext_resource path="res://art/previews/p_6_logs_01.png" type="Texture2D" id=21]
+[ext_resource path="res://art/previews/p_8_tiles_01.png" type="Texture2D" id=23]
+[ext_resource path="res://art/previews/p_1_tiles_small_01_black.png" type="Texture2D" id=24]
+[ext_resource path="res://art/previews/p_9_tiles_small_02.png" type="Texture2D" id=25]
+[ext_resource path="res://art/previews/p_7_bricks_01.png" type="Texture2D" id=26]
+[ext_resource path="res://art/previews/p_10_bricks_02.png" type="Texture2D" id=27]
 [ext_resource path="res://code/ui_elements/ui_editor_settings.tscn" type="PackedScene" id=28]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -25,7 +25,7 @@ anti_aliasing = false
 [sub_resource type="InputEventKey" id=6]
 scancode = 16777217
 
-[sub_resource type="ShortCut" id=5]
+[sub_resource type="Shortcut" id=5]
 shortcut = SubResource( 6 )
 
 [sub_resource type="InputEventKey" id=61]
@@ -33,7 +33,7 @@ control = true
 command = true
 scancode = 83
 
-[sub_resource type="ShortCut" id=62]
+[sub_resource type="Shortcut" id=62]
 shortcut = SubResource( 61 )
 
 [sub_resource type="StyleBoxFlat" id=2]
@@ -65,26 +65,26 @@ VSeparator/styles/separator = SubResource( 30 )
 [sub_resource type="InputEventKey" id=18]
 scancode = 90
 
-[sub_resource type="ShortCut" id=17]
+[sub_resource type="Shortcut" id=17]
 shortcut = SubResource( 18 )
 
 [sub_resource type="InputEventKey" id=19]
 scancode = 88
 
-[sub_resource type="ShortCut" id=20]
+[sub_resource type="Shortcut" id=20]
 shortcut = SubResource( 19 )
 
 [sub_resource type="InputEventKey" id=21]
 scancode = 67
 
-[sub_resource type="ShortCut" id=22]
+[sub_resource type="Shortcut" id=22]
 shortcut = SubResource( 21 )
 
-[sub_resource type="ShortCut" id=80]
+[sub_resource type="Shortcut" id=80]
 
-[sub_resource type="ShortCut" id=81]
+[sub_resource type="Shortcut" id=81]
 
-[sub_resource type="ShortCut" id=82]
+[sub_resource type="Shortcut" id=82]
 
 [sub_resource type="StyleBoxFlat" id=46]
 content_margin_left = 7.0
@@ -140,18 +140,18 @@ corner_radius_bottom_left = 3
 [sub_resource type="InputEventKey" id=51]
 scancode = 82
 
-[sub_resource type="ShortCut" id=52]
+[sub_resource type="Shortcut" id=52]
 shortcut = SubResource( 51 )
 
 [sub_resource type="InputEventKey" id=49]
 scancode = 84
 
-[sub_resource type="ShortCut" id=50]
+[sub_resource type="Shortcut" id=50]
 shortcut = SubResource( 49 )
 
 [sub_resource type="Image" id=178]
 data = {
-"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 49, 255, 255, 255, 49, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 49, 255, 255, 255, 49, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"data": PackedByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 49, 255, 255, 255, 49, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 100, 255, 255, 255, 100, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 49, 255, 255, 255, 49, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
 "format": "RGBA8",
 "height": 64,
 "mipmaps": false,
@@ -307,32 +307,32 @@ custom_styles/panel = SubResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-custom_constants/margin_right = 5
-custom_constants/margin_top = 5
-custom_constants/margin_left = 5
-custom_constants/margin_bottom = 5
+custom_constants/offset_right = 5
+custom_constants/offset_top = 5
+custom_constants/offset_left = 5
+custom_constants/offset_bottom = 5
 
 [node name="V" type="VBoxContainer" parent="M"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 1675.0
-margin_bottom = 1045.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 1675.0
+offset_bottom = 1045.0
 mouse_filter = 2
 
 [node name="Control" type="Control" parent="M/V"]
-margin_right = 1670.0
-margin_bottom = 45.0
-rect_min_size = Vector2( 0, 45 )
+offset_right = 1670.0
+offset_bottom = 45.0
+minimum_size = Vector2( 0, 45 )
 
 [node name="L" type="HBoxContainer" parent="M/V/Control"]
 anchor_bottom = 1.0
-margin_right = 373.0
-rect_min_size = Vector2( 0, 30 )
+offset_right = 373.0
+minimum_size = Vector2( 0, 30 )
 mouse_filter = 2
 
 [node name="BtnBack" type="Button" parent="M/V/Control/L"]
-margin_right = 114.0
-margin_bottom = 45.0
+offset_right = 114.0
+offset_bottom = 45.0
 focus_mode = 0
 custom_fonts/font = ExtResource( 19 )
 shortcut = SubResource( 5 )
@@ -340,9 +340,9 @@ text = "Back to menu"
 flat = true
 
 [node name="BtnSave" type="Button" parent="M/V/Control/L"]
-margin_left = 118.0
-margin_right = 205.0
-margin_bottom = 45.0
+offset_left = 118.0
+offset_right = 205.0
+offset_bottom = 45.0
 focus_mode = 0
 custom_fonts/font = ExtResource( 19 )
 shortcut = SubResource( 62 )
@@ -350,27 +350,27 @@ text = "Save map"
 flat = true
 
 [node name="BtnLoad" type="Button" parent="M/V/Control/L"]
-margin_left = 209.0
-margin_right = 299.0
-margin_bottom = 45.0
+offset_left = 209.0
+offset_right = 299.0
+offset_bottom = 45.0
 focus_mode = 0
 custom_fonts/font = ExtResource( 19 )
 text = "Load map"
 flat = true
 
 [node name="BtnSetts" type="Button" parent="M/V/Control/L"]
-margin_left = 303.0
-margin_right = 373.0
-margin_bottom = 45.0
+offset_left = 303.0
+offset_right = 373.0
+offset_bottom = 45.0
 focus_mode = 0
 custom_fonts/font = ExtResource( 19 )
 text = "Settings"
 flat = true
 
 [node name="BtnHelp" type="Button" parent="M/V/Control/L"]
-margin_left = 377.0
-margin_right = 424.0
-margin_bottom = 45.0
+offset_left = 377.0
+offset_right = 424.0
+offset_bottom = 45.0
 custom_fonts/font = ExtResource( 19 )
 text = "Help"
 flat = true
@@ -379,14 +379,14 @@ flat = true
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -82.0
-rect_min_size = Vector2( 0, 30 )
+offset_left = -82.0
+minimum_size = Vector2( 0, 30 )
 mouse_filter = 2
 alignment = 2
 
 [node name="BtnTest" type="Button" parent="M/V/Control/R"]
-margin_right = 82.0
-margin_bottom = 45.0
+offset_right = 82.0
+offset_bottom = 45.0
 focus_mode = 0
 custom_fonts/font = ExtResource( 19 )
 text = "Test level"
@@ -397,10 +397,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -40.0
-margin_top = -10.0
-margin_right = 40.0
-margin_bottom = 10.0
+offset_left = -40.0
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
@@ -409,10 +409,10 @@ custom_fonts/font = ExtResource( 19 )
 text = "Map name"
 
 [node name="Header" type="Control" parent="M/V"]
-margin_top = 49.0
-margin_right = 1670.0
-margin_bottom = 94.0
-rect_min_size = Vector2( 0, 45 )
+offset_top = 49.0
+offset_right = 1670.0
+offset_bottom = 94.0
+minimum_size = Vector2( 0, 45 )
 mouse_filter = 2
 
 [node name="HeaderBackground" type="Panel" parent="M/V/Header"]
@@ -424,38 +424,38 @@ custom_styles/panel = SubResource( 2 )
 [node name="H" type="HBoxContainer" parent="M/V/Header"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 5.0
-margin_right = -5.0
-margin_bottom = -5.0
-rect_min_size = Vector2( 600, 30 )
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+minimum_size = Vector2( 600, 30 )
 theme = SubResource( 31 )
 custom_constants/separation = 10
 
 [node name="LChCursor" parent="M/V/Header/H" instance=ExtResource( 9 )]
 anchor_bottom = 0.0
-margin_top = 7.0
-margin_bottom = 27.0
+offset_top = 7.0
+offset_bottom = 27.0
 shortcuts = [ SubResource( 17 ), SubResource( 20 ), SubResource( 22 ) ]
 checked = [ null, null, null ]
 unchecked = [ null, null, null ]
-tooltip = [ "Selection mode. Select blocks or checkpoints for editing.", "Spawn mode.", "Deletion mode." ]
+@tooltip = [ "Selection mode. Select blocks or checkpoints for editing.", "Spawn mode.", "Deletion mode." ]
 
 [node name="GridAxis" parent="M/V/Header/H" instance=ExtResource( 9 )]
 anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = 7.0
-margin_right = 10.0
-margin_bottom = 27.0
+offset_left = 10.0
+offset_top = 7.0
+offset_right = 10.0
+offset_bottom = 27.0
 shortcuts = [ SubResource( 80 ), SubResource( 81 ), SubResource( 82 ) ]
 checked = [ null, null, null ]
 unchecked = [ null, null, null ]
-tooltip = [ "(Press Q for switch) Set current grid axis to x", "(Press Q for switch) Set current grid axis to y", "(Press Q for switch) Set current grid axis to z" ]
+@tooltip = [ "(Press Q for switch) Set current grid axis to x", "(Press Q for switch) Set current grid axis to y", "(Press Q for switch) Set current grid axis to z" ]
 
 [node name="BtnRotate" type="Button" parent="M/V/Header/H"]
-margin_left = 20.0
-margin_right = 84.0
-margin_bottom = 34.0
+offset_left = 20.0
+offset_right = 84.0
+offset_bottom = 34.0
 focus_mode = 0
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 19 )
@@ -466,9 +466,9 @@ shortcut = SubResource( 52 )
 text = "Rotate"
 
 [node name="BtnType" type="Button" parent="M/V/Header/H"]
-margin_left = 94.0
-margin_right = 154.0
-margin_bottom = 34.0
+offset_left = 94.0
+offset_right = 154.0
+offset_bottom = 34.0
 focus_mode = 0
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 19 )
@@ -480,17 +480,17 @@ shortcut = SubResource( 50 )
 text = "Switch"
 
 [node name="Footer" type="HSplitContainer" parent="M/V"]
-margin_top = 98.0
-margin_right = 1670.0
-margin_bottom = 982.0
+offset_top = 98.0
+offset_right = 1670.0
+offset_bottom = 982.0
 size_flags_vertical = 3
 theme = SubResource( 177 )
 split_offset = 1376
 
-[node name="V" type="ViewportContainer" parent="M/V/Footer"]
-margin_right = 1436.0
-margin_bottom = 884.0
-rect_min_size = Vector2( 200, 50 )
+[node name="V" type="SubViewportContainer" parent="M/V/Footer"]
+offset_right = 1436.0
+offset_bottom = 884.0
+minimum_size = Vector2( 200, 50 )
 mouse_filter = 2
 size_flags_vertical = 3
 stretch = true
@@ -501,7 +501,7 @@ anchor_bottom = 1.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 3 )
 
-[node name="V" type="Viewport" parent="M/V/Footer/V"]
+[node name="V" type="SubViewport" parent="M/V/Footer/V"]
 size = Vector2( 1436, 884 )
 handle_input_locally = false
 msaa = 2
@@ -519,10 +519,10 @@ shadow_atlas_size = 4096
 grid_size = Vector2( 400, 400 )
 
 [node name="TabContainer" type="TabContainer" parent="M/V/Footer"]
-margin_left = 1448.0
-margin_right = 1670.0
-margin_bottom = 884.0
-rect_min_size = Vector2( 222, 50 )
+offset_left = 1448.0
+offset_right = 1670.0
+offset_bottom = 884.0
+minimum_size = Vector2( 222, 50 )
 custom_colors/font_color_bg = Color( 0.356863, 0.372549, 0.419608, 1 )
 custom_colors/font_color_fg = Color( 1, 1, 1, 1 )
 custom_constants/side_margin = 0
@@ -530,29 +530,29 @@ custom_fonts/font = ExtResource( 19 )
 custom_styles/tab_fg = SubResource( 23 )
 custom_styles/tab_bg = SubResource( 24 )
 custom_styles/panel = SubResource( 25 )
-tab_align = 0
+tab_alignment = 0
 use_hidden_tabs_for_min_size = true
 
 [node name="Blocks" type="MarginContainer" parent="M/V/Footer/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.0
-margin_top = 31.0
-margin_right = -1.0
-margin_bottom = -1.0
-custom_constants/margin_right = 5
-custom_constants/margin_top = 5
-custom_constants/margin_left = 5
-custom_constants/margin_bottom = 5
+offset_left = 1.0
+offset_top = 31.0
+offset_right = -1.0
+offset_bottom = -1.0
+custom_constants/offset_right = 5
+custom_constants/offset_top = 5
+custom_constants/offset_left = 5
+custom_constants/offset_bottom = 5
 
 [node name="List" type="ItemList" parent="M/V/Footer/TabContainer/Blocks"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 215.0
-margin_bottom = 847.0
-rect_min_size = Vector2( 0, 96 )
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 215.0
+offset_bottom = 847.0
+minimum_size = Vector2( 0, 96 )
 custom_fonts/font = ExtResource( 19 )
-custom_styles/bg = SubResource( 26 )
+custom_styles/panel = SubResource( 26 )
 items = [ "", ExtResource( 24 ), false, "", ExtResource( 3 ), false, "", ExtResource( 5 ), false, "", ExtResource( 7 ), false, "", ExtResource( 6 ), false, "", ExtResource( 21 ), false, "", ExtResource( 26 ), false, "", ExtResource( 23 ), false, "", ExtResource( 25 ), false, "", ExtResource( 27 ), false ]
 max_columns = 0
 fixed_icon_size = Vector2( 92, 92 )
@@ -561,38 +561,38 @@ fixed_icon_size = Vector2( 92, 92 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.0
-margin_top = 31.0
-margin_right = -1.0
-margin_bottom = -1.0
-custom_constants/margin_right = 5
-custom_constants/margin_top = 5
-custom_constants/margin_left = 5
-custom_constants/margin_bottom = 5
+offset_left = 1.0
+offset_top = 31.0
+offset_right = -1.0
+offset_bottom = -1.0
+custom_constants/offset_right = 5
+custom_constants/offset_top = 5
+custom_constants/offset_left = 5
+custom_constants/offset_bottom = 5
 
 [node name="ListO" type="ItemList" parent="M/V/Footer/TabContainer/Objects"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 215.0
-margin_bottom = 847.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 215.0
+offset_bottom = 847.0
 custom_fonts/font = ExtResource( 19 )
-custom_styles/bg = SubResource( 26 )
+custom_styles/panel = SubResource( 26 )
 max_columns = 0
 icon_scale = 0.1
 
 [node name="PanelContainer" type="PanelContainer" parent="M/V"]
-margin_top = 986.0
-margin_right = 1670.0
-margin_bottom = 1040.0
+offset_top = 986.0
+offset_right = 1670.0
+offset_bottom = 1040.0
 theme = SubResource( 161 )
 
 [node name="Timeline" parent="M/V/PanelContainer" instance=ExtResource( 8 )]
 
 [node name="Settings" parent="." instance=ExtResource( 28 )]
-margin_left = -358.0
-margin_top = -229.0
-margin_right = 358.0
-margin_bottom = 229.0
+offset_left = -358.0
+offset_top = -229.0
+offset_right = 358.0
+offset_bottom = 229.0
 
 [node name="VerTooltip" parent="." instance=ExtResource( 4 )]
 

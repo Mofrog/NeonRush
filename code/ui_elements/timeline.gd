@@ -1,17 +1,17 @@
 extends HBoxContainer
 
-export var max_time = 100.0
+@export var max_time = 100.0
 
-onready var b_to_start = $BtnToStart
-onready var b_inverse = $BtnInverse
-onready var b_stop = $BtnStop
-onready var b_start = $BtnStart
-onready var b_to_end = $BtnToEnd
-onready var txt_time = $TxtTime
-onready var txt_start = $TxtStart
-onready var txt_end = $TxtEnd
-onready var timeline = $Timeline
-onready var manager = $TimeManager
+@onready var b_to_start = $BtnToStart
+@onready var b_inverse = $BtnInverse
+@onready var b_stop = $BtnStop
+@onready var b_start = $BtnStart
+@onready var b_to_end = $BtnToEnd
+@onready var txt_time = $TxtTime
+@onready var txt_start = $TxtStart
+@onready var txt_end = $TxtEnd
+@onready var timeline = $Timeline
+@onready var manager = $TimeManager
 
 var stream = null
 

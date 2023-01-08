@@ -2,8 +2,8 @@
 
 [ext_resource path="res://scenes/map_select_menu/ui_map_select.gd" type="Script" id=1]
 [ext_resource path="res://code/ui_elements/debug.tscn" type="PackedScene" id=2]
-[ext_resource path="res://art/Quicksand-Regular.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://art/font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://art/Quicksand-Regular.ttf" type="FontFile" id=3]
+[ext_resource path="res://art/font.tres" type="FontFile" id=4]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 4 )
@@ -11,22 +11,22 @@ Label/fonts/font = ExtResource( 4 )
 
 [sub_resource type="Gradient" id=3]
 interpolation_mode = 2
-offsets = PoolRealArray( 0, 0.741525, 1 )
-colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 0.683616, 0, 0, 0, 0.862745 )
+offsets = PackedFloat32Array( 0, 0.741525, 1 )
+colors = PackedColorArray( 0, 0, 0, 0, 0, 0, 0, 0.683616, 0, 0, 0, 0.862745 )
 
-[sub_resource type="GradientTexture" id=4]
+[sub_resource type="GradientTexture2D" id=4]
 gradient = SubResource( 3 )
 
 [sub_resource type="StyleBoxTexture" id=5]
 texture = SubResource( 4 )
 region_rect = Rect2( 0, 0, 2048, 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="FontFile" id=2]
 size = 21
 use_filter = true
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="FontFile" id=6]
 use_filter = true
 font_data = ExtResource( 3 )
 
@@ -50,108 +50,108 @@ __meta__ = {
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -555.0
+offset_left = -555.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 2
 custom_styles/panel = SubResource( 5 )
 
 [node name="V" type="VBoxContainer" parent="Right"]
-margin_right = 555.0
-margin_bottom = 1050.0
+offset_right = 555.0
+offset_bottom = 1050.0
 
 [node name="C" type="PanelContainer" parent="Right/V"]
-margin_right = 555.0
-margin_bottom = 98.0
+offset_right = 555.0
+offset_bottom = 98.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Right/V/C"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 548.0
-margin_bottom = 91.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 548.0
+offset_bottom = 91.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Right/V/C/VBoxContainer2"]
-margin_right = 541.0
-margin_bottom = 40.0
+offset_right = 541.0
+offset_bottom = 40.0
 size_flags_vertical = 3
 
 [node name="LineEdit" type="LineEdit" parent="Right/V/C/VBoxContainer2/HBoxContainer2"]
-margin_right = 405.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 0, 40 )
+offset_right = 405.0
+offset_bottom = 40.0
+minimum_size = Vector2( 0, 40 )
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 3.08
 editable = false
 
 [node name="Button" type="Button" parent="Right/V/C/VBoxContainer2/HBoxContainer2"]
-margin_left = 409.0
-margin_right = 541.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 100, 40 )
+offset_left = 409.0
+offset_right = 541.0
+offset_bottom = 40.0
+minimum_size = Vector2( 100, 40 )
 size_flags_horizontal = 3
 size_flags_vertical = 4
 disabled = true
 text = "Search"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Right/V/C/VBoxContainer2"]
-margin_top = 44.0
-margin_right = 541.0
-margin_bottom = 84.0
+offset_top = 44.0
+offset_right = 541.0
+offset_bottom = 84.0
 size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="Right/V/C/VBoxContainer2/HBoxContainer3"]
-margin_right = 132.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 100, 40 )
+offset_right = 132.0
+offset_bottom = 40.0
+minimum_size = Vector2( 100, 40 )
 size_flags_horizontal = 3
 disabled = true
 text = "Filter"
 
 [node name="Button2" type="Button" parent="Right/V/C/VBoxContainer2/HBoxContainer3"]
-margin_left = 136.0
-margin_right = 268.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 100, 40 )
+offset_left = 136.0
+offset_right = 268.0
+offset_bottom = 40.0
+minimum_size = Vector2( 100, 40 )
 size_flags_horizontal = 3
 disabled = true
 text = "Filter"
 
 [node name="Button3" type="Button" parent="Right/V/C/VBoxContainer2/HBoxContainer3"]
-margin_left = 272.0
-margin_right = 404.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 100, 40 )
+offset_left = 272.0
+offset_right = 404.0
+offset_bottom = 40.0
+minimum_size = Vector2( 100, 40 )
 size_flags_horizontal = 3
 disabled = true
 text = "Filter"
 
 [node name="Button4" type="Button" parent="Right/V/C/VBoxContainer2/HBoxContainer3"]
-margin_left = 408.0
-margin_right = 541.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 100, 40 )
+offset_left = 408.0
+offset_right = 541.0
+offset_bottom = 40.0
+minimum_size = Vector2( 100, 40 )
 size_flags_horizontal = 3
 disabled = true
 text = "Filter"
 
 [node name="C2" type="Control" parent="Right/V"]
-margin_top = 102.0
-margin_right = 555.0
-margin_bottom = 1050.0
+offset_top = 102.0
+offset_right = 555.0
+offset_bottom = 1050.0
 size_flags_vertical = 3
 
 [node name="MapList" type="ScrollContainer" parent="Right/V/C2"]
 anchor_left = 0.106
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_clip_content = false
+clip_contents = false
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="Root" type="VBoxContainer" parent="Right/V/C2/MapList"]
-margin_right = 496.17
-margin_bottom = 948.0
+offset_right = 496.17
+offset_bottom = 948.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -159,31 +159,31 @@ custom_constants/separation = 10
 
 [node name="Left" type="PanelContainer" parent="."]
 anchor_bottom = 1.0
-margin_right = 400.0
-margin_bottom = -63.0
+offset_right = 400.0
+offset_bottom = -63.0
 
 [node name="V" type="VBoxContainer" parent="Left"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 393.0
-margin_bottom = 980.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 393.0
+offset_bottom = 980.0
 
 [node name="MapAbout" type="VBoxContainer" parent="Left/V"]
-margin_right = 386.0
-margin_bottom = 127.0
+offset_right = 386.0
+offset_bottom = 127.0
 
 [node name="G" type="Label" parent="Left/V/MapAbout"]
-margin_right = 386.0
-margin_bottom = 57.0
+offset_right = 386.0
+offset_bottom = 57.0
 custom_fonts/font = SubResource( 2 )
 text = "{Name} By: {Creator}
 {Artist} - {Song}"
 clip_text = true
 
 [node name="O" type="Label" parent="Left/V/MapAbout"]
-margin_top = 61.0
-margin_right = 386.0
-margin_bottom = 127.0
+offset_top = 61.0
+offset_right = 386.0
+offset_bottom = 127.0
 custom_fonts/font = SubResource( 6 )
 text = "BPM: {BPM}. Difficult: {Difficult}
 Beat speed: {BS}. Timing difficult: {TD}
@@ -191,32 +191,32 @@ Perfect time: {PT} sec. Jumps count : {J}"
 clip_text = true
 
 [node name="H" type="HBoxContainer" parent="Left/V"]
-margin_top = 131.0
-margin_right = 386.0
-margin_bottom = 172.0
-rect_min_size = Vector2( 0, 41 )
+offset_top = 131.0
+offset_right = 386.0
+offset_bottom = 172.0
+minimum_size = Vector2( 0, 41 )
 
 [node name="Button" type="Button" parent="Left/V/H"]
-margin_right = 126.0
-margin_bottom = 41.0
+offset_right = 126.0
+offset_bottom = 41.0
 size_flags_horizontal = 3
 disabled = true
 group = SubResource( 7 )
 text = "Global"
 
 [node name="Button2" type="Button" parent="Left/V/H"]
-margin_left = 130.0
-margin_right = 256.0
-margin_bottom = 41.0
+offset_left = 130.0
+offset_right = 256.0
+offset_bottom = 41.0
 size_flags_horizontal = 3
 disabled = true
 group = SubResource( 7 )
 text = "Friends"
 
 [node name="Button3" type="Button" parent="Left/V/H"]
-margin_left = 260.0
-margin_right = 386.0
-margin_bottom = 41.0
+offset_left = 260.0
+offset_right = 386.0
+offset_bottom = 41.0
 size_flags_horizontal = 3
 toggle_mode = true
 pressed = true
@@ -224,14 +224,14 @@ group = SubResource( 7 )
 text = "Local"
 
 [node name="ReplayList" type="ScrollContainer" parent="Left/V"]
-margin_top = 176.0
-margin_right = 386.0
-margin_bottom = 973.0
+offset_top = 176.0
+offset_right = 386.0
+offset_bottom = 973.0
 size_flags_vertical = 3
 
 [node name="Root" type="VBoxContainer" parent="Left/V/ReplayList"]
-margin_right = 386.0
-margin_bottom = 797.0
+offset_right = 386.0
+offset_bottom = 797.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -240,33 +240,33 @@ custom_constants/separation = 10
 [node name="Down" type="PanelContainer" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -64.0
-margin_right = 400.0
+offset_top = -64.0
+offset_right = 400.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Down"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 393.0
-margin_bottom = 57.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 393.0
+offset_bottom = 57.0
 
 [node name="BtnBack" type="Button" parent="Down/HBoxContainer"]
-margin_right = 176.0
-margin_bottom = 50.0
+offset_right = 176.0
+offset_bottom = 50.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
 text = "Back"
 
 [node name="BtnReload" type="Button" parent="Down/HBoxContainer"]
-margin_left = 180.0
-margin_right = 283.0
-margin_bottom = 50.0
+offset_left = 180.0
+offset_right = 283.0
+offset_bottom = 50.0
 size_flags_horizontal = 3
 text = "Reimport all"
 
 [node name="BtnDelete" type="Button" parent="Down/HBoxContainer"]
-margin_left = 287.0
-margin_right = 386.0
-margin_bottom = 50.0
+offset_left = 287.0
+offset_right = 386.0
+offset_bottom = 50.0
 size_flags_horizontal = 3
 text = "Delete map"
 

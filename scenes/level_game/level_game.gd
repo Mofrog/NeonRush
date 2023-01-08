@@ -1,19 +1,19 @@
-extends Spatial
+extends Node3D
 
 
-onready var l_time = $C/C/C/Time
-onready var l_jumps = $C/C/C/Jumps
-onready var l_acc = $C/C/C/Acc
-onready var time_text = l_time.text
-onready var jumps_text = l_jumps.text
-onready var acc_text = l_acc.text
+@onready var l_time = $C/C/C/Time
+@onready var l_jumps = $C/C/C/Jumps
+@onready var l_acc = $C/C/C/Acc
+@onready var time_text = l_time.text
+@onready var jumps_text = l_jumps.text
+@onready var acc_text = l_acc.text
 
-onready var c_test_mode = $C/TestMode
-onready var rytm_rule = $C/RytmRule
+@onready var c_test_mode = $C/TestMode
+@onready var rytm_rule = $C/RytmRule
 
-onready var chunks = $Chunks
-onready var character = $Character
-onready var menu = $Menu
+@onready var chunks = $Chunks
+@onready var character = $Character
+@onready var menu = $Menu
 
 
 # Go to:
@@ -87,10 +87,10 @@ func _process(_delta):
 
 
 func _physics_process(_delta):
-	# Save character translation every 0.05 sec
+	# Save character position every 0.05 sec
 	if character.is_game_start:
 		if record_count == 0: 
-			results["Positions"].append(character.translation)
+			results["Positions"].append(character.position)
 			results["Rotations"].append(character.camera.rotation)
 		record_count += 1
 		if record_count == 3: record_count = 0
@@ -99,24 +99,24 @@ func _physics_process(_delta):
 # Update chunks visibility every walked chunk
 func update_character_position():
 	if last_character_position == null:
-		last_character_position = character.translation
-	if last_character_position.distance_to(character.translation) >= chunk_size.x:
-		last_character_position = character.translation
+		last_character_position = character.position
+	if last_character_position.distance_to(character.position) >= chunk_size.x:
+		last_character_position = character.position
 		if chunk_thread.is_active(): chunk_thread.wait_to_finish()
-		chunk_thread.start(chunks, "update_chunks_visibility", character)
+		chunk_thread.start(Callable(chunks,"update_chunks_visibility").bind(character))
 
 
 func update_ui():
 	l_time.text = time_text.format({
 		"Min" : str(floor(rytm_rule.time_manager.time / 60)),
 		"Sec" : str(floor(fmod(rytm_rule.time_manager.time, 60))),
-		"Ssec" : str(stepify(fmod(rytm_rule.time_manager.time, 1) * 100, 1))
+		"Ssec" : str(snapped(fmod(rytm_rule.time_manager.time, 1) * 100, 1))
 	}) 
 	l_jumps.text = jumps_text.format({
 		"Jumps" : str(results["Jumps"])
 	})
 	l_acc.text = acc_text.format({
-		"Acc" : str(stepify(results["Accuracy"], 0.01))
+		"Acc" : str(snapped(results["Accuracy"], 0.01))
 	})
 
 
@@ -152,10 +152,10 @@ func restart():
 func load_map():
 	if play_map_id == -1: 
 		if is_test_mode:
-			if get_tree().change_scene("res://scenes/level_editor/ui_editor.tscn") != 0: 
+			if get_tree().change_scene_to_file("res://scenes/level_editor/ui_editor.tscn") != 0: 
 				printerr("Scene change error / level_game to ui_editor")
 		else:
-			if get_tree().change_scene("res://scenes/map_select_menu/ui_map_select.tscn") != 0: 
+			if get_tree().change_scene_to_file("res://scenes/map_select_menu/ui_map_select.tscn") != 0: 
 				printerr("Scene change error / level_game to ui_map_select")
 	map_data = SaveLoadManager.load_map_header(play_map_id)
 	var data = SaveLoadManager.load_map_data(map_data["Name"])
@@ -185,8 +185,8 @@ func save_results():
 		"Good" : results["Good"],
 		"Bad" : results["Bad"],
 		"Miss" : results["Miss"],
-		"Positions" : JSON.print(results["Positions"]),
-		"Rotations" : JSON.print(results["Rotations"]),
+		"Positions" : JSON.stringify(results["Positions"]),
+		"Rotations" : JSON.stringify(results["Rotations"]),
 		"Jumps" : results["Jumps"],
 		"Time" : rytm_rule.time_manager.time,
 		"DateTime" : Time.get_datetime_string_from_system()
@@ -208,10 +208,10 @@ func _on_BtnContinue_pressed():
 func _on_BtnExit_pressed(): 
 	if is_test_mode:
 		save_results()
-		if get_tree().change_scene("res://scenes/level_editor/ui_editor.tscn") != 0: 
+		if get_tree().change_scene_to_file("res://scenes/level_editor/ui_editor.tscn") != 0: 
 			printerr("Scene change error / level_game to ui_editor")
 	else:
-		if get_tree().change_scene("res://scenes/map_select_menu/ui_map_select.tscn") != 0: 
+		if get_tree().change_scene_to_file("res://scenes/map_select_menu/ui_map_select.tscn") != 0: 
 			printerr("Scene change error / level_game to ui_map_select")
 	get_tree().paused = false
 
@@ -225,7 +225,7 @@ func _on_Character_area_entered(area):
 		if area.is_end:
 			save_results()
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			var item = load("res://scenes/win_menu/ui_win_menu.tscn").instance()
+			var item = load("res://scenes/win_menu/ui_win_menu.tscn").instantiate()
 			item.level_game = self
 			add_child(item)
 		else:

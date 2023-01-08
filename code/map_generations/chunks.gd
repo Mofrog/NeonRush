@@ -1,4 +1,4 @@
-extends Spatial
+extends Node3D
 
 # FIXME Fix rare data dubles in block spawn
 # FIXME Fix rare data loss in block spawn and movement
@@ -49,7 +49,7 @@ func place_block(array_of_pos, r = 0, t = 0, p = 0, o = -1):
 		
 		#if chunk does not exists, then create chunk
 		if chunk_to_edit == null:
-			var chunk_instance = chunk_scene.instance().duplicate()
+			var chunk_instance = chunk_scene.instantiate().duplicate()
 			chunk_instance.name = str(chunk_pos.x, "_", chunk_pos.y, "_", chunk_pos.z)
 			chunk_instance.position = chunk_pos
 			add_child(chunk_instance)
@@ -118,7 +118,7 @@ func erase_block(array_of_pos):
 #-------------------------------SAVE AND UPDATE FUNC'S--------------------------
 func generate_chunks(character):
 	for pos in chunks.keys():
-		var chunk_instance = chunk_scene.instance().duplicate()
+		var chunk_instance = chunk_scene.instantiate().duplicate()
 		chunk_instance.position = pos
 		chunk_instance.blocks = chunks[pos].duplicate(true)
 		call_deferred("add_child", chunk_instance)
@@ -130,7 +130,7 @@ func generate_chunks(character):
 
 func spawn_chunk(current_pos, update_collsion = false):
 	if chunks.has(current_pos):
-		var chunk_instance = chunk_scene.instance().duplicate()
+		var chunk_instance = chunk_scene.instantiate().duplicate()
 		chunk_instance.name = str(current_pos.x, "_", current_pos.y, "_", current_pos.z)
 		chunk_instance.position = current_pos
 		chunk_instance.blocks = chunks[current_pos].duplicate(true)
@@ -142,7 +142,7 @@ func spawn_chunk(current_pos, update_collsion = false):
 # update all chunks visibility by character visible radius
 func update_chunks_visibility(character):
 	for pos in chunks.keys():
-		var char_pos = calc_chunk_position(character.translation)
+		var char_pos = calc_chunk_position(character.position)
 		var radius = pos.distance_to(char_pos)
 		var chunk_instance = get_chunk_in_position(pos)
 		var visible_radius = ProjectSettings.get_setting("config/visible_radius")

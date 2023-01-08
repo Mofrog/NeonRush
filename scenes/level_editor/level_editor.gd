@@ -1,15 +1,15 @@
-extends Spatial
+extends Node3D
 
 
-onready var character = $Character
-onready var selection = $Selection
-onready var cursor = $Cursor
-onready var grid = $Grid
-onready var chunks = $Chunks
-onready var visual_path = $VisualPath
-onready var mesh_replay_center = $MeshReplayCenter
-onready var mesh_rot_center = $MeshReplayCenter/MeshRotCenter
-onready var preview = $Cursor/OP
+@onready var character = $Character
+@onready var selection = $Selection
+@onready var cursor = $Cursor
+@onready var grid = $Grid
+@onready var chunks = $Chunks
+@onready var visual_path = $VisualPath
+@onready var mesh_replay_center = $MeshReplayCenter
+@onready var mesh_rot_center = $MeshReplayCenter/MeshRotCenter
+@onready var preview = $Cursor/OP
 
 # Global var's
 var result_id = ProjectSettings.get_setting("global/result_id")
@@ -78,18 +78,18 @@ func setting_cursor():
 	
 	# cursor location
 	if character.cursor_pos_cubic != null:
-		cursor.translation = character.cursor_pos_cubic - Vector3(0.5,0.5,0.5)
+		cursor.position = character.cursor_pos_cubic - Vector3(0.5,0.5,0.5)
 	
 	# editor state
 	match character.state:
 		character.STATE.CURSOR:
 			cursor.visible = true
-			if type == TYPE.SELECT && selection.translation != Vector3(-0.5, -0.5, -0.5): 
+			if type == TYPE.SELECT && selection.position != Vector3(-0.5, -0.5, -0.5): 
 				selection.visible = true
 			else: selection.visible = false
 		character.STATE.MOVE:
 			cursor.visible = false
-			if type == TYPE.SELECT && selection.translation != Vector3(-0.5, -0.5, -0.5): 
+			if type == TYPE.SELECT && selection.position != Vector3(-0.5, -0.5, -0.5): 
 				selection.visible = true
 			else: selection.visible = false
 		character.STATE.SELECT:
@@ -111,28 +111,28 @@ func setting_cursor():
 
 # set current grid axis and offset
 func setting_grid():
-	grid.translation = character.cursor_pos_cubic
+	grid.position = character.cursor_pos_cubic
 	match grid_axis:
 		GRID_AXIS.X:
 			grid.rotation_degrees = Vector3(0, 0, 0)
-			grid.translation.y = character.grid_offset + 0.05
+			grid.position.y = character.grid_offset + 0.05
 			grid.grid_axis = 0
 		GRID_AXIS.Y:
 			grid.rotation_degrees = Vector3(90, 0, 0)
-			grid.translation.z = character.grid_offset + 0.05
+			grid.position.z = character.grid_offset + 0.05
 			grid.grid_axis = 1
 		GRID_AXIS.Z:
 			grid.rotation_degrees = Vector3(0, 0, 90)
-			grid.translation.x = character.grid_offset + 0.05
+			grid.position.x = character.grid_offset + 0.05
 			grid.grid_axis = 2
 
 
 # set object scale and position to selection area
 func set_scale_to_selection(_object):
 	if character.selection_start_pos != null && character.selection_end_pos != null:
-		_object.translation = (character.selection_start_pos + \
+		_object.position = (character.selection_start_pos + \
 			character.selection_end_pos) / 2
-		_object.translation -= Vector3(0.5, 0.5, 0.5)
+		_object.position -= Vector3(0.5, 0.5, 0.5)
 		_object.scale = Vector3.ONE \
 			+ (character.selection_start_pos - character.selection_end_pos).abs() / 2
 		_object.scale -= Vector3(0.45, 0.45, 0.45)
@@ -141,20 +141,20 @@ func set_scale_to_selection(_object):
 # perform methods every walked chunk
 func update_character_position():
 	if last_character_position == null:
-		last_character_position = character.translation
+		last_character_position = character.position
 	var size = ProjectSettings.get_setting("config/chunk_size")
-	if last_character_position.distance_to(character.translation) >= size.x:
-		last_character_position = character.translation
+	if last_character_position.distance_to(character.position) >= size.x:
+		last_character_position = character.position
 		if thread.is_active() && !thread.is_alive(): thread.wait_to_finish()
-		thread.start(chunks, "update_chunks_visibility", character)
+		thread.start(Callable(chunks,"update_chunks_visibility").bind(character))
 
 
 # Set mesh_replay_center character location at current time
 func update_replay_pos(time : float):
 	var id_pos = int(time / 0.05)
 	if replay_pos.size() > id_pos: 
-		mesh_replay_center.translation = str2var("Vector3" + replay_pos[id_pos])
-		var rot = str2var("Vector3" + replay_rot[id_pos])
+		mesh_replay_center.position = str_to_var("Vector3" + replay_pos[id_pos])
+		var rot = str_to_var("Vector3" + replay_rot[id_pos])
 		mesh_replay_center.rotate_y(rot.y - mesh_replay_center.rotation.y)
 		mesh_rot_center.rotate_x(rot.x - mesh_rot_center.rotation.x)
 
@@ -164,16 +164,20 @@ func draw_visual_path():
 	if result_id == -1: return
 	var result = SaveLoadManager.load_result(result_id, true)
 	ProjectSettings.set_setting("global/result_id", -1)
-	replay_pos = JSON.parse(result["Positions"]).result
-	replay_rot = JSON.parse(result["Rotations"]).result
+	var test_json_conv = JSON.new()
+	test_json_conv.parse(result["Positions"]).result
+	replay_pos = test_json_conv.get_data()
+	var test_json_conv = JSON.new()
+	test_json_conv.parse(result["Rotations"]).result
+	replay_rot = test_json_conv.get_data()
 	
 	# Generate visible line path
 	var mesh = Mesh.new()
-	var mesh_instance = MeshInstance.new()
+	var mesh_instance = MeshInstance3D.new()
 	var st = SurfaceTool.new()
 	st.begin(Mesh.PRIMITIVE_LINE_STRIP) 
 	for i in replay_pos.size():
-		st.add_vertex(str2var("Vector3" + replay_pos[i]))
+		st.add_vertex(str_to_var("Vector3" + replay_pos[i]))
 	st.set_material(preload("res://art/materials/m_visual_path.tres"))
 	st.commit(mesh)
 	mesh_instance.set_mesh(mesh)

@@ -1,4 +1,4 @@
-extends Spatial
+extends Node3D
 
 
 func _on_Trigger_body_entered(body): 

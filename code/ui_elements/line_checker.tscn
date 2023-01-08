@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://code/ui_elements/line_checker.gd" type="Script" id=1]
-[ext_resource path="res://art/font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://art/font.tres" type="FontFile" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.14902, 0.172549, 0.231373, 1 )
@@ -21,7 +21,7 @@ CheckBox/fonts/font = ExtResource( 2 )
 
 [node name="LineChecker" type="Control"]
 anchor_bottom = 0.035
-rect_min_size = Vector2( 0, 20 )
+minimum_size = Vector2( 0, 20 )
 size_flags_vertical = 4
 script = ExtResource( 1 )
 

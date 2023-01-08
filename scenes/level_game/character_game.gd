@@ -1,17 +1,17 @@
-extends KinematicBody
+extends CharacterBody3D
 
-onready var camera = $Camera
-onready var debug = $Debug
+@onready var camera = $Camera3D
+@onready var debug = $Debug
 
 
 signal area_entered(area)
 
 
-export var speed = 15
-export var fric = 1.13
-export var air_fric = 1.1
-export var gravity = 20
-export var jump_scale = 8
+@export var speed = 15
+@export var fric = 1.13
+@export var air_fric = 1.1
+@export var gravity = 20
+@export var jump_scale = 8
 
 var velocity = Vector3()
 var velocity_speed = 0.0
@@ -33,7 +33,7 @@ func _physics_process(delta):
 	dir = dir.rotated(Vector3.UP, camera.rotation.y).normalized()
 	
 	# calc acceleration
-	acceleration = stepify((acceleration + speed * delta) / fric, 0.01)
+	acceleration = snapped((acceleration + speed * delta) / fric, 0.01)
 	
 	# calc velocity
 	velocity.x += dir.x * acceleration
@@ -48,8 +48,11 @@ func _physics_process(delta):
 	velocity.y -= gravity * delta
 	
 	# set velocity
-	velocity = move_and_slide(velocity, Vector3.UP)
-	velocity_speed = stepify(Vector3(velocity.x, 0, velocity.z).length(), 0.01)
+	set_velocity(velocity)
+	set_up_direction(Vector3.UP)
+	move_and_slide()
+	velocity = velocity
+	velocity_speed = snapped(Vector3(velocity.x, 0, velocity.z).length(), 0.01)
 
 
 func jump(strength = 1, is_important = false): 
@@ -60,7 +63,7 @@ func jump(strength = 1, is_important = false):
 func restart():
 	velocity = Vector3.ZERO
 	acceleration = 0
-	translation = Vector3(1,5,0)
+	position = Vector3(1,5,0)
 	camera.deg = Vector2.ZERO
 
 

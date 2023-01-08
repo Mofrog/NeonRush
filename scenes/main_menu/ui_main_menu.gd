@@ -2,8 +2,8 @@
 extends Control
 
 
-onready var debug = $VerTooltip
-onready var settings = $AcceptDialog
+@onready var debug = $VerTooltip
+@onready var settings = $AcceptDialog
 
 
 var is_debug_enabled = ProjectSettings.get_setting("config/is_debug_enabled")
@@ -42,12 +42,12 @@ func _ready():
 
 
 func _on_MapSelect_pressed():
-	if get_tree().change_scene("res://scenes/map_select_menu/ui_map_select.tscn") != OK: 
+	if get_tree().change_scene_to_file("res://scenes/map_select_menu/ui_map_select.tscn") != OK: 
 		print_debug("Scene change error")
 
 
 func _on_Editor_pressed():
-	if get_tree().change_scene("res://scenes/level_editor/ui_editor.tscn") != OK: 
+	if get_tree().change_scene_to_file("res://scenes/level_editor/ui_editor.tscn") != OK: 
 		print_debug("Scene change error")
 
 
@@ -59,7 +59,7 @@ func _on_BtnAbout_pressed():
 	PopUp.new().accept_dialog("About", 
 		"Neon Rush\nBy: MLKW(Mofrog)\n" + \
 		"Licenced under MIT\n" + \
-		"More info on github page: https://github.com/Mofrog/NeonRush \n" + \
+		"More info checked github page: https://github.com/Mofrog/NeonRush \n" + \
 		"Join to Neon rush discord server: https://discord.gg/qKznMrpdnw", 
 		self)
 
@@ -68,8 +68,8 @@ func _on_BtnSettings_pressed():
 	get_tree().paused = true
 	settings.visible = true
 	
-	$AcceptDialog/MarginContainer/VBoxContainer/Config/BtnDebug.pressed = is_debug_enabled
-	$AcceptDialog/MarginContainer/VBoxContainer/Config/BtnBlur.pressed = is_motion_blur_enabled
+	$AcceptDialog/MarginContainer/VBoxContainer/Config/BtnDebug.button_pressed = is_debug_enabled
+	$AcceptDialog/MarginContainer/VBoxContainer/Config/BtnBlur.button_pressed = is_motion_blur_enabled
 	$AcceptDialog/MarginContainer/VBoxContainer/Config2/Radius.value = visible_radius
 	$AcceptDialog/MarginContainer/VBoxContainer/Config2/HSlider.value = mouse_sens
 

@@ -1,10 +1,10 @@
-extends Spatial
+extends Node3D
 class_name TimeManager
 
 signal timeout
 signal beat
 
-export(int, 0, 500) var bpm = 120
+@export var bpm = 120 # (int, 0, 500)
 
 var bpm_delta : float = 1000 / (bpm / 60)
 var counted_delta = 0

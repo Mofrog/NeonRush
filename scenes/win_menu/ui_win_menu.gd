@@ -1,22 +1,22 @@
 extends Control
 
-onready var about_map = $C/C/About/C/Map
-onready var about_replay = $C/C/About/C/Replay
+@onready var about_map = $C/C/About/C/Map
+@onready var about_replay = $C/C/About/C/Replay
 
-onready var score = $C/C/Replay/Stat/C/Score
-onready var acc = $C/C/Replay/Stat/C/Acc
-onready var time = $C/C/Replay/Stat/C/Time
-onready var jumps = $C/C/Replay/Stat/C/Jumps
-onready var perfect = $C/C/Replay/Stat/C/Pefect
-onready var good = $C/C/Replay/Stat/C/Good
-onready var bad = $C/C/Replay/Stat/C/Bad
-onready var miss = $C/C/Replay/Stat/C/Miss
+@onready var score = $C/C/Replay/Stat/C/Score
+@onready var acc = $C/C/Replay/Stat/C/Acc
+@onready var time = $C/C/Replay/Stat/C/Time
+@onready var jumps = $C/C/Replay/Stat/C/Jumps
+@onready var perfect = $C/C/Replay/Stat/C/Pefect
+@onready var good = $C/C/Replay/Stat/C/Good
+@onready var bad = $C/C/Replay/Stat/C/Bad
+@onready var miss = $C/C/Replay/Stat/C/Miss
 
-onready var grade = $C/C/Replay/Grade/Label
-onready var about_grade = $C/C/Replay/Grade/About
-onready var btn_restart = $C/C/Actions/C/BtnRestart
+@onready var grade = $C/C/Replay/Grade/Label
+@onready var about_grade = $C/C/Replay/Grade/About
+@onready var btn_restart = $C/C/Actions/C/BtnRestart
 
-onready var test_label = $TestMode
+@onready var test_label = $TestMode
 
 
 # Exit to:
@@ -60,22 +60,22 @@ func _ready():
 	
 	# Replay stat labels
 	score.text = score.text.format({
-		"All" : stepify(result["Score"], 1),
-		"Multiplier" : stepify(s_m, 0.01)
+		"All" : snapped(result["Score"], 1),
+		"Multiplier" : snapped(s_m, 0.01)
 	})
 	acc.text = acc.text.format({
-		"Accuracy" : stepify(result["Accuracy"], 0.1),
-		"Multiplier" : stepify(a_m, 0.01)
+		"Accuracy" : snapped(result["Accuracy"], 0.1),
+		"Multiplier" : snapped(a_m, 0.01)
 	})
 	time.text = time.text.format({
-		"Current" : stepify(result["Time"], 0.1),
+		"Current" : snapped(result["Time"], 0.1),
 		"Perfect" : map["PerfectTime"],
-		"Multiplier" : stepify(t_m, 0.01)
+		"Multiplier" : snapped(t_m, 0.01)
 	})
 	jumps.text = jumps.text.format({
 		"Count" : result["Jumps"],
 		"Perfect" : map["JumpsCount"],
-		"Multiplier" : stepify(j_m, 0.01)
+		"Multiplier" : snapped(j_m, 0.01)
 	})
 	perfect.text = perfect.text.format({
 		"Count" : result["Perfect"]
@@ -110,8 +110,8 @@ func _on_BtnExit_pressed():
 		queue_free()
 		return
 	if is_test_mode:
-		if get_tree().change_scene("res://scenes/level_editor/ui_editor.tscn") != OK: 
+		if get_tree().change_scene_to_file("res://scenes/level_editor/ui_editor.tscn") != OK: 
 			printerr("Scene change error / ui_win_menu to ui_editor")
 	else:
-		if get_tree().change_scene("res://scenes/map_select_menu/ui_map_select.tscn") != OK: 
+		if get_tree().change_scene_to_file("res://scenes/map_select_menu/ui_map_select.tscn") != OK: 
 			printerr("Scene change error / ui_win_menu to ui_map_select")

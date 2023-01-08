@@ -1,4 +1,4 @@
-extends StaticBody
+extends StaticBody3D
 
 
 const atlas : AtlasTexture = preload("res://art/atlas/diffuse.tres")
@@ -68,7 +68,7 @@ func generate_mesh(update_collision = false, preloaded_mesh = null):
 		return null
 	
 	mesh = Mesh.new()
-	mesh_instance = MeshInstance.new()
+	mesh_instance = MeshInstance3D.new()
 	st.begin(Mesh.PRIMITIVE_TRIANGLES) 
 	
 	var is_tangents_valid = false
@@ -96,9 +96,9 @@ func generate_mesh(update_collision = false, preloaded_mesh = null):
 
 
 func create_object(x,y,z,id_obj):
-	var obj = load(objects[objects.keys()[id_obj]]).instance()
-	obj.translation = Vector3(x + 0.5,y + 0.25,z + 0.5)
-	if obj is Area: 
+	var obj = load(objects[objects.keys()[id_obj]]).instantiate()
+	obj.position = Vector3(x + 0.5,y + 0.25,z + 0.5)
+	if obj is Area3D: 
 		obj.is_end = true
 	add_child(obj)
 
@@ -107,7 +107,7 @@ func create_slope(x,y,z,id_tex,a=0):
 	var verts = vertices.duplicate()
 	
 	for i in verts.size():
-		verts[i] = verts[i].rotated(Vector3.UP,deg2rad(a))
+		verts[i] = verts[i].rotated(Vector3.UP,deg_to_rad(a))
 		if a == 90 || a == 180: verts[i].z += 1
 		if a == 180 || a == 270: verts[i].x += 1
 	
@@ -139,16 +139,16 @@ func create_triangle(i,x,y,z,id_tex,verts = null):
 	var b = verts[i[1]] + offset
 	var c = verts[i[2]] + offset
 	
-	# Texture size (px) : Always square
+	# Texture2D size (px) : Always square
 	var tex_px = Vector2(256.0, 256.0)
 	# Atlas size (px)
 	var atlas_size = Vector2(atlas.get_width(), atlas.get_height()) 
 	# Atlas separation between textures (px)
 	var sep_px = Vector2(0, 0)
-	# Texture real size (px)
+	# Texture2D real size (px)
 	var real_size = tex_px + sep_px * 2
 	
-	# Texture size (abs)
+	# Texture2D size (abs)
 	var tex_abs = Vector2(real_size.x / atlas_size.x, real_size.y / atlas_size.y) 
 	# Atlas separation between textures (abs)
 	var sep_abs = Vector2(sep_px.x / atlas_size.x, sep_px.y / atlas_size.y)# + Vector2.ONE * 0.005
@@ -173,16 +173,16 @@ func create_face(i,x,y,z,id_tex,verts = null):
 	var c = verts[i[2]] + offset
 	var d = verts[i[3]] + offset
 	
-	# Texture size (px) : Always square
+	# Texture2D size (px) : Always square
 	var tex_px = Vector2(256.0, 256.0)
 	# Atlas size (px)
 	var atlas_size = Vector2(atlas.get_width(), atlas.get_height()) 
 	# Atlas separation between textures (px)
 	var sep_px = Vector2(0, 0)
-	# Texture real size (px)
+	# Texture2D real size (px)
 	var real_size = tex_px + sep_px * 2
 	
-	# Texture size (abs)
+	# Texture2D size (abs)
 	var tex_abs = Vector2(real_size.x / atlas_size.x, real_size.y / atlas_size.y) 
 	# Atlas separation between textures (abs)
 	var sep_abs = Vector2(sep_px.x / atlas_size.x, sep_px.y / atlas_size.y)# + Vector2.ONE * 0.005

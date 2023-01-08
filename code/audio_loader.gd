@@ -23,7 +23,7 @@
 #SOFTWARE.
 
 #I honestly don't care that much, Kopimi ftw, but it's my little baby and I want it to look nice :3
-extends Reference
+extends RefCounted
 
 class_name AudioLoader
 
@@ -55,13 +55,13 @@ static func loadfile(filepath, bytes = null):
 		if err != OK:
 			report_errors(err, filepath)
 			file.close()
-			return AudioStreamSample.new()
-		bytes = file.get_buffer(file.get_len())
+			return AudioStreamWAV.new()
+		bytes = file.get_buffer(file.get_length())
 		file.close()
 	
 	# if File is wav
 	if filepath.ends_with(".wav"):
-		var newstream = AudioStreamSample.new()
+		var newstream = AudioStreamWAV.new()
 
 		#---------------------------
 		#parrrrseeeeee!!! :D
@@ -85,7 +85,7 @@ static func loadfile(filepath, bytes = null):
 				var formatsubchunksize = bytes[i+4] + (bytes[i+5] << 8) + (bytes[i+6] << 16) + (bytes[i+7] << 24)
 				#print ("Format subchunk size: " + str(formatsubchunksize))
 				
-				#using formatsubchunk index so it's easier to understand what's going on
+				#using formatsubchunk index so it's easier to understand what's going checked
 				var fsc0 = i+8 #fsc0 is byte 8 after start of "fmt "
 
 				#get format code [Bytes 0-1]
@@ -99,19 +99,19 @@ static func loadfile(filepath, bytes = null):
 					format_name = "UNKNOWN (trying to interpret as 16_BITS)"
 					format_code = 1
 				#print ("Format: " + str(format_code) + " " + format_name)
-				#assign format to our AudioStreamSample
+				#assign format to our AudioStreamWAV
 				newstream.format = format_code
 				
 				#get channel num [Bytes 2-3]
 				var channel_num = bytes[fsc0+2] + (bytes[fsc0+3] << 8)
 				#print ("Number of channels: " + str(channel_num))
-				#set our AudioStreamSample to stereo if needed
+				#set our AudioStreamWAV to stereo if needed
 				if channel_num == 2: newstream.stereo = true
 				
 				#get sample rate [Bytes 4-7]
 				var sample_rate = bytes[fsc0+4] + (bytes[fsc0+5] << 8) + (bytes[fsc0+6] << 16) + (bytes[fsc0+7] << 24)
 				#print ("Sample rate: " + str(sample_rate))
-				#set our AudioStreamSample mixrate
+				#set our AudioStreamWAV mixrate
 				newstream.mix_rate = sample_rate
 				
 				#get byte_rate [Bytes 8-11] because we can
@@ -154,7 +154,7 @@ static func loadfile(filepath, bytes = null):
 
 	#if file is ogg
 	elif filepath.ends_with(".ogg"):
-		var newstream = AudioStreamOGGVorbis.new()
+		var newstream = AudioStreamOggVorbis.new()
 		newstream.loop = false #set to false or delete this line if you don't want to loop
 		newstream.data = bytes
 		return newstream
@@ -172,17 +172,17 @@ static func loadfile(filepath, bytes = null):
 # Converts .wav data from 24 or 32 bits to 16
 #
 # These conversions are SLOW in GDScript
-# on my one test song, 32 -> 16 was around 3x slower than 24 -> 16
+# checked my one test song, 32 -> 16 was around 3x slower than 24 -> 16
 #
 # I couldn't get threads to help very much
 # They made the 24bit case about 2x faster in my test file
 # And the 32bit case abour 50% slower
-# I don't wanna risk it always being slower on other files
+# I don't wanna risk it always being slower checked other files
 # And really, the solution would be to handle it in a low-level language
-static func convert_to_16bit(data: PoolByteArray, from: int) -> PoolByteArray:
+static func convert_to_16bit(data: PackedByteArray, from: int) -> PackedByteArray:
 	#print("converting to 16-bit from %d" % from)
 # warning-ignore:unused_variable
-	var time = OS.get_ticks_msec()
+	var time = Time.get_ticks_msec()
 	# 24 bit .wav's are typically stored as integers
 	# so we just grab the 2 most significant bytes and ignore the other
 	if from == 24:
@@ -210,7 +210,7 @@ static func convert_to_16bit(data: PoolByteArray, from: int) -> PoolByteArray:
 			data[i/2+1] = value >> 8
 # warning-ignore:integer_division
 		data.resize(data.size() / 2)
-	#print("Took %f seconds for slow conversion" % ((OS.get_ticks_msec() - time) / 1000.0))
+	#print("Took %f seconds for slow conversion" % ((Time.get_ticks_msec() - time) / 1000.0))
 	return data
 
 

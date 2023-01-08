@@ -3,19 +3,19 @@ class_name RytmRule
 
 signal timeout
 
-onready var time_manager = $TimeManager
-onready var anim_player = $AnimationPlayer
-onready var p_l = $p_l
-onready var p_r = $p_r
-onready var g_l = $g_l
-onready var g_r = $g_r
-onready var b_l = $b_l
-onready var b_r = $b_r
+@onready var time_manager = $TimeManager
+@onready var anim_player = $AnimationPlayer
+@onready var p_l = $p_l
+@onready var p_r = $p_r
+@onready var g_l = $g_l
+@onready var g_r = $g_r
+@onready var b_l = $b_l
+@onready var b_r = $b_r
 
-export var beat_theme : Theme = null
+@export var beat_theme : Theme = null
 
 
-# Area sizes and pos
+# Area3D sizes and pos
 var p_area_size : Vector2
 var g_area_size : Vector2
 var b_area_size : Vector2
@@ -39,13 +39,13 @@ func _exit_tree():
 
 
 func update_areas(td):
-	# Area sizes 
+	# Area3D sizes 
 	# 15.5 at 10 td, 36.(3) at 0 td
 	p_area_size = Vector2(200 / (td + 6) + 3, 				60) 
 	g_area_size = Vector2(p_area_size.x * 2, 				60)
 	b_area_size = Vector2(g_area_size.x * 1.5, 				60)
 	
-	# Area pos
+	# Area3D pos
 	var b_area_pos_r = Vector2(20, 							-30)
 	b_area_pos_l = Vector2(-20 - b_area_size.x,				-30)
 	var g_area_pos_r = Vector2((b_area_size.x / 2 - \
@@ -86,7 +86,7 @@ func _physics_process(delta):
 		if i["beat"] != null: 
 			i["beat"].move(beat_speed * delta)
 			i["double"].move(-beat_speed * delta)
-			if i["beat"].rect_position.x + beat_size.x > -10: remove_beat(i)
+			if i["beat"].position.x + beat_size.x > -10: remove_beat(i)
 
 
 func click():
@@ -95,20 +95,20 @@ func click():
 	for i in beats:
 		if i["beat"] != null: 
 			# Check perfect timing
-			if i["beat"].rect_position.x + beat_size.x > p_area_pos_l.x && \
-			i["beat"].rect_position.x < p_area_pos_l.x + p_area_size.x:
+			if i["beat"].position.x + beat_size.x > p_area_pos_l.x && \
+			i["beat"].position.x < p_area_pos_l.x + p_area_size.x:
 				if max_score < 3:
 					max_score = 3
 					beat = i
 			# Check good timing
-			elif i["beat"].rect_position.x + beat_size.x > g_area_pos_l.x && \
-			i["beat"].rect_position.x < g_area_pos_l.x + g_area_size.x:
+			elif i["beat"].position.x + beat_size.x > g_area_pos_l.x && \
+			i["beat"].position.x < g_area_pos_l.x + g_area_size.x:
 				if max_score < 2:
 					max_score = 2
 					beat = i
 			# Check bad timing
-			elif i["beat"].rect_position.x + beat_size.x > b_area_pos_l.x && \
-			i["beat"].rect_position.x < b_area_pos_l.x + b_area_size.x:
+			elif i["beat"].position.x + beat_size.x > b_area_pos_l.x && \
+			i["beat"].position.x < b_area_pos_l.x + b_area_size.x:
 				if max_score < 1:
 					max_score = 1
 					beat = i
@@ -172,5 +172,5 @@ func spawn_beat():
 func _on_TimeManager_timeout(): emit_signal("timeout")
 
 
-# Signalled on every beat
+# Signalled checked every beat
 func _on_TimeManager_beat(): spawn_beat()

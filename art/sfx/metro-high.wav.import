@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/metro-high.wav-1a4430b6c5eaf49410765ad4f3110131.sample"
+type="AudioStreamWAV"
+uid="uid://c4kiuvge3t2hq"
+path="res://.godot/imported/metro-high.wav-1a4430b6c5eaf49410765ad4f3110131.sample"
 
 [deps]
 
 source_file="res://art/sfx/metro-high.wav"
-dest_files=[ "res://.import/metro-high.wav-1a4430b6c5eaf49410765ad4f3110131.sample" ]
+dest_files=["res://.godot/imported/metro-high.wav-1a4430b6c5eaf49410765ad4f3110131.sample"]
 
 [params]
 

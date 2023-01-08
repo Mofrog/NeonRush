@@ -1,25 +1,25 @@
 extends Control
 
 
-onready var map_name = $M/V/Control/MapName
+@onready var map_name = $M/V/Control/MapName
 
-onready var grid_axis = $M/V/Header/H/GridAxis
-onready var button_type = $M/V/Header/H/BtnType
+@onready var grid_axis = $M/V/Header/H/GridAxis
+@onready var button_type = $M/V/Header/H/BtnType
 
-onready var footer = $M/V/Footer
+@onready var footer = $M/V/Footer
 
-onready var viewport_container = $M/V/Footer/V
-onready var editor = $M/V/Footer/V/V/Root
-onready var chunks = $M/V/Footer/V/V/Root/Chunks
-onready var character = $M/V/Footer/V/V/Root/Character
+@onready var viewport_container = $M/V/Footer/V
+@onready var editor = $M/V/Footer/V/V/Root
+@onready var chunks = $M/V/Footer/V/V/Root/Chunks
+@onready var character = $M/V/Footer/V/V/Root/Character
 
-onready var tab_container = $M/V/Footer/TabContainer
-onready var blocks_list = $M/V/Footer/TabContainer/Blocks/List
-onready var objects_list = $M/V/Footer/TabContainer/Objects/ListO
+@onready var tab_container = $M/V/Footer/TabContainer
+@onready var blocks_list = $M/V/Footer/TabContainer/Blocks/List
+@onready var objects_list = $M/V/Footer/TabContainer/Objects/ListO
 
-onready var timeline = $M/V/PanelContainer/Timeline
+@onready var timeline = $M/V/PanelContainer/Timeline
 
-onready var settings_p = $Settings
+@onready var settings_p = $Settings
 
 
 # Go to:
@@ -68,7 +68,7 @@ func shortcuts_process():
 
 
 func check_ui_focus():
-	var rect = Rect2(footer.rect_position, viewport_container.rect_size)
+	var rect = Rect2(footer.position, viewport_container.size)
 	if rect.has_point(get_local_mouse_position()):
 		map_name.grab_focus()
 		footer.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -128,7 +128,7 @@ func is_map_valid():
 
 func exit_editor(): 
 	if is_map_valid(): save_map()
-	if get_tree().change_scene("res://scenes/main_menu/ui_main_menu.tscn") != 0: 
+	if get_tree().change_scene_to_file("res://scenes/main_menu/ui_main_menu.tscn") != 0: 
 		printerr("Scene change error / ui_editor to ui_main_menu")
 
 
@@ -149,7 +149,7 @@ func _on_BtnSave_pressed(): if is_map_valid(): save_map()
 # Load map (Open the map selection scene)
 func _on_BtnLoad_pressed():
 	ProjectSettings.set_setting("global/is_editor_map_load", true)
-	if get_tree().change_scene("res://scenes/map_select_menu/ui_map_select.tscn") != 0: 
+	if get_tree().change_scene_to_file("res://scenes/map_select_menu/ui_map_select.tscn") != 0: 
 		printerr("Scene change error / ui_editor to ui_map_select")
 
 
@@ -168,7 +168,7 @@ func _on_BtnTest_pressed():
 	var id = SaveLoadManager.load_map_header(null ,settings_p.data["Name"])["Id"]
 	ProjectSettings.set_setting("global/result_id", id)
 	ProjectSettings.set_setting("global/is_test_mode", true)
-	if get_tree().change_scene("res://scenes/level_game/level_game.tscn") != 0: 
+	if get_tree().change_scene_to_file("res://scenes/level_game/level_game.tscn") != 0: 
 		printerr("Scene change error / ui_editor to level_game")
 
 

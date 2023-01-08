@@ -1,18 +1,18 @@
-extends StaticBody
+extends StaticBody3D
 
-export (Material) var material
-export (Material) var material2
-export var block_size = Vector2(1,1)
-export var block_size2 = Vector2(10,10)
-export var grid_size = Vector2(80,80)
-export var line_width = 0.02
+@export (Material) var material
+@export (Material) var material2
+@export var block_size = Vector2(1,1)
+@export var block_size2 = Vector2(10,10)
+@export var grid_size = Vector2(80,80)
+@export var line_width = 0.02
 
 var mesh = Mesh.new()
-var mesh_instance = MeshInstance.new()
+var mesh_instance = MeshInstance3D.new()
 var st = SurfaceTool.new()
 
 var mesh2 = Mesh.new()
-var mesh_instance2 = MeshInstance.new()
+var mesh_instance2 = MeshInstance3D.new()
 var st2 = SurfaceTool.new()
 
 var grid_axis = GRID_AXIS.X
@@ -22,18 +22,18 @@ func _process(_delta):
 	var pos = Vector3()
 	match grid_axis:
 		GRID_AXIS.X:
-			pos = -translation
+			pos = -position
 			pos.y = 0
-			pos.x += floor(translation.x / block_size2.x) * block_size2.x
+			pos.x += floor(position.x / block_size2.x) * block_size2.x
 		GRID_AXIS.Y:
-			pos.x = -translation.x + floor(translation.x / block_size2.x) * block_size2.x
+			pos.x = -position.x + floor(position.x / block_size2.x) * block_size2.x
 			pos.y = 0
-			pos.z = translation.y + floor(translation.y / block_size2.y) * block_size2.y
+			pos.z = position.y + floor(position.y / block_size2.y) * block_size2.y
 		GRID_AXIS.Z:
-			pos.x = -translation.y + floor(translation.y / block_size2.y) * block_size2.y
+			pos.x = -position.y + floor(position.y / block_size2.y) * block_size2.y
 			pos.y = 0
-			pos.z = -translation.z
-	mesh_instance2.translation = pos
+			pos.z = -position.z
+	mesh_instance2.position = pos
 
 
 func _ready():
@@ -62,7 +62,7 @@ func _ready():
 	add_child(mesh_instance2)
 	
 	grid_size *= block_size / 2
-	$CollisionShape.shape.extents = Vector3(grid_size.x,0.001,grid_size.y)
+	$CollisionShape3D.shape.extents = Vector3(grid_size.x,0.001,grid_size.y)
 
 
 func spawn_line(basic_offset, local_block_size, local_st):

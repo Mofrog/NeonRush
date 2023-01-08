@@ -2,13 +2,13 @@ extends Control
 class_name PopUp
 
 
-export var p_theme : Theme = load("res://art/themes/pop_up_theme.tres")
+@export var p_theme : Theme = load("res://art/themes/pop_up_theme.tres")
 var is_stop_disabled = false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pause_mode = Node.PAUSE_MODE_PROCESS
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	anchor_bottom = 1
 	anchor_left = 0
 	anchor_right = 1
@@ -34,15 +34,15 @@ func accept_dialog(title, text, target, stop_disable = false):
 	dialog.anchor_left = 0.5
 	dialog.anchor_right = 0.5
 	dialog.anchor_top = 0.5
-	dialog.margin_left = -100
-	dialog.margin_right = 100
+	dialog.offset_left = -100
+	dialog.offset_right = 100
 	
-	dialog.pause_mode = Node.PAUSE_MODE_PROCESS
+	dialog.process_mode = Node.PROCESS_MODE_ALWAYS
 	dialog.visible = true
 	dialog.window_title = title
 	dialog.dialog_text = text
 	
-	dialog.connect("hide", self, "_exit_dialog")
+	dialog.connect("hide",Callable(self,"_exit_dialog"))
 
 
 func confirm_dialog(title, text, target, cancel_method, ok_method, stop_disable = false):
@@ -56,17 +56,17 @@ func confirm_dialog(title, text, target, cancel_method, ok_method, stop_disable 
 	dialog.anchor_left = 0.5
 	dialog.anchor_right = 0.5
 	dialog.anchor_top = 0.5
-	dialog.margin_left = -100
-	dialog.margin_right = 100
+	dialog.offset_left = -100
+	dialog.offset_right = 100
 	
-	dialog.pause_mode = Node.PAUSE_MODE_PROCESS
+	dialog.process_mode = Node.PROCESS_MODE_ALWAYS
 	dialog.visible = true
 	dialog.window_title = title
 	dialog.dialog_text = text
 	
-	if cancel_method != null: dialog.get_cancel().connect("pressed", target, cancel_method)
-	if ok_method != null: dialog.get_ok().connect("pressed", target, ok_method)
-	dialog.connect("hide", self, "_exit_dialog")
+	if cancel_method != null: dialog.get_cancel_button().connect("pressed",Callable(target,cancel_method))
+	if ok_method != null: dialog.get_ok_button().connect("pressed",Callable(target,ok_method))
+	dialog.connect("hide",Callable(self,"_exit_dialog"))
 
 
 func _exit_dialog():

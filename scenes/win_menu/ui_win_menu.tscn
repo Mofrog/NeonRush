@@ -1,10 +1,10 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://art/Quicksand-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://art/Quicksand-Regular.ttf" type="FontFile" id=1]
 [ext_resource path="res://code/ui_elements/debug.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/win_menu/ui_win_menu.gd" type="Script" id=3]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="FontFile" id=1]
 size = 30
 use_filter = true
 font_data = ExtResource( 1 )
@@ -12,12 +12,12 @@ font_data = ExtResource( 1 )
 [sub_resource type="Theme" id=2]
 default_font = SubResource( 1 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="FontFile" id=3]
 size = 40
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="FontFile" id=4]
 size = 32
 use_filter = true
 font_data = ExtResource( 1 )
@@ -25,15 +25,15 @@ font_data = ExtResource( 1 )
 [sub_resource type="Theme" id=5]
 default_font = SubResource( 4 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="FontFile" id=6]
 size = 25
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFontData" id=12]
+[sub_resource type="FontFile" id=12]
 font_path = "res://art/Quicksand-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="FontFile" id=7]
 size = 431
 outline_size = 5
 outline_color = Color( 0, 0, 0, 0.415686 )
@@ -44,10 +44,10 @@ font_data = SubResource( 12 )
 [sub_resource type="InputEventAction" id=10]
 action = "game_menu"
 
-[sub_resource type="ShortCut" id=11]
+[sub_resource type="Shortcut" id=11]
 shortcut = SubResource( 10 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="FontFile" id=8]
 size = 25
 use_filter = true
 font_data = ExtResource( 1 )
@@ -56,7 +56,7 @@ font_data = ExtResource( 1 )
 default_font = SubResource( 8 )
 
 [node name="Root" type="Control"]
-pause_mode = 2
+process_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
@@ -69,124 +69,124 @@ anchor_bottom = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = SubResource( 2 )
-custom_constants/margin_right = 30
-custom_constants/margin_top = 30
-custom_constants/margin_left = 30
-custom_constants/margin_bottom = 30
+custom_constants/offset_right = 30
+custom_constants/offset_top = 30
+custom_constants/offset_left = 30
+custom_constants/offset_bottom = 30
 
 [node name="C" type="VBoxContainer" parent="C"]
-margin_left = 30.0
-margin_top = 30.0
-margin_right = 1650.0
-margin_bottom = 1020.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 1650.0
+offset_bottom = 1020.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="About" type="PanelContainer" parent="C/C"]
-margin_top = 28.0
-margin_right = 1620.0
-margin_bottom = 134.0
+offset_top = 28.0
+offset_right = 1620.0
+offset_bottom = 134.0
 size_flags_vertical = 6
 
 [node name="C" type="VBoxContainer" parent="C/C/About"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 1613.0
-margin_bottom = 99.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 1613.0
+offset_bottom = 99.0
 
 [node name="Map" type="Label" parent="C/C/About/C"]
-margin_right = 1606.0
-margin_bottom = 50.0
+offset_right = 1606.0
+offset_bottom = 50.0
 custom_fonts/font = SubResource( 3 )
 text = "{Name} - {Creator} / {Song} - {Artist} "
 
 [node name="Replay" type="Label" parent="C/C/About/C"]
-margin_top = 54.0
-margin_right = 1606.0
-margin_bottom = 92.0
+offset_top = 54.0
+offset_right = 1606.0
+offset_bottom = 92.0
 text = "{Player} / Play date: {DateTime}"
 
 [node name="Replay" type="HBoxContainer" parent="C/C"]
-margin_top = 167.0
-margin_right = 1620.0
-margin_bottom = 822.0
+offset_top = 167.0
+offset_right = 1620.0
+offset_bottom = 822.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
 
 [node name="Stat" type="PanelContainer" parent="C/C/Replay"]
-margin_right = 808.0
-margin_bottom = 655.0
+offset_right = 808.0
+offset_bottom = 655.0
 size_flags_horizontal = 3
 theme = SubResource( 5 )
 
 [node name="C" type="VBoxContainer" parent="C/C/Replay/Stat"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 801.0
-margin_bottom = 648.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 801.0
+offset_bottom = 648.0
 size_flags_horizontal = 3
 custom_constants/separation = 50
 
 [node name="Score" type="Label" parent="C/C/Replay/Stat/C"]
-margin_right = 794.0
-margin_bottom = 40.0
+offset_right = 794.0
+offset_bottom = 40.0
 text = "Score: {All}, x{Multiplier}"
 
 [node name="Acc" type="Label" parent="C/C/Replay/Stat/C"]
-margin_top = 90.0
-margin_right = 794.0
-margin_bottom = 130.0
+offset_top = 90.0
+offset_right = 794.0
+offset_bottom = 130.0
 text = "Accuracy: {Accuracy}%, x{Multiplier}"
 
 [node name="Time" type="Label" parent="C/C/Replay/Stat/C"]
-margin_top = 180.0
-margin_right = 794.0
-margin_bottom = 220.0
+offset_top = 180.0
+offset_right = 794.0
+offset_bottom = 220.0
 text = "Time: {Current}sec / {Perfect}sec, x{Multiplier}"
 
 [node name="Jumps" type="Label" parent="C/C/Replay/Stat/C"]
-margin_top = 270.0
-margin_right = 794.0
-margin_bottom = 310.0
+offset_top = 270.0
+offset_right = 794.0
+offset_bottom = 310.0
 text = "Jumps: {Count} / {Perfect}, x{Multiplier}"
 
 [node name="Pefect" type="Label" parent="C/C/Replay/Stat/C"]
-margin_top = 360.0
-margin_right = 794.0
-margin_bottom = 392.0
+offset_top = 360.0
+offset_right = 794.0
+offset_bottom = 392.0
 custom_fonts/font = SubResource( 6 )
 text = "Perfect 300: {Count}"
 
 [node name="Good" type="Label" parent="C/C/Replay/Stat/C"]
-margin_top = 442.0
-margin_right = 794.0
-margin_bottom = 474.0
+offset_top = 442.0
+offset_right = 794.0
+offset_bottom = 474.0
 custom_fonts/font = SubResource( 6 )
 text = "Good 100: {Count}"
 
 [node name="Bad" type="Label" parent="C/C/Replay/Stat/C"]
-margin_top = 524.0
-margin_right = 794.0
-margin_bottom = 556.0
+offset_top = 524.0
+offset_right = 794.0
+offset_bottom = 556.0
 custom_fonts/font = SubResource( 6 )
 text = "Bad 50: {Count}"
 
 [node name="Miss" type="Label" parent="C/C/Replay/Stat/C"]
-margin_top = 606.0
-margin_right = 794.0
-margin_bottom = 638.0
+offset_top = 606.0
+offset_right = 794.0
+offset_bottom = 638.0
 custom_fonts/font = SubResource( 6 )
 text = "Miss 0: {Count}"
 
 [node name="Grade" type="VBoxContainer" parent="C/C/Replay"]
-margin_left = 812.0
-margin_right = 1620.0
-margin_bottom = 655.0
+offset_left = 812.0
+offset_right = 1620.0
+offset_bottom = 655.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="C/C/Replay/Grade"]
-margin_right = 808.0
-margin_bottom = 542.0
+offset_right = 808.0
+offset_bottom = 542.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
 custom_fonts/font = SubResource( 7 )
@@ -195,50 +195,50 @@ align = 1
 valign = 1
 
 [node name="About" type="Label" parent="C/C/Replay/Grade"]
-margin_top = 546.0
-margin_right = 808.0
-margin_bottom = 655.0
+offset_top = 546.0
+offset_right = 808.0
+offset_bottom = 655.0
 size_flags_vertical = 3
 text = "a"
 align = 1
 valign = 1
 
 [node name="Actions" type="PanelContainer" parent="C/C"]
-margin_top = 863.0
-margin_right = 1620.0
-margin_bottom = 952.0
+offset_top = 863.0
+offset_right = 1620.0
+offset_bottom = 952.0
 size_flags_vertical = 6
 
 [node name="C" type="HBoxContainer" parent="C/C/Actions"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 1613.0
-margin_bottom = 82.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 1613.0
+offset_bottom = 82.0
 size_flags_vertical = 6
 custom_constants/separation = 214
 alignment = 1
 
 [node name="BtnExit" type="Button" parent="C/C/Actions/C"]
-margin_left = 289.0
-margin_right = 489.0
-margin_bottom = 75.0
-rect_min_size = Vector2( 200, 0 )
+offset_left = 289.0
+offset_right = 489.0
+offset_bottom = 75.0
+minimum_size = Vector2( 200, 0 )
 shortcut = SubResource( 11 )
 text = "Back"
 
 [node name="BtnReplay" type="Button" parent="C/C/Actions/C"]
-margin_left = 703.0
-margin_right = 903.0
-margin_bottom = 75.0
-rect_min_size = Vector2( 200, 0 )
+offset_left = 703.0
+offset_right = 903.0
+offset_bottom = 75.0
+minimum_size = Vector2( 200, 0 )
 disabled = true
 text = "Watch replay"
 
 [node name="BtnRestart" type="Button" parent="C/C/Actions/C"]
-margin_left = 1117.0
-margin_right = 1317.0
-margin_bottom = 75.0
-rect_min_size = Vector2( 200, 75 )
+offset_left = 1117.0
+offset_right = 1317.0
+offset_bottom = 75.0
+minimum_size = Vector2( 200, 75 )
 text = "Restart"
 
 [node name="TestMode" type="PanelContainer" parent="."]
@@ -247,21 +247,21 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -100.0
-margin_top = -60.0
-margin_right = 100.0
-margin_bottom = -9.99927
-rect_min_size = Vector2( 200, 50 )
+offset_left = -100.0
+offset_top = -60.0
+offset_right = 100.0
+offset_bottom = -9.99927
+minimum_size = Vector2( 200, 50 )
 theme = SubResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Label" type="Label" parent="TestMode"]
-margin_left = 7.0
-margin_top = 9.0
-margin_right = 193.0
-margin_bottom = 41.0
+offset_left = 7.0
+offset_top = 9.0
+offset_right = 193.0
+offset_bottom = 41.0
 custom_colors/font_color = Color( 0.0313726, 1, 0, 1 )
 text = "TEST MODE"
 align = 1

@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://art/Quicksand-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://art/Quicksand-Regular.ttf" type="FontFile" id=1]
 [ext_resource path="res://code/ui_elements/rytm_rule.gd" type="Script" id=2]
 [ext_resource path="res://art/themes/beat_theme.tres" type="Theme" id=3]
 [ext_resource path="res://code/time_manager.gd" type="Script" id=4]
@@ -10,17 +10,17 @@
 
 [sub_resource type="Gradient" id=4]
 interpolation_mode = 2
-offsets = PoolRealArray( 0, 0.5, 1 )
-colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 0.392157, 0, 0, 0, 0 )
+offsets = PackedFloat32Array( 0, 0.5, 1 )
+colors = PackedColorArray( 0, 0, 0, 0, 0, 0, 0, 0.392157, 0, 0, 0, 0 )
 
-[sub_resource type="GradientTexture" id=5]
+[sub_resource type="GradientTexture2D" id=5]
 gradient = SubResource( 4 )
 
 [sub_resource type="StyleBoxTexture" id=6]
 texture = SubResource( 5 )
 region_rect = Rect2( 0, 0, 2048, 1 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="FontFile" id=3]
 size = 42
 use_filter = true
 font_data = ExtResource( 1 )
@@ -34,10 +34,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
-"values": [ PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.392157 ) ]
+"values": [ PackedColorArray( 1, 1, 1, 0, 1, 1, 1, 0.392157 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("p_r:custom_styles/panel:texture:gradient:colors")
@@ -46,10 +46,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
-"values": [ PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.392157 ) ]
+"values": [ PackedColorArray( 1, 1, 1, 0, 1, 1, 1, 0.392157 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("g_l:custom_styles/panel:texture:gradient:colors")
@@ -58,10 +58,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
-"values": [ PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.392157 ) ]
+"values": [ PackedColorArray( 1, 1, 1, 0, 1, 1, 1, 0.392157 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("b_l:custom_styles/panel:texture:gradient:colors")
@@ -70,10 +70,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
-"values": [ PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.117647 ) ]
+"values": [ PackedColorArray( 1, 1, 1, 0, 1, 1, 1, 0.117647 ) ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -87,10 +87,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 0.05, 0.1, 0.15, 0.2 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.117647 ), PoolColorArray( 1, 0.34902, 0.34902, 0, 1, 0.34902, 0.34902, 0.117647 ), PoolColorArray( 1, 0, 0, 0, 1, 0, 0, 0.117647 ), PoolColorArray( 1, 0.34902, 0.34902, 0, 1, 0.34902, 0.34902, 0.117647 ), PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.117647 ) ]
+"values": [ PackedColorArray( 1, 1, 1, 0, 1, 1, 1, 0.117647 ), PackedColorArray( 1, 0.34902, 0.34902, 0, 1, 0.34902, 0.34902, 0.117647 ), PackedColorArray( 1, 0, 0, 0, 1, 0, 0, 0.117647 ), PackedColorArray( 1, 0.34902, 0.34902, 0, 1, 0.34902, 0.34902, 0.117647 ), PackedColorArray( 1, 1, 1, 0, 1, 1, 1, 0.117647 ) ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -104,10 +104,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 0.05, 0.1, 0.15, 0.2 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.235294 ), PoolColorArray( 0.494118, 0.690196, 1, 0, 0.494118, 0.690196, 1, 0.235294 ), PoolColorArray( 0.196078, 0.509804, 1, 0, 0.196078, 0.509804, 1, 0.235294 ), PoolColorArray( 0.494118, 0.690196, 1, 0, 0.494118, 0.690196, 1, 0.235294 ), PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.235294 ) ]
+"values": [ PackedColorArray( 1, 1, 1, 0, 1, 1, 1, 0.235294 ), PackedColorArray( 0.494118, 0.690196, 1, 0, 0.494118, 0.690196, 1, 0.235294 ), PackedColorArray( 0.196078, 0.509804, 1, 0, 0.196078, 0.509804, 1, 0.235294 ), PackedColorArray( 0.494118, 0.690196, 1, 0, 0.494118, 0.690196, 1, 0.235294 ), PackedColorArray( 1, 1, 1, 0, 1, 1, 1, 0.235294 ) ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -120,15 +120,15 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 0.05, 0.1, 0.15, 0.2 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.352941 ), PoolColorArray( 0.788235, 1, 0.419608, 0, 0.866667, 1, 0.631373, 0.352941 ), PoolColorArray( 0.745098, 0.988235, 0.32549, 0, 0.745098, 0.988235, 0.32549, 0.352941 ), PoolColorArray( 0.788235, 1, 0.419608, 0, 0.866667, 1, 0.631373, 0.352941 ), PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.352941 ) ]
+"values": [ PackedColorArray( 1, 1, 1, 0, 1, 1, 1, 0.352941 ), PackedColorArray( 0.788235, 1, 0.419608, 0, 0.866667, 1, 0.631373, 0.352941 ), PackedColorArray( 0.745098, 0.988235, 0.32549, 0, 0.745098, 0.988235, 0.32549, 0.352941 ), PackedColorArray( 0.788235, 1, 0.419608, 0, 0.866667, 1, 0.631373, 0.352941 ), PackedColorArray( 1, 1, 1, 0, 1, 1, 1, 0.352941 ) ]
 }
 
 [sub_resource type="Gradient" id=10]
-offsets = PoolRealArray( 0, 0.75 )
-colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.392157 )
+offsets = PackedFloat32Array( 0, 0.75 )
+colors = PackedColorArray( 1, 1, 1, 0, 1, 1, 1, 0.392157 )
 
 [sub_resource type="GradientTexture2D" id=8]
 gradient = SubResource( 10 )
@@ -151,10 +151,10 @@ script = ExtResource( 2 )
 beat_theme = ExtResource( 3 )
 
 [node name="Background" type="Panel" parent="."]
-margin_left = -200.0
-margin_top = -20.0
-margin_right = 200.0
-margin_bottom = 20.0
+offset_left = -200.0
+offset_top = -20.0
+offset_right = 200.0
+offset_bottom = 20.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 6 )
 
@@ -168,7 +168,7 @@ grow_vertical = 2
 custom_fonts/font = SubResource( 3 )
 text = "+"
 
-[node name="TimeManager" type="Spatial" parent="."]
+[node name="TimeManager" type="Node3D" parent="."]
 script = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

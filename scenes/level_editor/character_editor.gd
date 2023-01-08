@@ -1,4 +1,4 @@
-extends Spatial
+extends Node3D
 
 
 # Maximum ray length in edit mode
@@ -59,7 +59,7 @@ func _unhandled_input(event):
 
 func ray_cast(mask = 1): 
 	var camera = $spring_arm/camera
-	var space_state = get_world().direct_space_state
+	var space_state = get_world_3d().direct_space_state
 	var mouse_pos = get_viewport().get_mouse_position()
 	var from = camera.project_ray_origin(mouse_pos)
 	var to = from + camera.project_ray_normal(mouse_pos) * cursor_ray_length
@@ -108,7 +108,7 @@ func movement(_delta):
 	velocity.z += dir.z * acceleration
 	velocity /= fric
 	
-	translation += velocity
+	position += velocity
 
 
 # rotation function
@@ -147,7 +147,7 @@ func reset_selection():
 # calculate cursor location
 func cursor_location():
 	var intersection = ray_cast()
-	if !intersection.empty():
+	if !intersection.is_empty():
 		cursor_pos = intersection.position
 		cursor_pos_cubic = cursor_pos.ceil()
 

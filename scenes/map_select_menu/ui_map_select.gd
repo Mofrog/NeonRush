@@ -1,14 +1,14 @@
 extends Control
 
-onready var map_about = $Left/V/MapAbout/G
-onready var map_other = $Left/V/MapAbout/O
-onready var map_about_text = map_about.text
-onready var map_other_text = map_other.text
+@onready var map_about = $Left/V/MapAbout/G
+@onready var map_other = $Left/V/MapAbout/O
+@onready var map_about_text = map_about.text
+@onready var map_other_text = map_other.text
 
-onready var audio = $Audio
-onready var result_list = $Left/V/ReplayList/Root
-onready var map_list = $Right/V/C2/MapList/Root
-onready var debug = $Debug
+@onready var audio = $Audio
+@onready var result_list = $Left/V/ReplayList/Root
+@onready var map_list = $Right/V/C2/MapList/Root
+@onready var debug = $Debug
 
 var db = preload("res://addons/godot-sqlite/bin/gdsqlite.gdns").new()
 
@@ -41,10 +41,10 @@ func load_maps():
 	if !db.query("SELECT * FROM Map"): printerr("Select all query failed in map select")
 	var data = db.query_result
 	for i in data:
-		var item = preload("res://code/ui_elements/map_item.tscn").instance()
+		var item = preload("res://code/ui_elements/map_item.tscn").instantiate()
 		item.map_data = i
 		map_list.add_child(item)
-		item.connect("selected", self, "select_item")
+		item.connect("selected",Callable(self,"select_item"))
 		if data[0]["Id"] == play_map_id: select_item(item)
 	db.close_db()
 	if selected.has(0): select_random()
@@ -54,7 +54,7 @@ func load_maps():
 func select_random():
 	selected = {0 : false}
 	if map_list.get_child_count() != 0:
-		var rand = rand_range(0, map_list.get_child_count())
+		var rand = randf_range(0, map_list.get_child_count())
 		var item = map_list.get_child(rand)
 		select_item(item)
 	else:
@@ -84,12 +84,12 @@ func load_results(map_id):
 	var data = db.query_result
 	var map_data = SaveLoadManager.load_map_header(map_id)
 	for i in data.size():
-		var item = preload("res://code/ui_elements/result_item.tscn").instance()
+		var item = preload("res://code/ui_elements/result_item.tscn").instantiate()
 		item.result_data = data[i]
 		item.result_rank = i + 1
 		item.map_data = map_data
 		result_list.add_child(item)
-		item.connect("selected", self, "select_result")
+		item.connect("selected",Callable(self,"select_result"))
 	db.close_db()
 
 
@@ -97,7 +97,7 @@ func load_results(map_id):
 func select_result(item):
 	ProjectSettings.set_setting("global/result_id", item.result_data["Id"])
 	ProjectSettings.set_setting("global/play_map_id", selected.keys()[0])
-	var scene = load("res://scenes/win_menu/ui_win_menu.tscn").instance()
+	var scene = load("res://scenes/win_menu/ui_win_menu.tscn").instantiate()
 	add_child(scene)
 
 
@@ -111,12 +111,12 @@ func select_item(item):
 		
 		# If loading for editor
 		if is_editor_map_load:
-			if get_tree().change_scene("res://scenes/level_editor/ui_editor.tscn") != 0: 
+			if get_tree().change_scene_to_file("res://scenes/level_editor/ui_editor.tscn") != 0: 
 				print_debug("Scene change error / ui_map_select to ui_editor")
 			return
 		
 		# If loading for game
-		if get_tree().change_scene("res://scenes/level_game/level_game.tscn") != 0:
+		if get_tree().change_scene_to_file("res://scenes/level_game/level_game.tscn") != 0:
 			print_debug("Scene change error / ui_map_select to level_game")
 	
 	# First item click - map select
@@ -159,7 +159,7 @@ func reimport_maps():
 	var dir = Directory.new()
 	var path = OS.get_executable_path().get_base_dir() + "/maps"
 	dir.open(path)
-	dir.list_dir_begin()
+	dir.list_dir_begin() # TODOGODOT4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 	while true:
 		var file = dir.get_next()
 		if file != "." && file != ".." && file != "": files.append(file)
@@ -216,10 +216,10 @@ func reimport_maps():
 # Return to main menu or editor menu
 func _on_BtnBack_pressed():
 	if is_editor_map_load:
-		if get_tree().change_scene("res://scenes/level_editor/ui_editor.tscn") != 0: 
+		if get_tree().change_scene_to_file("res://scenes/level_editor/ui_editor.tscn") != 0: 
 			print_debug("Scene change error / ui_map_select to ui_editor")
 		return
-	if get_tree().change_scene("res://scenes/main_menu/ui_main_menu.tscn") != 0:
+	if get_tree().change_scene_to_file("res://scenes/main_menu/ui_main_menu.tscn") != 0:
 		print_debug("Scene change error / ui_map_select to level_game")
 
 

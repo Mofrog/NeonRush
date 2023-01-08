@@ -4,7 +4,7 @@ class_name MapItem
 
 signal selected(item)
 
-export var map_data : Dictionary = {}
+@export var map_data : Dictionary = {}
 
 
 func _ready():
