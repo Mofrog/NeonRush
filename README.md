@@ -11,7 +11,6 @@ Neon Rush is a first person rhythm platformer where you can create your own voxe
 ## Third party
 
 - [Quicksand](https://fonts.google.com/specimen/Quicksand)
-- [TODO Manager](https://github.com/OrigamiDev-Pete/TODO_Manager)
 - [godot-sqlite](https://github.com/2shady4u/godot-sqlite)
 - [Godot Motion Blur](https://github.com/Bauxitedev/godot-motion-blur)
 - [GDScriptAudioImport](https://github.com/Gianclgar/GDScriptAudioImport)
