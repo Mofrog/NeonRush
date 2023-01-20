@@ -1,4 +1,3 @@
-# TODO Refractor settings
 extends Control
 
 

@@ -1,0 +1,54 @@
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://dwrvgtybia0s3"]
+
+[ext_resource type="FontFile" uid="uid://bfwgk4mk161u1" path="res://art/fonts/Sen/Sen-Bold.ttf" id="1_c3cy6"]
+
+[sub_resource type="Gradient" id="Gradient_y6dl2"]
+colors = PackedColorArray(0, 0.02, 0.1, 0.64, 0, 0.02, 0.1, 0.25)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_efdl0"]
+gradient = SubResource("Gradient_y6dl2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tm11l"]
+texture = SubResource("GradientTexture1D_efdl0")
+margin_left = 64.0
+region_rect = Rect2(0, 0, 256, 1)
+
+[sub_resource type="Gradient" id="Gradient_kyhg4"]
+colors = PackedColorArray(0, 0.04, 0.21, 0.64, 0, 0.04, 0.21, 0.25)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_djsva"]
+gradient = SubResource("Gradient_kyhg4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g5lcq"]
+texture = SubResource("GradientTexture1D_djsva")
+margin_left = 64.0
+region_rect = Rect2(0, 0, 256, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_clvkd"]
+texture = SubResource("GradientTexture1D_efdl0")
+margin_left = 64.0
+region_rect = Rect2(0, 0, 256, 1)
+
+[sub_resource type="Gradient" id="Gradient_pptt7"]
+colors = PackedColorArray(0.0481254, 0.0683791, 0.076797, 0.64, 0.0368343, 0.0734201, 0.0632968, 0.25)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ybkp1"]
+gradient = SubResource("Gradient_pptt7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qmfki"]
+texture = SubResource("GradientTexture1D_ybkp1")
+margin_left = 64.0
+region_rect = Rect2(0, 0, 256, 1)
+
+[resource]
+Button/colors/font_color = Color(0.843137, 0.862745, 1, 1)
+Button/colors/font_focus_color = Color(0.843137, 0.862745, 1, 1)
+Button/colors/font_hover_color = Color(1, 0.803922, 0.305882, 1)
+Button/colors/font_hover_pressed_color = Color(1, 0.803922, 0.305882, 1)
+Button/colors/font_pressed_color = Color(1, 0.803922, 0.305882, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_c3cy6")
+Button/styles/focus = SubResource("StyleBoxTexture_tm11l")
+Button/styles/hover = SubResource("StyleBoxTexture_g5lcq")
+Button/styles/normal = SubResource("StyleBoxTexture_clvkd")
+Button/styles/pressed = SubResource("StyleBoxTexture_qmfki")

@@ -1,16 +1,17 @@
 # NeonRush
 
-Neon Rush is a first person rhythm platformer where you can create your own voxel maps.
+Neon Rush is a first person platformer with rytm based gameplay where you can create your own voxel maps.
 
 - [Discord](https://discord.gg/qKznMrpdnw)
 
 ## License
 
-- [MIT License](/LICENSE).
+- [MIT License](/LICENSE)
 
 ## Third party
 
-- [Quicksand](https://fonts.google.com/specimen/Quicksand)
+- [Sen](/art/fonts/Sen/OFL.txt)
+- [Godot](https://godotengine.org/license/)
 - [godot-sqlite](https://github.com/2shady4u/godot-sqlite)
 - [Godot Motion Blur](https://github.com/Bauxitedev/godot-motion-blur)
 - [GDScriptAudioImport](https://github.com/Gianclgar/GDScriptAudioImport)

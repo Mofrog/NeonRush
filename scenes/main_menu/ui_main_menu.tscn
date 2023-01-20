@@ -1,118 +1,140 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=3 uid="uid://d2clg0pgobgd7"]
 
-[ext_resource path="res://scenes/main_menu/ui_main_menu.gd" type="Script" id=1]
-[ext_resource path="res://code/ui_elements/debug.tscn" type="PackedScene" id=2]
-[ext_resource path="res://art/themes/timeline_theme.tres" type="Theme" id=3]
-[ext_resource path="res://art/Quicksand-Regular.ttf" type="FontFile" id=4]
-[ext_resource path="res://art/font.tres" type="FontFile" id=5]
-[ext_resource path="res://art/sfx/metro-high.wav" type="AudioStream" id=6]
+[ext_resource type="Script" path="res://scenes/main_menu/ui_main_menu.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://0ory5v44ws47" path="res://art/temp_bg.png" id="3_0v1gm"]
+[ext_resource type="Theme" uid="uid://cna3jukey38ch" path="res://art/themes/t_label.tres" id="4_5apao"]
+[ext_resource type="Theme" uid="uid://dwrvgtybia0s3" path="res://art/themes/t_button.tres" id="5_mim1s"]
+[ext_resource type="Shader" path="res://art/shaders/blur.gdshader" id="6_kohwk"]
+[ext_resource type="FontFile" uid="uid://c027tkrbapiov" path="res://art/fonts/Sen/Sen-Regular.ttf" id="6_o3htx"]
 
-[sub_resource type="FontFile" id=1]
-size = 120
-use_filter = true
-font_data = ExtResource( 4 )
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_moc4x"]
+texture = ExtResource("3_0v1gm")
+region_rect = Rect2(0, 0, 1920, 1080)
 
-[sub_resource type="StyleBoxFlat" id=56]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0f3ht"]
+expand_margin_top = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_efa31"]
+shader = ExtResource("6_kohwk")
+shader_parameter/lod = 1.6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qq85b"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.380392, 0.396078, 0.490196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_taeqc"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.592157, 0.619608, 0.74902, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="56"]
 content_margin_left = 7.0
-content_margin_right = 7.0
 content_margin_top = 7.0
+content_margin_right = 7.0
 content_margin_bottom = 7.0
-bg_color = Color( 0.14902, 0.172549, 0.231373, 1 )
+bg_color = Color(0.14902, 0.172549, 0.231373, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0.407843, 0.611765, 0.909804, 0.694118 )
+border_color = Color(0.407843, 0.611765, 0.909804, 0.694118)
 border_blend = true
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="StyleBoxFlat" id=57]
+[sub_resource type="StyleBoxFlat" id="57"]
 content_margin_left = 7.0
-content_margin_right = 7.0
 content_margin_top = 7.0
+content_margin_right = 7.0
 content_margin_bottom = 7.0
-bg_color = Color( 0.14902, 0.172549, 0.231373, 1 )
+bg_color = Color(0.14902, 0.172549, 0.231373, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0, 0, 0, 0.694118 )
+border_color = Color(0, 0, 0, 0.694118)
 border_blend = true
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="StyleBoxFlat" id=58]
+[sub_resource type="StyleBoxFlat" id="58"]
 content_margin_left = 7.0
-content_margin_right = 7.0
 content_margin_top = 7.0
+content_margin_right = 7.0
 content_margin_bottom = 7.0
-bg_color = Color( 0.0941176, 0.109804, 0.14902, 1 )
+bg_color = Color(0.0941176, 0.109804, 0.14902, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0.407843, 0.611765, 0.909804, 0.694118 )
+border_color = Color(0.407843, 0.611765, 0.909804, 0.694118)
 border_blend = true
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="StyleBoxFlat" id=132]
-bg_color = Color( 0.12549, 0.141176, 0.192157, 1 )
+[sub_resource type="StyleBoxFlat" id="132"]
+bg_color = Color(0.12549, 0.141176, 0.192157, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0.407843, 0.611765, 0.909804, 1 )
+border_color = Color(0.407843, 0.611765, 0.909804, 1)
 border_blend = true
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="StyleBoxFlat" id=133]
-bg_color = Color( 0.12549, 0.141176, 0.192157, 1 )
+[sub_resource type="StyleBoxFlat" id="133"]
+bg_color = Color(0.12549, 0.141176, 0.192157, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
+border_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
 border_blend = true
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="StyleBoxFlat" id=134]
-bg_color = Color( 0.12549, 0.141176, 0.192157, 1 )
+[sub_resource type="StyleBoxFlat" id="134"]
+bg_color = Color(0.12549, 0.141176, 0.192157, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
+border_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
 border_blend = true
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="FontFile" id=59]
-use_filter = true
-font_data = ExtResource( 4 )
-
-[sub_resource type="StyleBoxFlat" id=53]
-bg_color = Color( 0.2, 0.227451, 0.309804, 1 )
+[sub_resource type="StyleBoxFlat" id="53"]
+bg_color = Color(0.2, 0.227451, 0.309804, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 7
 corner_radius_top_right = 7
 corner_radius_bottom_right = 7
@@ -120,209 +142,354 @@ corner_radius_bottom_left = 7
 expand_margin_top = 25.0
 shadow_size = 10
 
-[sub_resource type="Theme" id=54]
-Button/fonts/font = ExtResource( 5 )
-Button/styles/hover = SubResource( 56 )
-Button/styles/normal = SubResource( 57 )
-Button/styles/pressed = SubResource( 58 )
-Label/fonts/font = ExtResource( 5 )
-LineEdit/fonts/font = ExtResource( 5 )
-LineEdit/styles/focus = SubResource( 132 )
-LineEdit/styles/normal = SubResource( 133 )
-LineEdit/styles/read_only = SubResource( 134 )
-Window/colors/title_color = Color( 1, 1, 1, 1 )
+[sub_resource type="Theme" id="54"]
+Button/fonts/font = ExtResource("6_o3htx")
+Button/styles/hover = SubResource("56")
+Button/styles/normal = SubResource("57")
+Button/styles/pressed = SubResource("58")
+Label/fonts/font = ExtResource("6_o3htx")
+LineEdit/fonts/font = ExtResource("6_o3htx")
+LineEdit/styles/focus = SubResource("132")
+LineEdit/styles/normal = SubResource("133")
+LineEdit/styles/read_only = SubResource("134")
+Window/colors/title_color = Color(1, 1, 1, 1)
 Window/constants/close_h_offset = 22
-Window/fonts/title_font = SubResource( 59 )
-Window/styles/panel = SubResource( 53 )
+Window/fonts/title_font = ExtResource("6_o3htx")
+Window/styles/panel = SubResource("53")
 
 [node name="Root" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="C" type="VBoxContainer" parent="."]
+[node name="BG" type="Panel" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-
-[node name="Header" type="Control" parent="C"]
-offset_right = 1680.0
-offset_bottom = 130.0
-size_flags_vertical = 3
-
-[node name="Body" type="Control" parent="C"]
-offset_left = 840.0
-offset_top = 134.0
-offset_right = 840.0
-offset_bottom = 915.0
-size_flags_horizontal = 4
-size_flags_vertical = 3
-size_flags_stretch_ratio = 6.0
-
-[node name="Label" type="Label" parent="C/Body"]
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -414.5
-offset_right = 414.5
-offset_bottom = 207.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 1 )
-text = "Neon Rush"
-align = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_moc4x")
 
-[node name="Menu" type="VBoxContainer" parent="C/Body"]
-anchor_left = 0.5
-anchor_right = 0.5
+[node name="M" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -58.0
-offset_right = 58.0
 grow_horizontal = 2
 grow_vertical = 2
-minimum_size = Vector2( 400, 0 )
-theme = ExtResource( 3 )
-alignment = 1
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
 
-[node name="BtnSelect" type="Button" parent="C/Body/Menu"]
-offset_top = 297.0
-offset_right = 400.0
-offset_bottom = 331.0
-text = "Map selection"
+[node name="C" type="VBoxContainer" parent="M"]
+layout_mode = 2
 
-[node name="BtnEditor" type="Button" parent="C/Body/Menu"]
-offset_top = 335.0
-offset_right = 400.0
-offset_bottom = 369.0
-text = "Open editor"
-
-[node name="BtnSettings" type="Button" parent="C/Body/Menu"]
-offset_top = 373.0
-offset_right = 400.0
-offset_bottom = 407.0
-text = "Settings"
-
-[node name="BtnAbout" type="Button" parent="C/Body/Menu"]
-offset_top = 411.0
-offset_right = 400.0
-offset_bottom = 445.0
-text = "About"
-
-[node name="BtnExit" type="Button" parent="C/Body/Menu"]
-offset_top = 449.0
-offset_right = 400.0
-offset_bottom = 483.0
-text = "Exit"
-
-[node name="Footer" type="Control" parent="C"]
-offset_top = 919.0
-offset_right = 1680.0
-offset_bottom = 1050.0
+[node name="Header" type="Control" parent="M/C"]
+layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VerTooltip" parent="." instance=ExtResource( 2 )]
+[node name="Logo" type="Label" parent="M/C/Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_5apao")
+theme_type_variation = &"text_logo"
+theme_override_font_sizes/font_size = 144
+text = "Neon Rush"
+vertical_alignment = 1
+text_overrun_behavior = 3
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="M/C/Header"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxTexture_0f3ht")
+
+[node name="Body" type="Control" parent="M/C"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme = ExtResource("5_mim1s")
+
+[node name="Menu" type="VBoxContainer" parent="M/C/Body"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 350.0
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 2
+
+[node name="BtnSelect" type="Button" parent="M/C/Body/Menu"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "GAME"
+alignment = 0
+
+[node name="Panel" type="Panel" parent="M/C/Body/Menu/BtnSelect"]
+z_index = -1
+material = SubResource("ShaderMaterial_efa31")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InnerStroke" type="Panel" parent="M/C/Body/Menu/BtnSelect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qq85b")
+
+[node name="OuterStroke" type="Panel" parent="M/C/Body/Menu/BtnSelect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_taeqc")
+
+[node name="BtnEditor" type="Button" parent="M/C/Body/Menu"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "EDITOR"
+alignment = 0
+
+[node name="Panel" type="Panel" parent="M/C/Body/Menu/BtnEditor"]
+z_index = -1
+material = SubResource("ShaderMaterial_efa31")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InnerStroke" type="Panel" parent="M/C/Body/Menu/BtnEditor"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qq85b")
+
+[node name="OuterStroke" type="Panel" parent="M/C/Body/Menu/BtnEditor"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_taeqc")
+
+[node name="BtnSettings" type="Button" parent="M/C/Body/Menu"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "SETTINGS"
+alignment = 0
+
+[node name="Panel" type="Panel" parent="M/C/Body/Menu/BtnSettings"]
+z_index = -1
+material = SubResource("ShaderMaterial_efa31")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InnerStroke" type="Panel" parent="M/C/Body/Menu/BtnSettings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qq85b")
+
+[node name="OuterStroke" type="Panel" parent="M/C/Body/Menu/BtnSettings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_taeqc")
+
+[node name="BtnAbout" type="Button" parent="M/C/Body/Menu"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "ABOUT"
+alignment = 0
+
+[node name="Panel" type="Panel" parent="M/C/Body/Menu/BtnAbout"]
+z_index = -1
+material = SubResource("ShaderMaterial_efa31")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InnerStroke" type="Panel" parent="M/C/Body/Menu/BtnAbout"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qq85b")
+
+[node name="OuterStroke" type="Panel" parent="M/C/Body/Menu/BtnAbout"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_taeqc")
+
+[node name="BtnExit" type="Button" parent="M/C/Body/Menu"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "EXIT"
+alignment = 0
+
+[node name="Panel" type="Panel" parent="M/C/Body/Menu/BtnExit"]
+z_index = -1
+material = SubResource("ShaderMaterial_efa31")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InnerStroke" type="Panel" parent="M/C/Body/Menu/BtnExit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qq85b")
+
+[node name="OuterStroke" type="Panel" parent="M/C/Body/Menu/BtnExit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_taeqc")
+
+[node name="Footer" type="Control" parent="M/C"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Logo" type="Label" parent="M/C/Footer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_5apao")
+theme_type_variation = &"text_bg_menu"
+text = "main menu"
+horizontal_alignment = 2
+vertical_alignment = 1
+text_overrun_behavior = 3
+uppercase = true
 
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
 process_mode = 2
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -200.0
-offset_right = 250.0
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource( 54 )
-window_title = "Settings"
+size = Vector2i(352, 107)
+theme = SubResource("54")
 
 [node name="Panel" type="Panel" parent="AcceptDialog"]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 492.0
-offset_bottom = 350.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 351.0
+offset_bottom = 61.0
 
 [node name="MarginContainer" type="MarginContainer" parent="AcceptDialog"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = -8.0
-offset_bottom = -50.0
-custom_constants/offset_right = 5
-custom_constants/offset_top = 5
-custom_constants/offset_left = 5
-custom_constants/offset_bottom = 5
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1569.0
+offset_bottom = -1019.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AcceptDialog/MarginContainer"]
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 479.0
-offset_bottom = 337.0
+layout_mode = 2
 
 [node name="Config" type="HBoxContainer" parent="AcceptDialog/MarginContainer/VBoxContainer"]
-offset_right = 474.0
-offset_bottom = 46.0
+layout_mode = 2
 
 [node name="Label" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer/Config"]
-offset_top = 13.0
-offset_right = 105.0
-offset_bottom = 33.0
+layout_mode = 2
 text = "Debug mode: "
 
 [node name="BtnDebug" type="CheckButton" parent="AcceptDialog/MarginContainer/VBoxContainer/Config"]
-offset_left = 109.0
-offset_right = 187.0
-offset_bottom = 46.0
+layout_mode = 2
 flat = true
 
 [node name="Label2" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer/Config"]
-offset_left = 191.0
-offset_top = 13.0
-offset_right = 281.0
-offset_bottom = 33.0
+layout_mode = 2
 text = "Motion blur: "
 
 [node name="BtnBlur" type="CheckButton" parent="AcceptDialog/MarginContainer/VBoxContainer/Config"]
-offset_left = 285.0
-offset_right = 363.0
-offset_bottom = 46.0
+layout_mode = 2
 flat = true
 
 [node name="Config2" type="HBoxContainer" parent="AcceptDialog/MarginContainer/VBoxContainer"]
-offset_top = 50.0
-offset_right = 474.0
-offset_bottom = 80.0
+layout_mode = 2
 
 [node name="Label2" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer/Config2"]
-offset_top = 5.0
-offset_right = 105.0
-offset_bottom = 25.0
+layout_mode = 2
 text = "Visible radius: "
 
 [node name="Radius" type="SpinBox" parent="AcceptDialog/MarginContainer/VBoxContainer/Config2"]
-offset_left = 109.0
-offset_right = 175.0
-offset_bottom = 30.0
-minimum_size = Vector2( 0, 30 )
+layout_mode = 2
 min_value = 6.0
 max_value = 20.0
 value = 6.0
 
 [node name="Label3" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer/Config2"]
-offset_left = 179.0
-offset_top = 5.0
-offset_right = 315.0
-offset_bottom = 25.0
+layout_mode = 2
 text = "Mouse sensetivity: "
 
 [node name="HSlider" type="HSlider" parent="AcceptDialog/MarginContainer/VBoxContainer/Config2"]
-offset_left = 319.0
-offset_top = 7.0
-offset_right = 474.0
-offset_bottom = 23.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 max_value = 5.0
@@ -331,15 +498,11 @@ value = 1.0
 tick_count = 6
 ticks_on_borders = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-
-[connection signal="pressed" from="C/Body/Menu/BtnSelect" to="." method="_on_MapSelect_pressed"]
-[connection signal="pressed" from="C/Body/Menu/BtnEditor" to="." method="_on_Editor_pressed"]
-[connection signal="pressed" from="C/Body/Menu/BtnSettings" to="." method="_on_BtnSettings_pressed"]
-[connection signal="pressed" from="C/Body/Menu/BtnAbout" to="." method="_on_BtnAbout_pressed"]
-[connection signal="pressed" from="C/Body/Menu/BtnExit" to="." method="_on_Exit_pressed"]
-[connection signal="hide" from="AcceptDialog" to="." method="_on_AcceptDialog_hide"]
+[connection signal="pressed" from="M/C/Body/Menu/BtnSelect" to="." method="_on_MapSelect_pressed"]
+[connection signal="pressed" from="M/C/Body/Menu/BtnEditor" to="." method="_on_Editor_pressed"]
+[connection signal="pressed" from="M/C/Body/Menu/BtnSettings" to="." method="_on_BtnSettings_pressed"]
+[connection signal="pressed" from="M/C/Body/Menu/BtnAbout" to="." method="_on_BtnAbout_pressed"]
+[connection signal="pressed" from="M/C/Body/Menu/BtnExit" to="." method="_on_Exit_pressed"]
 [connection signal="toggled" from="AcceptDialog/MarginContainer/VBoxContainer/Config/BtnDebug" to="." method="_on_BtnDebug_toggled"]
 [connection signal="toggled" from="AcceptDialog/MarginContainer/VBoxContainer/Config/BtnBlur" to="." method="_on_BtnBlur_toggled"]
 [connection signal="value_changed" from="AcceptDialog/MarginContainer/VBoxContainer/Config2/Radius" to="." method="_on_Radius_value_changed"]

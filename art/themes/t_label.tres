@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cna3jukey38ch"]
+
+[ext_resource type="FontFile" uid="uid://bfwgk4mk161u1" path="res://art/fonts/Sen/Sen-Bold.ttf" id="1_wu6qy"]
+[ext_resource type="FontFile" uid="uid://c027tkrbapiov" path="res://art/fonts/Sen/Sen-Regular.ttf" id="2_iq4nb"]
+
+[resource]
+Label/colors/font_color = Color(0.843137, 0.862745, 1, 1)
+Label/fonts/font = ExtResource("1_wu6qy")
+text_bg_menu/base_type = &"Label"
+text_bg_menu/colors/font_color = Color(0.941176, 0.94902, 1, 0.14902)
+text_bg_menu/font_sizes/font_size = 168
+text_bg_menu/fonts/font = ExtResource("1_wu6qy")
+text_logo/base_type = &"Label"
+text_logo/colors/font_color = Color(0.94, 0.95, 1, 0.75)
+text_logo/colors/font_outline_color = Color(0.843137, 0.862745, 1, 1)
+text_logo/colors/font_shadow_color = Color(0, 0.02, 0.14, 0.25)
+text_logo/constants/outline_size = 1
+text_logo/constants/shadow_offset_x = 2
+text_logo/constants/shadow_offset_y = 4
+text_logo/constants/shadow_outline_size = 0
+text_logo/font_sizes/font_size = 144
+text_logo/fonts/font = ExtResource("2_iq4nb")

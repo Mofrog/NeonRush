@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://baxmgvmblh2vf"
-path="res://.godot/imported/Quicksand-Regular.ttf-ae283215cdf750a14c3b6f52b4731f56.fontdata"
+uid="uid://bfwgk4mk161u1"
+path="res://.godot/imported/Sen-Bold.ttf-c4bb85e82106ec96bd38714693af928d.fontdata"
 
 [deps]
 
-source_file="res://art/Quicksand-Regular.ttf"
-dest_files=["res://.godot/imported/Quicksand-Regular.ttf-ae283215cdf750a14c3b6f52b4731f56.fontdata"]
+source_file="res://art/fonts/Sen/Sen-Bold.ttf"
+dest_files=["res://.godot/imported/Sen-Bold.ttf-c4bb85e82106ec96bd38714693af928d.fontdata"]
 
 [params]
 
