@@ -1,10 +1,8 @@
 res://scenes/main_menu/ui_main_menu.tscn
-res://art/themes/t_label.tres
-res://art/themes/g_main_menu_stroke.tres
 res://art/themes/t_button.tres
-res://art/themes/timeline_theme.tres
-res://scenes/main_menu/ui_main_menu.gd
-res://code/ui_elements/btn_menu.tscn
-res://code/ui_elements/btn_menu.gd
 res://code/ui_elements/dynamic_bg.tscn
 res://code/ui_elements/dynamic_bg.gd
+res://art/themes/t_label.tres
+res://art/themes/t_submenu.tres
+res://addons/SmoothScroll/plugin.gd
+res://addons/SmoothScroll/SmoothScrollContainer.gd

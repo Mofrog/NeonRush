@@ -1,5 +1,8 @@
-Control
-ParallaxBackground
+SmoothScrollContainer
+VBoxContainer
 Panel
-HSeparator
 MarginContainer
+HBoxContainer
+Control
+HSeparator
+ParallaxBackground

@@ -101,7 +101,7 @@ window/size/height=1050
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg", "res://addons/SmoothScroll/plugin.cfg")
 
 [gdnative]
 

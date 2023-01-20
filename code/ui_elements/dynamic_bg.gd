@@ -10,5 +10,5 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		$Image.position.x += event.relative.x / 80
-		$Image.position.y += event.relative.y / 80
+		$Image.position.x += event.relative.x / 100
+		$Image.position.y += event.relative.y / 100
