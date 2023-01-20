@@ -1,161 +1,22 @@
-[gd_scene load_steps=20 format=3 uid="uid://d2clg0pgobgd7"]
+[gd_scene load_steps=9 format=3 uid="uid://d2clg0pgobgd7"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/ui_main_menu.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://0ory5v44ws47" path="res://art/temp_bg.png" id="3_0v1gm"]
 [ext_resource type="Theme" uid="uid://cna3jukey38ch" path="res://art/themes/t_label.tres" id="4_5apao"]
+[ext_resource type="PackedScene" uid="uid://br54cpwcocsty" path="res://code/ui_elements/dynamic_bg.tscn" id="5_eyp2s"]
 [ext_resource type="Theme" uid="uid://dwrvgtybia0s3" path="res://art/themes/t_button.tres" id="5_mim1s"]
-[ext_resource type="Shader" path="res://art/shaders/blur.gdshader" id="6_kohwk"]
-[ext_resource type="FontFile" uid="uid://c027tkrbapiov" path="res://art/fonts/Sen/Sen-Regular.ttf" id="6_o3htx"]
+[ext_resource type="PackedScene" uid="uid://dj53yebvgwrxt" path="res://code/ui_elements/btn_menu.tscn" id="5_xe3ya"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_moc4x"]
-texture = ExtResource("3_0v1gm")
-region_rect = Rect2(0, 0, 1920, 1080)
+[sub_resource type="Gradient" id="Gradient_8rrq5"]
+offsets = PackedFloat32Array(0, 0.14717, 1)
+colors = PackedColorArray(0.88, 0.88, 0.93, 0, 0.878431, 0.878431, 0.933333, 1, 0.878431, 0.878431, 0.933333, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q2gys"]
+gradient = SubResource("Gradient_8rrq5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0f3ht"]
+texture = SubResource("GradientTexture1D_q2gys")
 expand_margin_top = 2.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_efa31"]
-shader = ExtResource("6_kohwk")
-shader_parameter/lod = 1.6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qq85b"]
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.380392, 0.396078, 0.490196, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_taeqc"]
-draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.592157, 0.619608, 0.74902, 1)
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-
-[sub_resource type="StyleBoxFlat" id="56"]
-content_margin_left = 7.0
-content_margin_top = 7.0
-content_margin_right = 7.0
-content_margin_bottom = 7.0
-bg_color = Color(0.14902, 0.172549, 0.231373, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.407843, 0.611765, 0.909804, 0.694118)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxFlat" id="57"]
-content_margin_left = 7.0
-content_margin_top = 7.0
-content_margin_right = 7.0
-content_margin_bottom = 7.0
-bg_color = Color(0.14902, 0.172549, 0.231373, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 0.694118)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxFlat" id="58"]
-content_margin_left = 7.0
-content_margin_top = 7.0
-content_margin_right = 7.0
-content_margin_bottom = 7.0
-bg_color = Color(0.0941176, 0.109804, 0.14902, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.407843, 0.611765, 0.909804, 0.694118)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxFlat" id="132"]
-bg_color = Color(0.12549, 0.141176, 0.192157, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.407843, 0.611765, 0.909804, 1)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxFlat" id="133"]
-bg_color = Color(0.12549, 0.141176, 0.192157, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxFlat" id="134"]
-bg_color = Color(0.12549, 0.141176, 0.192157, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxFlat" id="53"]
-bg_color = Color(0.2, 0.227451, 0.309804, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 7
-corner_radius_top_right = 7
-corner_radius_bottom_right = 7
-corner_radius_bottom_left = 7
-expand_margin_top = 25.0
-shadow_size = 10
-
-[sub_resource type="Theme" id="54"]
-Button/fonts/font = ExtResource("6_o3htx")
-Button/styles/hover = SubResource("56")
-Button/styles/normal = SubResource("57")
-Button/styles/pressed = SubResource("58")
-Label/fonts/font = ExtResource("6_o3htx")
-LineEdit/fonts/font = ExtResource("6_o3htx")
-LineEdit/styles/focus = SubResource("132")
-LineEdit/styles/normal = SubResource("133")
-LineEdit/styles/read_only = SubResource("134")
-Window/colors/title_color = Color(1, 1, 1, 1)
-Window/constants/close_h_offset = 22
-Window/fonts/title_font = ExtResource("6_o3htx")
-Window/styles/panel = SubResource("53")
+region_rect = Rect2(0, 0, 256, 1)
 
 [node name="Root" type="Control"]
 layout_mode = 3
@@ -164,20 +25,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1")
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="BG" type="Panel" parent="."]
-z_index = -2
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_moc4x")
 
 [node name="M" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -229,6 +78,7 @@ theme_override_styles/separator = SubResource("StyleBoxTexture_0f3ht")
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
+mouse_filter = 1
 theme = ExtResource("5_mim1s")
 
 [node name="Menu" type="VBoxContainer" parent="M/C/Body"]
@@ -240,175 +90,24 @@ grow_vertical = 2
 theme_override_constants/separation = 24
 alignment = 2
 
-[node name="BtnSelect" type="Button" parent="M/C/Body/Menu"]
-custom_minimum_size = Vector2(0, 64)
+[node name="BtnSelect" parent="M/C/Body/Menu" instance=ExtResource("5_xe3ya")]
 layout_mode = 2
-text = "GAME"
-alignment = 0
 
-[node name="Panel" type="Panel" parent="M/C/Body/Menu/BtnSelect"]
-z_index = -1
-material = SubResource("ShaderMaterial_efa31")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="InnerStroke" type="Panel" parent="M/C/Body/Menu/BtnSelect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_qq85b")
-
-[node name="OuterStroke" type="Panel" parent="M/C/Body/Menu/BtnSelect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_taeqc")
-
-[node name="BtnEditor" type="Button" parent="M/C/Body/Menu"]
-custom_minimum_size = Vector2(0, 64)
+[node name="BtnEditor" parent="M/C/Body/Menu" instance=ExtResource("5_xe3ya")]
 layout_mode = 2
 text = "EDITOR"
-alignment = 0
 
-[node name="Panel" type="Panel" parent="M/C/Body/Menu/BtnEditor"]
-z_index = -1
-material = SubResource("ShaderMaterial_efa31")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="InnerStroke" type="Panel" parent="M/C/Body/Menu/BtnEditor"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_qq85b")
-
-[node name="OuterStroke" type="Panel" parent="M/C/Body/Menu/BtnEditor"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_taeqc")
-
-[node name="BtnSettings" type="Button" parent="M/C/Body/Menu"]
-custom_minimum_size = Vector2(0, 64)
+[node name="BtnSettings" parent="M/C/Body/Menu" instance=ExtResource("5_xe3ya")]
 layout_mode = 2
 text = "SETTINGS"
-alignment = 0
 
-[node name="Panel" type="Panel" parent="M/C/Body/Menu/BtnSettings"]
-z_index = -1
-material = SubResource("ShaderMaterial_efa31")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="InnerStroke" type="Panel" parent="M/C/Body/Menu/BtnSettings"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_qq85b")
-
-[node name="OuterStroke" type="Panel" parent="M/C/Body/Menu/BtnSettings"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_taeqc")
-
-[node name="BtnAbout" type="Button" parent="M/C/Body/Menu"]
-custom_minimum_size = Vector2(0, 64)
+[node name="BtnAbout" parent="M/C/Body/Menu" instance=ExtResource("5_xe3ya")]
 layout_mode = 2
 text = "ABOUT"
-alignment = 0
 
-[node name="Panel" type="Panel" parent="M/C/Body/Menu/BtnAbout"]
-z_index = -1
-material = SubResource("ShaderMaterial_efa31")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="InnerStroke" type="Panel" parent="M/C/Body/Menu/BtnAbout"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_qq85b")
-
-[node name="OuterStroke" type="Panel" parent="M/C/Body/Menu/BtnAbout"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_taeqc")
-
-[node name="BtnExit" type="Button" parent="M/C/Body/Menu"]
-custom_minimum_size = Vector2(0, 64)
+[node name="BtnExit" parent="M/C/Body/Menu" instance=ExtResource("5_xe3ya")]
 layout_mode = 2
 text = "EXIT"
-alignment = 0
-
-[node name="Panel" type="Panel" parent="M/C/Body/Menu/BtnExit"]
-z_index = -1
-material = SubResource("ShaderMaterial_efa31")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="InnerStroke" type="Panel" parent="M/C/Body/Menu/BtnExit"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_qq85b")
-
-[node name="OuterStroke" type="Panel" parent="M/C/Body/Menu/BtnExit"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_taeqc")
 
 [node name="Footer" type="Control" parent="M/C"]
 layout_mode = 2
@@ -429,81 +128,5 @@ vertical_alignment = 1
 text_overrun_behavior = 3
 uppercase = true
 
-[node name="AcceptDialog" type="AcceptDialog" parent="."]
-process_mode = 2
-size = Vector2i(352, 107)
-theme = SubResource("54")
-
-[node name="Panel" type="Panel" parent="AcceptDialog"]
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 351.0
-offset_bottom = 61.0
-
-[node name="MarginContainer" type="MarginContainer" parent="AcceptDialog"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = -1569.0
-offset_bottom = -1019.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="AcceptDialog/MarginContainer"]
-layout_mode = 2
-
-[node name="Config" type="HBoxContainer" parent="AcceptDialog/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer/Config"]
-layout_mode = 2
-text = "Debug mode: "
-
-[node name="BtnDebug" type="CheckButton" parent="AcceptDialog/MarginContainer/VBoxContainer/Config"]
-layout_mode = 2
-flat = true
-
-[node name="Label2" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer/Config"]
-layout_mode = 2
-text = "Motion blur: "
-
-[node name="BtnBlur" type="CheckButton" parent="AcceptDialog/MarginContainer/VBoxContainer/Config"]
-layout_mode = 2
-flat = true
-
-[node name="Config2" type="HBoxContainer" parent="AcceptDialog/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer/Config2"]
-layout_mode = 2
-text = "Visible radius: "
-
-[node name="Radius" type="SpinBox" parent="AcceptDialog/MarginContainer/VBoxContainer/Config2"]
-layout_mode = 2
-min_value = 6.0
-max_value = 20.0
-value = 6.0
-
-[node name="Label3" type="Label" parent="AcceptDialog/MarginContainer/VBoxContainer/Config2"]
-layout_mode = 2
-text = "Mouse sensetivity: "
-
-[node name="HSlider" type="HSlider" parent="AcceptDialog/MarginContainer/VBoxContainer/Config2"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-max_value = 5.0
-step = 0.01
-value = 1.0
-tick_count = 6
-ticks_on_borders = true
-
-[connection signal="pressed" from="M/C/Body/Menu/BtnSelect" to="." method="_on_MapSelect_pressed"]
-[connection signal="pressed" from="M/C/Body/Menu/BtnEditor" to="." method="_on_Editor_pressed"]
-[connection signal="pressed" from="M/C/Body/Menu/BtnSettings" to="." method="_on_BtnSettings_pressed"]
-[connection signal="pressed" from="M/C/Body/Menu/BtnAbout" to="." method="_on_BtnAbout_pressed"]
-[connection signal="pressed" from="M/C/Body/Menu/BtnExit" to="." method="_on_Exit_pressed"]
-[connection signal="toggled" from="AcceptDialog/MarginContainer/VBoxContainer/Config/BtnDebug" to="." method="_on_BtnDebug_toggled"]
-[connection signal="toggled" from="AcceptDialog/MarginContainer/VBoxContainer/Config/BtnBlur" to="." method="_on_BtnBlur_toggled"]
-[connection signal="value_changed" from="AcceptDialog/MarginContainer/VBoxContainer/Config2/Radius" to="." method="_on_Radius_value_changed"]
-[connection signal="value_changed" from="AcceptDialog/MarginContainer/VBoxContainer/Config2/HSlider" to="." method="_on_HSlider_value_changed"]
+[node name="BG" parent="." instance=ExtResource("5_eyp2s")]
+layout_mode = 1

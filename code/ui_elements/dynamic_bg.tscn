@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://br54cpwcocsty"]
+
+[ext_resource type="Texture2D" uid="uid://0ory5v44ws47" path="res://art/temp_bg.png" id="1_e1iwc"]
+[ext_resource type="Script" path="res://code/ui_elements/dynamic_bg.gd" id="1_jmamb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_moc4x"]
+texture = ExtResource("1_e1iwc")
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6jsy"]
+bg_color = Color(0, 0, 0, 0.2)
+
+[node name="BG" type="Control"]
+z_index = -100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_jmamb")
+
+[node name="Image" type="Panel" parent="."]
+layout_mode = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_moc4x")
+metadata/_edit_use_anchors_ = true
+
+[node name="Mask" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p6jsy")
+metadata/_edit_use_anchors_ = true
