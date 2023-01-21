@@ -27,16 +27,16 @@ var scrolling := false
 
 func _ready() -> void:
 	get_v_scroll_bar().scrolling.connect(_on_VScrollBar_scrolling)
+	get_v_scroll_bar().custom_minimum_size = Vector2(10, 0)
 	for c in get_children():
 		content_node = c
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# If no scroll needed, don't apply forces
 	if content_node.size.y - self.size.y < 1:
 		return
 	
-	var d := delta
 	# Distance between content_node's bottom and bottom of the scroll box 
 	var bottom_distance = content_node.position.y + content_node.size.y - self.size.y
 	# Distance between content_node and top of the scroll box

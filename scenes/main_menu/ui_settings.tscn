@@ -1,0 +1,346 @@
+[gd_scene load_steps=10 format=3 uid="uid://b27o31lwbw6vt"]
+
+[ext_resource type="Theme" uid="uid://eo4a2eayt8nq" path="res://art/themes/t_submenu.tres" id="1_flhiu"]
+[ext_resource type="Theme" uid="uid://dwrvgtybia0s3" path="res://art/themes/t_button.tres" id="2_4ig1t"]
+[ext_resource type="Script" path="res://scenes/main_menu/ui_settings.gd" id="2_t0uym"]
+[ext_resource type="PackedScene" uid="uid://dj53yebvgwrxt" path="res://code/ui_elements/btn_menu.tscn" id="3_pnbcx"]
+[ext_resource type="Theme" uid="uid://cndgcy67xr3nw" path="res://art/themes/t_grabber.tres" id="5_1niu0"]
+[ext_resource type="Script" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="5_t7tgm"]
+[ext_resource type="Shader" path="res://art/shaders/blur.gdshader" id="6_ke3by"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p6gbo"]
+content_margin_right = 24.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ds3mf"]
+shader = ExtResource("6_ke3by")
+shader_parameter/lod = 4.0
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_flhiu")
+script = ExtResource("2_t0uym")
+
+[node name="M" type="MarginContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="C" type="VBoxContainer" parent="M"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Header" type="Control" parent="M/C"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Body" type="Control" parent="M/C"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+mouse_filter = 1
+theme = ExtResource("2_4ig1t")
+
+[node name="Menu" type="VBoxContainer" parent="M/C/Body"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 350.0
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 2
+
+[node name="BtnSelect" parent="M/C/Body/Menu" instance=ExtResource("3_pnbcx")]
+z_index = 100
+layout_mode = 2
+focus_mode = 0
+disabled = true
+is_blur_dis = true
+
+[node name="BtnEditor" parent="M/C/Body/Menu" instance=ExtResource("3_pnbcx")]
+z_index = 100
+layout_mode = 2
+focus_mode = 0
+disabled = true
+text = "EDITOR"
+is_blur_dis = true
+
+[node name="BtnSettings" parent="M/C/Body/Menu" instance=ExtResource("3_pnbcx")]
+z_index = 100
+layout_mode = 2
+text = "SETTINGS"
+is_blur_dis = true
+
+[node name="BtnAbout" parent="M/C/Body/Menu" instance=ExtResource("3_pnbcx")]
+z_index = 100
+layout_mode = 2
+focus_mode = 0
+disabled = true
+text = "ABOUT"
+is_blur_dis = true
+
+[node name="BtnExit" parent="M/C/Body/Menu" instance=ExtResource("3_pnbcx")]
+z_index = 100
+layout_mode = 2
+focus_mode = 0
+disabled = true
+text = "EXIT"
+is_blur_dis = true
+
+[node name="Footer" type="Control" parent="M/C"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="C2" type="Control" parent="M"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="C" type="MarginContainer" parent="M/C2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 436.0
+offset_top = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="M/C2/C"]
+layout_mode = 2
+theme = ExtResource("5_1niu0")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p6gbo")
+script = ExtResource("5_t7tgm")
+speed = 3.0
+damping = 0.25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="M/C2/C/SmoothScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="Panel" type="Panel" parent="M/C2/C/SmoothScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel2" type="Panel" parent="M/C2/C/SmoothScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel3" type="Panel" parent="M/C2/C/SmoothScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel4" type="Panel" parent="M/C2/C/SmoothScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel5" type="Panel" parent="M/C2/C/SmoothScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel6" type="Panel" parent="M/C2/C/SmoothScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel7" type="Panel" parent="M/C2/C/SmoothScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel8" type="Panel" parent="M/C2/C/SmoothScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel9" type="Panel" parent="M/C2/C/SmoothScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel10" type="Panel" parent="M/C2/C/SmoothScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel11" type="Panel" parent="M/C2/C/SmoothScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel12" type="Panel" parent="M/C2/C/SmoothScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel13" type="Panel" parent="M/C2/C/SmoothScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel14" type="Panel" parent="M/C2/C/SmoothScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel15" type="Panel" parent="M/C2/C/SmoothScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel16" type="Panel" parent="M/C2/C/SmoothScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="LPanel" type="Control" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 500.0
+offset_bottom = -64.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BG" type="Panel" parent="LPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_flhiu")
+theme_type_variation = &"panel_left"
+
+[node name="Stroke" type="Panel" parent="LPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_flhiu")
+theme_type_variation = &"panel_left_s"
+
+[node name="Blur" type="Panel" parent="LPanel"]
+z_index = -1
+material = SubResource("ShaderMaterial_ds3mf")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.063
+offset_bottom = -0.00805664
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Footer" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="HSeparator" type="HSeparator" parent="Footer"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("1_flhiu")
+theme_type_variation = &"panel_footer_s"
+theme_override_constants/separation = 0
+
+[node name="BG" type="Panel" parent="Footer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_flhiu")
+theme_type_variation = &"panel_footer"
+
+[node name="Blur" type="Panel" parent="Footer"]
+z_index = -1
+material = SubResource("ShaderMaterial_ds3mf")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Center" type="Control" parent="."]
+z_index = -10
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BG" type="Panel" parent="Center"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_flhiu")
+theme_type_variation = &"panel_center"
+
+[node name="Blur" type="Panel" parent="Center"]
+z_index = -1
+material = SubResource("ShaderMaterial_ds3mf")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="toggled" from="M/C/Body/Menu/BtnSettings" to="." method="_on_btn_settings_toggled"]

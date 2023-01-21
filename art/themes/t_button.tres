@@ -1,6 +1,17 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://dwrvgtybia0s3"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://dwrvgtybia0s3"]
 
 [ext_resource type="FontFile" uid="uid://bfwgk4mk161u1" path="res://art/fonts/Sen/Sen-Bold.ttf" id="1_c3cy6"]
+
+[sub_resource type="Gradient" id="Gradient_epg8n"]
+colors = PackedColorArray(0, 0.02, 0.1, 0.13, 0, 0.02, 0.1, 0.25)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gbump"]
+gradient = SubResource("Gradient_epg8n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pce7m"]
+texture = SubResource("GradientTexture1D_gbump")
+margin_left = 64.0
+region_rect = Rect2(0, 0, 256, 1)
 
 [sub_resource type="Gradient" id="Gradient_y6dl2"]
 colors = PackedColorArray(0, 0.02, 0.1, 0.64, 0, 0.02, 0.1, 0.25)
@@ -42,12 +53,14 @@ region_rect = Rect2(0, 0, 256, 1)
 
 [resource]
 Button/colors/font_color = Color(0.843137, 0.862745, 1, 1)
+Button/colors/font_disabled_color = Color(0.84, 0.86, 1, 0.2)
 Button/colors/font_focus_color = Color(0.843137, 0.862745, 1, 1)
 Button/colors/font_hover_color = Color(1, 0.803922, 0.305882, 1)
 Button/colors/font_hover_pressed_color = Color(1, 0.803922, 0.305882, 1)
 Button/colors/font_pressed_color = Color(1, 0.803922, 0.305882, 1)
 Button/font_sizes/font_size = 24
 Button/fonts/font = ExtResource("1_c3cy6")
+Button/styles/disabled = SubResource("StyleBoxTexture_pce7m")
 Button/styles/focus = SubResource("StyleBoxTexture_tm11l")
 Button/styles/hover = SubResource("StyleBoxTexture_g5lcq")
 Button/styles/normal = SubResource("StyleBoxTexture_clvkd")

@@ -1,8 +1,9 @@
-res://scenes/main_menu/ui_main_menu.tscn
-res://art/themes/t_button.tres
-res://code/ui_elements/dynamic_bg.tscn
-res://code/ui_elements/dynamic_bg.gd
-res://art/themes/t_label.tres
+res://scenes/main_menu/ui_settings.tscn
 res://art/themes/t_submenu.tres
-res://addons/SmoothScroll/plugin.gd
+res://art/themes/t_button.tres
+res://scenes/main_menu/ui_main_menu.tscn
 res://addons/SmoothScroll/SmoothScrollContainer.gd
+res://art/themes/t_grabber.tres
+res://code/ui_elements/btn_menu.tscn
+res://scenes/main_menu/cursor_trail.gd
+res://scenes/main_menu/ui_main_menu.gd
