@@ -1,2 +1,6 @@
+ImageTexture
+PlaceholderTexture2D
+GradientTexture2D
+GradientTexture1D
 Shader
 FontVariation

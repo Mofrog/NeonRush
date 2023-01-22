@@ -1,0 +1,217 @@
+[gd_resource type="Theme" load_steps=44 format=3 uid="uid://d108udwkttr07"]
+
+[ext_resource type="FontFile" uid="uid://bfwgk4mk161u1" path="res://art/fonts/Sen/Sen-Bold.ttf" id="1_olun2"]
+
+[sub_resource type="Gradient" id="Gradient_bjocn"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.619672)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_m15dw"]
+gradient = SubResource("Gradient_bjocn")
+width = 1
+
+[sub_resource type="Gradient" id="Gradient_hpww4"]
+colors = PackedColorArray(0.021612, 0.0259383, 0.0274919, 0.64, 0.0687815, 0.0617815, 0.0691053, 0.129412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mn41m"]
+gradient = SubResource("Gradient_hpww4")
+fill_from = Vector2(0.363248, 0.820513)
+fill_to = Vector2(0.884615, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fngjo"]
+texture = SubResource("GradientTexture2D_mn41m")
+margin_left = 24.0
+region_rect = Rect2(0, 0, 64, 64)
+
+[sub_resource type="Gradient" id="Gradient_vy8ow"]
+colors = PackedColorArray(0, 0.02, 0.1, 0.64, 0, 0.02, 0.1, 0.25)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_eacmm"]
+gradient = SubResource("Gradient_vy8ow")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iecy1"]
+texture = SubResource("GradientTexture1D_eacmm")
+margin_left = 24.0
+region_rect = Rect2(0, 0, 256, 1)
+
+[sub_resource type="Gradient" id="Gradient_23vmj"]
+colors = PackedColorArray(0, 0.04, 0.21, 0.64, 0.00392157, 0.0392157, 0.207843, 0.129412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_05f70"]
+gradient = SubResource("Gradient_23vmj")
+fill_from = Vector2(0.363248, 0.820513)
+fill_to = Vector2(0.884615, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cvh6y"]
+texture = SubResource("GradientTexture2D_05f70")
+margin_left = 24.0
+region_rect = Rect2(0, 0, 64, 64)
+
+[sub_resource type="Gradient" id="Gradient_wy5s4"]
+colors = PackedColorArray(0, 0.0196078, 0.101961, 0.639216, 0.00392157, 0.0392157, 0.207843, 0.129412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cq2vx"]
+gradient = SubResource("Gradient_wy5s4")
+fill_from = Vector2(0.363248, 0.820513)
+fill_to = Vector2(0.884615, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynrta"]
+texture = SubResource("GradientTexture2D_cq2vx")
+margin_left = 24.0
+region_rect = Rect2(0, 0, 64, 64)
+
+[sub_resource type="Gradient" id="Gradient_2t1nw"]
+colors = PackedColorArray(0, 0.04, 0.21, 0.64, 0.00392157, 0.0392157, 0.207843, 0.129412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_avyfl"]
+gradient = SubResource("Gradient_2t1nw")
+fill_from = Vector2(0.363248, 0.820513)
+fill_to = Vector2(0.884615, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hdrbp"]
+texture = SubResource("GradientTexture2D_avyfl")
+margin_left = 24.0
+region_rect = Rect2(0, 0, 64, 64)
+
+[sub_resource type="Gradient" id="Gradient_0hfpm"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.619672)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hu8p7"]
+gradient = SubResource("Gradient_0hfpm")
+width = 1
+
+[sub_resource type="Gradient" id="Gradient_nxkp6"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.619672)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w7bnk"]
+gradient = SubResource("Gradient_nxkp6")
+width = 1
+
+[sub_resource type="Gradient" id="Gradient_kd3uu"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.619672)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2wpr5"]
+gradient = SubResource("Gradient_kd3uu")
+width = 1
+
+[sub_resource type="Gradient" id="Gradient_42uh7"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.619672)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ea5b8"]
+gradient = SubResource("Gradient_42uh7")
+width = 1
+
+[sub_resource type="Gradient" id="Gradient_jo3s0"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.619672)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_awsij"]
+gradient = SubResource("Gradient_jo3s0")
+width = 1
+
+[sub_resource type="Gradient" id="Gradient_lglwj"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.619672)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_67egq"]
+gradient = SubResource("Gradient_lglwj")
+width = 1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wwamq"]
+load_path = "res://.godot/imported/option_arrow.png-d56a2a36a9249e0db2a0b98135c559f8.ctex"
+
+[sub_resource type="Gradient" id="Gradient_0l5a0"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.619672)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_oakyl"]
+gradient = SubResource("Gradient_0l5a0")
+width = 1
+
+[sub_resource type="Gradient" id="Gradient_8wg28"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.619672)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yrdmd"]
+gradient = SubResource("Gradient_8wg28")
+width = 1
+
+[sub_resource type="Gradient" id="Gradient_548xg"]
+colors = PackedColorArray(0, 0.02, 0.1, 0.64, 0.00392157, 0.0392157, 0.207843, 0.129412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3plx5"]
+gradient = SubResource("Gradient_548xg")
+fill_from = Vector2(0.363248, 0.820513)
+fill_to = Vector2(0.884615, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hobi3"]
+texture = SubResource("GradientTexture2D_3plx5")
+margin_left = 24.0
+region_rect = Rect2(0, 0, 64, 64)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d5j8i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rv8eu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nftwi"]
+content_margin_left = 20.0
+bg_color = Color(0.12549, 0.133333, 0.215686, 0.67451)
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.807843, 0.317647, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4eqn"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ayd1g"]
+color = Color(0.843137, 0.854902, 0.92549, 1)
+
+[resource]
+OptionButton/colors/font_color = Color(0.843137, 0.854902, 0.92549, 1)
+OptionButton/colors/font_hover_color = Color(1, 0.807843, 0.317647, 1)
+OptionButton/colors/font_hover_pressed_color = Color(1, 0.807843, 0.317647, 1)
+OptionButton/colors/font_pressed_color = Color(1, 0.807843, 0.317647, 1)
+OptionButton/constants/arrow_margin = 0
+OptionButton/font_sizes/font_size = 24
+OptionButton/fonts/font = ExtResource("1_olun2")
+OptionButton/icons/arrow = SubResource("GradientTexture1D_m15dw")
+OptionButton/styles/disabled = SubResource("StyleBoxTexture_fngjo")
+OptionButton/styles/focus = SubResource("StyleBoxTexture_iecy1")
+OptionButton/styles/hover = SubResource("StyleBoxTexture_cvh6y")
+OptionButton/styles/normal = SubResource("StyleBoxTexture_ynrta")
+OptionButton/styles/pressed = SubResource("StyleBoxTexture_hdrbp")
+PopupMenu/colors/font_color = Color(0.843137, 0.854902, 0.92549, 1)
+PopupMenu/colors/font_hover_color = Color(1, 0.807843, 0.317647, 1)
+PopupMenu/colors/font_separator_color = Color(0.843137, 0.854902, 0.92549, 1)
+PopupMenu/font_sizes/font_separator_size = 24
+PopupMenu/font_sizes/font_size = 24
+PopupMenu/fonts/font = ExtResource("1_olun2")
+PopupMenu/fonts/font_separator = ExtResource("1_olun2")
+PopupMenu/icons/checked = SubResource("GradientTexture1D_hu8p7")
+PopupMenu/icons/checked_disabled = SubResource("GradientTexture1D_w7bnk")
+PopupMenu/icons/radio_checked = SubResource("GradientTexture1D_2wpr5")
+PopupMenu/icons/radio_checked_disabled = SubResource("GradientTexture1D_ea5b8")
+PopupMenu/icons/radio_unchecked = SubResource("GradientTexture1D_awsij")
+PopupMenu/icons/radio_unchecked_disabled = SubResource("GradientTexture1D_67egq")
+PopupMenu/icons/submenu = SubResource("CompressedTexture2D_wwamq")
+PopupMenu/icons/unchecked = SubResource("GradientTexture1D_oakyl")
+PopupMenu/icons/unchecked_disabled = SubResource("GradientTexture1D_yrdmd")
+PopupMenu/styles/hover = SubResource("StyleBoxTexture_hobi3")
+PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxEmpty_d5j8i")
+PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_rv8eu")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_nftwi")
+PopupMenu/styles/panel_disabled = SubResource("StyleBoxEmpty_h4eqn")
+PopupMenu/styles/separator = SubResource("StyleBoxLine_ayd1g")

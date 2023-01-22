@@ -15,3 +15,7 @@ func _on_settings_exit_settings():
 	menu.visible = true
 	settings.visible = false
 	btn_settings.grab_focus()
+
+
+func _on_btn_exit_pressed():
+	get_tree().free()

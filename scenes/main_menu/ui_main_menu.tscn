@@ -31,18 +31,16 @@ curve = SubResource("Curve_51gjr")
 direction = Vector3(0, 0, 0)
 spread = 0.0
 gravity = Vector3(0, 0, 0)
-scale_min = 15.0
-scale_max = 15.0
 scale_curve = SubResource("CurveTexture_jqanc")
-color = Color(1, 0.803922, 0.305882, 1)
+color = Color(0.764706, 0.839216, 0.937255, 1)
 
 [sub_resource type="Gradient" id="Gradient_2syjq"]
 colors = PackedColorArray(1, 1, 1, 0.172549, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_f00xq"]
 gradient = SubResource("Gradient_2syjq")
-width = 4
-height = 4
+width = 40
+height = 40
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
@@ -158,14 +156,23 @@ layout_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="CursorTrail" type="GPUParticles2D" parent="."]
+process_mode = 3
+process_priority = 100
 visible = false
+show_behind_parent = true
+top_level = true
 z_index = 101
-position = Vector2(1, 0)
-amount = 10
+y_sort_enabled = true
+position = Vector2(1083, 632)
+amount = 15
 process_material = SubResource("ParticleProcessMaterial_wfpm3")
 texture = SubResource("GradientTexture2D_f00xq")
-lifetime = 0.2
+lifetime = 0.1
+fixed_fps = 120
+interpolate = false
+visibility_rect = Rect2(-300, -300, 600, 600)
 script = ExtResource("7_74l0b")
 
 [connection signal="pressed" from="Menu/C/Body/Menu/BtnSettings" to="." method="_on_btn_settings_pressed"]
+[connection signal="pressed" from="Menu/C/Body/Menu/BtnExit" to="." method="_on_btn_exit_pressed"]
 [connection signal="exit_settings" from="Settings" to="." method="_on_settings_exit_settings"]

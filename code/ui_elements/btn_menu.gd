@@ -2,6 +2,7 @@ extends Button
 
 
 @export var is_blur_dis = false
+@export var is_focus_imm = false
 
 
 func _ready():
@@ -22,5 +23,6 @@ func _on_focus_entered():
 
 
 func _on_focus_exited():
+	if is_blur_dis: return
 	$InnerStrokeFocus.visible = false
 	$OuterStrokeFocus.visible = false

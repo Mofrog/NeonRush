@@ -4,10 +4,13 @@
 ## functionality to a ScrollContainer
 extends ScrollContainer
 
+
 # Drag impact for one scroll input
 @export var speed = 2.0
 # Softness of damping when "overdragging"
 @export var damping = 0.1
+@export var shadows = Control.new()
+
 
 # Current velocity of the `content_node`
 var velocity := Vector2(0,0)
@@ -23,6 +26,7 @@ var content_node : Control
 var pos := Vector2(0, 0)
 # When true, `content_node`'s position is only set by dragging the scroll bar
 var scrolling := false
+var lft_mouse_pressed = false
 
 
 func _ready() -> void:
@@ -43,16 +47,24 @@ func _process(_delta: float) -> void:
 	var top_distance = content_node.position.y
 	
 	# If overdragged on bottom:
-	if bottom_distance< 0 :
+	if bottom_distance < 0 :
 		over_drag_multiplicator_bottom = 1/abs(bottom_distance)*10
+		shadows.get_child(1).visible = false
+	elif bottom_distance < 10:
+		shadows.get_child(1).visible = false
 	else:
 		over_drag_multiplicator_bottom = 1
+		shadows.get_child(1).visible = true
 	
 	# If overdragged on top:
-	if top_distance> 0:
+	if top_distance > 0:
 		over_drag_multiplicator_top = 1/abs(top_distance)*10
+		shadows.get_child(0).visible = false
+	elif top_distance > -10:
+		shadows.get_child(0).visible = false
 	else:
 		over_drag_multiplicator_top = 1
+		shadows.get_child(0).visible = true
 	
 	# Simulate friction
 	velocity *= 0.9
@@ -83,12 +95,22 @@ func _process(_delta: float) -> void:
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
+		match event.button_index:
+			5: 
+				velocity.y -= speed
+				lft_mouse_pressed = false
+			4: 
+				velocity.y += speed
+				lft_mouse_pressed = false
+			1: 
+				lft_mouse_pressed = true
+		
 		if not event.pressed:
 			scrolling = false
-		
-		match event.button_index:
-			5: velocity.y -= speed
-			4: velocity.y += speed
+			lft_mouse_pressed = false
+	
+	if event is InputEventMouseMotion && lft_mouse_pressed:
+		velocity.y = (event.velocity.y / 200) * speed
 
 
 func _on_VScrollBar_scrolling() -> void:

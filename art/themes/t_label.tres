@@ -4,6 +4,7 @@
 
 [resource]
 Label/colors/font_color = Color(0.843137, 0.862745, 1, 1)
+Label/font_sizes/font_size = 18
 Label/fonts/font = ExtResource("1_wu6qy")
 text_bg_menu/base_type = &"Label"
 text_bg_menu/colors/font_color = Color(0.94, 0.95, 1, 0.1)
