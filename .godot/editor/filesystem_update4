@@ -1,4 +1,4 @@
-res://scenes/main_menu/ui_settings.tscn
+res://scenes/main_menu/ui_main_menu.tscn
 res://art/themes/t_submenu.tres
 res://art/themes/t_button.tres
 res://art/themes/t_grabber.tres
@@ -6,3 +6,10 @@ res://art/themes/t_settings_item.tres
 res://art/themes/t_option_btn.tres
 res://art/themes/t_spin_box.tres
 res://art/themes/t_slider.tres
+res://scenes/main_menu/ui_settings.tscn
+res://code/ui_elements/scroll_option.tscn
+res://code/ui_elements/btn_option.gd
+res://code/ui_elements/btn_option.tscn
+res://code/ui_elements/scroll_option.gd
+res://art/themes/t_btn_help.tres
+res://code/ui_elements/btn_help.tscn

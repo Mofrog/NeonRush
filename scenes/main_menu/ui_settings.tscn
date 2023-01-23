@@ -9,8 +9,8 @@
 [ext_resource type="Shader" path="res://art/shaders/blur.gdshader" id="6_ke3by"]
 [ext_resource type="Theme" uid="uid://d10qhd6v77bkv" path="res://art/themes/t_settings_item.tres" id="7_5w4ov"]
 [ext_resource type="PackedScene" uid="uid://cfymk32awtlp4" path="res://code/ui_elements/btn_option.tscn" id="8_im25j"]
-[ext_resource type="Theme" uid="uid://dqou4vjiwvwcf" path="res://art/themes/t_spin_box.tres" id="9_hwi8e"]
-[ext_resource type="Theme" uid="uid://bojam3itnewjv" path="res://art/themes/t_slider.tres" id="10_owpy4"]
+[ext_resource type="PackedScene" uid="uid://xo4tij046b54" path="res://code/ui_elements/scroll_option.tscn" id="9_6qsra"]
+[ext_resource type="PackedScene" uid="uid://bmn1vg6macjvx" path="res://code/ui_elements/btn_help.tscn" id="11_uh5n4"]
 
 [sub_resource type="Gradient" id="Gradient_4yn5r"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.64)
@@ -135,6 +135,7 @@ size_flags_vertical = 3
 [node name="C2" type="Control" parent="M"]
 layout_mode = 2
 mouse_filter = 2
+metadata/_edit_group_ = true
 
 [node name="C" type="MarginContainer" parent="M/C2"]
 layout_mode = 1
@@ -249,7 +250,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="OptWSize" parent="M/C2/C/C/C/SItem16" instance=ExtResource("8_im25j")]
+[node name="OptLang" parent="M/C2/C/C/C/SItem16" instance=ExtResource("8_im25j")]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -364,7 +365,7 @@ offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
 item_count = 3
-selected = 1
+selected = 2
 popup/item_0/text = "Windowed"
 popup/item_1/text = "Borderless"
 popup/item_1/id = 1
@@ -441,39 +442,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="SpinBox" type="SpinBox" parent="M/C2/C/C/C/SItem4"]
-custom_minimum_size = Vector2(300, 42)
+[node name="SOMaxFPS" parent="M/C2/C/C/C/SItem4" instance=ExtResource("9_6qsra")]
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -83.0625
-grow_horizontal = 0
-grow_vertical = 2
-theme = ExtResource("9_hwi8e")
-min_value = 30.0
-max_value = 144.0
-step = 15.0
-value = 60.0
-
-[node name="HSlider" type="HSlider" parent="M/C2/C/C/C/SItem4"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 432.0
-offset_top = -8.0
-offset_right = -356.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("10_owpy4")
-min_value = 30.0
-max_value = 144.0
-step = 15.0
-value = 30.0
+items = PackedStringArray("30", "45", "60", "75", "90", "120", "144")
+selected = 2.0
 
 [node name="SItem7" type="Control" parent="M/C2/C/C/C"]
 custom_minimum_size = Vector2(0, 42)
@@ -502,22 +474,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="OptF" parent="M/C2/C/C/C/SItem7" instance=ExtResource("8_im25j")]
+[node name="SOMouseSens" parent="M/C2/C/C/C/SItem7" instance=ExtResource("9_6qsra")]
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -258.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 2
-disabled = true
-item_count = 2
-popup/item_0/text = "Enabled"
-popup/item_1/text = "Disabled"
-popup/item_1/id = 1
+selected = 1.0
+max_value = 2.0
+min_value = 0.5
 
 [node name="SHeader2" type="Control" parent="M/C2/C/C/C"]
 custom_minimum_size = Vector2(0, 42)
@@ -559,7 +520,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Anti-aliasing*"
+text = "Graphics*"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem13"]
@@ -572,99 +533,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="OptF" parent="M/C2/C/C/C/SItem13" instance=ExtResource("8_im25j")]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -258.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 2
-item_count = 3
-selected = 2
-popup/item_0/text = "Low"
-popup/item_1/text = "Medium"
-popup/item_1/id = 1
-popup/item_2/text = "High"
-popup/item_2/id = 2
-
-[node name="SItem14" type="Control" parent="M/C2/C/C/C"]
-custom_minimum_size = Vector2(0, 42)
-layout_mode = 2
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="M/C2/C/C/C/SItem14"]
-z_index = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 42.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Shaders*"
-vertical_alignment = 1
-
-[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem14"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -300.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="OptF" parent="M/C2/C/C/C/SItem14" instance=ExtResource("8_im25j")]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -258.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 2
-item_count = 3
-selected = 2
-popup/item_0/text = "Low"
-popup/item_1/text = "Medium"
-popup/item_1/id = 1
-popup/item_2/text = "High"
-popup/item_2/id = 2
-
-[node name="SItem15" type="Control" parent="M/C2/C/C/C"]
-custom_minimum_size = Vector2(0, 42)
-layout_mode = 2
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="M/C2/C/C/C/SItem15"]
-z_index = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 42.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Shadows*"
-vertical_alignment = 1
-
-[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem15"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -300.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="OptF" parent="M/C2/C/C/C/SItem15" instance=ExtResource("8_im25j")]
+[node name="OptGraphics" parent="M/C2/C/C/C/SItem13" instance=ExtResource("8_im25j")]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -710,7 +579,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="OptF" parent="M/C2/C/C/C/SItem6" instance=ExtResource("8_im25j")]
+[node name="OptBlur" parent="M/C2/C/C/C/SItem6" instance=ExtResource("8_im25j")]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -753,22 +622,13 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="OptF" parent="M/C2/C/C/C/SItem5" instance=ExtResource("8_im25j")]
+[node name="SOVisible" parent="M/C2/C/C/C/SItem5" instance=ExtResource("9_6qsra")]
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -258.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 2
-disabled = true
-item_count = 2
-popup/item_0/text = "Enabled"
-popup/item_1/text = "Disabled"
-popup/item_1/id = 1
+selected = 12.0
+max_value = 20.0
+min_value = 8.0
+step = 1.0
+btn_step = 1.0
 
 [node name="SHeader3" type="Control" parent="M/C2/C/C/C"]
 custom_minimum_size = Vector2(0, 42)
@@ -823,22 +683,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="OptF" parent="M/C2/C/C/C/SItem8" instance=ExtResource("8_im25j")]
+[node name="SOVMaster" parent="M/C2/C/C/C/SItem8" instance=ExtResource("9_6qsra")]
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -258.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 2
-disabled = true
-item_count = 2
-popup/item_0/text = "Enabled"
-popup/item_1/text = "Disabled"
-popup/item_1/id = 1
+selected = 1.0
+max_value = 2.0
 
 [node name="SItem10" type="Control" parent="M/C2/C/C/C"]
 custom_minimum_size = Vector2(0, 42)
@@ -867,22 +715,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="OptF" parent="M/C2/C/C/C/SItem10" instance=ExtResource("8_im25j")]
+[node name="SOVMusic" parent="M/C2/C/C/C/SItem10" instance=ExtResource("9_6qsra")]
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -258.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 2
-disabled = true
-item_count = 2
-popup/item_0/text = "Enabled"
-popup/item_1/text = "Disabled"
-popup/item_1/id = 1
+selected = 1.0
+max_value = 2.0
 
 [node name="SItem9" type="Control" parent="M/C2/C/C/C"]
 custom_minimum_size = Vector2(0, 42)
@@ -911,22 +747,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="OptF" parent="M/C2/C/C/C/SItem9" instance=ExtResource("8_im25j")]
+[node name="SOVEffect" parent="M/C2/C/C/C/SItem9" instance=ExtResource("9_6qsra")]
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -258.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 2
-disabled = true
-item_count = 2
-popup/item_0/text = "Enabled"
-popup/item_1/text = "Disabled"
-popup/item_1/id = 1
+selected = 1.0
+max_value = 2.0
 
 [node name="SHeader4" type="Control" parent="M/C2/C/C/C"]
 custom_minimum_size = Vector2(0, 42)
@@ -981,7 +805,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="OptF" parent="M/C2/C/C/C/SItem12" instance=ExtResource("8_im25j")]
+[node name="OptFPSCounter" parent="M/C2/C/C/C/SItem12" instance=ExtResource("8_im25j")]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -1041,6 +865,824 @@ item_count = 2
 popup/item_0/text = "Enabled"
 popup/item_1/text = "Disabled"
 popup/item_1/id = 1
+
+[node name="SHeader5" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SHeader5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Key bindings (menu)"
+vertical_alignment = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="M/C2/C/C/C/SHeader5"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SItem14" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem14"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back / Cancel*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem14"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem14" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "Q / Esc"
+
+[node name="SItem15" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem15"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Accept*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem15"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem15" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "R / Enter"
+
+[node name="SItem17" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem17"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Search*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem17"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem17" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "S"
+
+[node name="SHeader6" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SHeader6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Key bindings (game)"
+vertical_alignment = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="M/C2/C/C/C/SHeader6"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SItem18" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem18"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Forward*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem18"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem18" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "W"
+
+[node name="SItem21" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem21"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Left*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem21"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem21" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "A"
+
+[node name="SItem19" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem19"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem19"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem19" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "S"
+
+[node name="SItem20" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem20"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Right*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem20"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem20" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "D"
+
+[node name="SItem22" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem22"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Jump / Interact*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem22"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem22" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "Lft Mouse \\ Space"
+
+[node name="SItem23" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem23"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem23"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem23" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "F"
+
+[node name="SHeader7" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SHeader7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Key bindings (editor)"
+vertical_alignment = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="M/C2/C/C/C/SHeader7"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SItem24" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem24"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Forward*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem24"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem24" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "W"
+
+[node name="SItem25" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem25"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Left*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem25"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem25" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "A"
+
+[node name="SItem26" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem26"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem26"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem26" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "S"
+
+[node name="SItem27" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem27"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Right*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem27"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem27" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "D"
+
+[node name="SItem28" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem28"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Up*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem28"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem28" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "Space"
+
+[node name="SItem29" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem29"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Down*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem29"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem29" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "Alt"
+
+[node name="SItem30" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem30"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sprint*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem30"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem30" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "Shift"
+
+[node name="SItem31" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem31"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Interact*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem31"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem31" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "Lft Mouse"
+
+[node name="SItem32" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem32"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cancel*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem32"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OptF" parent="M/C2/C/C/C/SItem32" instance=ExtResource("8_im25j")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+popup/item_0/text = "Rght Mouse"
 
 [node name="LPanel" type="Control" parent="."]
 z_index = -1
@@ -1132,6 +1774,25 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="C" type="HBoxContainer" parent="Footer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_right = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 555
+alignment = 1
+
+[node name="Btn_help2" parent="Footer/C" instance=ExtResource("11_uh5n4")]
+layout_mode = 2
+text = "Cancel"
+
+[node name="Btn_help" parent="Footer/C" instance=ExtResource("11_uh5n4")]
+layout_mode = 2
+
 [node name="Center" type="Control" parent="."]
 z_index = -10
 custom_minimum_size = Vector2(0, 64)
@@ -1142,6 +1803,8 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="BG" type="Panel" parent="Center"]
 layout_mode = 1

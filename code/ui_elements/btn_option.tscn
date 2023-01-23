@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://code/ui_elements/btn_option.gd" id="1_2lqmy"]
 [ext_resource type="Theme" uid="uid://d108udwkttr07" path="res://art/themes/t_option_btn.tres" id="1_jb38e"]
-[ext_resource type="Texture2D" uid="uid://cqoo0bwt1xi6c" path="res://art/icons/option_arrow.png" id="4_xkfor"]
+[ext_resource type="Texture2D" uid="uid://cmbmt4gm5idc8" path="res://art/icons/option_arrow.png" id="4_xkfor"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1b0ii"]
 draw_center = false
