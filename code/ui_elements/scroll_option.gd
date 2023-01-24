@@ -1,6 +1,9 @@
 extends Control
 
 
+signal value_changed(value : float)
+
+
 @export var items : PackedStringArray
 
 @export var selected = 0.0
@@ -12,6 +15,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Input.set_custom_mouse_cursor(load("res://art/icons/mouse_empty.tres"), CURSOR_IBEAM)
 	if items.size() > 0:
 		for i in items:
 			$Option.add_item(i)
@@ -24,6 +28,10 @@ func _ready():
 		$Slider.min_value = min_value
 		$Slider.step = step
 	$Slider.value = selected
+
+
+func select(value):
+	$Slider.value = value
 
 
 func _on_r_button_pressed():
@@ -45,7 +53,20 @@ func _on_l_button_pressed():
 func _on_slider_value_changed(value):
 	if items.size() > 0: $Option.select(value)
 	else: $Line.text = str(value)
+	value_changed.emit(value)
 
 
 func _on_option_item_selected(index):
 	$Slider.value = index
+
+
+func _on_slider_mouse_entered():
+	$Slider.scale.y = 2
+
+
+func _on_slider_mouse_exited():
+	$Slider.scale.y = 1
+
+
+func _on_slider_drag_started():
+	$Slider.scale.y = 3

@@ -8,70 +8,6 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "RefCounted",
-"class": &"AudioLoader",
-"language": &"GDScript",
-"path": "res://code/audio_loader.gd"
-}, {
-"base": "Panel",
-"class": &"Beat",
-"language": &"GDScript",
-"path": "res://code/ui_elements/beat.gd"
-}, {
-"base": "Object",
-"class": &"Blocks",
-"language": &"GDScript",
-"path": "res://data/blocks.gd"
-}, {
-"base": "Node",
-"class": &"GameMath",
-"language": &"GDScript",
-"path": "res://code/game_math.gd"
-}, {
-"base": "Control",
-"class": &"MapItem",
-"language": &"GDScript",
-"path": "res://code/ui_elements/map_item.gd"
-}, {
-"base": "Control",
-"class": &"PopUp",
-"language": &"GDScript",
-"path": "res://code/ui_elements/pop_up.gd"
-}, {
-"base": "Control",
-"class": &"RytmRule",
-"language": &"GDScript",
-"path": "res://code/ui_elements/rytm_rule.gd"
-}, {
-"base": "RefCounted",
-"class": &"SaveLoadManager",
-"language": &"GDScript",
-"path": "res://code/save_load_manager.gd"
-}, {
-"base": "Area3D",
-"class": &"StartEnd",
-"language": &"GDScript",
-"path": "res://code/map_objects/start_end.gd"
-}, {
-"base": "Node3D",
-"class": &"TimeManager",
-"language": &"GDScript",
-"path": "res://code/time_manager.gd"
-}]
-_global_script_class_icons={
-"AudioLoader": "",
-"Beat": "",
-"Blocks": "",
-"GameMath": "",
-"MapItem": "",
-"PopUp": "",
-"RytmRule": "",
-"SaveLoadManager": "",
-"StartEnd": "",
-"TimeManager": ""
-}
-
 [application]
 
 config/name="NeonRush"
@@ -106,6 +42,10 @@ window/size/borderless=true
 mouse_cursor/custom_image="res://art/icons/mouse_empty.tres"
 window/size/width=1920
 window/size/height=1050
+
+[editor]
+
+export/convert_text_resources_to_binary=true
 
 [editor_plugins]
 

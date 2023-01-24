@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://d2clg0pgobgd7"]
+[gd_scene load_steps=15 format=3 uid="uid://d2clg0pgobgd7"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/ui_main_menu.gd" id="1"]
 [ext_resource type="Theme" uid="uid://cna3jukey38ch" path="res://art/themes/t_label.tres" id="4_5apao"]
-[ext_resource type="PackedScene" uid="uid://b27o31lwbw6vt" path="res://scenes/main_menu/ui_settings.tscn" id="5_0o4a1"]
 [ext_resource type="PackedScene" uid="uid://br54cpwcocsty" path="res://code/ui_elements/dynamic_bg.tscn" id="5_eyp2s"]
 [ext_resource type="Theme" uid="uid://dwrvgtybia0s3" path="res://art/themes/t_button.tres" id="5_mim1s"]
 [ext_resource type="PackedScene" uid="uid://dj53yebvgwrxt" path="res://code/ui_elements/btn_menu.tscn" id="5_xe3ya"]
@@ -35,7 +34,8 @@ scale_curve = SubResource("CurveTexture_jqanc")
 color = Color(0.764706, 0.839216, 0.937255, 1)
 
 [sub_resource type="Gradient" id="Gradient_2syjq"]
-colors = PackedColorArray(1, 1, 1, 0.172549, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0.0576271, 0.183051, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.188235, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_f00xq"]
 gradient = SubResource("Gradient_2syjq")
@@ -147,10 +147,6 @@ text = "EXIT"
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Settings" parent="." instance=ExtResource("5_0o4a1")]
-visible = false
-layout_mode = 1
-
 [node name="BG" parent="." instance=ExtResource("5_eyp2s")]
 layout_mode = 1
 metadata/_edit_lock_ = true
@@ -175,4 +171,3 @@ script = ExtResource("7_74l0b")
 
 [connection signal="pressed" from="Menu/C/Body/Menu/BtnSettings" to="." method="_on_btn_settings_pressed"]
 [connection signal="pressed" from="Menu/C/Body/Menu/BtnExit" to="." method="_on_btn_exit_pressed"]
-[connection signal="exit_settings" from="Settings" to="." method="_on_settings_exit_settings"]

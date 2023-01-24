@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=12 format=3 uid="uid://eo4a2eayt8nq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpfdg"]
-bg_color = Color(0.39, 0.39, 0.4, 0.24)
+bg_color = Color(0.388235, 0.388235, 0.4, 0.239216)
 
 [sub_resource type="Gradient" id="Gradient_fcqk0"]
 offsets = PackedFloat32Array(0, 0.239057, 0.79798, 1)

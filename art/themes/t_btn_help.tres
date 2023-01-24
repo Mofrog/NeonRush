@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://limxi2oj0oe8"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://limxi2oj0oe8"]
 
 [ext_resource type="FontFile" uid="uid://c027tkrbapiov" path="res://art/fonts/Sen/Sen-Regular.ttf" id="1_bq6as"]
+[ext_resource type="FontFile" uid="uid://bfwgk4mk161u1" path="res://art/fonts/Sen/Sen-Bold.ttf" id="2_l1gdq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2xxe"]
 content_margin_left = 55.0
@@ -84,6 +85,15 @@ corner_radius_top_left = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xew1e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm6jw"]
+bg_color = Color(0.87, 0.77, 0.54, 0.5)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [resource]
 Button/colors/font_color = Color(0.862745, 0.913725, 0.937255, 1)
 Button/colors/font_focus_color = Color(0.862745, 0.913725, 0.937255, 1)
@@ -97,3 +107,6 @@ Button/styles/hover = SubResource("StyleBoxFlat_wsy80")
 Button/styles/normal = SubResource("StyleBoxFlat_2yekd")
 Button/styles/pressed = SubResource("StyleBoxFlat_h8q01")
 Panel/styles/panel = SubResource("StyleBoxFlat_p31ss")
+ProgressBar/fonts/font = ExtResource("2_l1gdq")
+ProgressBar/styles/background = SubResource("StyleBoxEmpty_xew1e")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_vm6jw")
