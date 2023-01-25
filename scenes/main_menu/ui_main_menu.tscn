@@ -170,4 +170,5 @@ visibility_rect = Rect2(-300, -300, 600, 600)
 script = ExtResource("7_74l0b")
 
 [connection signal="pressed" from="Menu/C/Body/Menu/BtnSettings" to="." method="_on_btn_settings_pressed"]
+[connection signal="pressed" from="Menu/C/Body/Menu/BtnAbout" to="." method="_on_btn_about_pressed"]
 [connection signal="pressed" from="Menu/C/Body/Menu/BtnExit" to="." method="_on_btn_exit_pressed"]

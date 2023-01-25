@@ -23,6 +23,6 @@ func _on_focus_entered():
 
 
 func _on_focus_exited():
-	if is_blur_dis: return
+	if is_focus_imm: return
 	$InnerStrokeFocus.visible = false
 	$OuterStrokeFocus.visible = false

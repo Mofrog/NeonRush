@@ -1,7 +1,7 @@
 extends Control
 
 
-signal exit_settings
+signal saved
 
 
 @onready var btn_settings = $M/C/Body/Menu/BtnSettings
@@ -30,7 +30,8 @@ func _ready():
 	$M/C/Body/Menu/BtnSettings.grab_focus()
 	var file = FileAccess.open("user://save_game.dat", FileAccess.READ)
 	if file != null:
-		settings = JSON.parse_string(file.get_as_text())
+		var result = JSON.parse_string(file.get_as_text())
+		settings = settings if result == null else result
 		set_settings()
 		default_settings = settings.duplicate()
 
@@ -43,18 +44,25 @@ func _on_visibility_changed():
 
 
 func _on_btn_settings_pressed():
-	if is_settings_changed(): init_popup()
-	else: emit_signal("exit_settings")
+	if is_settings_changed(): 
+		init_popup()
+	else: 
+		get_parent().remove_child(self)
+		queue_free()
 
 
 func _on_btn_cancel_btn_pressed():
-	emit_signal("exit_settings")
+	get_parent().remove_child(self)
+	queue_free()
 
 
 func _on_btn_save_btn_pressed():
-	var file = FileAccess.open("user://save_game.dat", FileAccess.WRITE)
-	file.store_string(JSON.stringify(settings))
-	emit_signal("exit_settings")
+	if is_settings_changed():
+		var file = FileAccess.open("user://save_game.dat", FileAccess.WRITE)
+		file.store_string(JSON.stringify(settings))
+		emit_signal("saved")
+	get_parent().remove_child(self)
+	queue_free()
 
 
 func _on_ok_pressed():
@@ -62,8 +70,8 @@ func _on_ok_pressed():
 
 
 func _on_cancel_pressed():
-	warning_popup.queue_free()
-	emit_signal("exit_settings")
+	get_parent().remove_child(self)
+	queue_free()
 
 
 func init_popup():

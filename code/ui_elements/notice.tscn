@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=3 uid="uid://ocvmbf2hvwej"]
+
+[ext_resource type="Theme" uid="uid://bxdlltmjayr5f" path="res://art/themes/t_pop_up.tres" id="1_lur8t"]
+[ext_resource type="Shader" path="res://art/shaders/blur.gdshader" id="2_2tu2q"]
+[ext_resource type="Script" path="res://code/ui_elements/notice.gd" id="2_mi6tt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qdamu"]
+shader = ExtResource("2_2tu2q")
+shader_parameter/lod = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otoum"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Notice" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_lur8t")
+script = ExtResource("2_mi6tt")
+
+[node name="C" type="Control" parent="."]
+custom_minimum_size = Vector2(350, 100)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -365.0
+offset_top = -115.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Blur" type="Panel" parent="C"]
+material = SubResource("ShaderMaterial_qdamu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_otoum")
+
+[node name="Stroke" type="Panel" parent="C"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_lur8t")
+theme_type_variation = &"BGStroke"
+
+[node name="BG" type="Panel" parent="C"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_lur8t")
+theme_type_variation = &"BG"
+
+[node name="C" type="VBoxContainer" parent="C"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="C/C"]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="C/C"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+text = "Notice text"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="C/C"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

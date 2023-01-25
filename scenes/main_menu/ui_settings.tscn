@@ -12,33 +12,33 @@
 [ext_resource type="PackedScene" uid="uid://xo4tij046b54" path="res://code/ui_elements/scroll_option.tscn" id="9_6qsra"]
 [ext_resource type="PackedScene" uid="uid://bmn1vg6macjvx" path="res://code/ui_elements/btn_help.tscn" id="11_uh5n4"]
 
-[sub_resource type="Gradient" id="Gradient_4yn5r"]
+[sub_resource type="Gradient" id="Gradient_eptfu"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.64)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_cxkcc"]
-gradient = SubResource("Gradient_4yn5r")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y0kos"]
+gradient = SubResource("Gradient_eptfu")
 fill_from = Vector2(1, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xavgk"]
-texture = SubResource("GradientTexture2D_cxkcc")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ytkev"]
+texture = SubResource("GradientTexture2D_y0kos")
 region_rect = Rect2(0, 0, 64, 64)
 
-[sub_resource type="Gradient" id="Gradient_ebt1x"]
+[sub_resource type="Gradient" id="Gradient_wcijn"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.64)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_bmts2"]
-gradient = SubResource("Gradient_ebt1x")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3674x"]
+gradient = SubResource("Gradient_wcijn")
 fill_from = Vector2(1, 0)
 fill_to = Vector2(1, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4l4s"]
-texture = SubResource("GradientTexture2D_bmts2")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g5his"]
+texture = SubResource("GradientTexture2D_3674x")
 region_rect = Rect2(0, 0, 64, 64)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p6gbo"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pos8w"]
 content_margin_right = 24.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ds3mf"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1i2sk"]
 shader = ExtResource("6_ke3by")
 shader_parameter/lod = 4.0
 
@@ -166,7 +166,7 @@ anchor_right = 1.0
 offset_bottom = 32.0
 grow_horizontal = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_xavgk")
+theme_override_styles/panel = SubResource("StyleBoxTexture_ytkev")
 
 [node name="BottomScrollShadow" type="Panel" parent="M/C2/C/C2"]
 visible = false
@@ -179,13 +179,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_n4l4s")
+theme_override_styles/panel = SubResource("StyleBoxTexture_g5his")
 
 [node name="C" type="ScrollContainer" parent="M/C2/C" node_paths=PackedStringArray("shadows")]
 layout_mode = 2
 theme = ExtResource("5_1niu0")
-theme_override_styles/panel = SubResource("StyleBoxEmpty_p6gbo")
-scroll_vertical = 100
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pos8w")
 script = ExtResource("5_t7tgm")
 speed = 3.0
 damping = 0.25
@@ -933,7 +932,7 @@ offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
 disabled = true
-popup/item_0/text = "Q / Esc"
+popup/item_0/text = "Q"
 
 [node name="SItem15" type="Control" parent="M/C2/C/C/C"]
 custom_minimum_size = Vector2(0, 42)
@@ -974,7 +973,7 @@ offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
 disabled = true
-popup/item_0/text = "R / Enter"
+popup/item_0/text = "R"
 
 [node name="SItem17" type="Control" parent="M/C2/C/C/C"]
 custom_minimum_size = Vector2(0, 42)
@@ -1718,7 +1717,7 @@ theme_type_variation = &"panel_left_s"
 
 [node name="Blur" type="Panel" parent="LPanel"]
 z_index = -1
-material = SubResource("ShaderMaterial_ds3mf")
+material = SubResource("ShaderMaterial_1i2sk")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -1764,7 +1763,7 @@ theme_type_variation = &"panel_footer"
 
 [node name="Blur" type="Panel" parent="Footer"]
 z_index = -1
-material = SubResource("ShaderMaterial_ds3mf")
+material = SubResource("ShaderMaterial_1i2sk")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1822,7 +1821,7 @@ theme_type_variation = &"panel_center"
 
 [node name="Blur" type="Panel" parent="Center"]
 z_index = -1
-material = SubResource("ShaderMaterial_ds3mf")
+material = SubResource("ShaderMaterial_1i2sk")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
