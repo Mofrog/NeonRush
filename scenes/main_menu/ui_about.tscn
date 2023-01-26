@@ -10,33 +10,33 @@
 [ext_resource type="Shader" path="res://art/shaders/blur.gdshader" id="9_7wudv"]
 [ext_resource type="PackedScene" uid="uid://bmn1vg6macjvx" path="res://code/ui_elements/btn_help.tscn" id="10_2w4a1"]
 
-[sub_resource type="Gradient" id="Gradient_pnttm"]
+[sub_resource type="Gradient" id="Gradient_uk5x7"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.64)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_jsolf"]
-gradient = SubResource("Gradient_pnttm")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b4a5l"]
+gradient = SubResource("Gradient_uk5x7")
 fill_from = Vector2(1, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kam21"]
-texture = SubResource("GradientTexture2D_jsolf")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k5d5s"]
+texture = SubResource("GradientTexture2D_b4a5l")
 region_rect = Rect2(0, 0, 64, 64)
 
-[sub_resource type="Gradient" id="Gradient_61lq0"]
+[sub_resource type="Gradient" id="Gradient_lfkiw"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.64)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_dr7o4"]
-gradient = SubResource("Gradient_61lq0")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iw4mc"]
+gradient = SubResource("Gradient_lfkiw")
 fill_from = Vector2(1, 0)
 fill_to = Vector2(1, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xadd8"]
-texture = SubResource("GradientTexture2D_dr7o4")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3q11a"]
+texture = SubResource("GradientTexture2D_iw4mc")
 region_rect = Rect2(0, 0, 64, 64)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ebfh8"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6y5wk"]
 content_margin_right = 24.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o54w0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gkgvy"]
 shader = ExtResource("9_7wudv")
 shader_parameter/lod = 4.0
 
@@ -165,7 +165,7 @@ anchor_right = 1.0
 offset_bottom = 32.0
 grow_horizontal = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_kam21")
+theme_override_styles/panel = SubResource("StyleBoxTexture_k5d5s")
 
 [node name="BottomScrollShadow" type="Panel" parent="M/C2/C/C2"]
 visible = false
@@ -178,12 +178,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_xadd8")
+theme_override_styles/panel = SubResource("StyleBoxTexture_3q11a")
 
 [node name="C" type="ScrollContainer" parent="M/C2/C" node_paths=PackedStringArray("shadows")]
 layout_mode = 2
 theme = ExtResource("3_5dd6v")
-theme_override_styles/panel = SubResource("StyleBoxEmpty_ebfh8")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6y5wk")
 script = ExtResource("4_1ic7r")
 speed = 3.0
 damping = 0.25
@@ -695,6 +695,48 @@ grow_vertical = 2
 text = "AM_License"
 is_blur_dis = true
 
+[node name="SItem11" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem11"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DejaVuSans font"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem11"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BtnDejaVuSansLicense" parent="M/C2/C/C/C/SItem11" instance=ExtResource("2_7r7ov")]
+custom_minimum_size = Vector2(300, 42)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "AM_License"
+is_blur_dis = true
+
 [node name="LPanel" type="Control" parent="."]
 z_index = -1
 layout_mode = 1
@@ -729,7 +771,7 @@ theme_type_variation = &"panel_left_s"
 
 [node name="Blur" type="Panel" parent="LPanel"]
 z_index = -1
-material = SubResource("ShaderMaterial_o54w0")
+material = SubResource("ShaderMaterial_gkgvy")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -775,7 +817,7 @@ theme_type_variation = &"panel_footer"
 
 [node name="Blur" type="Panel" parent="Footer"]
 z_index = -1
-material = SubResource("ShaderMaterial_o54w0")
+material = SubResource("ShaderMaterial_gkgvy")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -828,7 +870,7 @@ theme_type_variation = &"panel_center"
 
 [node name="Blur" type="Panel" parent="Center"]
 z_index = -1
-material = SubResource("ShaderMaterial_o54w0")
+material = SubResource("ShaderMaterial_gkgvy")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -849,4 +891,5 @@ mouse_filter = 2
 [connection signal="pressed" from="M/C2/C/C/C/SItem7/BtnBlurLicense" to="." method="_on_btn_blur_license_pressed"]
 [connection signal="pressed" from="M/C2/C/C/C/SItem8/BtnAudioImportLicense" to="." method="_on_btn_audio_import_license_pressed"]
 [connection signal="pressed" from="M/C2/C/C/C/SItem9/BtnSenLicense" to="." method="_on_btn_sen_license_pressed"]
+[connection signal="pressed" from="M/C2/C/C/C/SItem11/BtnDejaVuSansLicense" to="." method="_on_btn_deja_vu_sans_license_pressed"]
 [connection signal="btn_pressed" from="Footer/C/BtnCancel" to="." method="_on_btn_cancel_btn_pressed"]

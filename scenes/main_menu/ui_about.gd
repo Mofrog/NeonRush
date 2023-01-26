@@ -25,3 +25,4 @@ func _on_btn_sql_license_pressed(): OS.shell_open("https://github.com/2shady4u/g
 func _on_btn_blur_license_pressed(): OS.shell_open("https://github.com/Bauxitedev/godot-motion-blur/blob/master/LICENSE")
 func _on_btn_audio_import_license_pressed(): OS.shell_open("https://github.com/Gianclgar/GDScriptAudioImport/blob/master/LICENSE")
 func _on_btn_sen_license_pressed(): OS.shell_open(ProjectSettings.globalize_path("res://art/fonts/Sen/OFL.txt"))
+func _on_btn_deja_vu_sans_license_pressed(): OS.shell_open(ProjectSettings.globalize_path("res://art/fonts/dejavu-sans/LICENSE.txt"))

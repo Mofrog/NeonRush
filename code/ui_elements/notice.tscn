@@ -1,15 +1,32 @@
-[gd_scene load_steps=6 format=3 uid="uid://ocvmbf2hvwej"]
+[gd_scene load_steps=8 format=3 uid="uid://ocvmbf2hvwej"]
 
 [ext_resource type="Theme" uid="uid://bxdlltmjayr5f" path="res://art/themes/t_pop_up.tres" id="1_lur8t"]
 [ext_resource type="Shader" path="res://art/shaders/blur.gdshader" id="2_2tu2q"]
 [ext_resource type="Script" path="res://code/ui_elements/notice.gd" id="2_mi6tt"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qdamu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y11tm"]
 shader = ExtResource("2_2tu2q")
 shader_parameter/lod = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otoum"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ln83j"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfp07"]
+bg_color = Color(0, 0, 0, 0.36)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.592157, 0.619608, 0.74902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buspg"]
+bg_color = Color(0, 0, 0, 0.64)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.380392, 0.396078, 0.490196, 1)
 
 [node name="Notice" type="Control"]
 layout_mode = 3
@@ -40,7 +57,7 @@ mouse_filter = 2
 metadata/_edit_group_ = true
 
 [node name="Blur" type="Panel" parent="C"]
-material = SubResource("ShaderMaterial_qdamu")
+material = SubResource("ShaderMaterial_y11tm")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,7 +65,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_otoum")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ln83j")
 
 [node name="Stroke" type="Panel" parent="C"]
 layout_mode = 1
@@ -62,8 +79,7 @@ offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("1_lur8t")
-theme_type_variation = &"BGStroke"
+theme_override_styles/panel = SubResource("StyleBoxFlat_bfp07")
 
 [node name="BG" type="Panel" parent="C"]
 layout_mode = 1
@@ -73,8 +89,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("1_lur8t")
-theme_type_variation = &"BG"
+theme_override_styles/panel = SubResource("StyleBoxFlat_buspg")
 
 [node name="C" type="VBoxContainer" parent="C"]
 layout_mode = 1

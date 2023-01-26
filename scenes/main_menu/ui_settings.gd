@@ -36,26 +36,7 @@ func _ready():
 		default_settings = settings.duplicate()
 
 
-func _on_visibility_changed():
-	if btn_settings == null: return
-	btn_settings.toggle_mode = true
-	btn_settings.button_pressed = true
-	btn_settings.grab_focus()
-
-
-func _on_btn_settings_pressed():
-	if is_settings_changed(): 
-		init_popup()
-	else: 
-		get_parent().remove_child(self)
-		queue_free()
-
-
-func _on_btn_cancel_btn_pressed():
-	get_parent().remove_child(self)
-	queue_free()
-
-
+# Exit with saving
 func _on_btn_save_btn_pressed():
 	if is_settings_changed():
 		var file = FileAccess.open("user://save_game.dat", FileAccess.WRITE)
@@ -64,30 +45,39 @@ func _on_btn_save_btn_pressed():
 	get_parent().remove_child(self)
 	queue_free()
 
+func is_settings_changed():
+	for i in settings: if settings[i] != default_settings[i]: return true
+	return false
 
-func _on_ok_pressed():
-	warning_popup.queue_free()
 
+# Exit without saving
+func _on_btn_settings_pressed():
+	if is_settings_changed(): 
+		_init_popup()
+	else: 
+		get_parent().remove_child(self)
+		queue_free()
 
-func _on_cancel_pressed():
+func _on_btn_cancel_btn_pressed():
 	get_parent().remove_child(self)
 	queue_free()
 
-
-func init_popup():
+func _init_popup():
 	warning_popup = preload("res://code/ui_elements/pop_up.tscn").instantiate()
 	warning_popup.ok.connect(_on_ok_pressed)
 	warning_popup.cancel.connect(_on_cancel_pressed)
 	warning_popup.header = tr("SMP_Warning") 
 	warning_popup.text = tr("SMP_Discard_Changes")
-	warning_popup.cancel_text = tr("SMP_Discard")
-	warning_popup.ok_text = tr("SMP_Return")
+	warning_popup.cancel_text = tr("SMP_Return")
+	warning_popup.ok_text = tr("SMP_Discard")
 	add_child(warning_popup)
 
+func _on_ok_pressed():
+	get_parent().remove_child(self)
+	queue_free()
 
-func is_settings_changed():
-	for i in settings: if settings[i] != default_settings[i]: return true
-	return false
+func _on_cancel_pressed():
+	warning_popup.queue_free()
 
 
 # Settings
@@ -105,7 +95,6 @@ func set_settings():
 	$M/C2/C/C/C/SItem10/SOVMusic.select(settings["Music volume"])
 	$M/C2/C/C/C/SItem9/SOVEffect.select(settings["Effect volume"])
 	$M/C2/C/C/C/SItem12/OptFPSCounter.select(settings["FPSCounter"])
-
 
 func _on_opt_lang_item_selected(index): settings["Language"] = index
 func _on_opt_w_size_item_selected(index): settings["WSize"] = index
