@@ -1,15 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://bowl52lphos4u"]
+[gd_scene load_steps=8 format=3 uid="uid://bowl52lphos4u"]
 
 [ext_resource type="Script" path="res://code/ui_elements/pop_up.gd" id="1_a2kr7"]
 [ext_resource type="Theme" uid="uid://bxdlltmjayr5f" path="res://art/themes/t_pop_up.tres" id="1_ks5xk"]
 [ext_resource type="Shader" path="res://art/shaders/blur.gdshader" id="2_iysux"]
 [ext_resource type="PackedScene" uid="uid://bmn1vg6macjvx" path="res://code/ui_elements/btn_help.tscn" id="3_oipx0"]
+[ext_resource type="FontFile" uid="uid://fpaac2jgu5ga" path="res://art/fonts/dejavu-sans/DejaVuSans.ttf" id="4_4rk2f"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_73orq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m3g5p"]
 shader = ExtResource("2_iysux")
 shader_parameter/lod = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ych6s"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvqkk"]
 bg_color = Color(1, 1, 1, 1)
 
 [node name="PopUp" type="Control"]
@@ -63,7 +64,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Blur" type="Panel" parent="C/C"]
-material = SubResource("ShaderMaterial_73orq")
+material = SubResource("ShaderMaterial_m3g5p")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -71,7 +72,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ych6s")
+theme_override_styles/panel = SubResource("StyleBoxFlat_nvqkk")
 
 [node name="Stroke" type="Panel" parent="C/C"]
 layout_mode = 1
@@ -129,6 +130,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 20.0
+theme_override_fonts/font = ExtResource("4_4rk2f")
 text = "Pop up text"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -78,10 +78,10 @@ func init_popup():
 	warning_popup = preload("res://code/ui_elements/pop_up.tscn").instantiate()
 	warning_popup.ok.connect(_on_ok_pressed)
 	warning_popup.cancel.connect(_on_cancel_pressed)
-	warning_popup.header = "Warning"
-	warning_popup.text = "Do you want discard the changes?"
-	warning_popup.cancel_text = "Discard"
-	warning_popup.ok_text = "Return"
+	warning_popup.header = tr("SMP_Warning") 
+	warning_popup.text = tr("SMP_Discard_Changes")
+	warning_popup.cancel_text = tr("SMP_Discard")
+	warning_popup.ok_text = tr("SMP_Return")
 	add_child(warning_popup)
 
 

@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=10 format=3 uid="uid://limxi2oj0oe8"]
 
-[ext_resource type="FontFile" uid="uid://c027tkrbapiov" path="res://art/fonts/Sen/Sen-Regular.ttf" id="1_bq6as"]
-[ext_resource type="FontFile" uid="uid://bfwgk4mk161u1" path="res://art/fonts/Sen/Sen-Bold.ttf" id="2_l1gdq"]
+[ext_resource type="FontFile" uid="uid://cli6hj01iwvdw" path="res://art/fonts/dejavu-sans/DejaVuSans-ExtraLight.ttf" id="1_4oqln"]
+[ext_resource type="FontFile" uid="uid://fpaac2jgu5ga" path="res://art/fonts/dejavu-sans/DejaVuSans.ttf" id="2_uchy7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2xxe"]
 content_margin_left = 55.0
@@ -101,12 +101,12 @@ Button/colors/font_hover_color = Color(0.862745, 0.913725, 0.937255, 1)
 Button/colors/font_hover_pressed_color = Color(0.862745, 0.913725, 0.937255, 1)
 Button/colors/font_pressed_color = Color(0.862745, 0.913725, 0.937255, 1)
 Button/font_sizes/font_size = 16
-Button/fonts/font = ExtResource("1_bq6as")
+Button/fonts/font = ExtResource("1_4oqln")
 Button/styles/focus = SubResource("StyleBoxFlat_b2xxe")
 Button/styles/hover = SubResource("StyleBoxFlat_wsy80")
 Button/styles/normal = SubResource("StyleBoxFlat_2yekd")
 Button/styles/pressed = SubResource("StyleBoxFlat_h8q01")
 Panel/styles/panel = SubResource("StyleBoxFlat_p31ss")
-ProgressBar/fonts/font = ExtResource("2_l1gdq")
+ProgressBar/fonts/font = ExtResource("2_uchy7")
 ProgressBar/styles/background = SubResource("StyleBoxEmpty_xew1e")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_vm6jw")

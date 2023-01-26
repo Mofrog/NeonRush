@@ -122,26 +122,27 @@ alignment = 2
 [node name="BtnSelect" parent="Menu/C/Body/Menu" instance=ExtResource("5_xe3ya")]
 z_index = 2
 layout_mode = 2
+text = "MM_Game"
 
 [node name="BtnEditor" parent="Menu/C/Body/Menu" instance=ExtResource("5_xe3ya")]
 z_index = 2
 layout_mode = 2
-text = "EDITOR"
+text = "MM_Editor"
 
 [node name="BtnSettings" parent="Menu/C/Body/Menu" instance=ExtResource("5_xe3ya")]
 z_index = 2
 layout_mode = 2
-text = "SETTINGS"
+text = "MM_Settings"
 
 [node name="BtnAbout" parent="Menu/C/Body/Menu" instance=ExtResource("5_xe3ya")]
 z_index = 2
 layout_mode = 2
-text = "ABOUT"
+text = "MM_About"
 
 [node name="BtnExit" parent="Menu/C/Body/Menu" instance=ExtResource("5_xe3ya")]
 z_index = 2
 layout_mode = 2
-text = "EXIT"
+text = "MM_Exit"
 
 [node name="Footer" type="Control" parent="Menu/C"]
 layout_mode = 2

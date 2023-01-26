@@ -10,33 +10,33 @@
 [ext_resource type="Shader" path="res://art/shaders/blur.gdshader" id="9_7wudv"]
 [ext_resource type="PackedScene" uid="uid://bmn1vg6macjvx" path="res://code/ui_elements/btn_help.tscn" id="10_2w4a1"]
 
-[sub_resource type="Gradient" id="Gradient_ite4e"]
+[sub_resource type="Gradient" id="Gradient_pnttm"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.64)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_lnhvq"]
-gradient = SubResource("Gradient_ite4e")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jsolf"]
+gradient = SubResource("Gradient_pnttm")
 fill_from = Vector2(1, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8x335"]
-texture = SubResource("GradientTexture2D_lnhvq")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kam21"]
+texture = SubResource("GradientTexture2D_jsolf")
 region_rect = Rect2(0, 0, 64, 64)
 
-[sub_resource type="Gradient" id="Gradient_jbrln"]
+[sub_resource type="Gradient" id="Gradient_61lq0"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.64)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_sv7wd"]
-gradient = SubResource("Gradient_jbrln")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dr7o4"]
+gradient = SubResource("Gradient_61lq0")
 fill_from = Vector2(1, 0)
 fill_to = Vector2(1, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ic4lv"]
-texture = SubResource("GradientTexture2D_sv7wd")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xadd8"]
+texture = SubResource("GradientTexture2D_dr7o4")
 region_rect = Rect2(0, 0, 64, 64)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vdyfa"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ebfh8"]
 content_margin_right = 24.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xfvcq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o54w0"]
 shader = ExtResource("9_7wudv")
 shader_parameter/lod = 4.0
 
@@ -93,6 +93,7 @@ z_index = 100
 layout_mode = 2
 focus_mode = 0
 disabled = true
+text = "MM_Game"
 is_blur_dis = true
 
 [node name="BtnEditor" parent="M/C/Body/Menu" instance=ExtResource("2_7r7ov")]
@@ -100,7 +101,7 @@ z_index = 100
 layout_mode = 2
 focus_mode = 0
 disabled = true
-text = "EDITOR"
+text = "MM_Editor"
 is_blur_dis = true
 
 [node name="BtnSettings" parent="M/C/Body/Menu" instance=ExtResource("2_7r7ov")]
@@ -108,12 +109,12 @@ z_index = 100
 layout_mode = 2
 focus_mode = 0
 disabled = true
-text = "SETTINGS"
+text = "MM_Settings"
 is_blur_dis = true
 
 [node name="BtnAbout" parent="M/C/Body/Menu" instance=ExtResource("2_7r7ov")]
 layout_mode = 2
-text = "ABOUT"
+text = "MM_About"
 is_blur_dis = true
 is_focus_imm = true
 
@@ -122,7 +123,7 @@ z_index = 100
 layout_mode = 2
 focus_mode = 0
 disabled = true
-text = "EXIT"
+text = "MM_Exit"
 is_blur_dis = true
 
 [node name="Footer" type="Control" parent="M/C"]
@@ -164,7 +165,7 @@ anchor_right = 1.0
 offset_bottom = 32.0
 grow_horizontal = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_8x335")
+theme_override_styles/panel = SubResource("StyleBoxTexture_kam21")
 
 [node name="BottomScrollShadow" type="Panel" parent="M/C2/C/C2"]
 visible = false
@@ -177,12 +178,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_ic4lv")
+theme_override_styles/panel = SubResource("StyleBoxTexture_xadd8")
 
 [node name="C" type="ScrollContainer" parent="M/C2/C" node_paths=PackedStringArray("shadows")]
 layout_mode = 2
 theme = ExtResource("3_5dd6v")
-theme_override_styles/panel = SubResource("StyleBoxEmpty_vdyfa")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ebfh8")
 script = ExtResource("4_1ic7r")
 speed = 3.0
 damping = 0.25
@@ -207,7 +208,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Account"
+text = "AM_Account"
 vertical_alignment = 1
 uppercase = true
 
@@ -276,7 +277,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "General"
+text = "SM_General"
 vertical_alignment = 1
 uppercase = true
 
@@ -304,7 +305,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Join to our Discord server"
+text = "AM_Join_Discord"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem2"]
@@ -329,7 +330,7 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "Join"
+text = "AM_Open"
 is_blur_dis = true
 
 [node name="SItem10" type="Control" parent="M/C2/C/C/C"]
@@ -346,7 +347,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "NeonRush Github page"
+text = "AM_Github"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem10"]
@@ -371,7 +372,7 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "Open"
+text = "AM_Open"
 is_blur_dis = true
 
 [node name="SItem" type="Control" parent="M/C2/C/C/C"]
@@ -413,7 +414,7 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "License"
+text = "AM_License"
 is_blur_dis = true
 
 [node name="SHeader2" type="Control" parent="M/C2/C/C/C"]
@@ -428,7 +429,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "annotations"
+text = "AM_Annotations"
 vertical_alignment = 1
 uppercase = true
 
@@ -481,7 +482,7 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "License"
+text = "AM_License"
 is_blur_dis = true
 
 [node name="SItem5" type="Control" parent="M/C2/C/C/C"]
@@ -523,7 +524,7 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "License"
+text = "AM_License"
 is_blur_dis = true
 
 [node name="SItem6" type="Control" parent="M/C2/C/C/C"]
@@ -565,7 +566,7 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "License"
+text = "AM_License"
 is_blur_dis = true
 
 [node name="SItem7" type="Control" parent="M/C2/C/C/C"]
@@ -607,7 +608,7 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "License"
+text = "AM_License"
 is_blur_dis = true
 
 [node name="SItem8" type="Control" parent="M/C2/C/C/C"]
@@ -649,7 +650,7 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "License"
+text = "AM_License"
 is_blur_dis = true
 
 [node name="SItem9" type="Control" parent="M/C2/C/C/C"]
@@ -691,7 +692,7 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "License"
+text = "AM_License"
 is_blur_dis = true
 
 [node name="LPanel" type="Control" parent="."]
@@ -728,7 +729,7 @@ theme_type_variation = &"panel_left_s"
 
 [node name="Blur" type="Panel" parent="LPanel"]
 z_index = -1
-material = SubResource("ShaderMaterial_xfvcq")
+material = SubResource("ShaderMaterial_o54w0")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -774,7 +775,7 @@ theme_type_variation = &"panel_footer"
 
 [node name="Blur" type="Panel" parent="Footer"]
 z_index = -1
-material = SubResource("ShaderMaterial_xfvcq")
+material = SubResource("ShaderMaterial_o54w0")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -797,7 +798,7 @@ theme_override_constants/separation = 555
 
 [node name="BtnCancel" parent="Footer/C" instance=ExtResource("10_2w4a1")]
 layout_mode = 2
-text = "Back"
+text = "SM_Back"
 
 [node name="Center" type="Control" parent="."]
 z_index = -10
@@ -827,7 +828,7 @@ theme_type_variation = &"panel_center"
 
 [node name="Blur" type="Panel" parent="Center"]
 z_index = -1
-material = SubResource("ShaderMaterial_xfvcq")
+material = SubResource("ShaderMaterial_o54w0")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

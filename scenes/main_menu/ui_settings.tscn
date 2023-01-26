@@ -12,33 +12,33 @@
 [ext_resource type="PackedScene" uid="uid://xo4tij046b54" path="res://code/ui_elements/scroll_option.tscn" id="9_6qsra"]
 [ext_resource type="PackedScene" uid="uid://bmn1vg6macjvx" path="res://code/ui_elements/btn_help.tscn" id="11_uh5n4"]
 
-[sub_resource type="Gradient" id="Gradient_eptfu"]
+[sub_resource type="Gradient" id="Gradient_oojlu"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.64)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_y0kos"]
-gradient = SubResource("Gradient_eptfu")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fa0sa"]
+gradient = SubResource("Gradient_oojlu")
 fill_from = Vector2(1, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ytkev"]
-texture = SubResource("GradientTexture2D_y0kos")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nym0b"]
+texture = SubResource("GradientTexture2D_fa0sa")
 region_rect = Rect2(0, 0, 64, 64)
 
-[sub_resource type="Gradient" id="Gradient_wcijn"]
+[sub_resource type="Gradient" id="Gradient_bio7r"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.64)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_3674x"]
-gradient = SubResource("Gradient_wcijn")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4qnbq"]
+gradient = SubResource("Gradient_bio7r")
 fill_from = Vector2(1, 0)
 fill_to = Vector2(1, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g5his"]
-texture = SubResource("GradientTexture2D_3674x")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d376w"]
+texture = SubResource("GradientTexture2D_4qnbq")
 region_rect = Rect2(0, 0, 64, 64)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pos8w"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wxf0i"]
 content_margin_right = 24.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1i2sk"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v4676"]
 shader = ExtResource("6_ke3by")
 shader_parameter/lod = 4.0
 
@@ -96,6 +96,7 @@ z_index = 100
 layout_mode = 2
 focus_mode = 0
 disabled = true
+text = "MM_Game"
 is_blur_dis = true
 
 [node name="BtnEditor" parent="M/C/Body/Menu" instance=ExtResource("3_pnbcx")]
@@ -103,12 +104,12 @@ z_index = 100
 layout_mode = 2
 focus_mode = 0
 disabled = true
-text = "EDITOR"
+text = "MM_Editor"
 is_blur_dis = true
 
 [node name="BtnSettings" parent="M/C/Body/Menu" instance=ExtResource("3_pnbcx")]
 layout_mode = 2
-text = "SETTINGS"
+text = "MM_Settings"
 is_blur_dis = true
 is_focus_imm = true
 
@@ -117,7 +118,7 @@ z_index = 100
 layout_mode = 2
 focus_mode = 0
 disabled = true
-text = "ABOUT"
+text = "MM_About"
 is_blur_dis = true
 
 [node name="BtnExit" parent="M/C/Body/Menu" instance=ExtResource("3_pnbcx")]
@@ -125,7 +126,7 @@ z_index = 100
 layout_mode = 2
 focus_mode = 0
 disabled = true
-text = "EXIT"
+text = "MM_Exit"
 is_blur_dis = true
 
 [node name="Footer" type="Control" parent="M/C"]
@@ -166,7 +167,7 @@ anchor_right = 1.0
 offset_bottom = 32.0
 grow_horizontal = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_ytkev")
+theme_override_styles/panel = SubResource("StyleBoxTexture_nym0b")
 
 [node name="BottomScrollShadow" type="Panel" parent="M/C2/C/C2"]
 visible = false
@@ -179,12 +180,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_g5his")
+theme_override_styles/panel = SubResource("StyleBoxTexture_d376w")
 
 [node name="C" type="ScrollContainer" parent="M/C2/C" node_paths=PackedStringArray("shadows")]
 layout_mode = 2
 theme = ExtResource("5_1niu0")
-theme_override_styles/panel = SubResource("StyleBoxEmpty_pos8w")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wxf0i")
 script = ExtResource("5_t7tgm")
 speed = 3.0
 damping = 0.25
@@ -209,7 +210,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "General"
+text = "SM_General"
 vertical_alignment = 1
 uppercase = true
 
@@ -237,7 +238,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Language*"
+text = "SM_Language"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem16"]
@@ -262,8 +263,8 @@ offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
 item_count = 2
-popup/item_0/text = "English"
-popup/item_1/text = "Russian"
+popup/item_0/text = "SML_English"
+popup/item_1/text = "SML_Russian"
 popup/item_1/id = 1
 
 [node name="SItem" type="Control" parent="M/C2/C/C/C"]
@@ -280,7 +281,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Viewport resolution*"
+text = "SM_Screen_Resolution"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem"]
@@ -340,7 +341,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Viewport mode*"
+text = "SM_Viewport_Mode"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem2"]
@@ -366,10 +367,10 @@ grow_horizontal = 0
 grow_vertical = 2
 item_count = 3
 selected = 2
-popup/item_0/text = "Windowed"
-popup/item_1/text = "Borderless"
+popup/item_0/text = "SML_Windowed"
+popup/item_1/text = "SML_Borderless"
 popup/item_1/id = 1
-popup/item_2/text = "Fullscreen"
+popup/item_2/text = "SML_Fullscreen"
 popup/item_2/id = 2
 
 [node name="SItem3" type="Control" parent="M/C2/C/C/C"]
@@ -386,7 +387,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Vertical synchronization*"
+text = "SM_Vertical_Synchronization"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem3"]
@@ -412,8 +413,8 @@ grow_horizontal = 0
 grow_vertical = 2
 item_count = 2
 selected = 1
-popup/item_0/text = "Disabled"
-popup/item_1/text = "Enabled"
+popup/item_0/text = "SML_Disabled"
+popup/item_1/text = "SML_Enabled"
 popup/item_1/id = 1
 
 [node name="SItem4" type="Control" parent="M/C2/C/C/C"]
@@ -430,7 +431,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Maximum FPS*"
+text = "SM_Maximum_FPS"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem4"]
@@ -462,7 +463,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Mouse sensitivity*"
+text = "SM_Mouse_Sensitivity"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem7"]
@@ -493,7 +494,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Graphics"
+text = "SM_Graphics"
 vertical_alignment = 1
 uppercase = true
 
@@ -521,7 +522,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Graphics*"
+text = "SM_Graphics"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem13"]
@@ -547,10 +548,10 @@ grow_horizontal = 0
 grow_vertical = 2
 item_count = 3
 selected = 2
-popup/item_0/text = "Low"
-popup/item_1/text = "Medium"
+popup/item_0/text = "SML_Low"
+popup/item_1/text = "SML_Medium"
 popup/item_1/id = 1
-popup/item_2/text = "High"
+popup/item_2/text = "SML_High"
 popup/item_2/id = 2
 
 [node name="SItem6" type="Control" parent="M/C2/C/C/C"]
@@ -567,7 +568,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Motion blur*"
+text = "SM_Motion_Blur"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem6"]
@@ -593,8 +594,8 @@ grow_horizontal = 0
 grow_vertical = 2
 item_count = 2
 selected = 1
-popup/item_0/text = "Disabled"
-popup/item_1/text = "Enabled"
+popup/item_0/text = "SML_Disabled"
+popup/item_1/text = "SML_Enabled"
 popup/item_1/id = 1
 
 [node name="SItem5" type="Control" parent="M/C2/C/C/C"]
@@ -611,7 +612,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Visible distance*"
+text = "SM_Visible_Distance"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem5"]
@@ -644,7 +645,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Audio"
+text = "SM_Audio"
 vertical_alignment = 1
 uppercase = true
 
@@ -672,7 +673,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Master volume*"
+text = "SM_Master_Volume"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem8"]
@@ -704,7 +705,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Music volume*"
+text = "SM_Music_Volume"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem10"]
@@ -736,7 +737,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Effect volume*"
+text = "SM_Effect_Volume"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem9"]
@@ -766,7 +767,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Miscellaneous"
+text = "SM_Miscellaneous"
 vertical_alignment = 1
 uppercase = true
 
@@ -794,7 +795,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "FPS Counter*"
+text = "SM_FPS_Counter"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem12"]
@@ -819,8 +820,8 @@ offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
 item_count = 2
-popup/item_0/text = "Disabled"
-popup/item_1/text = "Enabled"
+popup/item_0/text = "SML_Disabled"
+popup/item_1/text = "SML_Enabled"
 popup/item_1/id = 1
 
 [node name="SItem11" type="Control" parent="M/C2/C/C/C"]
@@ -837,7 +838,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Maps folder*"
+text = "SM_Maps_Folder"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem11"]
@@ -863,8 +864,8 @@ grow_horizontal = 0
 grow_vertical = 2
 disabled = true
 item_count = 2
-popup/item_0/text = "Enabled"
-popup/item_1/text = "Disabled"
+popup/item_0/text = "SML_Enabled"
+popup/item_1/text = "SML_Disabled"
 popup/item_1/id = 1
 
 [node name="SHeader5" type="Control" parent="M/C2/C/C/C"]
@@ -879,7 +880,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Key bindings (menu)"
+text = "SM_Key_Bindings_Menu"
 vertical_alignment = 1
 uppercase = true
 
@@ -907,7 +908,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Back / Cancel*"
+text = "SM_Back_Cancel"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem14"]
@@ -948,7 +949,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Accept*"
+text = "SM_Accept"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem15"]
@@ -989,7 +990,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Search*"
+text = "SM_Search"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem17"]
@@ -1028,7 +1029,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Key bindings (game)"
+text = "SM_Key_Bindings_Game"
 vertical_alignment = 1
 uppercase = true
 
@@ -1056,7 +1057,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Forward*"
+text = "SM_Forward"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem18"]
@@ -1097,7 +1098,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Left*"
+text = "SM_Left"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem21"]
@@ -1138,7 +1139,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Back*"
+text = "SM_Back"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem19"]
@@ -1179,7 +1180,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Right*"
+text = "SM_Right"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem20"]
@@ -1220,7 +1221,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Jump / Interact*"
+text = "SM_Jump_Interact"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem22"]
@@ -1261,7 +1262,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Restart*"
+text = "SM_Restart"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem23"]
@@ -1300,7 +1301,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Key bindings (editor)"
+text = "SM_Key_Bindings_Editor"
 vertical_alignment = 1
 uppercase = true
 
@@ -1328,7 +1329,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Forward*"
+text = "SM_Forward"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem24"]
@@ -1369,7 +1370,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Left*"
+text = "SM_Left"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem25"]
@@ -1410,7 +1411,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Back*"
+text = "SM_Back"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem26"]
@@ -1451,7 +1452,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Right*"
+text = "SM_Right"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem27"]
@@ -1492,7 +1493,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Up*"
+text = "SM_Up"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem28"]
@@ -1533,7 +1534,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Down*"
+text = "SM_Down"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem29"]
@@ -1574,7 +1575,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Sprint*"
+text = "SM_Sprint"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem30"]
@@ -1615,7 +1616,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Interact*"
+text = "SM_Interact"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem31"]
@@ -1656,7 +1657,7 @@ anchor_bottom = 1.0
 offset_left = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Cancel*"
+text = "SM_Cancel"
 vertical_alignment = 1
 
 [node name="BG" type="Panel" parent="M/C2/C/C/C/SItem32"]
@@ -1717,7 +1718,7 @@ theme_type_variation = &"panel_left_s"
 
 [node name="Blur" type="Panel" parent="LPanel"]
 z_index = -1
-material = SubResource("ShaderMaterial_1i2sk")
+material = SubResource("ShaderMaterial_v4676")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -1763,7 +1764,7 @@ theme_type_variation = &"panel_footer"
 
 [node name="Blur" type="Panel" parent="Footer"]
 z_index = -1
-material = SubResource("ShaderMaterial_1i2sk")
+material = SubResource("ShaderMaterial_v4676")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1787,10 +1788,11 @@ alignment = 1
 
 [node name="BtnCancel" parent="Footer/C" instance=ExtResource("11_uh5n4")]
 layout_mode = 2
-text = "Cancel"
+text = "SM_Cancel"
 
 [node name="BtnSave" parent="Footer/C" instance=ExtResource("11_uh5n4")]
 layout_mode = 2
+text = "SM_Save"
 key_btn = "R"
 
 [node name="Center" type="Control" parent="."]
@@ -1821,7 +1823,7 @@ theme_type_variation = &"panel_center"
 
 [node name="Blur" type="Panel" parent="Center"]
 z_index = -1
-material = SubResource("ShaderMaterial_1i2sk")
+material = SubResource("ShaderMaterial_v4676")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

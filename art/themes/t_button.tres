@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=15 format=3 uid="uid://dwrvgtybia0s3"]
 
-[ext_resource type="FontFile" uid="uid://bfwgk4mk161u1" path="res://art/fonts/Sen/Sen-Bold.ttf" id="1_c3cy6"]
+[ext_resource type="FontVariation" uid="uid://bkbouvs5nkcrw" path="res://art/fonts/Buyan/buyan_btn_var.tres" id="1_lsc26"]
 
 [sub_resource type="Gradient" id="Gradient_epg8n"]
 colors = PackedColorArray(0, 0.02, 0.1, 0.13, 0, 0.02, 0.1, 0.25)
@@ -59,7 +59,7 @@ Button/colors/font_hover_color = Color(1, 0.803922, 0.305882, 1)
 Button/colors/font_hover_pressed_color = Color(1, 0.803922, 0.305882, 1)
 Button/colors/font_pressed_color = Color(1, 0.803922, 0.305882, 1)
 Button/font_sizes/font_size = 24
-Button/fonts/font = ExtResource("1_c3cy6")
+Button/fonts/font = ExtResource("1_lsc26")
 Button/styles/disabled = SubResource("StyleBoxTexture_pce7m")
 Button/styles/focus = SubResource("StyleBoxTexture_tm11l")
 Button/styles/hover = SubResource("StyleBoxTexture_g5lcq")

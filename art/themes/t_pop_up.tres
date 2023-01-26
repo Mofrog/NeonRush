@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=11 format=3 uid="uid://bxdlltmjayr5f"]
 
-[ext_resource type="FontFile" uid="uid://bfwgk4mk161u1" path="res://art/fonts/Sen/Sen-Bold.ttf" id="1_opkx5"]
+[ext_resource type="FontFile" uid="uid://nbsscwgie507" path="res://art/fonts/dejavu-sans/DejaVuSans-Bold.ttf" id="1_kukxy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swpsx"]
 bg_color = Color(0, 0, 0, 0.64)
@@ -57,6 +57,6 @@ BGStroke/base_type = &"Panel"
 BGStroke/styles/panel = SubResource("StyleBoxFlat_a5odi")
 HSeparator/styles/separator = SubResource("StyleBoxTexture_mlxxm")
 Label/colors/font_color = Color(0.843137, 0.862745, 1, 1)
-Label/font_sizes/font_size = 24
-Label/fonts/font = ExtResource("1_opkx5")
+Label/font_sizes/font_size = 22
+Label/fonts/font = ExtResource("1_kukxy")
 Panel/styles/panel = SubResource("StyleBoxTexture_rbs31")

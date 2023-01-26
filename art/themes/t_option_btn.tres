@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=44 format=3 uid="uid://d108udwkttr07"]
 
-[ext_resource type="FontFile" uid="uid://bfwgk4mk161u1" path="res://art/fonts/Sen/Sen-Bold.ttf" id="1_olun2"]
+[ext_resource type="FontFile" uid="uid://fpaac2jgu5ga" path="res://art/fonts/dejavu-sans/DejaVuSans.ttf" id="1_2ek1l"]
 
 [sub_resource type="Gradient" id="Gradient_bjocn"]
 interpolation_mode = 1
@@ -186,7 +186,7 @@ OptionButton/colors/font_hover_pressed_color = Color(1, 0.807843, 0.317647, 1)
 OptionButton/colors/font_pressed_color = Color(1, 0.807843, 0.317647, 1)
 OptionButton/constants/arrow_margin = 0
 OptionButton/font_sizes/font_size = 24
-OptionButton/fonts/font = ExtResource("1_olun2")
+OptionButton/fonts/font = ExtResource("1_2ek1l")
 OptionButton/icons/arrow = SubResource("GradientTexture1D_m15dw")
 OptionButton/styles/disabled = SubResource("StyleBoxTexture_fngjo")
 OptionButton/styles/focus = SubResource("StyleBoxTexture_iecy1")
@@ -198,8 +198,8 @@ PopupMenu/colors/font_hover_color = Color(1, 0.807843, 0.317647, 1)
 PopupMenu/colors/font_separator_color = Color(0.843137, 0.854902, 0.92549, 1)
 PopupMenu/font_sizes/font_separator_size = 24
 PopupMenu/font_sizes/font_size = 24
-PopupMenu/fonts/font = ExtResource("1_olun2")
-PopupMenu/fonts/font_separator = ExtResource("1_olun2")
+PopupMenu/fonts/font = ExtResource("1_2ek1l")
+PopupMenu/fonts/font_separator = ExtResource("1_2ek1l")
 PopupMenu/icons/checked = SubResource("GradientTexture1D_hu8p7")
 PopupMenu/icons/checked_disabled = SubResource("GradientTexture1D_w7bnk")
 PopupMenu/icons/radio_checked = SubResource("GradientTexture1D_2wpr5")
