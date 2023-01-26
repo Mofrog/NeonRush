@@ -1,3 +1,6 @@
 .godot/
 .import/
 .mono/
+export_presets.cfg
+runtest.cmd
+runtest.sh
