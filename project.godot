@@ -39,9 +39,9 @@ window/size/viewport_height=1080
 window/size/mode=3
 window/size/resizable=false
 window/size/borderless=true
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 mouse_cursor/custom_image="res://art/icons/mouse_empty.tres"
-window/size/width=1920
-window/size/height=1050
 
 [editor]
 
@@ -182,6 +182,7 @@ editor_grid_switch={
 
 locale/translation_remaps={}
 locale/translations=PackedStringArray("res://data/text.en.translation", "res://data/text.ru.translation")
+locale/fallback=""
 locale/translations_pot_files=PackedStringArray()
 locale/locale_filter_mode=1
 

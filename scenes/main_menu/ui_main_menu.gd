@@ -7,17 +7,8 @@ var warning_popup = null
 var settings_data = {}
 
 
-func _ready(): load_lang()
-
-
-func load_lang():
-	var file = FileAccess.open("user://save_game.dat", FileAccess.READ)
-	if file != null:
-		settings_data = JSON.parse_string(file.get_as_text())
-		if settings_data != null:
-			TranslationServer.set_locale("ru" if settings_data["Language"] == 1 else "")
-	else:
-		TranslationServer.set_locale("")
+func _init(): 
+	Settings.new().load_settings()
 
 
 # Settings

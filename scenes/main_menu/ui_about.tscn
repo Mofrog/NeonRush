@@ -10,33 +10,33 @@
 [ext_resource type="Shader" path="res://art/shaders/blur.gdshader" id="9_7wudv"]
 [ext_resource type="PackedScene" uid="uid://bmn1vg6macjvx" path="res://code/ui_elements/btn_help.tscn" id="10_2w4a1"]
 
-[sub_resource type="Gradient" id="Gradient_hrda4"]
+[sub_resource type="Gradient" id="Gradient_7wprv"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.64)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_vo0l7"]
-gradient = SubResource("Gradient_hrda4")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v86pl"]
+gradient = SubResource("Gradient_7wprv")
 fill_from = Vector2(1, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1hjhc"]
-texture = SubResource("GradientTexture2D_vo0l7")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aj4nw"]
+texture = SubResource("GradientTexture2D_v86pl")
 region_rect = Rect2(0, 0, 64, 64)
 
-[sub_resource type="Gradient" id="Gradient_p6nn7"]
+[sub_resource type="Gradient" id="Gradient_10oto"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.64)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ooifx"]
-gradient = SubResource("Gradient_p6nn7")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d52u1"]
+gradient = SubResource("Gradient_10oto")
 fill_from = Vector2(1, 0)
 fill_to = Vector2(1, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kboy6"]
-texture = SubResource("GradientTexture2D_ooifx")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cqnbv"]
+texture = SubResource("GradientTexture2D_d52u1")
 region_rect = Rect2(0, 0, 64, 64)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n78t1"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dd6yo"]
 content_margin_right = 24.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_e8dgj"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0c10d"]
 shader = ExtResource("9_7wudv")
 shader_parameter/lod = 4.0
 
@@ -165,7 +165,7 @@ anchor_right = 1.0
 offset_bottom = 32.0
 grow_horizontal = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_1hjhc")
+theme_override_styles/panel = SubResource("StyleBoxTexture_aj4nw")
 
 [node name="BottomScrollShadow" type="Panel" parent="M/C2/C/C2"]
 visible = false
@@ -178,12 +178,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_kboy6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_cqnbv")
 
 [node name="C" type="ScrollContainer" parent="M/C2/C" node_paths=PackedStringArray("shadows")]
 layout_mode = 2
 theme = ExtResource("3_5dd6v")
-theme_override_styles/panel = SubResource("StyleBoxEmpty_n78t1")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dd6yo")
 script = ExtResource("4_1ic7r")
 speed = 3.0
 damping = 0.25
@@ -771,7 +771,7 @@ theme_type_variation = &"panel_left_s"
 
 [node name="Blur" type="Panel" parent="LPanel"]
 z_index = -1
-material = SubResource("ShaderMaterial_e8dgj")
+material = SubResource("ShaderMaterial_0c10d")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -817,7 +817,7 @@ theme_type_variation = &"panel_footer"
 
 [node name="Blur" type="Panel" parent="Footer"]
 z_index = -1
-material = SubResource("ShaderMaterial_e8dgj")
+material = SubResource("ShaderMaterial_0c10d")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -870,7 +870,7 @@ theme_type_variation = &"panel_center"
 
 [node name="Blur" type="Panel" parent="Center"]
 z_index = -1
-material = SubResource("ShaderMaterial_e8dgj")
+material = SubResource("ShaderMaterial_0c10d")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

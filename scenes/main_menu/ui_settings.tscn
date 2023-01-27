@@ -12,33 +12,33 @@
 [ext_resource type="PackedScene" uid="uid://xo4tij046b54" path="res://code/ui_elements/scroll_option.tscn" id="9_6qsra"]
 [ext_resource type="PackedScene" uid="uid://bmn1vg6macjvx" path="res://code/ui_elements/btn_help.tscn" id="11_uh5n4"]
 
-[sub_resource type="Gradient" id="Gradient_3wd8h"]
+[sub_resource type="Gradient" id="Gradient_yqvhy"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.64)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_k7mdt"]
-gradient = SubResource("Gradient_3wd8h")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_46d4j"]
+gradient = SubResource("Gradient_yqvhy")
 fill_from = Vector2(1, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bcdn5"]
-texture = SubResource("GradientTexture2D_k7mdt")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jknpl"]
+texture = SubResource("GradientTexture2D_46d4j")
 region_rect = Rect2(0, 0, 64, 64)
 
-[sub_resource type="Gradient" id="Gradient_1hgtj"]
+[sub_resource type="Gradient" id="Gradient_sd7r7"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.64)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_612c3"]
-gradient = SubResource("Gradient_1hgtj")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4ugcn"]
+gradient = SubResource("Gradient_sd7r7")
 fill_from = Vector2(1, 0)
 fill_to = Vector2(1, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vhepf"]
-texture = SubResource("GradientTexture2D_612c3")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mijkv"]
+texture = SubResource("GradientTexture2D_4ugcn")
 region_rect = Rect2(0, 0, 64, 64)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oyjej"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_265v7"]
 content_margin_right = 24.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1li76"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vasqs"]
 shader = ExtResource("6_ke3by")
 shader_parameter/lod = 4.0
 
@@ -167,7 +167,7 @@ anchor_right = 1.0
 offset_bottom = 32.0
 grow_horizontal = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_bcdn5")
+theme_override_styles/panel = SubResource("StyleBoxTexture_jknpl")
 
 [node name="BottomScrollShadow" type="Panel" parent="M/C2/C/C2"]
 visible = false
@@ -180,12 +180,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_vhepf")
+theme_override_styles/panel = SubResource("StyleBoxTexture_mijkv")
 
 [node name="C" type="ScrollContainer" parent="M/C2/C" node_paths=PackedStringArray("shadows")]
 layout_mode = 2
 theme = ExtResource("5_1niu0")
-theme_override_styles/panel = SubResource("StyleBoxEmpty_oyjej")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_265v7")
 script = ExtResource("5_t7tgm")
 speed = 3.0
 damping = 0.25
@@ -305,27 +305,25 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
-item_count = 10
-selected = 5
+item_count = 9
+selected = 4
 popup/item_0/text = "1360 x 768"
-popup/item_1/text = "1366 x 768"
+popup/item_1/text = "1440 x 900"
 popup/item_1/id = 1
-popup/item_2/text = "1440 x 900"
+popup/item_2/text = "1600 x 900"
 popup/item_2/id = 2
-popup/item_3/text = "1600 x 900"
+popup/item_3/text = "1680 x 1050"
 popup/item_3/id = 3
-popup/item_4/text = "1680 x 1050"
+popup/item_4/text = "1920 x 1080"
 popup/item_4/id = 4
-popup/item_5/text = "1920 x 1080"
+popup/item_5/text = "2560 x 1600"
 popup/item_5/id = 5
-popup/item_6/text = "2560 x 1600"
+popup/item_6/text = "2560 x 1440"
 popup/item_6/id = 6
-popup/item_7/text = "2560 x 1440"
+popup/item_7/text = "3440 x 1440"
 popup/item_7/id = 7
-popup/item_8/text = "3440 x 1440"
+popup/item_8/text = "3840 x 2160"
 popup/item_8/id = 8
-popup/item_9/text = "3840 x 2160"
-popup/item_9/id = 9
 
 [node name="SItem2" type="Control" parent="M/C2/C/C/C"]
 custom_minimum_size = Vector2(0, 42)
@@ -372,6 +370,32 @@ popup/item_1/text = "SML_Borderless"
 popup/item_1/id = 1
 popup/item_2/text = "SML_Fullscreen"
 popup/item_2/id = 2
+
+[node name="SItem33" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem33"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SM_Restart_Needed"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem33"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="SItem3" type="Control" parent="M/C2/C/C/C"]
 custom_minimum_size = Vector2(0, 42)
@@ -1718,7 +1742,7 @@ theme_type_variation = &"panel_left_s"
 
 [node name="Blur" type="Panel" parent="LPanel"]
 z_index = -1
-material = SubResource("ShaderMaterial_1li76")
+material = SubResource("ShaderMaterial_vasqs")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -1764,7 +1788,7 @@ theme_type_variation = &"panel_footer"
 
 [node name="Blur" type="Panel" parent="Footer"]
 z_index = -1
-material = SubResource("ShaderMaterial_1li76")
+material = SubResource("ShaderMaterial_vasqs")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1823,7 +1847,7 @@ theme_type_variation = &"panel_center"
 
 [node name="Blur" type="Panel" parent="Center"]
 z_index = -1
-material = SubResource("ShaderMaterial_1li76")
+material = SubResource("ShaderMaterial_vasqs")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
