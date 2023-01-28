@@ -12,6 +12,7 @@ Neon Rush is a first person platformer with rytm based gameplay where you can cr
 
 - [Godot](https://godotengine.org/license/)
 - [Godot Smooth Scroll](https://github.com/SpyrexDE/SmoothScroll)
+- [TextDatabase](https://github.com/KoBeWi/Godot-Text-Database)
 - [godot-sqlite](https://github.com/2shady4u/godot-sqlite)
 - [Godot Motion Blur](https://github.com/Bauxitedev/godot-motion-blur)
 - [GDScriptAudioImport](https://github.com/Gianclgar/GDScriptAudioImport)

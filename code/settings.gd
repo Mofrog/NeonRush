@@ -62,14 +62,7 @@ func set_settings():
 	match int(settings["VSync"]):
 		0: DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 		1: DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
-	match int(settings["MaxFPS"]):
-		0: Engine.set_max_fps(30)
-		1: Engine.set_max_fps(45)
-		2: Engine.set_max_fps(60)
-		3: Engine.set_max_fps(75)
-		4: Engine.set_max_fps(90)
-		5: Engine.set_max_fps(120)
-		6: Engine.set_max_fps(144)
+	Engine.set_max_fps(60)
 	ProjectSettings.set_setting("config/mouse_sens", settings["MSens"])
 	#settings["Graphics"]
 	ProjectSettings.set_setting("config/is_motion_blur_enabled", settings["Blur"])
@@ -78,6 +71,17 @@ func set_settings():
 	#settings["Music volume"]
 	#settings["Effect volume"]
 	ProjectSettings.set_setting("config/is_fps_counter_enabled", settings["FPSCounter"])
+
+
+func set_fps():
+	match int(settings["MaxFPS"]):
+		0: Engine.set_max_fps(30)
+		1: Engine.set_max_fps(45)
+		2: Engine.set_max_fps(60)
+		3: Engine.set_max_fps(75)
+		4: Engine.set_max_fps(90)
+		5: Engine.set_max_fps(120)
+		6: Engine.set_max_fps(144)
 
 
 func is_settings_changed():

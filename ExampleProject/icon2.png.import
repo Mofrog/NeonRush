@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d5se1bg7w4fn"
-path="res://.godot/imported/class-icon.svg-7e8e7f949e3bd860c2e45f47769ab94b.ctex"
+uid="uid://ch81y0acv6nr5"
+path="res://.godot/imported/icon2.png-2294dfe885793d4711fc20bee13a3760.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/SmoothScroll/class-icon.svg"
-dest_files=["res://.godot/imported/class-icon.svg-7e8e7f949e3bd860c2e45f47769ab94b.ctex"]
+source_file="res://icon2.png"
+dest_files=["res://.godot/imported/icon2.png-2294dfe885793d4711fc20bee13a3760.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

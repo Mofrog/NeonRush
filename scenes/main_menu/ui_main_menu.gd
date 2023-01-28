@@ -1,20 +1,23 @@
+#TODO UI for diffetent resolutions
 extends Control
 
 
-var settings = null
-var about = null
-var warning_popup = null
-var settings_data = {}
+# Map select menu
+func _on_btn_select_pressed():
+	$Menu.visible = false
+	var map_select = preload("res://scenes/map_select_menu/ui_map_select.tscn").instantiate()
+	add_child(map_select)
+	map_select.tree_exited.connect(_on_map_select_exit)
 
-
-func _init(): 
-	Settings.new().load_settings()
+func _on_map_select_exit():
+	$Menu.visible = true
+	$Menu/C/Body/Menu/BtnSelect.grab_focus()
 
 
 # Settings
 func _on_btn_settings_pressed():
 	$Menu.visible = false
-	settings = preload("res://scenes/main_menu/ui_settings.tscn").instantiate()
+	var settings = preload("res://scenes/main_menu/ui_settings.tscn").instantiate()
 	add_child(settings)
 	settings.tree_exited.connect(_on_settings_exit_settings)
 	settings.saved.connect(_on_settings_saved)
@@ -32,7 +35,7 @@ func _on_settings_exit_settings():
 # About
 func _on_btn_about_pressed():
 	$Menu.visible = false
-	about = preload("res://scenes/main_menu/ui_about.tscn").instantiate()
+	var about = preload("res://scenes/main_menu/ui_about.tscn").instantiate()
 	add_child(about)
 	about.tree_exited.connect(_on_about_exit)
 
@@ -42,6 +45,8 @@ func _on_about_exit():
 
 
 # Exit game
+var warning_popup = null
+
 func _on_btn_exit_pressed(): init_popup()
 
 func init_popup():

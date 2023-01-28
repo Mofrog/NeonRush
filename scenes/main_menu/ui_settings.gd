@@ -4,8 +4,7 @@ extends Control
 signal saved
 
 
-var is_update_disabled = true
-var warning_popup = null
+
 var settings_class = Settings.new()
 
 
@@ -24,6 +23,8 @@ func _on_btn_save_btn_pressed():
 
 
 # Exit without saving
+var warning_popup = null
+
 func _on_btn_settings_pressed():
 	if settings_class.is_settings_changed(): 
 		_init_popup()
@@ -52,6 +53,8 @@ func _on_cancel_pressed():
 
 
 # Settings
+var is_update_disabled = true
+
 func set_settings():
 	var settings = settings_class.get_data()
 	if settings != null:
