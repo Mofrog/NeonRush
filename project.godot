@@ -31,6 +31,7 @@ visible_radius=12
 mouse_sens=1.0
 chunk_size=Vector3(16, 16, 16)
 is_motion_blur_enabled=true
+is_fps_counter_enabled=false
 
 [display]
 

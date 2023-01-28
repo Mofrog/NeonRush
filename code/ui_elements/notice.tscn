@@ -4,14 +4,14 @@
 [ext_resource type="Shader" path="res://art/shaders/blur.gdshader" id="2_2tu2q"]
 [ext_resource type="Script" path="res://code/ui_elements/notice.gd" id="2_mi6tt"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_y11tm"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nwfx8"]
 shader = ExtResource("2_2tu2q")
 shader_parameter/lod = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ln83j"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jhy6"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfp07"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8yh4"]
 bg_color = Color(0, 0, 0, 0.36)
 draw_center = false
 border_width_left = 1
@@ -20,7 +20,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.592157, 0.619608, 0.74902, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buspg"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5rh2"]
 bg_color = Color(0, 0, 0, 0.64)
 border_width_left = 2
 border_width_top = 2
@@ -48,16 +48,16 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -365.0
-offset_top = -115.0
+offset_top = -190.0
 offset_right = -15.0
-offset_bottom = -15.0
+offset_bottom = -90.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 2
 metadata/_edit_group_ = true
 
 [node name="Blur" type="Panel" parent="C"]
-material = SubResource("ShaderMaterial_y11tm")
+material = SubResource("ShaderMaterial_nwfx8")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,7 +65,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ln83j")
+theme_override_styles/panel = SubResource("StyleBoxFlat_4jhy6")
 
 [node name="Stroke" type="Panel" parent="C"]
 layout_mode = 1
@@ -79,7 +79,7 @@ offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bfp07")
+theme_override_styles/panel = SubResource("StyleBoxFlat_s8yh4")
 
 [node name="BG" type="Panel" parent="C"]
 layout_mode = 1
@@ -89,7 +89,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_buspg")
+theme_override_styles/panel = SubResource("StyleBoxFlat_x5rh2")
 
 [node name="C" type="VBoxContainer" parent="C"]
 layout_mode = 1

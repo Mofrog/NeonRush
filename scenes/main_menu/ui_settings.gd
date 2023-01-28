@@ -32,22 +32,20 @@ func _on_btn_settings_pressed():
 		queue_free()
 
 func _on_btn_cancel_btn_pressed():
+	settings_class.settings = settings_class.default_settings
+	settings_class.set_settings()
 	get_parent().remove_child(self)
 	queue_free()
 
 func _init_popup():
 	warning_popup = preload("res://code/ui_elements/pop_up.tscn").instantiate()
-	warning_popup.ok.connect(_on_ok_pressed)
+	warning_popup.ok.connect(_on_btn_cancel_btn_pressed)
 	warning_popup.cancel.connect(_on_cancel_pressed)
 	warning_popup.header = tr("SMP_Warning") 
 	warning_popup.text = tr("SMP_Discard_Changes")
 	warning_popup.cancel_text = tr("SMP_Return")
 	warning_popup.ok_text = tr("SMP_Discard")
 	add_child(warning_popup)
-
-func _on_ok_pressed():
-	get_parent().remove_child(self)
-	queue_free()
 
 func _on_cancel_pressed():
 	warning_popup.queue_free()

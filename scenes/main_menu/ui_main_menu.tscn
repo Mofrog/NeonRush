@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2clg0pgobgd7"]
+[gd_scene load_steps=16 format=3 uid="uid://d2clg0pgobgd7"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/ui_main_menu.gd" id="1"]
 [ext_resource type="Theme" uid="uid://cna3jukey38ch" path="res://art/themes/t_label.tres" id="4_5apao"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://dwrvgtybia0s3" path="res://art/themes/t_button.tres" id="5_mim1s"]
 [ext_resource type="PackedScene" uid="uid://dj53yebvgwrxt" path="res://code/ui_elements/btn_menu.tscn" id="5_xe3ya"]
 [ext_resource type="Script" path="res://scenes/main_menu/cursor_trail.gd" id="7_74l0b"]
+[ext_resource type="PackedScene" uid="uid://os8bl5ic36js" path="res://code/ui_elements/fps_counter.tscn" id="7_thqxh"]
 
 [sub_resource type="Gradient" id="Gradient_8rrq5"]
 offsets = PackedFloat32Array(0, 0.14717, 1)
@@ -170,6 +171,10 @@ fixed_fps = 120
 interpolate = false
 visibility_rect = Rect2(-300, -300, 600, 600)
 script = ExtResource("7_74l0b")
+
+[node name="FPSCounter" parent="." instance=ExtResource("7_thqxh")]
+z_index = 100
+layout_mode = 1
 
 [connection signal="pressed" from="Menu/C/Body/Menu/BtnSettings" to="." method="_on_btn_settings_pressed"]
 [connection signal="pressed" from="Menu/C/Body/Menu/BtnAbout" to="." method="_on_btn_about_pressed"]

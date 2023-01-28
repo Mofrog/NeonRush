@@ -60,7 +60,7 @@ func set_settings():
 		7: DisplayServer.window_set_size(Vector2i(3440,1440))
 		8: DisplayServer.window_set_size(Vector2i(3840,2160))
 	match int(settings["VSync"]):
-		0: DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ADAPTIVE)
+		0: DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 		1: DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 	match int(settings["MaxFPS"]):
 		0: Engine.set_max_fps(30)
@@ -77,7 +77,7 @@ func set_settings():
 	#settings["Master volume"]
 	#settings["Music volume"]
 	#settings["Effect volume"]
-	#settings["FPSCounter"]
+	ProjectSettings.set_setting("config/is_fps_counter_enabled", settings["FPSCounter"])
 
 
 func is_settings_changed():

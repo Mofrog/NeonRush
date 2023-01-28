@@ -10,7 +10,7 @@ extends ScrollContainer
 # Softness of damping when "overdragging"
 @export var damping = 0.1
 @export var shadows = Control.new()
-
+var delta = 0
 
 # Current velocity of the `content_node`
 var velocity := Vector2(0,0)
@@ -37,8 +37,10 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	delta = _delta + 1
+	
 	# If no scroll needed, don't apply forces
-	if content_node.size.y - self.size.y < 1:
+	if content_node.size.y - self.size.y < 1: 
 		return
 	
 	# Distance between content_node's bottom and bottom of the scroll box 
@@ -48,7 +50,7 @@ func _process(_delta: float) -> void:
 	
 	# If overdragged on bottom:
 	if bottom_distance < 0 :
-		over_drag_multiplicator_bottom = 1/abs(bottom_distance)*10
+		over_drag_multiplicator_bottom = (1 / abs(bottom_distance) * 10) * delta
 		shadows.get_child(1).visible = false
 	elif bottom_distance < 10:
 		shadows.get_child(1).visible = false
@@ -58,7 +60,7 @@ func _process(_delta: float) -> void:
 	
 	# If overdragged on top:
 	if top_distance > 0:
-		over_drag_multiplicator_top = 1/abs(top_distance)*10
+		over_drag_multiplicator_top = (1 / abs(top_distance) * 10) * delta
 		shadows.get_child(0).visible = false
 	elif top_distance > -10:
 		shadows.get_child(0).visible = false
@@ -67,7 +69,7 @@ func _process(_delta: float) -> void:
 		shadows.get_child(0).visible = true
 	
 	# Simulate friction
-	velocity *= 0.9
+	velocity *= 0.9 * delta
 	
 	# If velocity is too low, just set it to 0
 	if velocity.length() <= just_stop_under:
@@ -75,9 +77,9 @@ func _process(_delta: float) -> void:
 	
 	# Applies counterforces when overdragging
 	if bottom_distance< 0 :
-		velocity.y = lerp(velocity.y, -bottom_distance/8, damping)
+		velocity.y = lerp(velocity.y, -bottom_distance/8, damping) * delta
 	if top_distance> 0:
-		velocity.y = lerp(velocity.y, -top_distance/8, damping)
+		velocity.y = lerp(velocity.y, -top_distance/8, damping) * delta
 	
 	# If using scroll bar dragging, set the content_node's
 	# position by using the scrollbar position
@@ -86,7 +88,7 @@ func _process(_delta: float) -> void:
 		return
 	
 	# Move content node by applying velocity
-	pos += velocity
+	pos += velocity * delta
 	content_node.position = pos
 	
 	# Update vertical scroll bar
@@ -97,15 +99,14 @@ func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		match event.button_index:
 			5: 
-				velocity.y -= speed
+				velocity.y -= speed * delta
 				lft_mouse_pressed = false
 			4: 
-				velocity.y += speed
+				velocity.y += speed * delta
 				lft_mouse_pressed = false
-			1: 
-				lft_mouse_pressed = true
+			1: lft_mouse_pressed = true
 		
-		if not event.pressed:
+		if not event.pressed: 
 			scrolling = false
 			lft_mouse_pressed = false
 	
@@ -119,17 +120,17 @@ func _on_VScrollBar_scrolling() -> void:
 
 # Scrolls up a page
 func scroll_page_up() -> void:
-	velocity.y += size.y / 10
+	velocity.y += (size.y / 10) * delta
 
 
 # Scrolls down a page
 func scroll_page_down() -> void:
-	velocity.y -= size.y / 10
+	velocity.y -= (size.y / 10) * delta
 
 
 # Adds velocity to the vertical scroll
 func scroll_vertical(amount: float) -> void:
-	velocity.y -= amount
+	velocity.y -= amount * delta
 
 # Scrolls to top
 func scroll_to_top() -> void:
