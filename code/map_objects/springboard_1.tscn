@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource path="res://code/map_objects/springboard_1.gd" type="Script" id=1]
-[ext_resource path="res://art/materials/m_select_brush.tres" type="Material" id=2]
+[ext_resource type="Script" path="res://code/map_objects/springboard_1.gd" id="1"]
+[ext_resource type="Material" path="res://art/materials/m_select_brush.tres" id="2"]
 
 [sub_resource type="BoxShape3D" id=1]
 extents = Vector3( 0.2, 0.2, 0.2 )

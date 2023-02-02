@@ -1,15 +1,15 @@
-[gd_scene load_steps=35 format=3 uid="uid://dwox8feh7q3ac"]
+[gd_scene load_steps=35 format=3]
 
 [ext_resource type="Script" path="res://scenes/main_menu/ui_about.gd" id="1_7x7yv"]
-[ext_resource type="Theme" uid="uid://dwrvgtybia0s3" path="res://art/themes/t_button.tres" id="1_nlep5"]
-[ext_resource type="PackedScene" uid="uid://dj53yebvgwrxt" path="res://code/ui_elements/btn_menu.tscn" id="2_7r7ov"]
+[ext_resource type="Theme" path="res://art/themes/t_button.tres" id="1_nlep5"]
+[ext_resource type="PackedScene" path="res://code/ui_elements/btn_menu.tscn" id="2_7r7ov"]
 [ext_resource type="Theme" uid="uid://cndgcy67xr3nw" path="res://art/themes/t_grabber.tres" id="3_5dd6v"]
 [ext_resource type="Script" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="4_1ic7r"]
 [ext_resource type="FontFile" uid="uid://fpaac2jgu5ga" path="res://art/fonts/dejavu-sans/DejaVuSans.ttf" id="4_ntpls"]
-[ext_resource type="Theme" uid="uid://d10qhd6v77bkv" path="res://art/themes/t_settings_item.tres" id="5_4huj2"]
+[ext_resource type="Theme" path="res://art/themes/t_settings_item.tres" id="5_4huj2"]
 [ext_resource type="Theme" uid="uid://eo4a2eayt8nq" path="res://art/themes/t_submenu.tres" id="8_mxi26"]
 [ext_resource type="Shader" path="res://art/shaders/blur.gdshader" id="9_7wudv"]
-[ext_resource type="PackedScene" uid="uid://bmn1vg6macjvx" path="res://code/ui_elements/btn_help.tscn" id="10_2w4a1"]
+[ext_resource type="PackedScene" path="res://code/ui_elements/btn_help.tscn" id="10_2w4a1"]
 
 [sub_resource type="Gradient" id="Gradient_dvuq4"]
 colors = PackedColorArray(0, 0.02, 0.1, 0.13, 0, 0.02, 0.1, 0.25)

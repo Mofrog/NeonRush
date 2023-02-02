@@ -16,7 +16,7 @@ func _ready():
 		$Label.text = "End"
 		$Label2.text = "End"
 	else:
-		var scene = load("res://code/map_objects/start_end.tscn").instantiate().duplicate(true)
+		var scene = preload("res://code/map_objects/start_end.tscn").instantiate().duplicate(true)
 		for i in scene.get_children():
 			scene.remove_child(i)
 			add_child(i)

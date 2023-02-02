@@ -1,63 +1,63 @@
-[gd_scene load_steps=22 format=3 uid="uid://da8wm48heq0l3"]
+[gd_scene load_steps=22 format=3]
 
 [ext_resource type="Script" path="res://scenes/map_select_menu/ui_map_select.gd" id="1"]
-[ext_resource type="Theme" uid="uid://dwrvgtybia0s3" path="res://art/themes/t_button.tres" id="3_013gg"]
-[ext_resource type="Theme" uid="uid://d10qhd6v77bkv" path="res://art/themes/t_settings_item.tres" id="3_44i2b"]
+[ext_resource type="Theme" path="res://art/themes/t_button.tres" id="3_013gg"]
+[ext_resource type="Theme" path="res://art/themes/t_settings_item.tres" id="3_44i2b"]
 [ext_resource type="FontFile" uid="uid://nbsscwgie507" path="res://art/fonts/dejavu-sans/DejaVuSans-Bold.ttf" id="4"]
 [ext_resource type="Theme" uid="uid://cndgcy67xr3nw" path="res://art/themes/t_grabber.tres" id="4_wbl4q"]
 [ext_resource type="Script" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="5_b3b0p"]
 [ext_resource type="Theme" uid="uid://eo4a2eayt8nq" path="res://art/themes/t_submenu.tres" id="6_amga3"]
 [ext_resource type="Shader" path="res://art/shaders/blur.gdshader" id="7_3ffua"]
-[ext_resource type="PackedScene" uid="uid://bmn1vg6macjvx" path="res://code/ui_elements/btn_help.tscn" id="8_6yilv"]
+[ext_resource type="PackedScene" path="res://code/ui_elements/btn_help.tscn" id="8_6yilv"]
 
-[sub_resource type="Theme" id="Theme_bx2sb"]
+[sub_resource type="Theme" id="Theme_y0nog"]
 default_font = ExtResource("4")
 Label/fonts/font = ExtResource("4")
 
-[sub_resource type="Theme" id="Theme_6mlly"]
+[sub_resource type="Theme" id="Theme_4ua1x"]
 Label/colors/font_color = Color(0.94, 0.95, 1, 0.55)
 Label/colors/font_outline_color = Color(1, 1, 1, 1)
 Label/constants/outline_size = 2
 Label/font_sizes/font_size = 64
 Label/fonts/font = ExtResource("4")
 
-[sub_resource type="Theme" id="Theme_hbihd"]
+[sub_resource type="Theme" id="Theme_7lnqa"]
 Label/colors/font_color = Color(0.94, 0.95, 1, 0.55)
 Label/font_sizes/font_size = 42
 Label/fonts/font = ExtResource("4")
 
-[sub_resource type="Theme" id="Theme_rd4we"]
+[sub_resource type="Theme" id="Theme_wftsi"]
 Label/colors/font_color = Color(0.94, 0.95, 1, 0.55)
 Label/font_sizes/font_size = 24
 Label/fonts/font = ExtResource("4")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r3eqo"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kmmse"]
 content_margin_right = 24.0
 
-[sub_resource type="Gradient" id="Gradient_34guv"]
+[sub_resource type="Gradient" id="Gradient_ymw2k"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.32)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_twixg"]
-gradient = SubResource("Gradient_34guv")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6vdfs"]
+gradient = SubResource("Gradient_ymw2k")
 fill_from = Vector2(1, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_50v28"]
-texture = SubResource("GradientTexture2D_twixg")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bwban"]
+texture = SubResource("GradientTexture2D_6vdfs")
 region_rect = Rect2(0, 0, 64, 64)
 
-[sub_resource type="Gradient" id="Gradient_u7ph3"]
+[sub_resource type="Gradient" id="Gradient_vo7ts"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.32)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_jsg8s"]
-gradient = SubResource("Gradient_u7ph3")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l773o"]
+gradient = SubResource("Gradient_vo7ts")
 fill_from = Vector2(1, 0)
 fill_to = Vector2(1, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2l8ge"]
-texture = SubResource("GradientTexture2D_jsg8s")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w0lwb"]
+texture = SubResource("GradientTexture2D_l773o")
 region_rect = Rect2(0, 0, 64, 64)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nsn6b"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0cle0"]
 shader = ExtResource("7_3ffua")
 shader_parameter/lod = 4.0
 
@@ -69,7 +69,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = SubResource("Theme_bx2sb")
+theme = SubResource("Theme_y0nog")
 script = ExtResource("1")
 
 [node name="M" type="MarginContainer" parent="."]
@@ -109,19 +109,19 @@ theme_override_constants/separation = 10
 
 [node name="Map" type="Label" parent="M/C/Header/C"]
 layout_mode = 2
-theme = SubResource("Theme_6mlly")
+theme = SubResource("Theme_4ua1x")
 text = "{Map}"
 text_overrun_behavior = 3
 
 [node name="Song" type="Label" parent="M/C/Header/C"]
 layout_mode = 2
-theme = SubResource("Theme_hbihd")
+theme = SubResource("Theme_7lnqa")
 text = "{Artist} - {Song}"
 text_overrun_behavior = 3
 
 [node name="Data" type="Label" parent="M/C/Header/C"]
 layout_mode = 2
-theme = SubResource("Theme_rd4we")
+theme = SubResource("Theme_wftsi")
 text = "BPM: {BPM}, Difficult: {Difficult}, BS: {BS}, TD: {TD},
 Length: {Length}, Jumps: {Jumps}"
 text_overrun_behavior = 3
@@ -169,7 +169,7 @@ anchor_bottom = 1.0
 offset_right = 350.0
 grow_vertical = 2
 theme = ExtResource("4_wbl4q")
-theme_override_styles/panel = SubResource("StyleBoxEmpty_r3eqo")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kmmse")
 script = ExtResource("5_b3b0p")
 speed = 3.0
 damping = 0.25
@@ -251,7 +251,7 @@ anchor_right = 1.0
 offset_bottom = 32.0
 grow_horizontal = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_50v28")
+theme_override_styles/panel = SubResource("StyleBoxTexture_bwban")
 
 [node name="BottomScrollShadow" type="Panel" parent="M/C/Body/C2"]
 visible = false
@@ -264,7 +264,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_2l8ge")
+theme_override_styles/panel = SubResource("StyleBoxTexture_w0lwb")
 
 [node name="Footer" type="Control" parent="M/C"]
 layout_mode = 2
@@ -333,7 +333,7 @@ theme_override_constants/margin_bottom = 64
 [node name="C" type="ScrollContainer" parent="M/C2/C" node_paths=PackedStringArray("shadows")]
 layout_mode = 2
 theme = ExtResource("4_wbl4q")
-theme_override_styles/panel = SubResource("StyleBoxEmpty_r3eqo")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kmmse")
 script = ExtResource("5_b3b0p")
 speed = 3.0
 damping = 0.25
@@ -433,7 +433,7 @@ theme_type_variation = &"panel_left_s"
 
 [node name="Blur" type="Panel" parent="LPanel"]
 z_index = -1
-material = SubResource("ShaderMaterial_nsn6b")
+material = SubResource("ShaderMaterial_0cle0")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -479,7 +479,7 @@ theme_type_variation = &"panel_footer"
 
 [node name="Blur" type="Panel" parent="Footer"]
 z_index = -1
-material = SubResource("ShaderMaterial_nsn6b")
+material = SubResource("ShaderMaterial_0cle0")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

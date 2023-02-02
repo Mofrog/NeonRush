@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmn1vg6macjvx"]
+[gd_scene load_steps=8 format=3]
 
-[ext_resource type="Theme" uid="uid://limxi2oj0oe8" path="res://art/themes/t_btn_help.tres" id="1_1i1px"]
+[ext_resource type="Theme" path="res://art/themes/t_btn_help.tres" id="1_1i1px"]
 [ext_resource type="Script" path="res://code/ui_elements/btn_help.gd" id="2_k0vj6"]
 [ext_resource type="FontFile" uid="uid://bfwgk4mk161u1" path="res://art/fonts/Sen/Sen-Bold.ttf" id="2_p2xcd"]
 

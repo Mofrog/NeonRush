@@ -13,7 +13,6 @@ signal area_entered(area)
 @export var gravity = 20
 @export var jump_scale = 8
 
-var velocity = Vector3()
 var velocity_speed = 0.0
 var acceleration = 0.0
 

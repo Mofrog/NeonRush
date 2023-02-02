@@ -1,13 +1,13 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=18 format=3]
 
-[ext_resource path="res://code/map_generations/chunks.gd" type="Script" id=1]
-[ext_resource path="res://scenes/level_game/level_game.gd" type="Script" id=2]
-[ext_resource path="res://art/env.tres" type="Environment" id=3]
-[ext_resource path="res://scenes/level_game/character_game.tscn" type="PackedScene" id=4]
-[ext_resource path="res://art/Quicksand-Regular.ttf" type="FontFile" id=5]
-[ext_resource path="res://code/ui_elements/rytm_rule.tscn" type="PackedScene" id=6]
-[ext_resource path="res://art/themes/timeline_theme.tres" type="Theme" id=7]
-[ext_resource path="res://art/shaders/motion_blur/motion_blur.tscn" type="PackedScene" id=9]
+[ext_resource type="Script" path="res://code/map_generations/chunks.gd" id="1"]
+[ext_resource type="Script" path="res://scenes/level_game/level_game.gd" id="2"]
+[ext_resource type="Environment" uid="uid://b55d0g50mey2c" path="res://art/env.tres" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/level_game/character_game.tscn" id="4"]
+[ext_resource type="FontFile" uid="uid://fpaac2jgu5ga" path="res://art/fonts/dejavu-sans/DejaVuSans.ttf" id="5"]
+[ext_resource type="PackedScene" path="res://code/ui_elements/rytm_rule.tscn" id="6"]
+[ext_resource type="Theme" path="res://art/themes/timeline_theme.tres" id="7"]
+[ext_resource type="PackedScene" path="res://art/shaders/motion_blur/motion_blur.tscn" id="9"]
 
 [sub_resource type="FontFile" id=4]
 size = 26

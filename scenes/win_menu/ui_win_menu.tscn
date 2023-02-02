@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=16 format=3]
 
-[ext_resource path="res://art/Quicksand-Regular.ttf" type="FontFile" id=1]
-[ext_resource path="res://code/ui_elements/debug.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/win_menu/ui_win_menu.gd" type="Script" id=3]
+[ext_resource type="FontFile" uid="uid://fpaac2jgu5ga" path="res://art/fonts/dejavu-sans/DejaVuSans.ttf" id="1"]
+[ext_resource type="PackedScene" path="res://code/ui_elements/debug.tscn" id="2"]
+[ext_resource type="Script" path="res://scenes/win_menu/ui_win_menu.gd" id="3"]
 
 [sub_resource type="FontFile" id=1]
 size = 30

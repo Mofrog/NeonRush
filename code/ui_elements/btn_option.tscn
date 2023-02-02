@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfymk32awtlp4"]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://code/ui_elements/btn_option.gd" id="1_2lqmy"]
-[ext_resource type="Theme" uid="uid://d108udwkttr07" path="res://art/themes/t_option_btn.tres" id="1_jb38e"]
+[ext_resource type="Theme" path="res://art/themes/t_option_btn.tres" id="1_jb38e"]
 [ext_resource type="Texture2D" uid="uid://cmbmt4gm5idc8" path="res://art/icons/option_arrow.png" id="4_xkfor"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1b0ii"]

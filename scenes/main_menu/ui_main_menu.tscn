@@ -1,12 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://d2clg0pgobgd7"]
+[gd_scene load_steps=16 format=3 uid="uid://dtiv5qi1vhdit"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/ui_main_menu.gd" id="1"]
-[ext_resource type="Theme" uid="uid://cna3jukey38ch" path="res://art/themes/t_label.tres" id="4_5apao"]
-[ext_resource type="PackedScene" uid="uid://br54cpwcocsty" path="res://code/ui_elements/dynamic_bg.tscn" id="5_eyp2s"]
-[ext_resource type="Theme" uid="uid://dwrvgtybia0s3" path="res://art/themes/t_button.tres" id="5_mim1s"]
-[ext_resource type="PackedScene" uid="uid://dj53yebvgwrxt" path="res://code/ui_elements/btn_menu.tscn" id="5_xe3ya"]
+[ext_resource type="Theme" path="res://art/themes/t_label.tres" id="4_5apao"]
+[ext_resource type="PackedScene" path="res://code/ui_elements/dynamic_bg.tscn" id="5_eyp2s"]
+[ext_resource type="Theme" uid="uid://b3ohrykwllx6r" path="res://art/themes/t_button.tres" id="5_mim1s"]
+[ext_resource type="PackedScene" path="res://code/ui_elements/btn_menu.tscn" id="5_xe3ya"]
 [ext_resource type="Script" path="res://scenes/main_menu/cursor_trail.gd" id="7_74l0b"]
-[ext_resource type="PackedScene" uid="uid://os8bl5ic36js" path="res://code/ui_elements/fps_counter.tscn" id="7_thqxh"]
+[ext_resource type="PackedScene" path="res://code/ui_elements/fps_counter.tscn" id="7_thqxh"]
 
 [sub_resource type="Gradient" id="Gradient_8rrq5"]
 offsets = PackedFloat32Array(0, 0.14717, 1)
@@ -24,22 +24,22 @@ region_rect = Rect2(0, 0, 256, 1)
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.490909), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_jqanc"]
+[sub_resource type="CurveTexture" id="CurveTexture_geykw"]
 curve = SubResource("Curve_51gjr")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wfpm3"]
 direction = Vector3(0, 0, 0)
 spread = 0.0
 gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_jqanc")
+scale_curve = SubResource("CurveTexture_geykw")
 color = Color(0.764706, 0.839216, 0.937255, 1)
 
-[sub_resource type="Gradient" id="Gradient_2syjq"]
+[sub_resource type="Gradient" id="Gradient_0xutv"]
 offsets = PackedFloat32Array(0.0576271, 0.183051, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.188235, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_f00xq"]
-gradient = SubResource("Gradient_2syjq")
+gradient = SubResource("Gradient_0xutv")
 width = 40
 height = 40
 fill = 1
@@ -176,6 +176,7 @@ z_index = 100
 layout_mode = 1
 
 [connection signal="pressed" from="Menu/C/Body/Menu/BtnSelect" to="." method="_on_btn_select_pressed"]
+[connection signal="pressed" from="Menu/C/Body/Menu/BtnEditor" to="." method="_on_btn_editor_pressed"]
 [connection signal="pressed" from="Menu/C/Body/Menu/BtnSettings" to="." method="_on_btn_settings_pressed"]
 [connection signal="pressed" from="Menu/C/Body/Menu/BtnAbout" to="." method="_on_btn_about_pressed"]
 [connection signal="pressed" from="Menu/C/Body/Menu/BtnExit" to="." method="_on_btn_exit_pressed"]

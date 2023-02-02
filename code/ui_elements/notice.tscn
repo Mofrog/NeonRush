@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ocvmbf2hvwej"]
+[gd_scene load_steps=8 format=3]
 
-[ext_resource type="Theme" uid="uid://bxdlltmjayr5f" path="res://art/themes/t_pop_up.tres" id="1_lur8t"]
+[ext_resource type="Theme" path="res://art/themes/t_pop_up.tres" id="1_lur8t"]
 [ext_resource type="Shader" path="res://art/shaders/blur.gdshader" id="2_2tu2q"]
 [ext_resource type="Script" path="res://code/ui_elements/notice.gd" id="2_mi6tt"]
 

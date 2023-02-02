@@ -15,7 +15,6 @@ signal value_changed(value : float)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Input.set_custom_mouse_cursor(load("res://art/icons/mouse_empty.tres"), CURSOR_IBEAM)
 	if items.size() > 0:
 		for i in items:
 			$Option.add_item(i)

@@ -7,6 +7,14 @@ var once = false
 func _process(_delta):
 	if ProjectSettings.get_setting("art/is_mouse_trail_dis"): visible = false
 	else: visible = true
+	
+	match Global.cursor_state:
+		Global.CURSOR_STATE.MOVE:
+			visible = false
+		Global.CURSOR_STATE.BRUSH:
+			visible = true
+		Global.CURSOR_STATE.SELECT:
+			visible = true
 
 
 func _input(event):

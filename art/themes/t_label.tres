@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cna3jukey38ch"]
+[gd_resource type="Theme" load_steps=3 format=3]
 
 [ext_resource type="FontFile" uid="uid://b3ixnh7ehr4y7" path="res://art/fonts/Buyan/BuyanRegular.ttf" id="1_onwn4"]
 [ext_resource type="FontFile" uid="uid://bfwgk4mk161u1" path="res://art/fonts/Sen/Sen-Bold.ttf" id="1_wu6qy"]

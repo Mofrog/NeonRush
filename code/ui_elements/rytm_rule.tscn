@@ -1,12 +1,12 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=20 format=3]
 
-[ext_resource path="res://art/Quicksand-Regular.ttf" type="FontFile" id=1]
-[ext_resource path="res://code/ui_elements/rytm_rule.gd" type="Script" id=2]
-[ext_resource path="res://art/themes/beat_theme.tres" type="Theme" id=3]
-[ext_resource path="res://code/time_manager.gd" type="Script" id=4]
-[ext_resource path="res://art/themes/p_area_theme.tres" type="StyleBox" id=5]
-[ext_resource path="res://art/themes/b_area_theme.tres" type="StyleBox" id=6]
-[ext_resource path="res://art/themes/g_area_theme.tres" type="StyleBox" id=7]
+[ext_resource type="FontFile" path="res://art/Quicksand-Regular.ttf" id="1"]
+[ext_resource type="Script" path="res://code/ui_elements/rytm_rule.gd" id="2"]
+[ext_resource type="Theme" path="res://art/themes/beat_theme.tres" id="3"]
+[ext_resource type="Script" path="res://code/time_manager.gd" id="4"]
+[ext_resource type="StyleBox" path="res://art/themes/p_area_theme.tres" id="5"]
+[ext_resource type="StyleBox" path="res://art/themes/b_area_theme.tres" id="6"]
+[ext_resource type="StyleBox" path="res://art/themes/g_area_theme.tres" id="7"]
 
 [sub_resource type="Gradient" id=4]
 interpolation_mode = 2

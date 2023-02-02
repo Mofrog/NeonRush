@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=44 format=3 uid="uid://d108udwkttr07"]
+[gd_resource type="Theme" load_steps=44 format=3 uid="uid://i63ut7kafk7o"]
 
 [ext_resource type="FontFile" uid="uid://fpaac2jgu5ga" path="res://art/fonts/dejavu-sans/DejaVuSans.ttf" id="1_2ek1l"]
 
@@ -20,8 +20,8 @@ fill_from = Vector2(0.363248, 0.820513)
 fill_to = Vector2(0.884615, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fngjo"]
+content_margin_left = 32.0
 texture = SubResource("GradientTexture2D_mn41m")
-margin_left = 24.0
 region_rect = Rect2(0, 0, 64, 64)
 
 [sub_resource type="Gradient" id="Gradient_vy8ow"]
@@ -31,8 +31,8 @@ colors = PackedColorArray(0, 0.02, 0.1, 0.64, 0, 0.02, 0.1, 0.25)
 gradient = SubResource("Gradient_vy8ow")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iecy1"]
+content_margin_left = 32.0
 texture = SubResource("GradientTexture1D_eacmm")
-margin_left = 24.0
 region_rect = Rect2(0, 0, 256, 1)
 
 [sub_resource type="Gradient" id="Gradient_23vmj"]
@@ -44,8 +44,8 @@ fill_from = Vector2(0.363248, 0.820513)
 fill_to = Vector2(0.884615, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cvh6y"]
+content_margin_left = 32.0
 texture = SubResource("GradientTexture2D_05f70")
-margin_left = 24.0
 region_rect = Rect2(0, 0, 64, 64)
 
 [sub_resource type="Gradient" id="Gradient_wy5s4"]
@@ -57,8 +57,8 @@ fill_from = Vector2(0.363248, 0.820513)
 fill_to = Vector2(0.884615, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynrta"]
+content_margin_left = 32.0
 texture = SubResource("GradientTexture2D_cq2vx")
-margin_left = 24.0
 region_rect = Rect2(0, 0, 64, 64)
 
 [sub_resource type="Gradient" id="Gradient_2t1nw"]
@@ -70,8 +70,8 @@ fill_from = Vector2(0.363248, 0.820513)
 fill_to = Vector2(0.884615, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hdrbp"]
+content_margin_left = 32.0
 texture = SubResource("GradientTexture2D_avyfl")
-margin_left = 24.0
 region_rect = Rect2(0, 0, 64, 64)
 
 [sub_resource type="Gradient" id="Gradient_0hfpm"]
@@ -159,7 +159,6 @@ fill_to = Vector2(0.884615, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hobi3"]
 texture = SubResource("GradientTexture2D_3plx5")
-margin_left = 24.0
 region_rect = Rect2(0, 0, 64, 64)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d5j8i"]

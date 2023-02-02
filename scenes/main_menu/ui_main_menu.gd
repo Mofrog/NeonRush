@@ -14,6 +14,11 @@ func _on_map_select_exit():
 	$Menu/C/Body/Menu/BtnSelect.grab_focus()
 
 
+func _on_btn_editor_pressed():
+	if get_tree().change_scene_to_packed(load("res://scenes/main_menu/ui_main_menu.tscn")) != 0:
+		printerr("Can't change scene")
+
+
 # Settings
 func _on_btn_settings_pressed():
 	$Menu.visible = false

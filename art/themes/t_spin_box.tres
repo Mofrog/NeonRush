@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dqou4vjiwvwcf"]
+[gd_resource type="Theme" load_steps=5 format=3]
 
 [ext_resource type="FontFile" uid="uid://bfwgk4mk161u1" path="res://art/fonts/Sen/Sen-Bold.ttf" id="1_iph3a"]
 [ext_resource type="Texture2D" uid="uid://cm4y3pfm7l0" path="res://art/icons/up_down_arrow.png" id="2_lhxnp"]

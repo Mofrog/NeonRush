@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://xo4tij046b54"]
+[gd_scene load_steps=12 format=3]
 
 [ext_resource type="Script" path="res://code/ui_elements/scroll_option.gd" id="1_5so4a"]
 [ext_resource type="FontFile" uid="uid://bfwgk4mk161u1" path="res://art/fonts/Sen/Sen-Bold.ttf" id="1_cr7xd"]
-[ext_resource type="PackedScene" uid="uid://cfymk32awtlp4" path="res://code/ui_elements/btn_option.tscn" id="2_pvk35"]
+[ext_resource type="PackedScene" path="res://code/ui_elements/btn_option.tscn" id="2_pvk35"]
 [ext_resource type="Theme" uid="uid://bojam3itnewjv" path="res://art/themes/t_slider.tres" id="2_uvbuk"]
-[ext_resource type="Theme" uid="uid://nk0jychsh28u" path="res://art/themes/t_btn_base.tres" id="4_evdvs"]
+[ext_resource type="Theme" path="res://art/themes/t_btn_base.tres" id="4_evdvs"]
 [ext_resource type="Texture2D" uid="uid://cmbmt4gm5idc8" path="res://art/icons/option_arrow.png" id="4_qqnlw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx7oa"]

@@ -47,8 +47,6 @@ var block : Dictionary = {
 
 var is_have_collision = false
 
-var position = Vector3()
-
 
 #----------------------------------FUNC'S---------------------------------------
 # generate full mesh of chunk
