@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bb1eitm6w1dpl"]
+[gd_scene load_steps=12 format=3 uid="uid://bb1eitm6w1dpl"]
 
 [ext_resource type="Script" path="res://scenes/level_editor/level_editor.gd" id="2"]
 [ext_resource type="Environment" uid="uid://b55d0g50mey2c" path="res://art/env.tres" id="2_x42ru"]
 [ext_resource type="PackedScene" uid="uid://u3b5l5t7fklh" path="res://scenes/level_editor/character_editor.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://bdfsrnm3iduja" path="res://scenes/level_editor/editor_cursor.tscn" id="4_qbtgw"]
 [ext_resource type="Shader" path="res://art/shaders/grid.gdshader" id="5_lv88f"]
+[ext_resource type="PackedScene" uid="uid://bkk2p4bitvopq" path="res://code/map_generations/voxel_world.tscn" id="7_aufda"]
 [ext_resource type="FontFile" uid="uid://fpaac2jgu5ga" path="res://art/fonts/dejavu-sans/DejaVuSans.ttf" id="11"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_x7n6l"]
@@ -24,7 +25,7 @@ size = Vector2(100, 100)
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
-fallbacks = [ExtResource("11")]
+fallbacks = Array[Font]([ExtResource("11")])
 face_index = null
 embolden = null
 transform = null
@@ -78,3 +79,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3, 0)
 billboard = 1
 text = "Spawn point"
 font = SubResource("32")
+
+[node name="VoxelWorld" parent="." instance=ExtResource("7_aufda")]

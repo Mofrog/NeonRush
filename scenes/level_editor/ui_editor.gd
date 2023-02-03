@@ -1,41 +1,50 @@
 extends Control
 
 
-#@onready var map_name = $M/V/Control/MapName
-#
-#@onready var grid_axis = $M/V/Header/H/GridAxis
-#@onready var button_type = $M/V/Header/H/BtnType
-#
-#@onready var footer = $M/V/Footer
-#
-#@onready var viewport_container = $M/V/Footer/V
-#@onready var editor = $M/V/Footer/V/V/Root
-#@onready var chunks = $M/V/Footer/V/V/Root/Chunks
-#@onready var character = $M/V/Footer/V/V/Root/Character
-#
-#@onready var tab_container = $M/V/Footer/TabContainer
-#@onready var blocks_list = $M/V/Footer/TabContainer/Blocks/List
-#@onready var objects_list = $M/V/Footer/TabContainer/Objects/ListO
-#
-#@onready var timeline = $M/V/PanelContainer/Timeline
-#
-#@onready var settings_p = $Settings
+
+func _process(_delta):
+	$C/C/C/Body/Right/C/Header/Menu/L/GridHeight.text = str(Global.grid_height)
 
 
-# Go to:
-#	level_game
-#	ui_map_select
-#	ui_main_menu
+# Cursor type
+func _on_btn_cursor_toggled(button_pressed):
+	if button_pressed: Global.cursor_type = Global.CURSOR_TYPE.CURSOR
+
+func _on_btn_add_toggled(button_pressed):
+	if button_pressed: Global.cursor_type = Global.CURSOR_TYPE.ADD
+
+func _on_btn_delete_toggled(button_pressed):
+	if button_pressed: Global.cursor_type = Global.CURSOR_TYPE.DELETE
 
 
-# Global var's
-#var play_map_id = ProjectSettings.get_setting("global/play_map_id")
-#var result_id = ProjectSettings.get_setting("global/result_id")
-#var is_test_mode = ProjectSettings.get_setting("global/is_test_mode")
-# Setting:
-#	"global/is_editor_map_load"
-#	"global/is_test_mode"
-#	"global/result_id"
+# Grid axis
+func _on_btn_grid_x_toggled(button_pressed):
+	if button_pressed: Global.grid_axis = Global.GRID_AXIS.X
+
+func _on_btn_grid_y_toggled(button_pressed):
+	if button_pressed: Global.grid_axis = Global.GRID_AXIS.Y
+
+func _on_btn_grid_z_toggled(button_pressed):
+	if button_pressed: Global.grid_axis = Global.GRID_AXIS.Z
+
+
+# Grid height
+func _on_btn_grid_up_pressed():
+	Global.grid_height += 1
+
+func _on_btn_grid_down_pressed():
+	Global.grid_height -= 1
+
+func _on_grid_height_pressed():
+	Global.grid_height = 0
+
+func _on_grid_character_pressed():
+	Global.grid_height = 0
+
+
+# Block select
+func _on_item_list_item_selected(index):
+	Global.texture_id = index
 
 
 #------------------------------------READY_EXIT FUNC'S--------------------------

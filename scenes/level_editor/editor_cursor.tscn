@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdfsrnm3iduja"]
+[gd_scene load_steps=5 format=3 uid="uid://bdfsrnm3iduja"]
 
 [ext_resource type="Script" path="res://scenes/level_editor/editor_cursor.gd" id="1_2geta"]
-[ext_resource type="Material" path="res://art/materials/m_select_brush.tres" id="1_nfy6f"]
+[ext_resource type="Material" uid="uid://d0x3v8545aw42" path="res://art/materials/m_select_brush.tres" id="1_nfy6f"]
+[ext_resource type="Material" uid="uid://b783vt1td55in" path="res://art/materials/m_cursor_brush.tres" id="2_xxtr8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bihxa"]
-material = ExtResource("1_nfy6f")
 
 [node name="Cursor" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
@@ -12,7 +12,9 @@ script = ExtResource("1_2geta")
 
 [node name="Cursor" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_bihxa")
+surface_material_override/0 = ExtResource("2_xxtr8")
 
 [node name="Select" type="MeshInstance3D" parent="."]
 visible = false
 mesh = SubResource("BoxMesh_bihxa")
+surface_material_override/0 = ExtResource("1_nfy6f")

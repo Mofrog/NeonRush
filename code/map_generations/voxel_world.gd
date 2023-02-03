@@ -3,27 +3,32 @@ extends Node3D
 
 var chunks = {}
 #chunks[chunk_position] = {
-#	"b" : { _position : { _texture : _object_id } },	Blocks, Position, Texture, Object
-#	"v" : PackedVector3Array(),							Triangles
-#	"u" : PackedVector2Array(),							UV's
-#	"r" : null											ChunkMeshRef
+#	"b" : {								Blocks
+#		_position : { 	 					Position
+#			"t" : _texture,						Block texture
+#			"p" : _type,						Block type
+#			"o" : _object_id 					Object id
+#		}
+#	},  
+#	"v" : PackedVector3Array(),			Triangles
+#	"u" : PackedVector2Array(),			UV's
+#	"r" : null							ChunkMeshRef
 #}
 
 
-func generate_chunk_data(_position):
-	var mesh_data = VoxelMath.create_chunk(_position, chunks)
-	chunks[_position]["v"] = mesh_data["v"]
-	chunks[_position]["u"] = mesh_data["u"]
+func create_chunk(_position):
+	if _position in chunks:
+		var mesh_data = VoxelMath.create_chunk(_position, chunks)
+		chunks[_position]["v"] = mesh_data["v"]
+		chunks[_position]["u"] = mesh_data["u"]
 
 
-func create_chunk_mesh(_position):
+func commit_chunk(_position):
+	if !(_position in chunks): return
+	
 	var chunk = chunks[_position]
 	var reference = chunk["r"]
-	
-	if reference != null:
-		remove_child(reference)
-		reference.queue_free()
-	reference = MeshInstance3D.new()
+	if reference == null: reference = MeshInstance3D.new()
 	
 	# Begin mesh creation
 	var st = SurfaceTool.new()
@@ -31,44 +36,72 @@ func create_chunk_mesh(_position):
 	
 	for i in chunk["u"].size():
 		st.set_uv(chunk["u"][i])
+		st.set_smooth_group(-1)
 		st.add_vertex(chunk["v"][i])
 	
 	st.generate_normals()
 	st.generate_tangents()
-	st.set_material(load("res://addons/art/materials/m_blocks.tres"))
+	st.set_material(load("res://art/materials/m_block.tres"))
 	
-	# Commit mesh
-	var mesh = Mesh.new()
-	st.commit(mesh)
-	reference.set_mesh(mesh)
+	reference.set_mesh(st.commit(Mesh.new()))
 	
 	# Create shape
 	var shape = ConcavePolygonShape3D.new()
 	shape.set_faces(chunk["v"])
-	reference.add_child(shape)
+	var shape_obj = CollisionShape3D.new()
+	shape_obj.shape = shape
+	reference.add_child(shape_obj)
 	
 	# Commit object
-	add_child(reference)
+	if !reference in get_children(): add_child(reference)
 	chunk["r"] = reference
 
 
 func add_block(_position, _texture, _block_type):
-	chunks[VoxelMath.get_chunk_pos(_position)] = {
-		"b" : { _position : { _texture : -1 } },
-		"v" : PackedVector3Array(),
-		"u" : PackedVector2Array(),
-		"r" : null
-	}
+	var chunk_pos = VoxelMath.get_chunk_pos(_position)
+	if chunk_pos in chunks:
+		var blocks = chunks[chunk_pos]["b"]
+		if _position in blocks: return false
+		blocks[_position] = { 
+			"t" : _texture,
+			"p" : _block_type,
+			"o" : -1
+		}
+		chunks[chunk_pos]["b"] = blocks
+	else:
+		chunks[VoxelMath.get_chunk_pos(_position)] = {
+			"b" : {
+				_position : {
+					"t" : _texture,
+					"p" : _block_type,
+					"o" : -1
+					}
+				},
+			"v" : PackedVector3Array(),
+			"u" : PackedVector2Array(),
+			"r" : null
+		}
+	return true
 
 
-func add_object(_position, _object_id):
-	chunks[VoxelMath.get_chunk_pos(_position)] = {
-		"b" : { _position : { -1 : _object_id } },
-		"v" : PackedVector3Array(),
-		"u" : PackedVector2Array(),
-		"r" : null
-	}
+#func add_object(_position, _object_id):
+#	chunks[VoxelMath.get_chunk_pos(_position)] = {
+#		"b" : { _position : { -1 : _object_id } },
+#		"v" : PackedVector3Array(),
+#		"u" : PackedVector2Array(),
+#		"r" : null
+#	}
 
 
-func remove_block(_position):
-	chunks[VoxelMath.get_chunk_pos(_position)]["b"].erase(_position)
+func delete_block(_position):
+	var chunk_pos = VoxelMath.get_chunk_pos(_position)
+	if chunk_pos in chunks:
+		var chunk = chunks[chunk_pos]
+		if _position in chunk["b"]:
+			chunk["b"].erase(_position)
+			if chunk["b"].size() == 0:
+				remove_child(chunk["r"])
+				chunk["r"].queue_free()
+				chunks.erase(chunk_pos)
+			return true
+	return false

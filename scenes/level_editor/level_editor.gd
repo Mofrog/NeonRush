@@ -4,36 +4,28 @@ extends Node3D
 @onready var character = $Character
 @onready var cursor = $Cursor
 @onready var grid = $Grid
-#@onready var chunks = $Chunks
-#@onready var visual_path = $VisualPath
-#@onready var mesh_replay_center = $MeshReplayCenter
-#@onready var mesh_rot_center = $MeshReplayCenter/MeshRotCenter
-#@onready var preview = $Cursor/OP
-#
-## Global var's
-#var result_id = ProjectSettings.get_setting("global/result_id")
-## Setting:
-##	"global/result_id"
-#
-#enum OBJECT {BLOCK, OBJECT}
-#enum TYPE {SELECT, SPAWN, DELETE}
-#enum GRID_AXIS {X, Y, Z}
-#
-#var type = TYPE.SELECT
-#var object = OBJECT.BLOCK
-#var grid_axis = GRID_AXIS.X
-#
-#var thread = Thread.new()
-#var last_character_position = Vector3()
-#
-#var replay_pos = []
-#var replay_rot = []
+@onready var voxel_world = $VoxelWorld
 
 
 func _process(_delta):
 	cursor.calc_position(character.ray_cast())
-	grid.position.x = character.position.ceil().x
-	grid.position.z = character.position.ceil().z
+	
+	match Global.grid_axis:
+		Global.GRID_AXIS.X:
+			grid.position.x = character.position.ceil().x
+			grid.position.y = Global.grid_height + 0.05
+			grid.position.z = character.position.ceil().z
+			grid.set_rotation_degrees(Vector3(0, 0, 0))
+		Global.GRID_AXIS.Y:
+			grid.position.x = character.position.ceil().x
+			grid.position.y = character.position.ceil().y
+			grid.position.z = Global.grid_height + 0.05
+			grid.set_rotation_degrees(Vector3(90, 0, 0))
+		Global.GRID_AXIS.Z:
+			grid.position.x = Global.grid_height + 0.05
+			grid.position.y = character.position.ceil().y
+			grid.position.z = character.position.ceil().z
+			grid.set_rotation_degrees(Vector3(0, 0, 90))
 
 
 func _unhandled_input(event):
@@ -45,10 +37,31 @@ func _unhandled_input(event):
 		cursor.selection_end_pos = cursor.cursor.position
 	
 	if Input.is_action_just_released("editor_interact"):
+		match Global.cursor_type:
+			Global.CURSOR_TYPE.CURSOR:
+				pass
+			Global.CURSOR_TYPE.ADD:
+				place_blocks()
+			Global.CURSOR_TYPE.DELETE:
+				place_blocks(true)
 		Global.cursor_state = Global.CURSOR_STATE.BRUSH
 
 
+func place_blocks(is_delete = false):
+	var positions = cursor.get_selection_positions()
+	var chunks = []
+	var check_array = []
+	for i in positions:
+		if is_delete: check_array.append(voxel_world.delete_block(i))
+		else: check_array.append(voxel_world.add_block(i, Global.texture_id, 0))
+		var chunk = VoxelMath.get_chunk_pos(i)
+		if !(chunk in chunks): chunks.append(chunk)
+	if check_array.all(is_false): return
+	for i in chunks:
+		voxel_world.create_chunk(i)
+		voxel_world.commit_chunk(i)
 
+func is_false(item): return !item
 
 
 #-------------------------------FUNC'S------------------------------------------
@@ -230,20 +243,3 @@ func _unhandled_input(event):
 #		return
 #	chunks.place_block(positions, character.b_rot, character.id_tex, \
 #	character.b_type, character.id_obj)
-#
-#
-## return array of current selection positions
-#func get_selection_positions(_start, _end):
-#	if _start == Vector3.ZERO && _end == Vector3.ZERO: return []
-#	var positions = []
-#	var size_x = 1 if _end.x - _start.x > 0 else -1
-#	var size_y = 1 if _end.y - _start.y > 0 else -1
-#	var size_z = 1 if _end.z - _start.z > 0 else -1
-#	for x in 1.0 if size_x == 0 else abs(_end.x - _start.x) + 1:
-#		for y in 1.0 if size_y == 0 else abs(_end.y - _start.y) + 1:
-#			for z in 1.0 if size_z == 0 else abs(_end.z - _start.z) + 1:
-#				var _x = _start.x + size_x * x
-#				var _y = _start.y + size_y * y
-#				var _z = _start.z + size_z * z
-#				positions.append(Vector3(_x - 1, _y - 1, _z - 1))
-#	return positions

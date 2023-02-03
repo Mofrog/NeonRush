@@ -25,7 +25,7 @@ texture = SubResource("GradientTexture2D_mn41m")
 region_rect = Rect2(0, 0, 64, 64)
 
 [sub_resource type="Gradient" id="Gradient_vy8ow"]
-colors = PackedColorArray(0, 0.02, 0.1, 0.64, 0, 0.02, 0.1, 0.25)
+colors = PackedColorArray(0, 0.0196078, 0.101961, 0.639216, 0, 0.02, 0.1, 0.25)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_eacmm"]
 gradient = SubResource("Gradient_vy8ow")

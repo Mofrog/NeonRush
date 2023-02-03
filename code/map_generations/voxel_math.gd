@@ -35,50 +35,62 @@ static func create_chunk(chunk_position, chunks_array):
 		"u" : PackedVector2Array()
 	}
 	
+	var near_blocks = PackedVector3Array(blocks.keys())
+	if chunk_position + Vector3.UP in chunks_array:
+		near_blocks.append_array(chunks_array[chunk_position + Vector3.UP]["b"].keys())
+	if chunk_position + Vector3.DOWN in chunks_array:
+		near_blocks.append_array(chunks_array[chunk_position + Vector3.DOWN]["b"].keys())
+	if chunk_position + Vector3.LEFT in chunks_array:
+		near_blocks.append_array(chunks_array[chunk_position + Vector3.LEFT]["b"].keys())
+	if chunk_position + Vector3.RIGHT in chunks_array:
+		near_blocks.append_array(chunks_array[chunk_position + Vector3.RIGHT]["b"].keys())
+	if chunk_position + Vector3.FORWARD in chunks_array:
+		near_blocks.append_array(chunks_array[chunk_position + Vector3.FORWARD]["b"].keys())
+	if chunk_position + Vector3.BACK in chunks_array:
+		near_blocks.append_array(chunks_array[chunk_position + Vector3.BACK]["b"].keys())
+	
 	for block_position in blocks:
-		if blocks[block_position].keys()[0] != -1:
-			var data = create_block(block_position, blocks)
+		if blocks[block_position]["t"] != -1:
+			var data = create_block(block_position, blocks[block_position]["t"], near_blocks)
 			returns["v"].append_array(data["v"])
 			returns["u"].append_array(data["u"])
-	
 	return returns
 
 
-static func create_block(block_position, blocks):
+static func create_block(block_position, id_tex, blocks):
 	const TOP_FACE = 	[Vector3(0,1,0),Vector3(1,1,0),Vector3(1,1,1),Vector3(0,1,1)]
 	const DOWN_FACE = 	[Vector3(0,0,0),Vector3(0,0,1),Vector3(1,0,1),Vector3(1,0,0)]
 	const LEFT_FACE = 	[Vector3(0,1,1),Vector3(0,0,1),Vector3(0,0,0),Vector3(0,1,0)]
 	const RIGHT_FACE = 	[Vector3(1,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(1,1,1)]
-	const FRONT_FACE = 	[Vector3(1,1,1),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,1)]
-	const BACK_FACE = 	[Vector3(0,1,0),Vector3(0,0,0),Vector3(1,0,0),Vector3(1,1,0)]
+	const FRONT_FACE = 	[Vector3(0,1,0),Vector3(0,0,0),Vector3(1,0,0),Vector3(1,1,0)]
+	const BACK_FACE = 	[Vector3(1,1,1),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,1)]
 	
 	var returns = {
 		"v" : PackedVector3Array(),
 		"u" : PackedVector2Array()
 	}
-	var id_tex = blocks[block_position].keys()[0]
 	
-	if !(block_position + Vector3i.UP in blocks): 
+	if !(block_position + Vector3.UP in blocks): 
 		var data = create_face(TOP_FACE, block_position, id_tex)
 		returns["v"].append_array(data["Triangle_1"] + data["Triangle_2"])
 		returns["u"].append_array(data["UV_1"] + data["UV_2"])
-	if !(block_position + Vector3i.DOWN in blocks): 
+	if !(block_position + Vector3.DOWN in blocks): 
 		var data = create_face(DOWN_FACE, block_position, id_tex)
 		returns["v"].append_array(data["Triangle_1"] + data["Triangle_2"])
 		returns["u"].append_array(data["UV_1"] + data["UV_2"])
-	if !(block_position + Vector3i.LEFT in blocks): 
+	if !(block_position + Vector3.LEFT in blocks): 
 		var data = create_face(LEFT_FACE, block_position, id_tex)
 		returns["v"].append_array(data["Triangle_1"] + data["Triangle_2"])
 		returns["u"].append_array(data["UV_1"] + data["UV_2"])
-	if !(block_position + Vector3i.RIGHT in blocks): 
+	if !(block_position + Vector3.RIGHT in blocks): 
 		var data = create_face(RIGHT_FACE, block_position, id_tex)
 		returns["v"].append_array(data["Triangle_1"] + data["Triangle_2"])
 		returns["u"].append_array(data["UV_1"] + data["UV_2"])
-	if !(block_position + Vector3i.FORWARD in blocks): 
+	if !(block_position + Vector3.FORWARD in blocks): 
 		var data = create_face(FRONT_FACE, block_position, id_tex)
 		returns["v"].append_array(data["Triangle_1"] + data["Triangle_2"])
 		returns["u"].append_array(data["UV_1"] + data["UV_2"])
-	if !(block_position + Vector3i.BACK in blocks): 
+	if !(block_position + Vector3.BACK in blocks): 
 		var data = create_face(BACK_FACE, block_position, id_tex)
 		returns["v"].append_array(data["Triangle_1"] + data["Triangle_2"])
 		returns["u"].append_array(data["UV_1"] + data["UV_2"])

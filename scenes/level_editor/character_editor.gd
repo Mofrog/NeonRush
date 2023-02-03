@@ -5,7 +5,7 @@ const cursor_ray_length = 100
 
 var deceleration = 2.1
 var friction = 10.0
-var speed = 3.0
+var speed = 1.0
 var acceleration = 0.0
 var velocity = Vector3()
 

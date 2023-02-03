@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c2obw3jbtn02u"]
+
+[ext_resource type="Texture2D" uid="uid://d2d5rcoonnp8" path="res://art/atlas/a_main_a.png" id="1_er7jh"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.001
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_er7jh")

@@ -1,11 +1,9 @@
-[gd_resource type="StandardMaterial3D" format=2]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b783vt1td55in"]
 
 [resource]
-flags_transparent = true
-flags_do_not_receive_shadows = true
-albedo_color = Color( 0.407843, 0.639216, 1, 0.196078 )
+transparency = 1
+albedo_color = Color(0.505882, 0.701961, 1, 0.117647)
 emission_enabled = true
-emission = Color( 0.537255, 0.717647, 1, 1 )
-emission_energy = 0.5
-emission_operator = 0
-emission_on_uv2 = false
+emission = Color(0.505882, 0.701961, 1, 1)
+emission_energy_multiplier = 0.5
+disable_receive_shadows = true

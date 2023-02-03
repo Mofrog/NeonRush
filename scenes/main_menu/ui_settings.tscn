@@ -186,7 +186,6 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_tekqt")
 layout_mode = 2
 theme = ExtResource("5_1niu0")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_try2x")
-scroll_vertical = 1325
 script = ExtResource("5_t7tgm")
 speed = 3.0
 damping = 0.25
