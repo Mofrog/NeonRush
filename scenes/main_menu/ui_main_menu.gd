@@ -15,8 +15,7 @@ func _on_map_select_exit():
 
 
 func _on_btn_editor_pressed():
-	if get_tree().change_scene_to_packed(load("res://scenes/main_menu/ui_main_menu.tscn")) != 0:
-		printerr("Can't change scene")
+	get_tree().change_scene_to_file("res://scenes/level_editor/ui_editor.tscn")
 
 
 # Settings

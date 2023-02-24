@@ -1,7 +1,8 @@
-[gd_scene load_steps=54 format=3 uid="uid://dluaowx2sg7sn"]
+[gd_scene load_steps=62 format=3 uid="uid://dluaowx2sg7sn"]
 
 [ext_resource type="Script" path="res://scenes/level_editor/ui_editor.gd" id="1"]
 [ext_resource type="Shader" path="res://art/shaders/blur.gdshader" id="2_rp585"]
+[ext_resource type="PackedScene" path="res://code/ui_elements/dynamic_bg.tscn" id="3_3bo7u"]
 [ext_resource type="Texture2D" uid="uid://bu8tp1p2pqj43" path="res://art/icons/back.svg" id="4_1erhi"]
 [ext_resource type="FontFile" uid="uid://fpaac2jgu5ga" path="res://art/fonts/dejavu-sans/DejaVuSans.ttf" id="4_ab6ac"]
 [ext_resource type="Theme" uid="uid://dx4qitfaphkjg" path="res://art/themes/t_editor_button.tres" id="5_18yae"]
@@ -23,9 +24,12 @@
 [ext_resource type="PackedScene" uid="uid://bb1eitm6w1dpl" path="res://scenes/level_editor/level_editor.tscn" id="16_8w0mp"]
 [ext_resource type="Theme" uid="uid://cndgcy67xr3nw" path="res://art/themes/t_grabber.tres" id="21_7ddl4"]
 [ext_resource type="FontFile" uid="uid://nbsscwgie507" path="res://art/fonts/dejavu-sans/DejaVuSans-Bold.ttf" id="21_tkqgb"]
+[ext_resource type="Texture2D" uid="uid://cey246c100dfx" path="res://art/icons/block.svg" id="22_l2wc3"]
 [ext_resource type="Texture2D" uid="uid://43xiasbbjcbk" path="res://art/previews/p_1_tiles_small_01_black.png" id="23_6sqrh"]
 [ext_resource type="Texture2D" uid="uid://chkm1j8u4tdkh" path="res://art/previews/p_2_tiles_small_01_black_emi.png" id="24_5e8a6"]
+[ext_resource type="Texture2D" uid="uid://bftnwmr1h688k" path="res://art/icons/shape.svg" id="24_vv5dq"]
 [ext_resource type="Texture2D" uid="uid://d25x4xtmwk3qp" path="res://art/previews/p_3_tiles_small_01_white.png" id="25_dhhn8"]
+[ext_resource type="Texture2D" uid="uid://bn6ubnaq6qlrq" path="res://art/icons/object.svg" id="25_typpr"]
 [ext_resource type="Texture2D" uid="uid://bf3xcic8xxght" path="res://art/previews/p_4_tiles_small_01_white_emi.png" id="26_i0ohl"]
 [ext_resource type="Texture2D" uid="uid://cmy3rmyhh3vjp" path="res://art/previews/p_5_tiles_xsmall_01.png" id="27_aafl7"]
 [ext_resource type="Texture2D" uid="uid://c6aj1g4q1qvk1" path="res://art/previews/p_6_logs_01.png" id="28_0xxs2"]
@@ -34,6 +38,9 @@
 [ext_resource type="Texture2D" uid="uid://nl6ckc5w35ve" path="res://art/previews/p_9_tiles_small_02.png" id="31_wdvvg"]
 [ext_resource type="Texture2D" uid="uid://cmu4uw3brtqa0" path="res://art/previews/p_10_bricks_02.png" id="32_lri5v"]
 [ext_resource type="Texture2D" uid="uid://5tsdw2eno0wn" path="res://art/previews/p_11_tiles_xsmall_02.png" id="33_txreg"]
+[ext_resource type="Texture2D" uid="uid://c1b70gqdd084u" path="res://art/previews/p_block.png" id="38_puqce"]
+[ext_resource type="Texture2D" uid="uid://blvkil55144rd" path="res://art/previews/p_slope.png" id="39_s8oyf"]
+[ext_resource type="Texture2D" uid="uid://cbhisj0prcv01" path="res://art/previews/p_half.png" id="40_1ga8r"]
 
 [sub_resource type="Theme" id="Theme_dj6js"]
 default_font = ExtResource("4_ab6ac")
@@ -91,6 +98,9 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 shadow_offset = Vector2(0, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_vbh1a"]
+resource_name = "SELECT"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8jf3o"]
 
@@ -168,23 +178,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="View" type="SubViewportContainer" parent="BG"]
+[node name="BG2" parent="BG" instance=ExtResource("3_3bo7u")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-stretch_shrink = 10
-
-[node name="SubViewport" type="SubViewport" parent="BG/View"]
-handle_input_locally = false
-size = Vector2i(192, 108)
-render_target_update_mode = 4
-
-[node name="Root" parent="BG/View/SubViewport" instance=ExtResource("16_8w0mp")]
-visible = false
 
 [node name="Mask" type="Panel" parent="BG"]
 layout_mode = 1
@@ -308,7 +303,7 @@ theme = SubResource("Theme_ad1lk")
 split_offset = 1470
 
 [node name="Right" type="Control" parent="C/C/C/Body"]
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
 mouse_filter = 2
 
@@ -417,6 +412,53 @@ icon = ExtResource("16_2r7qw")
 flat = true
 icon_alignment = 1
 
+[node name="VSeparator3" type="VSeparator" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="GridRotationX" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+text = "{RotationX}"
+flat = true
+icon_alignment = 1
+
+[node name="BtnRotateX" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+icon = ExtResource("14_du5in")
+flat = true
+icon_alignment = 1
+
+[node name="GridRotationY" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+text = "{RotationY}"
+flat = true
+icon_alignment = 1
+
+[node name="BtnRotateY" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+icon = ExtResource("14_du5in")
+flat = true
+icon_alignment = 1
+
+[node name="GridRotationZ" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+text = "{RotationZ}"
+flat = true
+icon_alignment = 1
+
+[node name="BtnRotateZ" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+icon = ExtResource("14_du5in")
+flat = true
+icon_alignment = 1
+
+[node name="GridRotationZero" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+icon = ExtResource("16_2r7qw")
+flat = true
+icon_alignment = 1
+
 [node name="Label" type="Label" parent="C/C/C/Body/Right/C/Header/Menu"]
 layout_mode = 1
 anchors_preset = 11
@@ -429,7 +471,7 @@ offset_bottom = -2.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("21_tkqgb")
-text = "E_Editor"
+text = "MM_Editor"
 horizontal_alignment = 1
 vertical_alignment = 2
 uppercase = true
@@ -458,7 +500,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yqbhv")
 
 [node name="Left" type="Control" parent="C/C/C/Body"]
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(230, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
@@ -473,7 +515,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_egbgd")
 
 [node name="C" type="BoxContainer" parent="C/C/C/Body/Left"]
-custom_minimum_size = Vector2(400, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -500,31 +541,32 @@ anchor_bottom = 1.0
 offset_right = 45.0
 grow_vertical = 2
 
-[node name="BtnBack" type="Button" parent="C/C/C/Body/Left/C/Header/Menu/L"]
+[node name="BtnBlocks" type="Button" parent="C/C/C/Body/Left/C/Header/Menu/L"]
 layout_mode = 2
-icon = ExtResource("4_1erhi")
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_vbh1a")
+icon = ExtResource("22_l2wc3")
 flat = true
 icon_alignment = 1
 
-[node name="BtnLoad" type="Button" parent="C/C/C/Body/Left/C/Header/Menu/L"]
+[node name="BtnShapes" type="Button" parent="C/C/C/Body/Left/C/Header/Menu/L"]
 layout_mode = 2
-icon = ExtResource("6_2w2d0")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_vbh1a")
+icon = ExtResource("24_vv5dq")
 flat = true
 icon_alignment = 1
 
-[node name="BtnSave" type="Button" parent="C/C/C/Body/Left/C/Header/Menu/L"]
+[node name="BtnObjects" type="Button" parent="C/C/C/Body/Left/C/Header/Menu/L"]
 layout_mode = 2
-icon = ExtResource("6_jdyfr")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_vbh1a")
+icon = ExtResource("25_typpr")
 flat = true
 icon_alignment = 1
 
-[node name="BtnSettings" type="Button" parent="C/C/C/Body/Left/C/Header/Menu/L"]
-layout_mode = 2
-icon = ExtResource("6_xdu2w")
-flat = true
-icon_alignment = 1
-
-[node name="Label2" type="Label" parent="C/C/C/Body/Left/C/Header/Menu"]
+[node name="Label" type="Label" parent="C/C/C/Body/Left/C/Header/Menu"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -537,8 +579,8 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("21_tkqgb")
-text = "E_Block_Select_Menu"
-horizontal_alignment = 1
+text = "E_Block_Select"
+horizontal_alignment = 2
 vertical_alignment = 2
 uppercase = true
 
@@ -547,7 +589,13 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("21_7ddl4")
 
-[node name="ItemList" type="ItemList" parent="C/C/C/Body/Left/C/ScrollContainer"]
+[node name="С" type="BoxContainer" parent="C/C/C/Body/Left/C/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+vertical = true
+
+[node name="ItemList" type="ItemList" parent="C/C/C/Body/Left/C/ScrollContainer/С"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -581,6 +629,40 @@ item_9/icon = ExtResource("32_lri5v")
 item_10/text = ""
 item_10/icon = ExtResource("33_txreg")
 
+[node name="ShapeList" type="ItemList" parent="C/C/C/Body/Left/C/ScrollContainer/С"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_fbn3e")
+auto_height = true
+item_count = 3
+max_columns = 0
+same_column_width = true
+icon_mode = 0
+fixed_icon_size = Vector2i(64, 64)
+item_0/text = ""
+item_0/icon = ExtResource("38_puqce")
+item_1/text = ""
+item_1/icon = ExtResource("39_s8oyf")
+item_2/text = ""
+item_2/icon = ExtResource("40_1ga8r")
+
+[node name="ObjectList" type="ItemList" parent="C/C/C/Body/Left/C/ScrollContainer/С"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_fbn3e")
+auto_height = true
+item_count = 2
+max_columns = 0
+same_column_width = true
+icon_mode = 0
+fixed_icon_size = Vector2i(64, 64)
+item_0/text = "Start"
+item_1/text = "End"
+
 [node name="Footer" type="Control" parent="C/C"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -604,6 +686,7 @@ interpolate = false
 visibility_rect = Rect2(-300, -300, 600, 600)
 script = ExtResource("15_do3mh")
 
+[connection signal="pressed" from="C/C/C/Menu/L/BtnBack" to="." method="_on_btn_back_pressed"]
 [connection signal="toggled" from="C/C/C/Body/Right/C/Header/Menu/L/BtnCursor" to="." method="_on_btn_cursor_toggled"]
 [connection signal="toggled" from="C/C/C/Body/Right/C/Header/Menu/L/BtnAdd" to="." method="_on_btn_add_toggled"]
 [connection signal="toggled" from="C/C/C/Body/Right/C/Header/Menu/L/BtnDelete" to="." method="_on_btn_delete_toggled"]
@@ -614,4 +697,16 @@ script = ExtResource("15_do3mh")
 [connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridHeight" to="." method="_on_grid_height_pressed"]
 [connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/BtnGridUp" to="." method="_on_btn_grid_up_pressed"]
 [connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridCharacter" to="." method="_on_grid_character_pressed"]
-[connection signal="item_selected" from="C/C/C/Body/Left/C/ScrollContainer/ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridRotationX" to="." method="_on_grid_rotation_x_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/BtnRotateX" to="." method="_on_btn_rotate_x_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridRotationY" to="." method="_on_grid_rotation_y_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/BtnRotateY" to="." method="_on_btn_rotate_y_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridRotationZ" to="." method="_on_grid_rotation_z_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/BtnRotateZ" to="." method="_on_btn_rotate_z_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridRotationZero" to="." method="_on_grid_rotation_zero_pressed"]
+[connection signal="toggled" from="C/C/C/Body/Left/C/Header/Menu/L/BtnBlocks" to="." method="_on_btn_blocks_toggled"]
+[connection signal="toggled" from="C/C/C/Body/Left/C/Header/Menu/L/BtnShapes" to="." method="_on_btn_shapes_toggled"]
+[connection signal="toggled" from="C/C/C/Body/Left/C/Header/Menu/L/BtnObjects" to="." method="_on_btn_objects_toggled"]
+[connection signal="item_selected" from="C/C/C/Body/Left/C/ScrollContainer/С/ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="item_selected" from="C/C/C/Body/Left/C/ScrollContainer/С/ShapeList" to="." method="_on_shape_list_item_selected"]
+[connection signal="item_selected" from="C/C/C/Body/Left/C/ScrollContainer/С/ObjectList" to="." method="_on_object_list_item_selected"]

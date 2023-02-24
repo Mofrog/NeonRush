@@ -4,15 +4,20 @@ extends Control
 
 func _process(_delta):
 	$C/C/C/Body/Right/C/Header/Menu/L/GridHeight.text = str(Global.grid_height)
+	$C/C/C/Body/Right/C/Header/Menu/L/GridRotationX.text = str(Global.block_rotation.x)
+	$C/C/C/Body/Right/C/Header/Menu/L/GridRotationY.text = str(Global.block_rotation.y)
+	$C/C/C/Body/Right/C/Header/Menu/L/GridRotationZ.text = str(Global.block_rotation.z)
+
+
+func _on_btn_back_pressed():
+	get_tree().change_scene_to_file("res://scenes/main_menu/ui_main_menu.tscn")
 
 
 # Cursor type
 func _on_btn_cursor_toggled(button_pressed):
 	if button_pressed: Global.cursor_type = Global.CURSOR_TYPE.CURSOR
-
 func _on_btn_add_toggled(button_pressed):
 	if button_pressed: Global.cursor_type = Global.CURSOR_TYPE.ADD
-
 func _on_btn_delete_toggled(button_pressed):
 	if button_pressed: Global.cursor_type = Global.CURSOR_TYPE.DELETE
 
@@ -20,10 +25,8 @@ func _on_btn_delete_toggled(button_pressed):
 # Grid axis
 func _on_btn_grid_x_toggled(button_pressed):
 	if button_pressed: Global.grid_axis = Global.GRID_AXIS.X
-
 func _on_btn_grid_y_toggled(button_pressed):
 	if button_pressed: Global.grid_axis = Global.GRID_AXIS.Y
-
 func _on_btn_grid_z_toggled(button_pressed):
 	if button_pressed: Global.grid_axis = Global.GRID_AXIS.Z
 
@@ -31,20 +34,59 @@ func _on_btn_grid_z_toggled(button_pressed):
 # Grid height
 func _on_btn_grid_up_pressed():
 	Global.grid_height += 1
-
 func _on_btn_grid_down_pressed():
 	Global.grid_height -= 1
-
 func _on_grid_height_pressed():
 	Global.grid_height = 0
-
 func _on_grid_character_pressed():
 	Global.grid_height = 0
 
 
-# Block select
+# Block type
+func _on_btn_blocks_toggled(button_pressed):
+	if button_pressed: $C/C/C/Body/Left/C/Header/Menu/Label.text = tr("E_Block_Select")
+	$"C/C/C/Body/Left/C/ScrollContainer/С/ItemList".visible = true
+	$"C/C/C/Body/Left/C/ScrollContainer/С/ShapeList".visible = false
+	$"C/C/C/Body/Left/C/ScrollContainer/С/ObjectList".visible = false
+func _on_btn_shapes_toggled(button_pressed):
+	if button_pressed: $C/C/C/Body/Left/C/Header/Menu/Label.text = tr("E_Shape_Select")
+	$"C/C/C/Body/Left/C/ScrollContainer/С/ItemList".visible = false
+	$"C/C/C/Body/Left/C/ScrollContainer/С/ShapeList".visible = true
+	$"C/C/C/Body/Left/C/ScrollContainer/С/ObjectList".visible = false
+func _on_btn_objects_toggled(button_pressed):
+	if button_pressed: $C/C/C/Body/Left/C/Header/Menu/Label.text = tr("E_Object_Select")
+	$"C/C/C/Body/Left/C/ScrollContainer/С/ItemList".visible = false
+	$"C/C/C/Body/Left/C/ScrollContainer/С/ShapeList".visible = false
+	$"C/C/C/Body/Left/C/ScrollContainer/С/ObjectList".visible = true
 func _on_item_list_item_selected(index):
 	Global.texture_id = index
+func _on_shape_list_item_selected(index):
+	Global.shape_id = index
+func _on_object_list_item_selected(index):
+	Global.object_id = index
+
+
+# Block rotation
+func _on_grid_rotation_x_pressed():
+	Global.block_rotation.x = 0
+func _on_btn_rotate_x_pressed():
+	Global.block_rotation.x += 90
+	if Global.block_rotation.x >= 360:
+		Global.block_rotation.x = 0
+func _on_grid_rotation_y_pressed():
+	Global.block_rotation.y = 0
+func _on_btn_rotate_y_pressed():
+	Global.block_rotation.y += 90
+	if Global.block_rotation.y >= 360:
+		Global.block_rotation.y = 0
+func _on_grid_rotation_z_pressed():
+	Global.block_rotation.z = 0
+func _on_btn_rotate_z_pressed():
+	Global.block_rotation.z += 90
+	if Global.block_rotation.z >= 360:
+		Global.block_rotation.z = 0
+func _on_grid_rotation_zero_pressed():
+	Global.block_rotation = Vector3.ZERO
 
 
 #------------------------------------READY_EXIT FUNC'S--------------------------
@@ -64,18 +106,7 @@ func _on_item_list_item_selected(index):
 #	shortcuts_process()
 #	if timeline != null && result_id != -1: editor.update_replay_pos(timeline.manager.time)
 #	map_name.text = settings_p.data["Name"]
-#
-#
-#func shortcuts_process():
-#	if tab_container.current_tab == 1: character.b_type = 2
-#	elif button_type.pressed: character.b_type = 1
-#	else: character.b_type = 0
-#
-#	if Input.is_action_just_pressed("editor_grid_switch"):
-#		if grid_axis.selected == 2: grid_axis.selected = 0
-#		else: grid_axis.selected += 1
-#
-#
+
 #func check_ui_focus():
 #	var rect = Rect2(footer.position, viewport_container.size)
 #	if rect.has_point(get_local_mouse_position()):

@@ -45,7 +45,7 @@ func _process(_delta):
 
 func set_scale_to_selection():
 	select.position = (selection_start_pos + selection_end_pos) / 2
-	select.scale = Vector3.ONE + (selection_start_pos - selection_end_pos).abs()
+	select.scale = Vector3(1.02, 1.02, 1.02) + (selection_start_pos - selection_end_pos).abs()
 
 
 func get_selection_positions():

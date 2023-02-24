@@ -13,16 +13,16 @@ func _process(_delta):
 	match Global.grid_axis:
 		Global.GRID_AXIS.X:
 			grid.position.x = character.position.ceil().x
-			grid.position.y = Global.grid_height + 0.05
+			grid.position.y = Global.grid_height + 0.02
 			grid.position.z = character.position.ceil().z
 			grid.set_rotation_degrees(Vector3(0, 0, 0))
 		Global.GRID_AXIS.Y:
 			grid.position.x = character.position.ceil().x
 			grid.position.y = character.position.ceil().y
-			grid.position.z = Global.grid_height + 0.05
+			grid.position.z = Global.grid_height + 0.02
 			grid.set_rotation_degrees(Vector3(90, 0, 0))
 		Global.GRID_AXIS.Z:
-			grid.position.x = Global.grid_height + 0.05
+			grid.position.x = Global.grid_height + 0.02
 			grid.position.y = character.position.ceil().y
 			grid.position.z = character.position.ceil().z
 			grid.set_rotation_degrees(Vector3(0, 0, 90))
@@ -53,7 +53,7 @@ func place_blocks(is_delete = false):
 	var check_array = []
 	for i in positions:
 		if is_delete: check_array.append(voxel_world.delete_block(i))
-		else: check_array.append(voxel_world.add_block(i, Global.texture_id, 0))
+		else: check_array.append(voxel_world.add_block(i, Global.texture_id, Global.shape_id, Global.block_rotation))
 		var chunk = VoxelMath.get_chunk_pos(i)
 		if !(chunk in chunks): chunks.append(chunk)
 	if check_array.all(is_false): return

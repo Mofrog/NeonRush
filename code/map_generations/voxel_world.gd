@@ -2,12 +2,13 @@ extends Node3D
 
 
 var chunks = {}
-#chunks[chunk_position] = {
+#chunks[Vector3()] = {				Chunk position
 #	"b" : {								Blocks
-#		_position : { 	 					Position
-#			"t" : _texture,						Block texture
-#			"p" : _type,						Block type
-#			"o" : _object_id 					Object id
+#		Vector3() : { 	 					Position
+#			"t" : int,						Block texture
+#			"s" : int,						Block shape
+#			"r" : Vector3(),				Rotation
+#			"o" : int 						Object id
 #		}
 #	},  
 #	"v" : PackedVector3Array(),			Triangles
@@ -57,14 +58,15 @@ func commit_chunk(_position):
 	chunk["r"] = reference
 
 
-func add_block(_position, _texture, _block_type):
+func add_block(_position, _texture, _block_shape, _rotation):
 	var chunk_pos = VoxelMath.get_chunk_pos(_position)
 	if chunk_pos in chunks:
 		var blocks = chunks[chunk_pos]["b"]
 		if _position in blocks: return false
 		blocks[_position] = { 
 			"t" : _texture,
-			"p" : _block_type,
+			"s" : _block_shape,
+			"r" : _rotation,
 			"o" : -1
 		}
 		chunks[chunk_pos]["b"] = blocks
@@ -73,7 +75,8 @@ func add_block(_position, _texture, _block_type):
 			"b" : {
 				_position : {
 					"t" : _texture,
-					"p" : _block_type,
+					"s" : _block_shape,
+					"r" : _rotation,
 					"o" : -1
 					}
 				},
