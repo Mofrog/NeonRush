@@ -1,0 +1,39 @@
+[gd_resource type="Theme" load_steps=5 format=3]
+
+[ext_resource type="FontFile" uid="uid://bfwgk4mk161u1" path="res://resources/drawable/fonts/Sen/Sen-Bold.ttf" id="1_iph3a"]
+[ext_resource type="Texture2D" uid="uid://cm4y3pfm7l0" path="res://resources/drawable/ico_up_down_arrow.png" id="2_lhxnp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2xkf"]
+content_margin_left = 20.0
+bg_color = Color(0, 0.0196078, 0.0980392, 0.639216)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.807843, 0.317647, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snxfo"]
+content_margin_left = 20.0
+bg_color = Color(0, 0.0196078, 0.0980392, 0.639216)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.592157, 0.619608, 0.74902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[resource]
+LineEdit/colors/font_color = Color(0.843137, 0.854902, 0.92549, 1)
+LineEdit/colors/font_selected_color = Color(1, 0.807843, 0.317647, 1)
+LineEdit/font_sizes/font_size = 24
+LineEdit/fonts/font = ExtResource("1_iph3a")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_v2xkf")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_snxfo")
+SpinBox/icons/updown = ExtResource("2_lhxnp")

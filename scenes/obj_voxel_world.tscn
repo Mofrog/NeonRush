@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://wp1dvvlfm3n6"]
+
+[ext_resource type="Script" path="res://scripts/obj_voxel_world.gd" id="1_xf7mu"]
+
+[node name="VoxelWorld" type="Node3D"]
+script = ExtResource("1_xf7mu")

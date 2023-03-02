@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/obj_springboard_1.gd" id="1"]
+[ext_resource type="Material" uid="uid://d0x3v8545aw42" path="res://resources/drawable/m_select_brush.tres" id="2"]
+
+[sub_resource type="BoxShape3D" id=1]
+extents = Vector3( 0.2, 0.2, 0.2 )
+
+[sub_resource type="BoxMesh" id=2]
+size = Vector3( 0.4, 0.4, 0.4 )
+
+[node name="Springboard" type="Node3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
+script = ExtResource( 1 )
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D( 2.4, 0, 0, 0, 1, 0, 0, 0, 2.4, 0, 0.1, 0 )
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource( 2 )
+material/0 = ExtResource( 2 )
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_Trigger_body_entered"]

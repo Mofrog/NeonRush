@@ -1,0 +1,182 @@
+[gd_scene load_steps=16 format=3 uid="uid://c7wtqmou7cqi6"]
+
+[ext_resource type="Script" path="res://scripts/ui_main.gd" id="1_dama6"]
+[ext_resource type="Theme" path="res://resources/drawable/st_label.tres" id="2_prt57"]
+[ext_resource type="Theme" uid="uid://bdl114ssnfrni" path="res://resources/drawable/st_button.tres" id="3_jrf3a"]
+[ext_resource type="PackedScene" path="res://scenes/uic_btn_menu.tscn" id="4_2qucj"]
+[ext_resource type="PackedScene" path="res://scenes/uic_dynamic_bg.tscn" id="5_f2aom"]
+[ext_resource type="Script" path="res://scripts/uic_cursor_trail.gd" id="6_5mda5"]
+[ext_resource type="PackedScene" path="res://scenes/uic_fps_counter.tscn" id="7_eeqyp"]
+
+[sub_resource type="Gradient" id="Gradient_8rrq5"]
+offsets = PackedFloat32Array(0, 0.14717, 1)
+colors = PackedColorArray(0.88, 0.88, 0.93, 0, 0.878431, 0.878431, 0.933333, 1, 0.878431, 0.878431, 0.933333, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q2gys"]
+gradient = SubResource("Gradient_8rrq5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0f3ht"]
+texture = SubResource("GradientTexture1D_q2gys")
+expand_margin_top = 2.0
+region_rect = Rect2(0, 0, 256, 1)
+
+[sub_resource type="Curve" id="Curve_51gjr"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.490909), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_geykw"]
+curve = SubResource("Curve_51gjr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wfpm3"]
+direction = Vector3(0, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_geykw")
+color = Color(0.764706, 0.839216, 0.937255, 1)
+
+[sub_resource type="Gradient" id="Gradient_0xutv"]
+offsets = PackedFloat32Array(0.0576271, 0.183051, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.188235, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f00xq"]
+gradient = SubResource("Gradient_0xutv")
+width = 40
+height = 40
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="Root" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_dama6")
+
+[node name="Menu" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="C" type="VBoxContainer" parent="Menu"]
+layout_mode = 2
+
+[node name="Header" type="Control" parent="Menu/C"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Logo" type="Label" parent="Menu/C/Header"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -177.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_prt57")
+theme_type_variation = &"text_logo"
+theme_override_font_sizes/font_size = 144
+text = "Neon Rush"
+vertical_alignment = 1
+text_overrun_behavior = 3
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="Menu/C/Header"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxTexture_0f3ht")
+
+[node name="Body" type="Control" parent="Menu/C"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+mouse_filter = 1
+theme = ExtResource("3_jrf3a")
+
+[node name="Menu" type="VBoxContainer" parent="Menu/C/Body"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 350.0
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 2
+
+[node name="BtnSelect" parent="Menu/C/Body/Menu" instance=ExtResource("4_2qucj")]
+z_index = 2
+layout_mode = 2
+text = "MM_Game"
+
+[node name="BtnEditor" parent="Menu/C/Body/Menu" instance=ExtResource("4_2qucj")]
+z_index = 2
+layout_mode = 2
+text = "MM_Editor"
+
+[node name="BtnSettings" parent="Menu/C/Body/Menu" instance=ExtResource("4_2qucj")]
+z_index = 2
+layout_mode = 2
+text = "MM_Settings"
+
+[node name="BtnAbout" parent="Menu/C/Body/Menu" instance=ExtResource("4_2qucj")]
+z_index = 2
+layout_mode = 2
+text = "MM_About"
+
+[node name="BtnExit" parent="Menu/C/Body/Menu" instance=ExtResource("4_2qucj")]
+z_index = 2
+layout_mode = 2
+text = "MM_Exit"
+
+[node name="Footer" type="Control" parent="Menu/C"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BG" parent="." instance=ExtResource("5_f2aom")]
+layout_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="CursorTrail" type="GPUParticles2D" parent="."]
+process_mode = 3
+process_priority = 100
+visible = false
+show_behind_parent = true
+top_level = true
+z_index = 101
+y_sort_enabled = true
+position = Vector2(1083, 632)
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_wfpm3")
+texture = SubResource("GradientTexture2D_f00xq")
+lifetime = 0.1
+fixed_fps = 120
+interpolate = false
+visibility_rect = Rect2(-300, -300, 600, 600)
+script = ExtResource("6_5mda5")
+
+[node name="FPSCounter" parent="." instance=ExtResource("7_eeqyp")]
+z_index = 100
+layout_mode = 1
+
+[connection signal="pressed" from="Menu/C/Body/Menu/BtnSelect" to="." method="_on_btn_select_pressed"]
+[connection signal="pressed" from="Menu/C/Body/Menu/BtnEditor" to="." method="_on_btn_editor_pressed"]
+[connection signal="pressed" from="Menu/C/Body/Menu/BtnSettings" to="." method="_on_btn_settings_pressed"]
+[connection signal="pressed" from="Menu/C/Body/Menu/BtnAbout" to="." method="_on_btn_about_pressed"]
+[connection signal="pressed" from="Menu/C/Body/Menu/BtnExit" to="." method="_on_btn_exit_pressed"]

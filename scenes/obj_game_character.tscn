@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/obj_game_character.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/obj_game_character_camera.gd" id="2"]
+[ext_resource type="PackedScene" path="res://code/debug.tscn" id="3"]
+
+[sub_resource type="CapsuleShape3D" id=1]
+radius = 0.5
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+process_mode = 1
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+keep_aspect = 0
+fov = 100.0
+far = 200.0
+script = ExtResource( 2 )
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Floor" type="RayCast3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0 )
+enabled = true
+
+[node name="Debug" parent="." instance=ExtResource( 3 )]
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_Area_area_entered"]

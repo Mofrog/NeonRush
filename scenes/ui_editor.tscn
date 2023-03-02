@@ -1,0 +1,712 @@
+[gd_scene load_steps=62 format=3 uid="uid://bedqigdiior6n"]
+
+[ext_resource type="Script" path="res://scripts/ui_editor.gd" id="1"]
+[ext_resource type="Shader" path="res://resources/drawable/shaders/blur.gdshader" id="2_rp585"]
+[ext_resource type="PackedScene" uid="uid://gd74md0ipo7h" path="res://scenes/uic_dynamic_bg.tscn" id="3_3bo7u"]
+[ext_resource type="Texture2D" uid="uid://bu8tp1p2pqj43" path="res://resources/drawable/ico_back.svg" id="4_1erhi"]
+[ext_resource type="FontFile" uid="uid://fpaac2jgu5ga" path="res://resources/drawable/fonts/dejavu-sans/DejaVuSans.ttf" id="4_ab6ac"]
+[ext_resource type="Theme" uid="uid://h05tcdwll6xr" path="res://resources/drawable/st_editor_button.tres" id="5_18yae"]
+[ext_resource type="Texture2D" uid="uid://cjqaxann5jy6y" path="res://resources/drawable/ico_load.svg" id="6_2w2d0"]
+[ext_resource type="Texture2D" uid="uid://dusahdf8dr4i4" path="res://resources/drawable/ico_save.svg" id="6_jdyfr"]
+[ext_resource type="Texture2D" uid="uid://d34i5vlmrqp5e" path="res://resources/drawable/ico_settings.svg" id="6_xdu2w"]
+[ext_resource type="Texture2D" uid="uid://c27u4u6i6p1yv" path="res://resources/drawable/ico_share.svg" id="8_dbsms"]
+[ext_resource type="Texture2D" uid="uid://cru6hhesqoitq" path="res://resources/drawable/ico_play.svg" id="9_ahhlw"]
+[ext_resource type="Texture2D" uid="uid://b5h44fnyeyn8p" path="res://resources/drawable/ico_cursor.svg" id="11_4rrgg"]
+[ext_resource type="Texture2D" uid="uid://bxswlksrygxm0" path="res://resources/drawable/ico_add.svg" id="12_kyirn"]
+[ext_resource type="Texture2D" uid="uid://ds4pwhbumdtiv" path="res://resources/drawable/ico_delete.svg" id="13_ontob"]
+[ext_resource type="Texture2D" uid="uid://dsigd5bjl50hp" path="res://resources/drawable/ico_grid_up.svg" id="14_du5in"]
+[ext_resource type="Texture2D" uid="uid://do08bf5qlqv" path="res://resources/drawable/ico_grid_x.svg" id="14_mligj"]
+[ext_resource type="Script" path="res://scripts/uic_cursor_trail.gd" id="15_do3mh"]
+[ext_resource type="Texture2D" uid="uid://bmmnt40i0o7ny" path="res://resources/drawable/ico_grid_y.svg" id="15_kaqbp"]
+[ext_resource type="Texture2D" uid="uid://cjod7rwqa2cjv" path="res://resources/drawable/ico_grid_down.svg" id="15_wi3ul"]
+[ext_resource type="Texture2D" uid="uid://cqenm4qfnumf5" path="res://resources/drawable/ico_grid_z.svg" id="16_00t72"]
+[ext_resource type="Texture2D" uid="uid://b7la1wrg4t4pk" path="res://resources/drawable/ico_grid_character.svg" id="16_2r7qw"]
+[ext_resource type="PackedScene" uid="uid://4rqa3kbhgqeq" path="res://scenes/lvl_editor.tscn" id="16_8w0mp"]
+[ext_resource type="Theme" uid="uid://cndgcy67xr3nw" path="res://resources/drawable/st_grabber.tres" id="21_7ddl4"]
+[ext_resource type="FontFile" uid="uid://nbsscwgie507" path="res://resources/drawable/fonts/dejavu-sans/DejaVuSans-Bold.ttf" id="21_tkqgb"]
+[ext_resource type="Texture2D" uid="uid://cey246c100dfx" path="res://resources/drawable/ico_block.svg" id="22_l2wc3"]
+[ext_resource type="Texture2D" uid="uid://43xiasbbjcbk" path="res://resources/drawable/txt_1_tiles_small_01_black.png" id="23_6sqrh"]
+[ext_resource type="Texture2D" uid="uid://chkm1j8u4tdkh" path="res://resources/drawable/txt_2_tiles_small_01_black_emi.png" id="24_5e8a6"]
+[ext_resource type="Texture2D" uid="uid://bftnwmr1h688k" path="res://resources/drawable/ico_shape.svg" id="24_vv5dq"]
+[ext_resource type="Texture2D" uid="uid://d25x4xtmwk3qp" path="res://resources/drawable/txt_3_tiles_small_01_white.png" id="25_dhhn8"]
+[ext_resource type="Texture2D" uid="uid://bn6ubnaq6qlrq" path="res://resources/drawable/ico_object.svg" id="25_typpr"]
+[ext_resource type="Texture2D" uid="uid://bf3xcic8xxght" path="res://resources/drawable/txt_4_tiles_small_01_white_emi.png" id="26_i0ohl"]
+[ext_resource type="Texture2D" uid="uid://cmy3rmyhh3vjp" path="res://resources/drawable/txt_5_tiles_xsmall_01.png" id="27_aafl7"]
+[ext_resource type="Texture2D" uid="uid://c6aj1g4q1qvk1" path="res://resources/drawable/txt_6_logs_01.png" id="28_0xxs2"]
+[ext_resource type="Texture2D" uid="uid://drnnkj0xwtqab" path="res://resources/drawable/txt_7_bricks_01.png" id="29_n7g2p"]
+[ext_resource type="Texture2D" uid="uid://bwhwsb14h56ym" path="res://resources/drawable/txt_8_tiles_01.png" id="30_lh3ru"]
+[ext_resource type="Texture2D" uid="uid://nl6ckc5w35ve" path="res://resources/drawable/txt_9_tiles_small_02.png" id="31_wdvvg"]
+[ext_resource type="Texture2D" uid="uid://cmu4uw3brtqa0" path="res://resources/drawable/txt_10_bricks_02.png" id="32_lri5v"]
+[ext_resource type="Texture2D" uid="uid://5tsdw2eno0wn" path="res://resources/drawable/txt_11_tiles_xsmall_02.png" id="33_txreg"]
+[ext_resource type="Texture2D" uid="uid://c1b70gqdd084u" path="res://resources/drawable/txt_block.png" id="38_puqce"]
+[ext_resource type="Texture2D" uid="uid://blvkil55144rd" path="res://resources/drawable/txt_slope.png" id="39_s8oyf"]
+[ext_resource type="Texture2D" uid="uid://cbhisj0prcv01" path="res://resources/drawable/txt_half.png" id="40_1ga8r"]
+
+[sub_resource type="Theme" id="Theme_dj6js"]
+default_font = ExtResource("4_ab6ac")
+default_font_size = 14
+Label/colors/font_color = Color(0.843137, 0.862745, 1, 1)
+Label/fonts/font = ExtResource("4_ab6ac")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mmkn"]
+bg_color = Color(0, 0, 0, 0.56)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1k23t"]
+shader = ExtResource("2_rp585")
+shader_parameter/lod = 5.0
+
+[sub_resource type="Theme" id="Theme_ad1lk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0w4wv"]
+bg_color = Color(0, 0, 0, 0.792157)
+border_width_bottom = 1
+border_color = Color(0.843137, 0.862745, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_bottom = 4.0
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_qdmt0"]
+resource_name = "TYPE"
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_m40ah"]
+resource_name = "GRID"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqbhv"]
+draw_center = false
+border_color = Color(0.592157, 0.619608, 0.74902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egbgd"]
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk76u"]
+bg_color = Color(0, 0, 0, 0.592157)
+border_width_bottom = 1
+border_color = Color(0.843137, 0.862745, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_vbh1a"]
+resource_name = "SELECT"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8jf3o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w4fd7"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sp5uj"]
+bg_color = Color(0, 0.0196078, 0.101961, 0.639216)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.843137, 0.862745, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_fbn3e"]
+ItemList/colors/font_color = Color(0.843137, 0.862745, 1, 1)
+ItemList/colors/font_selected_color = Color(0.866667, 0.772549, 0.537255, 1)
+ItemList/constants/v_separation = 5
+ItemList/fonts/font = ExtResource("4_ab6ac")
+ItemList/styles/focus = SubResource("StyleBoxEmpty_8jf3o")
+ItemList/styles/panel = SubResource("StyleBoxEmpty_w4fd7")
+ItemList/styles/selected = SubResource("StyleBoxFlat_sp5uj")
+ItemList/styles/selected_focus = SubResource("StyleBoxFlat_sp5uj")
+
+[sub_resource type="Curve" id="Curve_5dook"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.490909), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_jqanc"]
+curve = SubResource("Curve_5dook")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f2dg1"]
+direction = Vector3(0, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_jqanc")
+color = Color(0.764706, 0.839216, 0.937255, 1)
+
+[sub_resource type="Gradient" id="Gradient_2syjq"]
+offsets = PackedFloat32Array(0.0576271, 0.183051, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.188235, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t3f1u"]
+gradient = SubResource("Gradient_2syjq")
+width = 40
+height = 40
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="Root" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_dj6js")
+script = ExtResource("1")
+
+[node name="BG" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BG2" parent="BG" instance=ExtResource("3_3bo7u")]
+layout_mode = 1
+
+[node name="Mask" type="Panel" parent="BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2mmkn")
+
+[node name="Blur" type="Panel" parent="BG"]
+material = SubResource("ShaderMaterial_1k23t")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="C" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_18yae")
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="C" type="SplitContainer" parent="C"]
+layout_mode = 2
+split_offset = 393
+vertical = true
+
+[node name="C" type="BoxContainer" parent="C/C"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical = true
+
+[node name="Menu" type="Control" parent="C/C/C"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="L" type="BoxContainer" parent="C/C/C/Menu"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 45.0
+grow_vertical = 2
+
+[node name="BtnBack" type="Button" parent="C/C/C/Menu/L"]
+layout_mode = 2
+icon = ExtResource("4_1erhi")
+flat = true
+icon_alignment = 1
+
+[node name="BtnLoad" type="Button" parent="C/C/C/Menu/L"]
+layout_mode = 2
+icon = ExtResource("6_2w2d0")
+flat = true
+icon_alignment = 1
+
+[node name="BtnSave" type="Button" parent="C/C/C/Menu/L"]
+layout_mode = 2
+icon = ExtResource("6_jdyfr")
+flat = true
+icon_alignment = 1
+
+[node name="BtnSettings" type="Button" parent="C/C/C/Menu/L"]
+layout_mode = 2
+icon = ExtResource("6_xdu2w")
+flat = true
+icon_alignment = 1
+
+[node name="R" type="BoxContainer" parent="C/C/C/Menu"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -186.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("5_18yae")
+alignment = 2
+
+[node name="BtnTest" type="Button" parent="C/C/C/Menu/R"]
+layout_mode = 2
+text = "E_Not_Played"
+icon = ExtResource("9_ahhlw")
+
+[node name="BtnShare" type="Button" parent="C/C/C/Menu/R"]
+layout_mode = 2
+text = "E_Local"
+icon = ExtResource("8_dbsms")
+flat = true
+
+[node name="Label" type="Label" parent="C/C/C/Menu"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -23.5
+offset_right = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "{Map}"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Body" type="SplitContainer" parent="C/C/C"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_ad1lk")
+split_offset = 1470
+
+[node name="Right" type="Control" parent="C/C/C/Body"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="C" type="BoxContainer" parent="C/C/C/Body/Right"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+vertical = true
+
+[node name="Header" type="PanelContainer" parent="C/C/C/Body/Right/C"]
+z_index = 1
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_0w4wv")
+
+[node name="Menu" type="Control" parent="C/C/C/Body/Right/C/Header"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="L" type="BoxContainer" parent="C/C/C/Body/Right/C/Header/Menu"]
+layout_mode = 2
+offset_right = 1470.0
+offset_bottom = 32.0
+
+[node name="BtnCursor" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_qdmt0")
+icon = ExtResource("11_4rrgg")
+flat = true
+
+[node name="BtnAdd" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_qdmt0")
+icon = ExtResource("12_kyirn")
+flat = true
+
+[node name="BtnDelete" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_qdmt0")
+icon = ExtResource("13_ontob")
+flat = true
+
+[node name="VSeparator2" type="VSeparator" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="BtnGridX" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_m40ah")
+icon = ExtResource("14_mligj")
+flat = true
+
+[node name="BtnGridY" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_m40ah")
+icon = ExtResource("15_kaqbp")
+flat = true
+
+[node name="BtnGridZ" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_m40ah")
+icon = ExtResource("16_00t72")
+flat = true
+
+[node name="VSeparator" type="VSeparator" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="BtnGridDown" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+icon = ExtResource("15_wi3ul")
+flat = true
+icon_alignment = 1
+
+[node name="GridHeight" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+text = "{Height}"
+flat = true
+icon_alignment = 1
+
+[node name="BtnGridUp" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+icon = ExtResource("14_du5in")
+flat = true
+icon_alignment = 1
+
+[node name="GridCharacter" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+icon = ExtResource("16_2r7qw")
+flat = true
+icon_alignment = 1
+
+[node name="VSeparator3" type="VSeparator" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="GridRotationX" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+text = "{RotationX}"
+flat = true
+icon_alignment = 1
+
+[node name="BtnRotateX" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+icon = ExtResource("14_du5in")
+flat = true
+icon_alignment = 1
+
+[node name="GridRotationY" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+text = "{RotationY}"
+flat = true
+icon_alignment = 1
+
+[node name="BtnRotateY" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+icon = ExtResource("14_du5in")
+flat = true
+icon_alignment = 1
+
+[node name="GridRotationZ" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+text = "{RotationZ}"
+flat = true
+icon_alignment = 1
+
+[node name="BtnRotateZ" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+icon = ExtResource("14_du5in")
+flat = true
+icon_alignment = 1
+
+[node name="GridRotationZero" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+layout_mode = 2
+icon = ExtResource("16_2r7qw")
+flat = true
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="C/C/C/Body/Right/C/Header/Menu"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -83.0
+offset_right = -7.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("21_tkqgb")
+text = "MM_Editor"
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+
+[node name="C" type="SubViewportContainer" parent="C/C/C/Body/Right/C"]
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="C/C/C/Body/Right/C/C"]
+handle_input_locally = false
+size = Vector2i(1470, 852)
+render_target_update_mode = 4
+
+[node name="Root" parent="C/C/C/Body/Right/C/C/SubViewport" instance=ExtResource("16_8w0mp")]
+
+[node name="BG" type="PanelContainer" parent="C/C/C/Body/Right"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yqbhv")
+
+[node name="Left" type="Control" parent="C/C/C/Body"]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="BG" type="Panel" parent="C/C/C/Body/Left"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_egbgd")
+
+[node name="C" type="BoxContainer" parent="C/C/C/Body/Left"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="Header" type="PanelContainer" parent="C/C/C/Body/Left/C"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_qk76u")
+
+[node name="Menu" type="Control" parent="C/C/C/Body/Left/C/Header"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="L" type="BoxContainer" parent="C/C/C/Body/Left/C/Header/Menu"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 45.0
+grow_vertical = 2
+
+[node name="BtnBlocks" type="Button" parent="C/C/C/Body/Left/C/Header/Menu/L"]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_vbh1a")
+icon = ExtResource("22_l2wc3")
+flat = true
+icon_alignment = 1
+
+[node name="BtnShapes" type="Button" parent="C/C/C/Body/Left/C/Header/Menu/L"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_vbh1a")
+icon = ExtResource("24_vv5dq")
+flat = true
+icon_alignment = 1
+
+[node name="BtnObjects" type="Button" parent="C/C/C/Body/Left/C/Header/Menu/L"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_vbh1a")
+icon = ExtResource("25_typpr")
+flat = true
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="C/C/C/Body/Left/C/Header/Menu"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -195.0
+offset_right = -7.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("21_tkqgb")
+text = "E_Block_Select"
+horizontal_alignment = 2
+vertical_alignment = 2
+uppercase = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="C/C/C/Body/Left/C"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("21_7ddl4")
+
+[node name="С" type="BoxContainer" parent="C/C/C/Body/Left/C/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+vertical = true
+
+[node name="ItemList" type="ItemList" parent="C/C/C/Body/Left/C/ScrollContainer/С"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_fbn3e")
+auto_height = true
+item_count = 11
+max_columns = 0
+same_column_width = true
+icon_mode = 0
+fixed_icon_size = Vector2i(64, 64)
+item_0/text = ""
+item_0/icon = ExtResource("23_6sqrh")
+item_1/text = ""
+item_1/icon = ExtResource("24_5e8a6")
+item_2/text = ""
+item_2/icon = ExtResource("25_dhhn8")
+item_3/text = ""
+item_3/icon = ExtResource("26_i0ohl")
+item_4/text = ""
+item_4/icon = ExtResource("27_aafl7")
+item_5/text = ""
+item_5/icon = ExtResource("28_0xxs2")
+item_6/text = ""
+item_6/icon = ExtResource("29_n7g2p")
+item_7/text = ""
+item_7/icon = ExtResource("30_lh3ru")
+item_8/text = ""
+item_8/icon = ExtResource("31_wdvvg")
+item_9/text = ""
+item_9/icon = ExtResource("32_lri5v")
+item_10/text = ""
+item_10/icon = ExtResource("33_txreg")
+
+[node name="ShapeList" type="ItemList" parent="C/C/C/Body/Left/C/ScrollContainer/С"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_fbn3e")
+auto_height = true
+item_count = 3
+max_columns = 0
+same_column_width = true
+icon_mode = 0
+fixed_icon_size = Vector2i(64, 64)
+item_0/text = ""
+item_0/icon = ExtResource("38_puqce")
+item_1/text = ""
+item_1/icon = ExtResource("39_s8oyf")
+item_2/text = ""
+item_2/icon = ExtResource("40_1ga8r")
+
+[node name="ObjectList" type="ItemList" parent="C/C/C/Body/Left/C/ScrollContainer/С"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_fbn3e")
+auto_height = true
+item_count = 2
+max_columns = 0
+same_column_width = true
+icon_mode = 0
+fixed_icon_size = Vector2i(64, 64)
+item_0/text = "Start"
+item_1/text = "End"
+
+[node name="Footer" type="Control" parent="C/C"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="CursorTrail" type="GPUParticles2D" parent="."]
+process_mode = 3
+process_priority = 100
+visible = false
+show_behind_parent = true
+top_level = true
+z_index = 101
+y_sort_enabled = true
+position = Vector2(1083, 632)
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_f2dg1")
+texture = SubResource("GradientTexture2D_t3f1u")
+lifetime = 0.1
+fixed_fps = 120
+interpolate = false
+visibility_rect = Rect2(-300, -300, 600, 600)
+script = ExtResource("15_do3mh")
+
+[connection signal="pressed" from="C/C/C/Menu/L/BtnBack" to="." method="_on_btn_back_pressed"]
+[connection signal="toggled" from="C/C/C/Body/Right/C/Header/Menu/L/BtnCursor" to="." method="_on_btn_cursor_toggled"]
+[connection signal="toggled" from="C/C/C/Body/Right/C/Header/Menu/L/BtnAdd" to="." method="_on_btn_add_toggled"]
+[connection signal="toggled" from="C/C/C/Body/Right/C/Header/Menu/L/BtnDelete" to="." method="_on_btn_delete_toggled"]
+[connection signal="toggled" from="C/C/C/Body/Right/C/Header/Menu/L/BtnGridX" to="." method="_on_btn_grid_x_toggled"]
+[connection signal="toggled" from="C/C/C/Body/Right/C/Header/Menu/L/BtnGridY" to="." method="_on_btn_grid_y_toggled"]
+[connection signal="toggled" from="C/C/C/Body/Right/C/Header/Menu/L/BtnGridZ" to="." method="_on_btn_grid_z_toggled"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/BtnGridDown" to="." method="_on_btn_grid_down_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridHeight" to="." method="_on_grid_height_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/BtnGridUp" to="." method="_on_btn_grid_up_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridCharacter" to="." method="_on_grid_character_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridRotationX" to="." method="_on_grid_rotation_x_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/BtnRotateX" to="." method="_on_btn_rotate_x_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridRotationY" to="." method="_on_grid_rotation_y_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/BtnRotateY" to="." method="_on_btn_rotate_y_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridRotationZ" to="." method="_on_grid_rotation_z_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/BtnRotateZ" to="." method="_on_btn_rotate_z_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridRotationZero" to="." method="_on_grid_rotation_zero_pressed"]
+[connection signal="toggled" from="C/C/C/Body/Left/C/Header/Menu/L/BtnBlocks" to="." method="_on_btn_blocks_toggled"]
+[connection signal="toggled" from="C/C/C/Body/Left/C/Header/Menu/L/BtnShapes" to="." method="_on_btn_shapes_toggled"]
+[connection signal="toggled" from="C/C/C/Body/Left/C/Header/Menu/L/BtnObjects" to="." method="_on_btn_objects_toggled"]
+[connection signal="item_selected" from="C/C/C/Body/Left/C/ScrollContainer/С/ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="item_selected" from="C/C/C/Body/Left/C/ScrollContainer/С/ShapeList" to="." method="_on_shape_list_item_selected"]
+[connection signal="item_selected" from="C/C/C/Body/Left/C/ScrollContainer/С/ObjectList" to="." method="_on_object_list_item_selected"]

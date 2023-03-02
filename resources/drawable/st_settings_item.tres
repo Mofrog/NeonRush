@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dy8drnm5atd4f"]
+
+[ext_resource type="FontFile" uid="uid://nbsscwgie507" path="res://resources/drawable/fonts/dejavu-sans/DejaVuSans-Bold.ttf" id="1_1hpv5"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_dupna"]
+color = Color(0.843137, 0.862745, 1, 1)
+thickness = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvtg1"]
+bg_color = Color(0, 0, 0, 0.35)
+
+[resource]
+HSeparator/styles/separator = SubResource("StyleBoxLine_dupna")
+Label/colors/font_color = Color(0.843137, 0.862745, 1, 1)
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("1_1hpv5")
+Panel/styles/panel = SubResource("StyleBoxFlat_gvtg1")

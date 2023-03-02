@@ -1,0 +1,967 @@
+[gd_scene load_steps=35 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui_about.gd" id="1_7x7yv"]
+[ext_resource type="Theme" uid="uid://bdl114ssnfrni" path="res://resources/drawable/st_button.tres" id="1_nlep5"]
+[ext_resource type="PackedScene" path="res://scenes/uic_btn_menu.tscn" id="2_7r7ov"]
+[ext_resource type="Theme" uid="uid://cndgcy67xr3nw" path="res://resources/drawable/st_grabber.tres" id="3_5dd6v"]
+[ext_resource type="Script" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="4_1ic7r"]
+[ext_resource type="FontFile" uid="uid://fpaac2jgu5ga" path="res://resources/drawable/fonts/dejavu-sans/DejaVuSans.ttf" id="4_ntpls"]
+[ext_resource type="Theme" uid="uid://dy8drnm5atd4f" path="res://resources/drawable/st_settings_item.tres" id="5_4huj2"]
+[ext_resource type="Theme" uid="uid://eo4a2eayt8nq" path="res://resources/drawable/st_submenu.tres" id="8_mxi26"]
+[ext_resource type="Shader" path="res://resources/drawable/shaders/blur.gdshader" id="9_7wudv"]
+[ext_resource type="PackedScene" path="res://scenes/uic_btn_help.tscn" id="10_2w4a1"]
+
+[sub_resource type="Gradient" id="Gradient_dvuq4"]
+colors = PackedColorArray(0, 0.02, 0.1, 0.13, 0, 0.02, 0.1, 0.25)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_o1vnv"]
+gradient = SubResource("Gradient_dvuq4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1nmi4"]
+texture = SubResource("GradientTexture1D_o1vnv")
+margin_left = 64.0
+region_rect = Rect2(0, 0, 256, 1)
+
+[sub_resource type="Gradient" id="Gradient_fsc6d"]
+colors = PackedColorArray(0, 0.02, 0.1, 0.64, 0, 0.02, 0.1, 0.25)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3rovn"]
+gradient = SubResource("Gradient_fsc6d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lgyuc"]
+texture = SubResource("GradientTexture1D_3rovn")
+margin_left = 64.0
+region_rect = Rect2(0, 0, 256, 1)
+
+[sub_resource type="Gradient" id="Gradient_ejkei"]
+colors = PackedColorArray(0, 0.04, 0.21, 0.64, 0, 0.04, 0.21, 0.25)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ntg7a"]
+gradient = SubResource("Gradient_ejkei")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_788pl"]
+texture = SubResource("GradientTexture1D_ntg7a")
+margin_left = 64.0
+region_rect = Rect2(0, 0, 256, 1)
+
+[sub_resource type="Gradient" id="Gradient_r2a4k"]
+colors = PackedColorArray(0, 0.02, 0.1, 0.64, 0, 0.02, 0.1, 0.25)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_y3uuf"]
+gradient = SubResource("Gradient_r2a4k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e4kv1"]
+texture = SubResource("GradientTexture1D_y3uuf")
+margin_left = 64.0
+region_rect = Rect2(0, 0, 256, 1)
+
+[sub_resource type="Gradient" id="Gradient_djkim"]
+colors = PackedColorArray(0.0481254, 0.0683791, 0.076797, 0.64, 0.0368343, 0.0734201, 0.0632968, 0.25)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fv1ud"]
+gradient = SubResource("Gradient_djkim")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kec1e"]
+texture = SubResource("GradientTexture1D_fv1ud")
+margin_left = 64.0
+region_rect = Rect2(0, 0, 256, 1)
+
+[sub_resource type="Theme" id="Theme_lxutv"]
+Button/colors/font_color = Color(0.843137, 0.862745, 1, 1)
+Button/colors/font_disabled_color = Color(0.84, 0.86, 1, 0.2)
+Button/colors/font_focus_color = Color(0.843137, 0.862745, 1, 1)
+Button/colors/font_hover_color = Color(1, 0.803922, 0.305882, 1)
+Button/colors/font_hover_pressed_color = Color(1, 0.803922, 0.305882, 1)
+Button/colors/font_pressed_color = Color(1, 0.803922, 0.305882, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("4_ntpls")
+Button/styles/disabled = SubResource("StyleBoxTexture_1nmi4")
+Button/styles/focus = SubResource("StyleBoxTexture_lgyuc")
+Button/styles/hover = SubResource("StyleBoxTexture_788pl")
+Button/styles/normal = SubResource("StyleBoxTexture_e4kv1")
+Button/styles/pressed = SubResource("StyleBoxTexture_kec1e")
+
+[sub_resource type="Gradient" id="Gradient_8oxyb"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.64)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ptam1"]
+gradient = SubResource("Gradient_8oxyb")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_32br4"]
+texture = SubResource("GradientTexture2D_ptam1")
+region_rect = Rect2(0, 0, 64, 64)
+
+[sub_resource type="Gradient" id="Gradient_cq0hf"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.64)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k6tib"]
+gradient = SubResource("Gradient_cq0hf")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tkibo"]
+texture = SubResource("GradientTexture2D_k6tib")
+region_rect = Rect2(0, 0, 64, 64)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6bw3"]
+content_margin_right = 24.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_smkbq"]
+shader = ExtResource("9_7wudv")
+shader_parameter/lod = 4.0
+
+[node name="About" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_7x7yv")
+
+[node name="M" type="MarginContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="C" type="VBoxContainer" parent="M"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Header" type="Control" parent="M/C"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Body" type="Control" parent="M/C"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+mouse_filter = 1
+theme = ExtResource("1_nlep5")
+
+[node name="Menu" type="VBoxContainer" parent="M/C/Body"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 350.0
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 2
+
+[node name="BtnSelect" parent="M/C/Body/Menu" instance=ExtResource("2_7r7ov")]
+z_index = 100
+layout_mode = 2
+focus_mode = 0
+disabled = true
+text = "MM_Game"
+is_blur_dis = true
+
+[node name="BtnEditor" parent="M/C/Body/Menu" instance=ExtResource("2_7r7ov")]
+z_index = 100
+layout_mode = 2
+focus_mode = 0
+disabled = true
+text = "MM_Editor"
+is_blur_dis = true
+
+[node name="BtnSettings" parent="M/C/Body/Menu" instance=ExtResource("2_7r7ov")]
+z_index = 100
+layout_mode = 2
+focus_mode = 0
+disabled = true
+text = "MM_Settings"
+is_blur_dis = true
+
+[node name="BtnAbout" parent="M/C/Body/Menu" instance=ExtResource("2_7r7ov")]
+layout_mode = 2
+text = "MM_About"
+is_blur_dis = true
+is_focus_imm = true
+
+[node name="BtnExit" parent="M/C/Body/Menu" instance=ExtResource("2_7r7ov")]
+z_index = 100
+layout_mode = 2
+focus_mode = 0
+disabled = true
+text = "MM_Exit"
+is_blur_dis = true
+
+[node name="Footer" type="Control" parent="M/C"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="C2" type="Control" parent="M"]
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="C" type="MarginContainer" parent="M/C2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 436.0
+offset_top = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_lxutv")
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="C2" type="Control" parent="M/C2/C"]
+z_index = 50
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="UpperScrollShadow" type="Panel" parent="M/C2/C/C2"]
+visible = false
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_32br4")
+
+[node name="BottomScrollShadow" type="Panel" parent="M/C2/C/C2"]
+visible = false
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_tkibo")
+
+[node name="C" type="ScrollContainer" parent="M/C2/C" node_paths=PackedStringArray("shadows")]
+layout_mode = 2
+theme = ExtResource("3_5dd6v")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_k6bw3")
+script = ExtResource("4_1ic7r")
+speed = 3.0
+damping = 0.25
+shadows = NodePath("../C2")
+
+[node name="C" type="VBoxContainer" parent="M/C2/C/C"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme = ExtResource("5_4huj2")
+theme_override_constants/separation = 12
+
+[node name="SHeader3" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SHeader3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "AM_Account"
+vertical_alignment = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="M/C2/C/C/C/SHeader3"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SItem4" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem4"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Placeholder*"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BtnPlaceholder" parent="M/C2/C/C/C/SItem4" instance=ExtResource("2_7r7ov")]
+custom_minimum_size = Vector2(300, 42)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+disabled = true
+text = "Placeholder"
+is_blur_dis = true
+
+[node name="SHeader" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SHeader"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SM_General"
+vertical_alignment = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="M/C2/C/C/C/SHeader"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SItem2" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem2"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "AM_Join_Discord"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BtnDiscord" parent="M/C2/C/C/C/SItem2" instance=ExtResource("2_7r7ov")]
+custom_minimum_size = Vector2(300, 42)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "AM_Open"
+is_blur_dis = true
+
+[node name="SItem10" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem10"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "AM_Github"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem10"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BtnGitHub" parent="M/C2/C/C/C/SItem10" instance=ExtResource("2_7r7ov")]
+custom_minimum_size = Vector2(300, 42)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "AM_Open"
+is_blur_dis = true
+
+[node name="SItem" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "NeonRush - MIT License"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BtnLicense" parent="M/C2/C/C/C/SItem" instance=ExtResource("2_7r7ov")]
+custom_minimum_size = Vector2(300, 42)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "AM_License"
+is_blur_dis = true
+
+[node name="SHeader2" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SHeader2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "AM_Annotations"
+vertical_alignment = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="M/C2/C/C/C/SHeader2"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SItem3" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem3"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Godot Engine - MIT License"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BtnGodotLicense" parent="M/C2/C/C/C/SItem3" instance=ExtResource("2_7r7ov")]
+custom_minimum_size = Vector2(300, 42)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "AM_License"
+is_blur_dis = true
+
+[node name="SItem5" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem5"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SmoothScroll - MIT License"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BtnScrollLicense" parent="M/C2/C/C/C/SItem5" instance=ExtResource("2_7r7ov")]
+custom_minimum_size = Vector2(300, 42)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "AM_License"
+is_blur_dis = true
+
+[node name="SItem6" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem6"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "godot-sqlite - MIT License"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BtnSQLLicense" parent="M/C2/C/C/C/SItem6" instance=ExtResource("2_7r7ov")]
+custom_minimum_size = Vector2(300, 42)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "AM_License"
+is_blur_dis = true
+
+[node name="SItem7" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem7"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Godot Motion Blur - MIT License"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BtnBlurLicense" parent="M/C2/C/C/C/SItem7" instance=ExtResource("2_7r7ov")]
+custom_minimum_size = Vector2(300, 42)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "AM_License"
+is_blur_dis = true
+
+[node name="SItem8" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem8"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GDScriptAudioImport - MIT License"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BtnAudioImportLicense" parent="M/C2/C/C/C/SItem8" instance=ExtResource("2_7r7ov")]
+custom_minimum_size = Vector2(300, 42)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "AM_License"
+is_blur_dis = true
+
+[node name="SItem9" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem9"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sen font - SIL OPEN FONT LICENSE Version 1.1"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BtnSenLicense" parent="M/C2/C/C/C/SItem9" instance=ExtResource("2_7r7ov")]
+custom_minimum_size = Vector2(300, 42)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "AM_License"
+is_blur_dis = true
+
+[node name="SItem11" type="Control" parent="M/C2/C/C/C"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="M/C2/C/C/C/SItem11"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DejaVuSans font"
+vertical_alignment = 1
+
+[node name="BG" type="Panel" parent="M/C2/C/C/C/SItem11"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BtnDejaVuSansLicense" parent="M/C2/C/C/C/SItem11" instance=ExtResource("2_7r7ov")]
+custom_minimum_size = Vector2(300, 42)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "AM_License"
+is_blur_dis = true
+
+[node name="LPanel" type="Control" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 500.0
+offset_bottom = -64.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BG" type="Panel" parent="LPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("8_mxi26")
+theme_type_variation = &"panel_left"
+
+[node name="Stroke" type="Panel" parent="LPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("8_mxi26")
+theme_type_variation = &"panel_left_s"
+
+[node name="Blur" type="Panel" parent="LPanel"]
+z_index = -1
+material = SubResource("ShaderMaterial_smkbq")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.063
+offset_bottom = -0.00805664
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Footer" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="HSeparator" type="HSeparator" parent="Footer"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("8_mxi26")
+theme_type_variation = &"panel_footer_s"
+theme_override_constants/separation = 0
+
+[node name="BG" type="Panel" parent="Footer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("8_mxi26")
+theme_type_variation = &"panel_footer"
+
+[node name="Blur" type="Panel" parent="Footer"]
+z_index = -1
+material = SubResource("ShaderMaterial_smkbq")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="C" type="HBoxContainer" parent="Footer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 565.0
+offset_right = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 555
+
+[node name="BtnCancel" parent="Footer/C" instance=ExtResource("10_2w4a1")]
+layout_mode = 2
+text = "SM_Back"
+one_shot = true
+
+[node name="Center" type="Control" parent="."]
+z_index = -10
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="BG" type="Panel" parent="Center"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("8_mxi26")
+theme_type_variation = &"panel_center"
+
+[node name="Blur" type="Panel" parent="Center"]
+z_index = -1
+material = SubResource("ShaderMaterial_smkbq")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="pressed" from="M/C/Body/Menu/BtnAbout" to="." method="_on_btn_about_pressed"]
+[connection signal="pressed" from="M/C2/C/C/C/SItem2/BtnDiscord" to="." method="_on_btn_discord_pressed"]
+[connection signal="pressed" from="M/C2/C/C/C/SItem10/BtnGitHub" to="." method="_on_btn_git_hub_pressed"]
+[connection signal="pressed" from="M/C2/C/C/C/SItem/BtnLicense" to="." method="_on_btn_license_pressed"]
+[connection signal="pressed" from="M/C2/C/C/C/SItem3/BtnGodotLicense" to="." method="_on_btn_godot_license_pressed"]
+[connection signal="pressed" from="M/C2/C/C/C/SItem5/BtnScrollLicense" to="." method="_on_btn_scroll_license_pressed"]
+[connection signal="pressed" from="M/C2/C/C/C/SItem6/BtnSQLLicense" to="." method="_on_btn_sql_license_pressed"]
+[connection signal="pressed" from="M/C2/C/C/C/SItem7/BtnBlurLicense" to="." method="_on_btn_blur_license_pressed"]
+[connection signal="pressed" from="M/C2/C/C/C/SItem8/BtnAudioImportLicense" to="." method="_on_btn_audio_import_license_pressed"]
+[connection signal="pressed" from="M/C2/C/C/C/SItem9/BtnSenLicense" to="." method="_on_btn_sen_license_pressed"]
+[connection signal="pressed" from="M/C2/C/C/C/SItem11/BtnDejaVuSansLicense" to="." method="_on_btn_deja_vu_sans_license_pressed"]
+[connection signal="pressed" from="Footer/C/BtnCancel" to="." method="_on_btn_cancel_btn_pressed"]

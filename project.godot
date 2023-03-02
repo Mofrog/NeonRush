@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="NeonRush"
-run/main_scene="res://scenes/main_menu/ui_main_menu.tscn"
+run/main_scene="res://scenes/ui_main.tscn"
 config/features=PackedStringArray("4.0")
 run/max_fps=144
 
@@ -21,7 +21,7 @@ default_bus_layout=""
 
 [autoload]
 
-Global="*res://code/_global.gd"
+Global="*res://scripts/__global.gd"
 
 [config]
 
@@ -43,7 +43,7 @@ window/size/window_height_override=1080
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg", "res://addons/SmoothScroll/plugin.cfg")
+enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg")
 
 [gdnative]
 
@@ -137,7 +137,7 @@ editor_grid_down={
 [internationalization]
 
 locale/translation_remaps={}
-locale/translations=PackedStringArray("res://data/text.en.translation", "res://data/text.ru.translation")
+locale/translations=PackedStringArray("res://resources/localization/text.ru.translation", "res://resources/localization/text.en.translation")
 locale/fallback=""
 locale/translations_pot_files=PackedStringArray()
 locale/locale_filter_mode=1
