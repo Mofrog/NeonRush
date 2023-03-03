@@ -15,7 +15,7 @@ render_priority = 0
 shader = ExtResource("5_lv88f")
 shader_parameter/cell_size = 0.097
 shader_parameter/cell_spacing = 0.002
-shader_parameter/line_color = Color(0.584314, 0.584314, 0.584314, 1)
+shader_parameter/line_color = Color(0.678431, 0.678431, 0.678431, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fprjv"]
 material = SubResource("ShaderMaterial_0k6ej")

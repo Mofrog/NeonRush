@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b24wsjydam4ma"]
 
 [ext_resource type="Texture2D" uid="uid://d2d5rcoonnp8" path="res://resources/drawable/a_blocks_a.png" id="1_er7jh"]
 

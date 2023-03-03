@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://d04lk3xmrs1xw"]
+
+[ext_resource type="FontFile" uid="uid://bfwgk4mk161u1" path="res://resources/drawable/fonts/Sen/Sen-Bold.ttf" id="1_gvpoi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yha7u"]
+bg_color = Color(0.6, 0.6, 0.6, 0.0941176)
+border_width_left = 2
+border_width_right = 2
+border_color = Color(0.8, 0.819608, 0.94902, 0.627451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6eb0"]
+bg_color = Color(0.6, 0.6, 0.6, 0.0941176)
+draw_center = false
+border_width_left = 2
+border_width_right = 2
+border_color = Color(0.8, 0.819608, 0.94902, 0.627451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3g1gx"]
+bg_color = Color(0.6, 0.6, 0.6, 0.0941176)
+draw_center = false
+border_width_left = 2
+border_width_right = 2
+border_color = Color(0.8, 0.819608, 0.94902, 0.627451)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vho3k"]
+font = ExtResource("1_gvpoi")
+font_size = 20
+font_color = Color(0.843137, 0.862745, 1, 1)
+
+[node name="Root" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yha7u")
+
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22
+anchor_top = 1.0
+anchor_right = 0.78
+anchor_bottom = 1.0
+offset_top = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h6eb0")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -28.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3g1gx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -26.5
+offset_right = 26.5
+offset_bottom = 20.0
+grow_horizontal = 2
+text = "5"
+label_settings = SubResource("LabelSettings_vho3k")
+horizontal_alignment = 1

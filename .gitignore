@@ -1,6 +1,7 @@
 .godot/
 .import/
 .mono/
+.vscode/
 addons/Todo_Manager
 export_presets.cfg
 runtest.cmd

@@ -1,16 +1,25 @@
 extends Control
 
-
+var is_grid_height_change = false
 
 func _process(_delta):
-	$C/C/C/Body/Right/C/Header/Menu/L/GridHeight.text = str(Global.grid_height)
-	$C/C/C/Body/Right/C/Header/Menu/L/GridRotationX.text = str(Global.block_rotation.x)
-	$C/C/C/Body/Right/C/Header/Menu/L/GridRotationY.text = str(Global.block_rotation.y)
-	$C/C/C/Body/Right/C/Header/Menu/L/GridRotationZ.text = str(Global.block_rotation.z)
+	if !is_grid_height_change:
+		$C/C/C/Body/Right/OnScreen/CLeft/GridHeight.value = Global.grid_height
+		$C/C/C/Body/Right/OnScreen/CLeft/TxtGridHeight.text = str(Global.grid_height)
+	else:
+		$C/C/C/Body/Right/OnScreen/CLeft/TxtGridHeight.text = str($C/C/C/Body/Right/OnScreen/CLeft/GridHeight.value)
+		Global.grid_height = $C/C/C/Body/Right/OnScreen/CLeft/GridHeight.value
+	$C/C/C/Body/Right/C/Header/Menu/L/X/C/GridRotationX.text = str(Global.block_rotation.x)
+	$C/C/C/Body/Right/C/Header/Menu/L/Y/C/GridRotationY.text = str(Global.block_rotation.y)
+	$C/C/C/Body/Right/C/Header/Menu/L/Z/C/GridRotationZ.text = str(Global.block_rotation.z)
 
 
 func _on_btn_back_pressed():
-	get_tree().change_scene_to_file("res://scenes/main_menu/ui_main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui_main.tscn")
+
+
+func _on_c_mouse_entered():
+	$C/C/C/Body/Right/C/C.grab_focus()
 
 
 # Cursor type
@@ -36,10 +45,12 @@ func _on_btn_grid_up_pressed():
 	Global.grid_height += 1
 func _on_btn_grid_down_pressed():
 	Global.grid_height -= 1
-func _on_grid_height_pressed():
-	Global.grid_height = 0
-func _on_grid_character_pressed():
-	Global.grid_height = 0
+func _on_grid_height_drag_started():
+	is_grid_height_change = true
+func _on_grid_height_drag_ended(_value_changed):
+	Global.grid_height = $C/C/C/Body/Right/OnScreen/CLeft/GridHeight.value
+	is_grid_height_change = false
+	$C/C/C/Body/Right/C/C.grab_focus()
 
 
 # Block type
@@ -89,172 +100,14 @@ func _on_grid_rotation_zero_pressed():
 	Global.block_rotation = Vector3.ZERO
 
 
-#------------------------------------READY_EXIT FUNC'S--------------------------
-#func _ready():
-#	ProjectSettings.set_setting("global/is_editor_map_load", false)
-#	ProjectSettings.set_setting("global/is_test_mode", false)
-#
-#	ProjectSettings.set_setting("global/is_end_valid", false)
-#	for i in Blocks.objects.keys(): objects_list.add_item(i)
-#	if result_id != -1: editor.draw_visual_path()
-#	load_map()
-
-
-#------------------------------------PROCESS FUNC'S-----------------------------
-#func _process(_delta):
-#	check_ui_focus()
-#	shortcuts_process()
-#	if timeline != null && result_id != -1: editor.update_replay_pos(timeline.manager.time)
-#	map_name.text = settings_p.data["Name"]
-
-#func check_ui_focus():
-#	var rect = Rect2(footer.position, viewport_container.size)
-#	if rect.has_point(get_local_mouse_position()):
-#		map_name.grab_focus()
-#		footer.mouse_filter = Control.MOUSE_FILTER_IGNORE
-#		ProjectSettings.set_setting("global/is_on_ui", false)
-#	else:
-#		footer.mouse_filter = Control.MOUSE_FILTER_STOP
-#		ProjectSettings.set_setting("global/is_on_ui", true)
-
-
-#------------------------------------UTILITE FUNC'S-----------------------------
-# Onready loading of the map
-#func load_map():
-#	if play_map_id == -1: return
-#
-#	# Get map data
-#	var data = SaveLoadManager.load_map_header(play_map_id)
-#	map_name.text = data["Name"]
-#	settings_p.data_update(data, true)
-#	settings_p.disable_edit()
-#
-#	# Load song
-#	var path = OS.get_executable_path().get_base_dir() + "/maps/" + data["Name"] + "/" + data["Song"].get_file()
-#	var song_data : AudioStream = AudioLoader.loadfile(path)
-#	timeline.stream = song_data
-#	timeline.set_max(data["End"])
-#	timeline.manager.set_bpm(data["BPM"])
-#	timeline.manager.calc_delay(data["BS"], data["TD"])
-#	timeline.manager.set_general_delay(data["Delay"])
-#
-#	# Load map
-#	data = SaveLoadManager.load_map_data(data["Name"])
-#	if !data.has("Chunks"): return
-#	chunks.delete_all_chunks()
-#	chunks.chunks = data["Chunks"]
-#	chunks.update_chunks_visibility(character)
-#	ProjectSettings.set_setting("global/is_end_valid", true)
-#
-#
-## Save the map
-#func save_map():
-#	SaveLoadManager.save_map(settings_p.data, chunks.chunks, settings_p.is_data_resave)
-#	settings_p.disable_edit()
-#	PopUp.new().accept_dialog("Succes!", "Map saved :3", self)
-
-
-# Check that map have a song
-#func is_map_valid():
-#	# Check song existance
-#	if settings_p.data["Song"] == "unknown": 
-#		#PopUp.new().accept_dialog("Fail!", "There is no song at your map!", self)
-#		return false
-#	if !ProjectSettings.get_setting("global/is_end_valid"):
-#		#PopUp.new().accept_dialog("Fail!", "There is no end at your map!", self)
-#		return false
-#	return true
-#
-#
-#func exit_editor(): 
-#	if is_map_valid(): save_map()
-#	if get_tree().change_scene_to_file("res://scenes/main_menu/ui_main_menu.tscn") != 0: 
-#		printerr("Scene change error / ui_editor to ui_main_menu")
-#
-#
-## Close warning panel
-#func _on_Warning_hide(): get_tree().paused = false
-
-
-#--------------------------------------MENU EVENTS------------------------------
-# Return to the main menu
-#func _on_BtnBack_pressed():
-#	PopUp.new().confirm_dialog("Exit?", "Please confirm. Map will be saved.", self, null, "exit_editor")
-
-
-# Save map
-#func _on_BtnSave_pressed(): if is_map_valid(): save_map()
-
-
-# Load map (Open the map selection scene)
-#func _on_BtnLoad_pressed():
-#	ProjectSettings.set_setting("global/is_editor_map_load", true)
-#	if get_tree().change_scene_to_file("res://scenes/map_select_menu/ui_map_select.tscn") != 0: 
-#		printerr("Scene change error / ui_editor to ui_map_select")
-#
-#
-## Open map settings panel
-#func _on_BtnSetts_pressed():
-#	settings_p.visible = true
-#	get_tree().paused = true
-#	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-#
-#
-## Start map test at game scene
-#func _on_BtnTest_pressed():
-#	if is_map_valid(): save_map()
-#	else: return
-#
-#	var id = SaveLoadManager.load_map_header(null ,settings_p.data["Name"])["Id"]
-#	ProjectSettings.set_setting("global/result_id", id)
-#	ProjectSettings.set_setting("global/is_test_mode", true)
-#	if get_tree().change_scene_to_file("res://scenes/level_game/level_game.tscn") != 0: 
-#		printerr("Scene change error / ui_editor to level_game")
-
-
-#------------------------------------HEADER EVENTS------------------------------
-#func _on_GridAxis_pressed_group(button):
-#	if character != null:
-#		match button:
-#			0: character.grid_offset = character.cursor_pos_cubic.y
-#			1: character.grid_offset = character.cursor_pos_cubic.z
-#			2: character.grid_offset = character.cursor_pos_cubic.x
-#		editor.grid_axis = button
-#
-#
-#func _on_LChCursor_pressed_group(button): if editor != null: editor.type = button
-#
-#
-#func _on_BtnRotate_pressed(): 
-#	character.rotate_object()
-#	editor.rotate_preview()
-#
-#
-##----------------------------------BLOCKS LIST EVENTS---------------------------
-#func _on_List_item_selected(index): if character != null: character.id_tex = index
-#
-#
-#func _on_ListO_item_selected(index): if character != null: character.id_obj = index
-#
-#
-##-----------------------------------TIMELINE EVENTS-----------------------------
-#func _on_TabContainer_tab_changed(tab): 
-#	if editor != null: 
-#		if tab == 0 || tab == 2: editor.object = 0
-#		else: editor.object = 1
-
-
-#func _on_BtnHelp_pressed():
-#	PopUp.new().accept_dialog("Help",
-#	"Movement: WASD\n" + \
-#	"Up, Down: Space, Alt\n" + \
-#	"View around: Mouse Wheel Button\n" + \
-#	"Zoom: Ctrl + Mouse Wheel Up, Down\n" + \
-#	"Action: Left Mouse Button\n" + \
-#	"Cancel: Right Mouse Button\n" + \
-#	"Grid Up, Down: Mouse Wheel Up, Down\n" + \
-#	"Select, Spawn, Delete mode: Z, X, C\n" + \
-#	"Rotate grid: Q\n" + \
-#	"Switch block type: T\n" + \
-#	"Rotate block: R\n" + \
-#	"Save map: Shift + S", self)
+# Timeline
+func _on_btn_to_start_toggled(button_pressed):
+	if button_pressed: GlobalTime.time_state = GlobalTime.TIME_STATE.TO_START
+func _on_btn_reverse_toggled(button_pressed):
+	if button_pressed: GlobalTime.time_state = GlobalTime.TIME_STATE.REVERSE
+func _on_btn_stop_toggled(button_pressed):
+	if button_pressed: GlobalTime.time_state = GlobalTime.TIME_STATE.STOP
+func _on_btn_play_toggled(button_pressed):
+	if button_pressed: GlobalTime.time_state = GlobalTime.TIME_STATE.PLAY
+func _on_btn_to_end_toggled(button_pressed):
+	if button_pressed: GlobalTime.time_state = GlobalTime.TIME_STATE.TO_END

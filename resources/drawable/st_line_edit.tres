@@ -1,0 +1,37 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dhy2kmb7pr78g"]
+
+[ext_resource type="FontFile" uid="uid://fpaac2jgu5ga" path="res://resources/drawable/fonts/dejavu-sans/DejaVuSans.ttf" id="1_tsj6r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x13jh"]
+content_margin_left = 4.0
+bg_color = Color(0, 0.0196078, 0.101961, 0.639216)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.94902, 0.764706, 0.301961, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqe2n"]
+content_margin_left = 4.0
+bg_color = Color(0, 0.0196078, 0.101961, 0.639216)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.72549, 0.74902, 0.870588, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[resource]
+LineEdit/colors/font_color = Color(0.843137, 0.862745, 1, 1)
+LineEdit/colors/font_selected_color = Color(0.94902, 0.764706, 0.301961, 1)
+LineEdit/font_sizes/font_size = 12
+LineEdit/fonts/font = ExtResource("1_tsj6r")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_x13jh")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_xqe2n")

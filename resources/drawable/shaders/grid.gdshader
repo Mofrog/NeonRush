@@ -1,4 +1,5 @@
 shader_type spatial;
+render_mode cull_disabled, shadows_disabled, unshaded;
 
 uniform float cell_size = 16;
 uniform float cell_spacing = 2;

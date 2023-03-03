@@ -7,6 +7,18 @@ extends Node3D
 var selection_start_pos = Vector3()
 var selection_end_pos = Vector3()
 
+var box_mesh = null
+var slope_mesh = null
+var half_mesh = null
+
+
+func _ready():
+	box_mesh = BoxMesh.new()
+	slope_mesh = PrismMesh.new()
+	slope_mesh.left_to_right = 0
+	half_mesh = BoxMesh.new()
+	half_mesh.size.y = 0.5
+
 
 func calc_position(intersection):
 	if !intersection.is_empty():
@@ -29,18 +41,31 @@ func _process(_delta):
 		Global.CURSOR_TYPE.CURSOR:
 			cursor.material_override = load("res://resources/drawable/m_cursor_brush.tres")
 			select.material_override = load("res://resources/drawable/m_select_brush.tres")
+			if box_mesh != null: cursor.mesh = box_mesh
 		Global.CURSOR_TYPE.ADD:
 			cursor.material_override = load("res://resources/drawable/m_cursor_spawn.tres")
 			select.material_override = load("res://resources/drawable/m_select_spawn.tres")
 			if Global.cursor_state != Global.CURSOR_STATE.SELECT:
 				selection_start_pos = Vector3()
 				selection_end_pos = Vector3()
+			match Global.shape_id:
+				0: 
+					if box_mesh != null: cursor.mesh = box_mesh
+					cursor.position.y = 0.0
+				1: 
+					if slope_mesh != null: cursor.mesh = slope_mesh
+					cursor.position.y = 0.0
+					cursor.rotation_degrees = Global.block_rotation
+				2: 
+					if half_mesh != null: cursor.mesh = half_mesh
+					cursor.position.y = -0.25
 		Global.CURSOR_TYPE.DELETE:
 			cursor.material_override = load("res://resources/drawable/m_cursor_delete.tres")
 			select.material_override = load("res://resources/drawable/m_select_delete.tres")
 			if Global.cursor_state != Global.CURSOR_STATE.SELECT:
 				selection_start_pos = Vector3()
 				selection_end_pos = Vector3()
+			if box_mesh != null: cursor.mesh = box_mesh
 
 
 func set_scale_to_selection():

@@ -52,7 +52,7 @@ static func create_chunk(chunk_position, chunks_array):
 	return returns
 
 
-static func _create_block(block_position, block, blocks):
+static func _create_block(block_position, block, _blocks):
 	const TOP_FACE = 	[Vector3(0,1,0),Vector3(1,1,0),Vector3(1,1,1),Vector3(0,1,1)]
 	const DOWN_FACE = 	[Vector3(0,0,0),Vector3(0,0,1),Vector3(1,0,1),Vector3(1,0,0)]
 	const LEFT_FACE = 	[Vector3(0,1,0),Vector3(0,1,1),Vector3(0,0,1),Vector3(0,0,0)]
@@ -84,8 +84,8 @@ static func _create_block(block_position, block, blocks):
 			_c(FRONT_FACE, block_position, block["t"], returns)
 			block_position += Vector3(0.5, 0.5, 0.5)
 			for i in returns["v"].size():
-				returns["v"][i] = (returns["v"][i] - block_position).rotated(Vector3.UP, deg_to_rad(block["r"].z)) + block_position
-				returns["v"][i] = (returns["v"][i] - block_position).rotated(Vector3.FORWARD, deg_to_rad(block["r"].y)) + block_position
+				returns["v"][i] = (returns["v"][i] - block_position).rotated(Vector3.UP, deg_to_rad(block["r"].y + 90.0)) + block_position
+				returns["v"][i] = (returns["v"][i] - block_position).rotated(Vector3.BACK, deg_to_rad(block["r"].z)) + block_position
 				returns["v"][i] = (returns["v"][i] - block_position).rotated(Vector3.RIGHT, deg_to_rad(block["r"].x)) + block_position
 	
 	

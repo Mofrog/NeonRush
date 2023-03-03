@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://bedqigdiior6n"]
+[gd_scene load_steps=87 format=3 uid="uid://bedqigdiior6n"]
 
 [ext_resource type="Script" path="res://scripts/ui_editor.gd" id="1"]
 [ext_resource type="Shader" path="res://resources/drawable/shaders/blur.gdshader" id="2_rp585"]
@@ -16,16 +16,16 @@
 [ext_resource type="Texture2D" uid="uid://ds4pwhbumdtiv" path="res://resources/drawable/ico_delete.svg" id="13_ontob"]
 [ext_resource type="Texture2D" uid="uid://dsigd5bjl50hp" path="res://resources/drawable/ico_grid_up.svg" id="14_du5in"]
 [ext_resource type="Texture2D" uid="uid://do08bf5qlqv" path="res://resources/drawable/ico_grid_x.svg" id="14_mligj"]
-[ext_resource type="Script" path="res://scripts/uic_cursor_trail.gd" id="15_do3mh"]
 [ext_resource type="Texture2D" uid="uid://bmmnt40i0o7ny" path="res://resources/drawable/ico_grid_y.svg" id="15_kaqbp"]
 [ext_resource type="Texture2D" uid="uid://cjod7rwqa2cjv" path="res://resources/drawable/ico_grid_down.svg" id="15_wi3ul"]
 [ext_resource type="Texture2D" uid="uid://cqenm4qfnumf5" path="res://resources/drawable/ico_grid_z.svg" id="16_00t72"]
-[ext_resource type="Texture2D" uid="uid://b7la1wrg4t4pk" path="res://resources/drawable/ico_grid_character.svg" id="16_2r7qw"]
 [ext_resource type="PackedScene" uid="uid://4rqa3kbhgqeq" path="res://scenes/lvl_editor.tscn" id="16_8w0mp"]
+[ext_resource type="Texture2D" uid="uid://c20xxqwd2rpmf" path="res://resources/drawable/ico_rotate.svg" id="18_ertgg"]
 [ext_resource type="Theme" uid="uid://cndgcy67xr3nw" path="res://resources/drawable/st_grabber.tres" id="21_7ddl4"]
 [ext_resource type="FontFile" uid="uid://nbsscwgie507" path="res://resources/drawable/fonts/dejavu-sans/DejaVuSans-Bold.ttf" id="21_tkqgb"]
-[ext_resource type="Texture2D" uid="uid://cey246c100dfx" path="res://resources/drawable/ico_block.svg" id="22_l2wc3"]
+[ext_resource type="StyleBox" uid="uid://brwcq1g8cm3yg" path="res://resources/drawable/st_editor_header.tres" id="23_1jtdy"]
 [ext_resource type="Texture2D" uid="uid://43xiasbbjcbk" path="res://resources/drawable/txt_1_tiles_small_01_black.png" id="23_6sqrh"]
+[ext_resource type="Theme" uid="uid://bojam3itnewjv" path="res://resources/drawable/st_slider.tres" id="23_qch7o"]
 [ext_resource type="Texture2D" uid="uid://chkm1j8u4tdkh" path="res://resources/drawable/txt_2_tiles_small_01_black_emi.png" id="24_5e8a6"]
 [ext_resource type="Texture2D" uid="uid://bftnwmr1h688k" path="res://resources/drawable/ico_shape.svg" id="24_vv5dq"]
 [ext_resource type="Texture2D" uid="uid://d25x4xtmwk3qp" path="res://resources/drawable/txt_3_tiles_small_01_white.png" id="25_dhhn8"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://bf3xcic8xxght" path="res://resources/drawable/txt_4_tiles_small_01_white_emi.png" id="26_i0ohl"]
 [ext_resource type="Texture2D" uid="uid://cmy3rmyhh3vjp" path="res://resources/drawable/txt_5_tiles_xsmall_01.png" id="27_aafl7"]
 [ext_resource type="Texture2D" uid="uid://c6aj1g4q1qvk1" path="res://resources/drawable/txt_6_logs_01.png" id="28_0xxs2"]
+[ext_resource type="Texture2D" uid="uid://c7boeb46xpru7" path="res://resources/drawable/ico_block16x.svg" id="29_fax31"]
 [ext_resource type="Texture2D" uid="uid://drnnkj0xwtqab" path="res://resources/drawable/txt_7_bricks_01.png" id="29_n7g2p"]
 [ext_resource type="Texture2D" uid="uid://bwhwsb14h56ym" path="res://resources/drawable/txt_8_tiles_01.png" id="30_lh3ru"]
 [ext_resource type="Texture2D" uid="uid://nl6ckc5w35ve" path="res://resources/drawable/txt_9_tiles_small_02.png" id="31_wdvvg"]
@@ -41,6 +42,11 @@
 [ext_resource type="Texture2D" uid="uid://c1b70gqdd084u" path="res://resources/drawable/txt_block.png" id="38_puqce"]
 [ext_resource type="Texture2D" uid="uid://blvkil55144rd" path="res://resources/drawable/txt_slope.png" id="39_s8oyf"]
 [ext_resource type="Texture2D" uid="uid://cbhisj0prcv01" path="res://resources/drawable/txt_half.png" id="40_1ga8r"]
+[ext_resource type="Script" path="res://scripts/uic_timeline.gd" id="42_27vc4"]
+[ext_resource type="Texture2D" uid="uid://dgj2prepyjlq0" path="res://resources/drawable/ico_to_start.svg" id="43_68ex5"]
+[ext_resource type="Texture2D" uid="uid://mwupbthvfk3c" path="res://resources/drawable/ico_reverse.svg" id="44_us064"]
+[ext_resource type="Texture2D" uid="uid://bwaq4j3sq50lg" path="res://resources/drawable/ico_stop.svg" id="45_s0xit"]
+[ext_resource type="Texture2D" uid="uid://coal7k7wuuf7" path="res://resources/drawable/ico_to_end.svg" id="46_87obd"]
 
 [sub_resource type="Theme" id="Theme_dj6js"]
 default_font = ExtResource("4_ab6ac")
@@ -73,12 +79,63 @@ resource_name = "TYPE"
 [sub_resource type="ButtonGroup" id="ButtonGroup_m40ah"]
 resource_name = "GRID"
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1nlf"]
+content_margin_left = 5.0
+bg_color = Color(0.6, 0.6, 0.6, 0.160784)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.117647, 0.14902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3wpbh"]
+content_margin_left = 5.0
+bg_color = Color(0.6, 0.6, 0.6, 0.160784)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.270588, 0.643137, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tg7r"]
+content_margin_left = 5.0
+bg_color = Color(0.6, 0.6, 0.6, 0.160784)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.85098, 0, 0.941176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqbhv"]
 draw_center = false
 border_color = Color(0.592157, 0.619608, 0.74902, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hwokt"]
+bg_color = Color(0, 0.0196078, 0.101961, 0.686275)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.592157, 0.619608, 0.74902, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egbgd"]
 bg_color = Color(0, 0, 0, 0)
@@ -88,16 +145,6 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 shadow_color = Color(0, 0, 0, 0.321569)
 shadow_size = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk76u"]
-bg_color = Color(0, 0, 0, 0.592157)
-border_width_bottom = 1
-border_color = Color(0.843137, 0.862745, 1, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-shadow_offset = Vector2(0, 1)
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_vbh1a"]
 resource_name = "SELECT"
@@ -132,31 +179,94 @@ ItemList/styles/panel = SubResource("StyleBoxEmpty_w4fd7")
 ItemList/styles/selected = SubResource("StyleBoxFlat_sp5uj")
 ItemList/styles/selected_focus = SubResource("StyleBoxFlat_sp5uj")
 
-[sub_resource type="Curve" id="Curve_5dook"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.490909), 0.0, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="ButtonGroup" id="ButtonGroup_c2tbt"]
 
-[sub_resource type="CurveTexture" id="CurveTexture_jqanc"]
-curve = SubResource("Curve_5dook")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4uni"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0, 0.0196078, 0.101961, 0.686275)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.843137, 0.862745, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f2dg1"]
-direction = Vector3(0, 0, 0)
-spread = 0.0
-gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_jqanc")
-color = Color(0.764706, 0.839216, 0.937255, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x4ah8"]
 
-[sub_resource type="Gradient" id="Gradient_2syjq"]
-offsets = PackedFloat32Array(0.0576271, 0.183051, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.188235, 1, 1, 1, 0)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bknri"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_t3f1u"]
-gradient = SubResource("Gradient_2syjq")
-width = 40
-height = 40
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 0.5)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u8bk1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_weyw1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4r2oe"]
+
+[sub_resource type="Theme" id="Theme_y30nq"]
+HScrollBar/styles/grabber = SubResource("StyleBoxEmpty_x4ah8")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_bknri")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_u8bk1")
+HScrollBar/styles/scroll = SubResource("StyleBoxEmpty_weyw1")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_4r2oe")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5g8jj"]
+
+[sub_resource type="Gradient" id="Gradient_5fdxj"]
+offsets = PackedFloat32Array(0.00239808, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jq7ks"]
+gradient = SubResource("Gradient_5fdxj")
+width = 1
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ixmjd"]
+gradient = SubResource("Gradient_5fdxj")
+width = 1
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xgvrl"]
+gradient = SubResource("Gradient_5fdxj")
+width = 1
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_v0i2y"]
+gradient = SubResource("Gradient_5fdxj")
+width = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_seha0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ii31"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mq8hj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8dyd"]
+content_margin_bottom = 5.0
+bg_color = Color(0.8, 0.819608, 0.94902, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dji1d"]
+bg_color = Color(0.94902, 0.764706, 0.301961, 1)
+corner_radius_top_left = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dy45"]
+bg_color = Color(0.991885, 0.899487, 0.69164, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r26rt"]
+bg_color = Color(0, 0, 0, 0.898039)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_offset = Vector2(0, 1)
 
 [node name="Root" type="Control"]
 layout_mode = 3
@@ -214,7 +324,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="C" type="SplitContainer" parent="C"]
 layout_mode = 2
-split_offset = 393
+split_offset = -120
 vertical = true
 
 [node name="C" type="BoxContainer" parent="C/C"]
@@ -303,7 +413,7 @@ theme = SubResource("Theme_ad1lk")
 split_offset = 1470
 
 [node name="Right" type="Control" parent="C/C/C/Body"]
-custom_minimum_size = Vector2(700, 0)
+custom_minimum_size = Vector2(600, 600)
 layout_mode = 2
 mouse_filter = 2
 
@@ -388,74 +498,87 @@ custom_minimum_size = Vector2(0, 18)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="BtnGridDown" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
-layout_mode = 2
-icon = ExtResource("15_wi3ul")
-flat = true
-icon_alignment = 1
-
-[node name="GridHeight" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
-layout_mode = 2
-text = "{Height}"
-flat = true
-icon_alignment = 1
-
-[node name="BtnGridUp" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
-layout_mode = 2
-icon = ExtResource("14_du5in")
-flat = true
-icon_alignment = 1
-
-[node name="GridCharacter" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
-layout_mode = 2
-icon = ExtResource("16_2r7qw")
-flat = true
-icon_alignment = 1
-
-[node name="VSeparator3" type="VSeparator" parent="C/C/C/Body/Right/C/Header/Menu/L"]
-custom_minimum_size = Vector2(0, 18)
+[node name="X" type="PanelContainer" parent="C/C/C/Body/Right/C/Header/Menu/L"]
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_g1nlf")
 
-[node name="GridRotationX" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+[node name="C" type="BoxContainer" parent="C/C/C/Body/Right/C/Header/Menu/L/X"]
 layout_mode = 2
-text = "{RotationX}"
+
+[node name="Label" type="Label" parent="C/C/C/Body/Right/C/Header/Menu/L/X/C"]
+modulate = Color(1, 0.395019, 0.351663, 1)
+layout_mode = 2
+size_flags_vertical = 1
+text = "X:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridRotationX" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L/X/C"]
+layout_mode = 2
+text = "0"
 flat = true
 icon_alignment = 1
 
-[node name="BtnRotateX" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+[node name="BtnRotateX" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L/X/C"]
 layout_mode = 2
-icon = ExtResource("14_du5in")
+icon = ExtResource("18_ertgg")
 flat = true
 icon_alignment = 1
 
-[node name="GridRotationY" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+[node name="Y" type="PanelContainer" parent="C/C/C/Body/Right/C/Header/Menu/L"]
 layout_mode = 2
-text = "{RotationY}"
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_3wpbh")
+
+[node name="C" type="BoxContainer" parent="C/C/C/Body/Right/C/Header/Menu/L/Y"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="C/C/C/Body/Right/C/Header/Menu/L/Y/C"]
+modulate = Color(0.270588, 0.643137, 0, 1)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Y:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridRotationY" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L/Y/C"]
+layout_mode = 2
+text = "0"
 flat = true
 icon_alignment = 1
 
-[node name="BtnRotateY" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+[node name="BtnRotateY" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L/Y/C"]
 layout_mode = 2
-icon = ExtResource("14_du5in")
+icon = ExtResource("18_ertgg")
 flat = true
 icon_alignment = 1
 
-[node name="GridRotationZ" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+[node name="Z" type="PanelContainer" parent="C/C/C/Body/Right/C/Header/Menu/L"]
 layout_mode = 2
-text = "{RotationZ}"
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_3tg7r")
+
+[node name="C" type="BoxContainer" parent="C/C/C/Body/Right/C/Header/Menu/L/Z"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="C/C/C/Body/Right/C/Header/Menu/L/Z/C"]
+modulate = Color(0.862745, 0, 0.956863, 1)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Z:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridRotationZ" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L/Z/C"]
+layout_mode = 2
+text = "0"
 flat = true
 icon_alignment = 1
 
-[node name="BtnRotateZ" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
+[node name="BtnRotateZ" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L/Z/C"]
 layout_mode = 2
-icon = ExtResource("14_du5in")
-flat = true
-icon_alignment = 1
-
-[node name="GridRotationZero" type="Button" parent="C/C/C/Body/Right/C/Header/Menu/L"]
-layout_mode = 2
-icon = ExtResource("16_2r7qw")
+icon = ExtResource("18_ertgg")
 flat = true
 icon_alignment = 1
 
@@ -479,11 +602,12 @@ uppercase = true
 [node name="C" type="SubViewportContainer" parent="C/C/C/Body/Right/C"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="C/C/C/Body/Right/C/C"]
 handle_input_locally = false
-size = Vector2i(1470, 852)
+size = Vector2i(1470, 863)
 render_target_update_mode = 4
 
 [node name="Root" parent="C/C/C/Body/Right/C/C/SubViewport" instance=ExtResource("16_8w0mp")]
@@ -498,6 +622,62 @@ grow_vertical = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yqbhv")
+
+[node name="OnScreen" type="Control" parent="C/C/C/Body/Right"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CLeft" type="BoxContainer" parent="C/C/C/Body/Right/OnScreen"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -150.0
+offset_bottom = 150.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 0
+alignment = 1
+vertical = true
+
+[node name="GridHeight" type="VSlider" parent="C/C/C/Body/Right/OnScreen/CLeft"]
+custom_minimum_size = Vector2(10, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("23_qch7o")
+min_value = -100.0
+scrollable = false
+tick_count = 3
+
+[node name="BtnGridUp" type="Button" parent="C/C/C/Body/Right/OnScreen/CLeft"]
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("14_du5in")
+
+[node name="TxtGridHeight" type="Label" parent="C/C/C/Body/Right/OnScreen/CLeft"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_hwokt")
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 1
+
+[node name="BtnGridDown" type="Button" parent="C/C/C/Body/Right/OnScreen/CLeft"]
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("15_wi3ul")
 
 [node name="Left" type="Control" parent="C/C/C/Body"]
 custom_minimum_size = Vector2(230, 0)
@@ -527,7 +707,7 @@ vertical = true
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_qk76u")
+theme_override_styles/panel = ExtResource("23_1jtdy")
 
 [node name="Menu" type="Control" parent="C/C/C/Body/Left/C/Header"]
 custom_minimum_size = Vector2(0, 32)
@@ -546,7 +726,7 @@ layout_mode = 2
 toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_vbh1a")
-icon = ExtResource("22_l2wc3")
+icon = ExtResource("29_fax31")
 flat = true
 icon_alignment = 1
 
@@ -663,28 +843,214 @@ fixed_icon_size = Vector2i(64, 64)
 item_0/text = "Start"
 item_1/text = "End"
 
-[node name="Footer" type="Control" parent="C/C"]
+[node name="Footer" type="BoxContainer" parent="C/C"]
 layout_mode = 2
+vertical = true
+
+[node name="Timeline" type="Control" parent="C/C/Footer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 1
+script = ExtResource("42_27vc4")
 
-[node name="CursorTrail" type="GPUParticles2D" parent="."]
-process_mode = 3
-process_priority = 100
-visible = false
-show_behind_parent = true
-top_level = true
-z_index = 101
-y_sort_enabled = true
-position = Vector2(1083, 632)
-amount = 15
-process_material = SubResource("ParticleProcessMaterial_f2dg1")
-texture = SubResource("GradientTexture2D_t3f1u")
-lifetime = 0.1
-fixed_fps = 120
-interpolate = false
-visibility_rect = Rect2(-300, -300, 600, 600)
-script = ExtResource("15_do3mh")
+[node name="BG" type="Panel" parent="C/C/Footer/Timeline"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_egbgd")
+
+[node name="C" type="BoxContainer" parent="C/C/Footer/Timeline"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="Header" type="PanelContainer" parent="C/C/Footer/Timeline/C"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("23_1jtdy")
+
+[node name="Menu" type="Control" parent="C/C/Footer/Timeline/C/Header"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="L" type="BoxContainer" parent="C/C/Footer/Timeline/C/Header/Menu"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 45.0
+grow_vertical = 2
+
+[node name="BtnToStart" type="Button" parent="C/C/Footer/Timeline/C/Header/Menu/L"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_c2tbt")
+icon = ExtResource("43_68ex5")
+flat = true
+icon_alignment = 1
+
+[node name="BtnReverse" type="Button" parent="C/C/Footer/Timeline/C/Header/Menu/L"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_c2tbt")
+icon = ExtResource("44_us064")
+flat = true
+icon_alignment = 1
+
+[node name="BtnStop" type="Button" parent="C/C/Footer/Timeline/C/Header/Menu/L"]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_c2tbt")
+icon = ExtResource("45_s0xit")
+flat = true
+icon_alignment = 1
+
+[node name="BtnPlay" type="Button" parent="C/C/Footer/Timeline/C/Header/Menu/L"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_c2tbt")
+icon = ExtResource("9_ahhlw")
+flat = true
+icon_alignment = 1
+
+[node name="BtnToEnd" type="Button" parent="C/C/Footer/Timeline/C/Header/Menu/L"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_c2tbt")
+icon = ExtResource("46_87obd")
+flat = true
+icon_alignment = 1
+
+[node name="Time" type="Label" parent="C/C/Footer/Timeline/C/Header/Menu/L"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q4uni")
+text = "{Time}"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="C/C/Footer/Timeline/C/Header/Menu"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -195.0
+offset_right = -7.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("21_tkqgb")
+text = "E_Timeline"
+horizontal_alignment = 2
+vertical_alignment = 2
+uppercase = true
+
+[node name="C" type="Control" parent="C/C/Footer/Timeline/C"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TimelineScroll" type="ScrollContainer" parent="C/C/Footer/Timeline/C/C"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_y30nq")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5g8jj")
+horizontal_scroll_mode = 2
+vertical_scroll_mode = 0
+
+[node name="Times" type="BoxContainer" parent="C/C/Footer/Timeline/C/C/TimelineScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = -1
+
+[node name="TimeSlider" type="HSlider" parent="C/C/Footer/Timeline/C/C"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_icons/grabber = SubResource("GradientTexture1D_jq7ks")
+theme_override_icons/grabber_highlight = SubResource("GradientTexture1D_ixmjd")
+theme_override_icons/grabber_disabled = SubResource("GradientTexture1D_xgvrl")
+theme_override_icons/tick = SubResource("GradientTexture1D_v0i2y")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_seha0")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_4ii31")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_mq8hj")
+max_value = 50.0
+step = 0.01
+scrollable = false
+
+[node name="VisibleSlider" type="HSlider" parent="C/C/Footer/Timeline/C/C"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_icons/grabber = SubResource("GradientTexture1D_jq7ks")
+theme_override_icons/grabber_highlight = SubResource("GradientTexture1D_ixmjd")
+theme_override_icons/grabber_disabled = SubResource("GradientTexture1D_xgvrl")
+theme_override_icons/tick = SubResource("GradientTexture1D_v0i2y")
+theme_override_styles/slider = SubResource("StyleBoxFlat_g8dyd")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_dji1d")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_dji1d")
+max_value = 50.0
+step = 0.01
+editable = false
+scrollable = false
+
+[node name="Grabber" type="Panel" parent="C/C/Footer/Timeline/C/C"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 5.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2dy45")
+
+[node name="Left2" type="Control" parent="C/C/Footer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="BG" type="Panel" parent="C/C/Footer/Left2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r26rt")
+
+[node name="Menu" type="BoxContainer" parent="C/C/Footer/Left2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
 
 [connection signal="pressed" from="C/C/C/Menu/L/BtnBack" to="." method="_on_btn_back_pressed"]
 [connection signal="toggled" from="C/C/C/Body/Right/C/Header/Menu/L/BtnCursor" to="." method="_on_btn_cursor_toggled"]
@@ -693,20 +1059,27 @@ script = ExtResource("15_do3mh")
 [connection signal="toggled" from="C/C/C/Body/Right/C/Header/Menu/L/BtnGridX" to="." method="_on_btn_grid_x_toggled"]
 [connection signal="toggled" from="C/C/C/Body/Right/C/Header/Menu/L/BtnGridY" to="." method="_on_btn_grid_y_toggled"]
 [connection signal="toggled" from="C/C/C/Body/Right/C/Header/Menu/L/BtnGridZ" to="." method="_on_btn_grid_z_toggled"]
-[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/BtnGridDown" to="." method="_on_btn_grid_down_pressed"]
-[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridHeight" to="." method="_on_grid_height_pressed"]
-[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/BtnGridUp" to="." method="_on_btn_grid_up_pressed"]
-[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridCharacter" to="." method="_on_grid_character_pressed"]
-[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridRotationX" to="." method="_on_grid_rotation_x_pressed"]
-[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/BtnRotateX" to="." method="_on_btn_rotate_x_pressed"]
-[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridRotationY" to="." method="_on_grid_rotation_y_pressed"]
-[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/BtnRotateY" to="." method="_on_btn_rotate_y_pressed"]
-[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridRotationZ" to="." method="_on_grid_rotation_z_pressed"]
-[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/BtnRotateZ" to="." method="_on_btn_rotate_z_pressed"]
-[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/GridRotationZero" to="." method="_on_grid_rotation_zero_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/X/C/GridRotationX" to="." method="_on_grid_rotation_x_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/X/C/BtnRotateX" to="." method="_on_btn_rotate_x_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/Y/C/GridRotationY" to="." method="_on_grid_rotation_y_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/Y/C/BtnRotateY" to="." method="_on_btn_rotate_y_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/Z/C/GridRotationZ" to="." method="_on_grid_rotation_z_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/C/Header/Menu/L/Z/C/BtnRotateZ" to="." method="_on_btn_rotate_z_pressed"]
+[connection signal="mouse_entered" from="C/C/C/Body/Right/C/C" to="." method="_on_c_mouse_entered"]
+[connection signal="drag_ended" from="C/C/C/Body/Right/OnScreen/CLeft/GridHeight" to="." method="_on_grid_height_drag_ended"]
+[connection signal="drag_started" from="C/C/C/Body/Right/OnScreen/CLeft/GridHeight" to="." method="_on_grid_height_drag_started"]
+[connection signal="pressed" from="C/C/C/Body/Right/OnScreen/CLeft/BtnGridUp" to="." method="_on_btn_grid_up_pressed"]
+[connection signal="pressed" from="C/C/C/Body/Right/OnScreen/CLeft/BtnGridDown" to="." method="_on_btn_grid_down_pressed"]
 [connection signal="toggled" from="C/C/C/Body/Left/C/Header/Menu/L/BtnBlocks" to="." method="_on_btn_blocks_toggled"]
 [connection signal="toggled" from="C/C/C/Body/Left/C/Header/Menu/L/BtnShapes" to="." method="_on_btn_shapes_toggled"]
 [connection signal="toggled" from="C/C/C/Body/Left/C/Header/Menu/L/BtnObjects" to="." method="_on_btn_objects_toggled"]
 [connection signal="item_selected" from="C/C/C/Body/Left/C/ScrollContainer/С/ItemList" to="." method="_on_item_list_item_selected"]
 [connection signal="item_selected" from="C/C/C/Body/Left/C/ScrollContainer/С/ShapeList" to="." method="_on_shape_list_item_selected"]
 [connection signal="item_selected" from="C/C/C/Body/Left/C/ScrollContainer/С/ObjectList" to="." method="_on_object_list_item_selected"]
+[connection signal="toggled" from="C/C/Footer/Timeline/C/Header/Menu/L/BtnToStart" to="." method="_on_btn_to_start_toggled"]
+[connection signal="toggled" from="C/C/Footer/Timeline/C/Header/Menu/L/BtnReverse" to="." method="_on_btn_reverse_toggled"]
+[connection signal="toggled" from="C/C/Footer/Timeline/C/Header/Menu/L/BtnStop" to="." method="_on_btn_stop_toggled"]
+[connection signal="toggled" from="C/C/Footer/Timeline/C/Header/Menu/L/BtnPlay" to="." method="_on_btn_play_toggled"]
+[connection signal="toggled" from="C/C/Footer/Timeline/C/Header/Menu/L/BtnToEnd" to="." method="_on_btn_to_end_toggled"]
+[connection signal="drag_ended" from="C/C/Footer/Timeline/C/C/TimeSlider" to="C/C/Footer/Timeline" method="_on_time_slider_drag_ended"]
+[connection signal="drag_started" from="C/C/Footer/Timeline/C/C/TimeSlider" to="C/C/Footer/Timeline" method="_on_time_slider_drag_started"]

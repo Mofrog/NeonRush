@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bojam3itnewjv"]
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://bojam3itnewjv"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vms5w"]
 
@@ -18,6 +18,53 @@ thickness = 3
 color = Color(1, 1, 1, 1)
 thickness = 3
 
+[sub_resource type="Gradient" id="Gradient_24c3f"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7sbpc"]
+gradient = SubResource("Gradient_24c3f")
+width = 5
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7ircp"]
+gradient = SubResource("Gradient_24c3f")
+width = 5
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cmpca"]
+gradient = SubResource("Gradient_24c3f")
+width = 5
+
+[sub_resource type="Gradient" id="Gradient_f4tln"]
+colors = PackedColorArray(0.678431, 0.690196, 0.8, 0.501961, 0.678431, 0.690196, 0.8, 0.501961)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e0133"]
+gradient = SubResource("Gradient_f4tln")
+width = 10
+height = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cn766"]
+bg_color = Color(0.94902, 0.764706, 0.301961, 1)
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxxfy"]
+bg_color = Color(0.992157, 0.886275, 0.647059, 1)
+corner_radius_top_left = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0eelk"]
+content_margin_bottom = 5.0
+bg_color = Color(0.8, 0.819608, 0.94902, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
 [resource]
 HSlider/icons/grabber = SubResource("PlaceholderTexture2D_vms5w")
 HSlider/icons/grabber_disabled = SubResource("PlaceholderTexture2D_km2le")
@@ -25,3 +72,10 @@ HSlider/icons/grabber_highlight = SubResource("PlaceholderTexture2D_38ksf")
 HSlider/styles/grabber_area = SubResource("StyleBoxLine_673bp")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxLine_17haw")
 HSlider/styles/slider = SubResource("StyleBoxLine_0l50v")
+VSlider/icons/grabber = SubResource("GradientTexture1D_7sbpc")
+VSlider/icons/grabber_disabled = SubResource("GradientTexture1D_7ircp")
+VSlider/icons/grabber_highlight = SubResource("GradientTexture1D_cmpca")
+VSlider/icons/tick = SubResource("GradientTexture2D_e0133")
+VSlider/styles/grabber_area = SubResource("StyleBoxFlat_cn766")
+VSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_yxxfy")
+VSlider/styles/slider = SubResource("StyleBoxFlat_0eelk")

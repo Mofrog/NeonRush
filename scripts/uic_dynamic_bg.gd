@@ -5,7 +5,7 @@ extends Control
 func _ready():
 	pivot_offset = size / 2
 	scale = Vector2.ONE * 1.05
-	$Image.size = size
+	$Image.set_deferred("size", size)
 
 
 func _input(event):

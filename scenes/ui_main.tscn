@@ -4,7 +4,7 @@
 [ext_resource type="Theme" path="res://resources/drawable/st_label.tres" id="2_prt57"]
 [ext_resource type="Theme" uid="uid://bdl114ssnfrni" path="res://resources/drawable/st_button.tres" id="3_jrf3a"]
 [ext_resource type="PackedScene" path="res://scenes/uic_btn_menu.tscn" id="4_2qucj"]
-[ext_resource type="PackedScene" path="res://scenes/uic_dynamic_bg.tscn" id="5_f2aom"]
+[ext_resource type="PackedScene" uid="uid://gd74md0ipo7h" path="res://scenes/uic_dynamic_bg.tscn" id="5_f2aom"]
 [ext_resource type="Script" path="res://scripts/uic_cursor_trail.gd" id="6_5mda5"]
 [ext_resource type="PackedScene" path="res://scenes/uic_fps_counter.tscn" id="7_eeqyp"]
 

@@ -20,6 +20,5 @@ var object_id = 0
 var block_rotation = Vector3()
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	Settings.new().load_settings()
